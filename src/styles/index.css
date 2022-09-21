@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+:root{
+    --white: #FFF;
+    --bs-blue: #0d6efd;
+}
