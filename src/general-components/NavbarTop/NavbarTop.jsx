@@ -1,9 +1,23 @@
 import React from 'react';
-import {Container, Nav, Navbar} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Button, Container, Nav, Navbar} from "react-bootstrap";
+import {Link,useNavigate} from "react-router-dom";
 import './NavbarTop.css';
+import {useUserAuth} from "../../context/AuthContext";
 
 const NavbarTop = () => {
+
+    const { logOut, user } = useUserAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try {
+            await logOut();
+            navigate("/login");
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
+
     return (
         <Navbar className={'NavbarTop'} expand="lg" bg="dark">
             <Container>
@@ -17,7 +31,13 @@ const NavbarTop = () => {
                     <Nav>
                         <Link to={`/`}>Избр. товары</Link>
                         <Link to={`/`}>Диалоги</Link>
-                        <Link to={`/`}>Войти</Link>
+                        { user && <Link to={`/userProfile`}>Профиль</Link> }
+                        {
+                            user?
+                                <Button onClick={handleLogout}>Выйти</Button>:
+                                <Link to={`/login`}>Войти</Link>
+                        }
+
                     </Nav>
             </Container>
         </Navbar>
