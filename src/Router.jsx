@@ -5,7 +5,8 @@ import NavbarTop from "./general-components/NavbarTop/NavbarTop";
 import {UserAuthContextProvider} from "./context/AuthContext";
 import ProtectedRoute from "./general-components/Auth/ProtectedRoute";
 import UserProfile from "./general-components/Auth/UserProfile/UserProfile";
-import PhoneSignUp from "./general-components/Auth/PhoneSignUp";
+import Login from "./general-components/Auth/Login";
+import AdminPage from "./pages/AdminPage/AdminPage";
 
 const Router = () => {
     return (
@@ -22,7 +23,8 @@ const Router = () => {
                             </ProtectedRoute>
                         }
                     />
-                    <Route path="/login" element={<PhoneSignUp />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/admin" element={<AdminPage />} />
                 </Routes>
             </UserAuthContextProvider>
         </>

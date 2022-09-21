@@ -6,7 +6,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useUserAuth } from "../../context/AuthContext";
 
-const PhoneSignUp = () => {
+const Login = () => {
   const [error, setError] = useState("");
   const [number, setNumber] = useState("");
   const [flag, setFlag] = useState(false);
@@ -46,25 +46,26 @@ const PhoneSignUp = () => {
   return (
     <div className={'container'}>
       <div className="p-4 box w-50 border mt-3">
-        <h2 className="mb-3">Firebase Phone Auth</h2>
+        <h5 className="mb-3">Авторизация</h5>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <PhoneInput
-              defaultCountry="RU"
-              value={number}
-              onChange={setNumber}
-              placeholder="Enter Phone Number"
+                className={"w-50"}
+                defaultCountry={"RU"}
+                value={number}
+                onChange={setNumber}
+                placeholder="Введите номер телефона"
             />
-            <div className={'mt-3'} id="recaptcha-container"></div>
+            <div className={'mt-3'} id="recaptcha-container" />
           </Form.Group>
           <div className="button-right">
-            <Link to="/login">
-              <Button variant="secondary">Cancel</Button>
+            <Link to="/">
+              <Button variant="secondary">На главную</Button>
             </Link>
             &nbsp;
             <Button type="submit" variant="primary">
-              Send Otp
+              Далее
             </Button>
           </div>
         </Form>
@@ -79,11 +80,11 @@ const PhoneSignUp = () => {
           </Form.Group>
           <div className="button-right">
             <Link to="/login">
-              <Button variant="secondary">Cancel</Button>
+              <Button variant="secondary">Назад</Button>
             </Link>
             &nbsp;
             <Button type="submit" variant="primary">
-              Verify
+              Отправить
             </Button>
           </div>
         </Form>
@@ -92,4 +93,4 @@ const PhoneSignUp = () => {
   );
 };
 
-export default PhoneSignUp;
+export default Login;

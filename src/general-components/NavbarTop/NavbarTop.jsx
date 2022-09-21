@@ -24,11 +24,11 @@ const NavbarTop = () => {
                 <Link className={'logo'} to={`/`}>OptQuick</Link>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Nav className="me-auto">
+                    <Nav className="me-auto d-flex align-items-center">
                         <Link to={`/`}>Каталог</Link>
                         <Link to={`/`}>О нас</Link>
                     </Nav>
-                    <Nav>
+                    <Nav className="d-flex align-items-center">
                         <Link to={`/`}>Избр. товары</Link>
                         <Link to={`/`}>Диалоги</Link>
                         { user && <Link to={`/userProfile`}>Профиль</Link> }
