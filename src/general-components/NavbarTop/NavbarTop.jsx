@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Container, Nav, Navbar} from "react-bootstrap";
+import {Button, Container, Nav, Navbar, NavbarBrand} from "react-bootstrap";
 import {Link,useNavigate} from "react-router-dom";
 import './NavbarTop.css';
 import {useUserAuth} from "../../context/AuthContext";
@@ -21,7 +21,11 @@ const NavbarTop = () => {
     return (
         <Navbar className={'NavbarTop'} expand="lg" bg="dark">
             <Container>
-                <Link className={'logo'} to={`/`}>OptQuick</Link>
+
+                <NavbarBrand className={`d-flex align-items-center`}>
+                    <img style={{marginRight:7}} width={40} src="/images/general/logo.svg" alt="optquick"/>
+                    <Link className={'logo'} to={`/`}>OptQuick</Link>
+                </NavbarBrand>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Nav className="me-auto d-flex align-items-center">

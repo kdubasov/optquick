@@ -3,7 +3,7 @@ import {Route, Routes} from 'react-router-dom';
 import MainPage from "./pages/MainPage/MainPage";
 import NavbarTop from "./general-components/NavbarTop/NavbarTop";
 import {UserAuthContextProvider} from "./context/AuthContext";
-import ProtectedRoute from "./general-components/Auth/ProtectedRoute";
+import CheckLoginRoute from "./general-components/Auth/CheckLoginRoute";
 import UserProfile from "./general-components/Auth/UserProfile/UserProfile";
 import Login from "./general-components/Auth/Login";
 import AdminPage from "./pages/AdminPage/AdminPage";
@@ -18,9 +18,9 @@ const Router = () => {
                     <Route
                         path="/userProfile"
                         element={
-                            <ProtectedRoute>
+                            <CheckLoginRoute>
                                 <UserProfile />
-                            </ProtectedRoute>
+                            </CheckLoginRoute>
                         }
                     />
                     <Route path="/login" element={<Login />} />
