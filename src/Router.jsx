@@ -8,6 +8,7 @@ import UserProfile from "./general-components/Auth/UserProfile/UserProfile";
 import Login from "./general-components/Auth/Login";
 import AdminPage from "./pages/AdminPage/AdminPage";
 
+
 const Router = () => {
     return (
         <>
@@ -24,7 +25,14 @@ const Router = () => {
                         }
                     />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/admin" element={<AdminPage />} />
+                    <Route
+                        path="/admin"
+                        element={
+                        <CheckLoginRoute>
+                            <AdminPage />
+                        </CheckLoginRoute>
+                        }
+                    />
                 </Routes>
             </UserAuthContextProvider>
         </>

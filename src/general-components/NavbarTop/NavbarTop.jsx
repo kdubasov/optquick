@@ -27,7 +27,7 @@ const NavbarTop = () => {
                     <Link className={'logo'} to={`/`}>OptQuick</Link>
                 </NavbarBrand>
 
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar aria-controls="responsive-navbar-nav" />
                     <Nav className="me-auto d-flex align-items-center">
                         <Link to={`/`}>Каталог</Link>
                         <Link to={`/`}>О нас</Link>
