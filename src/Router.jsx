@@ -10,6 +10,7 @@ import AdminPage from "./pages/AdminPage/AdminPage";
 
 
 const Router = () => {
+
     return (
         <>
             <UserAuthContextProvider>
@@ -29,7 +30,7 @@ const Router = () => {
                         path="/admin"
                         element={
                         <CheckLoginRoute>
-                            <AdminPage />
+                            <AdminPage  />
                         </CheckLoginRoute>
                         }
                     />

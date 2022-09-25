@@ -3,11 +3,7 @@ import {Button, FloatingLabel, Form} from "react-bootstrap";
 import {handleAddCategory} from "../../../pages-functions/AdminPage/Categories/handleAddCategory";
 import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
 
-const AddCategory = () => {
-
-    //for error or result form
-    const [err,setErr] = useState(false)
-    const [res,setRes] = useState(false)
+const AddCategory = ({setRes}) => {
 
     //inps value
     const [category,setCategory] = useState({
@@ -38,6 +34,7 @@ const AddCategory = () => {
         return(
             <FloatingLabel label={value} className={`mt-1 mb-1`}>
                 <Form.Control
+                    required={true}
                     value={state[value]}
                     onChange={e => handleChange(e.target.value,value,state,setState)}
                     placeholder={value}
@@ -49,21 +46,25 @@ const AddCategory = () => {
     //send form func with check errors or res
     const handleSendForm = async (e,url,state,setState) =>{
         e.preventDefault()
-        await handleAddCategory(e,url,state.id,state.title,state.image)
-            .then(() => setRes(true))
-            .catch(() => setErr(true))
-
-        if (res){//check res or err
-            setTimeout(() => setRes(false),5000)
-        }else {
-            setTimeout(() => setRes(false),5000)
+        if (!selectVal){
+            setRes({error:"Выберите родительскую категорию.",res:false})
+            return false
         }
+        await handleAddCategory(e,url,state.id,state.title,state.image)
+            .then(() => setRes({error:false,res:"Добавлено."}))
+            .catch(() => setRes({error:"Ошибка.",res:false}))
+
+        //delete message
+        setTimeout(() => setRes({error:false,res:false}),4000)
+
         setState({id:'', title:'', image:'',})
     }
 
     return (
         <div className={`AddCategory w-100 d-flex`}>
-            <Form className={`w-50 border p-3 m-3`} onSubmit={e => handleSendForm(e,"/categories",category,setCategory)}>
+
+            {/*category*/}
+            <Form className={`w-50 border p-3 m-1`} onSubmit={e => handleSendForm(e,"/categories",category,setCategory)}>
 
                 <h5>Добавить категорию</h5>
 
@@ -75,19 +76,16 @@ const AddCategory = () => {
                     ))
                 }
 
-                <span>
-                    {res && "Добавлено."}
-                    {err && "Ошибка!"}
-                </span>
-
-                <Button type={"submit"}>Add</Button>
+                <Button type={"submit"}>Добавить</Button>
             </Form>
 
-            <Form className={`w-50 border p-3 m-3`} onSubmit={e => handleSendForm(e,`/categories/${selectVal}/subcategories`,subCategory,setSubCategory)}>
+            {/*subcategory*/}
+            <Form className={`w-50 border p-3 m-1`} onSubmit={e => handleSendForm(e,`/categories/${selectVal}/subcategories`,subCategory,setSubCategory)}>
 
                 <h5>Добавить подкатегорию</h5>
 
                 <Form.Select value={selectVal} onChange={e => setSelectVal(e.target.value)}>
+                    <option hidden={true}>Выберите родительскую категорию.</option>
                     {
                         useGetCategory(["categories"]).map(elem =>(
                             <option key={elem.id} value={elem.id}>
@@ -105,12 +103,7 @@ const AddCategory = () => {
                     ))
                 }
 
-                <span>
-                    {res && "Добавлено."}
-                    {err && "Ошибка!"}
-                </span>
-
-                <Button type={"submit"}>Add</Button>
+                <Button type={"submit"}>Добавить</Button>
             </Form>
         </div>
     );
