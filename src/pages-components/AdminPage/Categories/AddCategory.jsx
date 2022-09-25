@@ -61,49 +61,43 @@ const AddCategory = ({setRes}) => {
     }
 
     return (
-        <div className={`AddCategory w-100 d-flex`}>
+        <div className={`AddCategory w-100 p-1 border d-flex flex-wrap`}>
+
+            <h4 className={`w-100 m-1`}>Добавление категорий и подкатегорий</h4>
 
             {/*category*/}
-            <Form className={`w-50 border p-3 m-1`} onSubmit={e => handleSendForm(e,"/categories",category,setCategory)}>
-
+            <Form className={`w-25 border p-3 m-1`} onSubmit={e => handleSendForm(e,"/categories",category,setCategory)}>
                 <h5>Добавить категорию</h5>
 
-                {
-                    Object.keys(category).map(elem =>(
-                        <div key={elem}>
-                            {getInput(elem,category,setCategory)}
-                        </div>
-                    ))
-                }
+                {Object.keys(category).map(elem =>(
+                    <div key={elem}>
+                        {getInput(elem,category,setCategory)}
+                    </div>
+                ))}
 
-                <Button type={"submit"}>Добавить</Button>
+                <Button variant={"outline-dark"} type={"submit"}>Добавить</Button>
             </Form>
 
             {/*subcategory*/}
-            <Form className={`w-50 border p-3 m-1`} onSubmit={e => handleSendForm(e,`/categories/${selectVal}/subcategories`,subCategory,setSubCategory)}>
-
+            <Form className={`w-25 border p-3 m-1`} onSubmit={e => handleSendForm(e,`/categories/${selectVal}/subcategories`,subCategory,setSubCategory)}>
                 <h5>Добавить подкатегорию</h5>
 
                 <Form.Select value={selectVal} onChange={e => setSelectVal(e.target.value)}>
                     <option hidden={true}>Выберите родительскую категорию.</option>
-                    {
-                        useGetCategory(["categories"]).map(elem =>(
-                            <option key={elem.id} value={elem.id}>
-                                {elem.title}
-                            </option>
-                        ))
-                    }
+                    {useGetCategory(["categories"]).map(elem =>(
+                        <option key={elem.id} value={elem.id}>
+                            {elem.title}
+                        </option>
+                    ))}
                 </Form.Select>
 
-                {
-                    Object.keys(subCategory).map(elem =>(
-                        <div key={elem}>
-                            {getInput(elem,subCategory,setSubCategory)}
-                        </div>
-                    ))
-                }
+                {Object.keys(subCategory).map(elem =>(
+                    <div key={elem}>
+                        {getInput(elem,subCategory,setSubCategory)}
+                    </div>
+                ))}
 
-                <Button type={"submit"}>Добавить</Button>
+                <Button variant={"outline-dark"} type={"submit"}>Добавить</Button>
             </Form>
         </div>
     );

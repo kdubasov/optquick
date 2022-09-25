@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import AddCategory from "../../pages-components/AdminPage/Categories/AddCategory";
 import MessageAlert from "../../general-components/MessageAlert/MessageAlert";
+import ListCategory from "../../pages-components/AdminPage/Categories/ListCategory";
 
 
 const AdminPage = () => {
@@ -15,6 +16,7 @@ const AdminPage = () => {
 
             <h3 className={"mt-3 mb-3"}>Админ. страница</h3>
             <AddCategory setRes={setRes}  />
+            <ListCategory />
         </div>
     );
 };

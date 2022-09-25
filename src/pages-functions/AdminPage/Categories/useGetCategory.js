@@ -11,7 +11,8 @@ export const useGetCategory = (url) =>{
         onValue(ref(realtimeDB),snapshot => {
             setData([])
             const dataInner = snapshot.val()[url];
-            if (dataInner !== null){
+            // console.log(Object.values(dataInner["clothes"]["subcategories"]));
+            if (dataInner){
                 // eslint-disable-next-line
                 Object.values(dataInner).map(elem => {
                     setData((old) => [...old,elem])
