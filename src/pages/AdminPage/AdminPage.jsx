@@ -1,6 +1,7 @@
 import React from 'react';
 import AddCategory from "../../pages-components/AdminPage/Categories/AddCategory";
 
+
 const AdminPage = () => {
 
     return (
