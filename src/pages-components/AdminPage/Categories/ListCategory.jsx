@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
-import {Button, ListGroup} from "react-bootstrap";
+import {Button, ListGroup, Form} from "react-bootstrap";
 
 const ListCategory = () => {
+
+    const [selectCategory,setSelectCategory] = useState('')
 
     //categories states and get data
     const categories = useGetCategory("/categories")
     // console.log(categories,"categories list")
-
 
     //for getting category list item
     const getCategoryListItem = category =>{
@@ -26,11 +27,11 @@ const ListCategory = () => {
         )
     }
 
-
     return (
         <div className={`ListCategory w-100 p-1 mt-2 mb-2 border`}>
-            <h4>Список катеорий и подкатегорий</h4>
 
+            {/*categories*/}
+            <h4 className={`mt-3`}>Список катеорий и подкатегорий</h4>
             <ListGroup>
                 {
                     categories.map(category => (
@@ -38,6 +39,27 @@ const ListCategory = () => {
                     ))
                 }
             </ListGroup>
+
+            {/*subcategories*/}
+            <h4 className={`mt-3`}>Список подкатегорий</h4>
+            {/*for selec parent categoru for then show sub*/}
+            <Form.Select
+                value={selectCategory}
+                onChange={e => setSelectCategory(e.target.value)}
+                className={`mb-1`}
+            >
+                <option hidden>Выберите родительскую категорию.</option>
+                {
+                    categories.map(category => (
+                        <option
+                            key={category.id}
+                            value={category.id}
+                        >
+                            {category.title}
+                        </option>
+                    ))
+                }
+            </Form.Select>
         </div>
     );
 };

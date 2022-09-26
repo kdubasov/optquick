@@ -83,7 +83,7 @@ const AddCategory = ({setRes}) => {
                 <h5>Добавить подкатегорию</h5>
 
                 <Form.Select value={selectVal} onChange={e => setSelectVal(e.target.value)}>
-                    <option hidden={true}>Выберите родительскую категорию.</option>
+                    <option hidden>Выберите родительскую категорию.</option>
                     {useGetCategory("/categories").map(elem =>(
                         <option key={elem.id} value={elem.id}>
                             {elem.title}
