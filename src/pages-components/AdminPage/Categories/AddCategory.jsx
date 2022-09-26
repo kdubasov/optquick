@@ -46,7 +46,7 @@ const AddCategory = ({setRes}) => {
     //send form func with check errors or res
     const handleSendForm = async (e,url,state,setState) =>{
         e.preventDefault()
-        if (!selectVal){
+        if (state === subCategory && !selectVal){
             setRes({error:"Выберите родительскую категорию.",res:false})
             return false
         }
@@ -84,7 +84,7 @@ const AddCategory = ({setRes}) => {
 
                 <Form.Select value={selectVal} onChange={e => setSelectVal(e.target.value)}>
                     <option hidden={true}>Выберите родительскую категорию.</option>
-                    {useGetCategory(["categories"]).map(elem =>(
+                    {useGetCategory("/categories").map(elem =>(
                         <option key={elem.id} value={elem.id}>
                             {elem.title}
                         </option>

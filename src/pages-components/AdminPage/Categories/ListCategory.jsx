@@ -5,8 +5,9 @@ import {Button, ListGroup} from "react-bootstrap";
 const ListCategory = () => {
 
     //categories states and get data
-    const categories = useGetCategory(["categories"])
+    const categories = useGetCategory("/categories")
     // console.log(categories,"categories list")
+
 
     //for getting category list item
     const getCategoryListItem = category =>{
@@ -16,7 +17,10 @@ const ListCategory = () => {
                 <span className={'m-3'}>
                     <p className={'m-0'}>ID: {category.id}</p>
                     <p className={'m-0'}>Название: {category.title}</p>
-                    <Button variant={`outline-primary`}>Показать подкатегории</Button>
+
+                    <Button variant={`outline-primary`}>
+                        Показать подкатегории
+                    </Button>
                 </span>
             </ListGroup.Item>
         )
@@ -29,11 +33,10 @@ const ListCategory = () => {
 
             <ListGroup>
                 {
-                    categories.map((category) => (
+                    categories.map(category => (
                         getCategoryListItem(category)
                     ))
                 }
-
             </ListGroup>
         </div>
     );

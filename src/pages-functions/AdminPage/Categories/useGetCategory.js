@@ -8,9 +8,9 @@ export const useGetCategory = (url) =>{
     const [data,setData] = useState([])
 
     useEffect(() =>{
-        onValue(ref(realtimeDB),snapshot => {
+        onValue(ref(realtimeDB,url),snapshot => {
             setData([])
-            const dataInner = snapshot.val()[url];
+            const dataInner = snapshot.val();
             // console.log(Object.values(dataInner["clothes"]["subcategories"]));
             if (dataInner){
                 // eslint-disable-next-line
