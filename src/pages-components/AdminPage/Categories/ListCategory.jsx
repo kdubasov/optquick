@@ -15,32 +15,13 @@ const ListCategory = () => {
     const subcategories = useGetCategory(`/categories/${selectCategory}/subcategories`)
     //console.log(subcategories,"subcategories list")
 
-    // //for getting category list item
-    // const getCategoryListItem = category =>{
-    //     return(
-    //         <ListGroup.Item className={'d-flex m-1 align-items-center'} key={category.id}>
-    //             <img width={120} style={{borderRadius:10}} src={category.image} alt={category.image}/>
-    //             <span className={'m-3'}>
-    //                 <p className={'m-0'}>ID: {category.id}</p>
-    //                 <p className={'m-0'}>Название: {category.title}</p>
-    //
-    //                 <Button variant={`outline-primary`}>
-    //                     Показать подкатегории
-    //                 </Button>
-    //
-    //                 <Button onClick={() => handleDeleteCategory()} variant={`outline-danger`}>
-    //                     Удалить
-    //                 </Button>
-    //             </span>
-    //         </ListGroup.Item>
-    //     )
-    // }
-
     return (
         <div className={`ListCategory w-100 p-1 mt-2 mb-2 border`}>
 
             {/*categories*/}
-            <h4 className={`mt-3`}>Список катеорий и подкатегорий</h4>
+            <h4 className={`mt-3`}>
+                <Badge>Список катеорий и подкатегорий</Badge>
+            </h4>
             <ListGroup>
                 {
                     categories.length?
@@ -52,12 +33,14 @@ const ListCategory = () => {
             </ListGroup>
 
             {/*subcategories*/}
-            <h4 className={`mt-3`}>Список подкатегорий</h4>
-            {/*for selec parent categoru for then show sub*/}
+            <h4 className={`mt-3 mx-1`}>
+                <Badge>Список подкатегорий</Badge>
+            </h4>
+            {/*for select parent category for then show sub*/}
             <Form.Select
                 value={selectCategory}
                 onChange={e => setSelectCategory(e.target.value)}
-                className={`mb-1`}
+                className={`mb-1 mx-1 w-50`}
             >
                 <option hidden>Выберите родительскую категорию.</option>
                 {

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, FloatingLabel, Form} from "react-bootstrap";
+import {Badge, Button, FloatingLabel, Form} from "react-bootstrap";
 import {handleAddCategory} from "../../../pages-functions/AdminPage/Categories/handleAddCategory";
 import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
 
@@ -43,6 +43,16 @@ const AddCategory = ({setRes}) => {
         )
     }
 
+    const getListInputs = (state,setState) =>{
+        return(
+            Object.keys(state).map(elem =>(
+                    <div key={elem}>
+                        {getInput(elem,state,setState)}
+                    </div>
+                ))
+        )
+    }
+
     //send form func with check errors or res
     const handleSendForm = async (e,url,state,setState) =>{
         e.preventDefault()
@@ -63,24 +73,22 @@ const AddCategory = ({setRes}) => {
     return (
         <div className={`AddCategory w-100 p-1 border d-flex flex-wrap`}>
 
-            <h4 className={`w-100 m-1`}>Добавление категорий и подкатегорий</h4>
+            <h4 className={`w-100 m-1`}>
+                <Badge>Добавление категорий и подкатегорий</Badge>
+            </h4>
 
             {/*category*/}
-            <Form className={`w-25 border p-3 m-1`} onSubmit={e => handleSendForm(e,"/categories",category,setCategory)}>
-                <h5>Добавить категорию</h5>
+            <Form className={`w-25 border p-2 m-1`} onSubmit={e => handleSendForm(e,"/categories",category,setCategory)}>
+                <h6>Добавить категорию</h6>
 
-                {Object.keys(category).map(elem =>(
-                    <div key={elem}>
-                        {getInput(elem,category,setCategory)}
-                    </div>
-                ))}
+                {getListInputs(category,setCategory)}
 
                 <Button variant={"outline-dark"} type={"submit"}>Добавить</Button>
             </Form>
 
             {/*subcategory*/}
-            <Form className={`w-25 border p-3 m-1`} onSubmit={e => handleSendForm(e,`/categories/${selectVal}/subcategories`,subCategory,setSubCategory)}>
-                <h5>Добавить подкатегорию</h5>
+            <Form className={`w-25 border p-2 m-1`} onSubmit={e => handleSendForm(e,`/categories/${selectVal}/subcategories`,subCategory,setSubCategory)}>
+                <h6>Добавить подкатегорию</h6>
 
                 <Form.Select value={selectVal} onChange={e => setSelectVal(e.target.value)}>
                     <option hidden>Выберите родительскую категорию.</option>
@@ -91,11 +99,7 @@ const AddCategory = ({setRes}) => {
                     ))}
                 </Form.Select>
 
-                {Object.keys(subCategory).map(elem =>(
-                    <div key={elem}>
-                        {getInput(elem,subCategory,setSubCategory)}
-                    </div>
-                ))}
+                {getListInputs(subCategory,setSubCategory)}
 
                 <Button variant={"outline-dark"} type={"submit"}>Добавить</Button>
             </Form>

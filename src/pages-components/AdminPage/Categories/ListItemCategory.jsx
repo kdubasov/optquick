@@ -26,10 +26,19 @@ const ListItemCategory = ({category,subcategory,selectCategory}) =>{
                     </p>
 
                     <Button
+                        size={"sm"}
                         variant={`outline-danger`}
                         onClick={() => handleDeleteCategory(getUrl())}
                     >
                         Удалить
+                    </Button>
+
+                    <Button
+                        size={"sm"}
+                        className={`mx-2`}
+                        variant={"secondary"}
+                    >
+                        Редактировать
                     </Button>
                 </span>
         </ListGroup.Item>
