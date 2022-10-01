@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Form, Alert } from "react-bootstrap";
+import {Form, Alert, Badge} from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
@@ -46,12 +46,15 @@ const Login = () => {
   return (
     <div className={'container'}>
       <div className="p-4 box w-50 border mt-3">
-        <h5 className="mb-3">Авторизация</h5>
+
+        <h4><Badge className="mb-3 fw-light">Авторизация</Badge></h4>
+
         {error && <Alert variant="danger">{error}</Alert>}
+
         <Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <PhoneInput
-                className={"w-50"}
+                className={"w-75"}
                 defaultCountry={"RU"}
                 value={number}
                 onChange={setNumber}
@@ -59,12 +62,13 @@ const Login = () => {
             />
             <div className={'mt-3'} id="recaptcha-container" />
           </Form.Group>
+
           <div className="button-right">
             <Link to="/">
-              <Button variant="secondary">На главную</Button>
+              <Button size={"sm"} variant="secondary">На главную</Button>
             </Link>
-            &nbsp;
-            <Button type="submit" variant="primary">
+
+            <Button size={"sm"} type="submit" className={'mx-1'}>
               Далее
             </Button>
           </div>
@@ -80,10 +84,10 @@ const Login = () => {
           </Form.Group>
           <div className="button-right">
             <Link to="/login">
-              <Button variant="secondary">Назад</Button>
+              <Button size={"sm"} variant="secondary">Назад</Button>
             </Link>
-            &nbsp;
-            <Button type="submit" variant="primary">
+
+            <Button size={"sm"} type="submit" className={'mx-1'}>
               Отправить
             </Button>
           </div>

@@ -1,8 +1,9 @@
 import React from 'react';
-import {Button, Container, Nav, Navbar, NavbarBrand} from "react-bootstrap";
+import {Container, Nav, Navbar, NavbarBrand} from "react-bootstrap";
 import {Link,useNavigate} from "react-router-dom";
 import './NavbarTop.css';
 import {useUserAuth} from "../../context/AuthContext";
+import ConfirmButton from "../GeneralButtons/ConfirmButton";
 
 const NavbarTop = () => {
 
@@ -23,7 +24,7 @@ const NavbarTop = () => {
             <Container>
 
                 <NavbarBrand className={`d-flex align-items-center`}>
-                    <img style={{marginRight:7}} width={40} src="/images/general/logo.svg" alt="optquick"/>
+                    <img style={{marginRight:7}} width={30} src="/images/general/logo.svg" alt="optquick"/>
                     <Link className={'logo'} to={`/`}>OptQuick</Link>
                 </NavbarBrand>
 
@@ -38,7 +39,7 @@ const NavbarTop = () => {
                         { user && <Link to={`/userProfile`}>Профиль</Link> }
                         {
                             user?
-                                <Button onClick={handleLogout}>Выйти</Button>:
+                                <ConfirmButton text={'Выйти'} func={handleLogout} />:
                                 <Link to={`/login`}>Войти</Link>
                         }
 
