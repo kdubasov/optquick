@@ -6,7 +6,7 @@ const MessageAlert = ({res}) => {
 
     if (res.error || res.res){
         return (
-            <Alert className={`MessageAlert`} variant={res.res?"success":"danger"}>
+            <Alert className={`MessageAlert small`} variant={res.res?"success":"danger"}>
                 {res.res?res.res:res.error}
             </Alert>
         );
