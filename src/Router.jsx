@@ -7,6 +7,8 @@ import CheckLoginRoute from "./general-components/Auth/CheckLoginRoute";
 import UserProfile from "./general-components/Auth/UserProfile/UserProfile";
 import Login from "./general-components/Auth/Login";
 import AdminPage from "./pages/AdminPage/AdminPage";
+import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
+import SubcategoriesPage from "./pages/SubcategoriesPage/SubcategoriesPage";
 
 
 const Router = () => {
@@ -34,6 +36,8 @@ const Router = () => {
                         </CheckLoginRoute>
                         }
                     />
+                    <Route path="/categories" element={<CategoriesPage />} />
+                    <Route path="/categories/:categoryID" element={<SubcategoriesPage />} />
                 </Routes>
             </UserAuthContextProvider>
         </>

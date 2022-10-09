@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Badge, Button, Form, InputGroup} from "react-bootstrap";
+import {Alert, Badge, Button, Form, InputGroup} from "react-bootstrap";
 import {handleAddUserData} from "../functions/handleAddUserData";
 
 const AddUserData = ({setRes,user}) => {
@@ -13,6 +13,7 @@ const AddUserData = ({setRes,user}) => {
         age: '',
         email: '',
         photo: '',
+        dateRegistr:user['metadata']?user['metadata']['creationTime'] : 'Нет данных',
     });
     // console.log(dataForm,'Data from form add user')
 
@@ -38,8 +39,8 @@ const AddUserData = ({setRes,user}) => {
 
     const handleSend = e =>{
         handleAddUserData(e,dataForm,`/users/${user.uid}`)
-            .then(() => setRes({error:false,res:"Данные профиля успешно обновлены."}))
-            .catch(() => setRes({error:"Ошибка, попробуйте позже.",res:false}))
+            .then(() => setRes({error:false,res:"Данные профиля успешно отредактированы."}))
+            .catch(() => setRes({error:"Ошибка редактирования профиля, попробуйте позже.",res:false}))
 
         //delete message
         setTimeout(() => setRes({error:false,res:false}),4000)
@@ -50,10 +51,14 @@ const AddUserData = ({setRes,user}) => {
     return (
         <div className={`AddUserData p-3 border w-50 mt-3 mx-3`}>
 
-            <Badge className={'w-100 mb-2'}>
+            <Badge className={'w-100'}>
                 Добавьте информацию о себе,
                 для возможности разм. объявления.
             </Badge>
+
+            <Alert className={'my-2 small p-2'}>
+                Если вы заполните все поля, то в вашем товаре появится табличка "Подтвержденный партнер"
+            </Alert>
 
             <Form onSubmit={e => handleSend(e)}>
                 <InputGroup size={"sm"} className="mb-1">
