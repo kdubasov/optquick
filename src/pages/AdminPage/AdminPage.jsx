@@ -3,7 +3,7 @@ import AddCategory from "../../pages-components/AdminPage/Categories/AddCategory
 import MessageAlert from "../../general-components/MessageAlert/MessageAlert";
 import ListCategory from "../../pages-components/AdminPage/Categories/ListCategory";
 import {Badge} from "react-bootstrap";
-import AddProduct from "../../pages-components/AdminPage/Products/AddProduct";
+import AddProduct from "../../pages-components/AdminPage/Products/AddProducts/AddProduct";
 
 
 const AdminPage = () => {

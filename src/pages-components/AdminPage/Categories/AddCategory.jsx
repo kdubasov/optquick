@@ -83,7 +83,7 @@ const AddCategory = ({setRes}) => {
 
                 {getListInputs(category,setCategory)}
 
-                <Button variant={"outline-dark"} type={"submit"}>Добавить</Button>
+                <Button size={"sm"} variant={"outline-dark"} type={"submit"}>Добавить</Button>
             </Form>
 
             {/*subcategory*/}
@@ -101,7 +101,7 @@ const AddCategory = ({setRes}) => {
 
                 {getListInputs(subCategory,setSubCategory)}
 
-                <Button variant={"outline-dark"} type={"submit"}>Добавить</Button>
+                <Button size={"sm"} variant={"outline-dark"} type={"submit"}>Добавить</Button>
             </Form>
         </div>
     );
