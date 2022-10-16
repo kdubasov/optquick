@@ -2,14 +2,23 @@ import React, {useState} from 'react';
 import {Badge, Button, Form, InputGroup} from "react-bootstrap";
 import AddProductSelect from "./AddProductCategSelect";
 import AddProductDeliverPaySelects from "./AddProductDeliverPaySelects";
+import {useUserAuth} from "../../../../context/AuthContext";
 
 const AddProduct = () => {
 
-    //categories and subcategories value
+    //context user data
+    const { user } = useUserAuth();
+    console.log(user,'AddProduct user')
+
+    //values for select and input(image)
     const [selectCategory,setSelectCategory] = useState();
     const [selectSubCategory,setSubSelectCategory] = useState();
     const [selectPay,setSelectPay] = useState();
     const [selectDelivery,setSelectDelivery] = useState();
+    const [images,setImages] = useState([]);
+
+    const priductId = (user && user.uid) + String(Date.now());
+    console.log(priductId)
 
     //form data
     const [dataForm,setFormData] = useState({
@@ -23,13 +32,14 @@ const AddProduct = () => {
         location:'',
         sizes:'',
         deliveryPeriod:'',
-        photos:[],
         showPhoneNumber:false,
         showEmailAddress:false,
-    })
+    });
 
-    console.log(dataForm)
+    console.log(dataForm,'dataForm addProducts')
+    console.log(images,'images addProducts')
 
+    //change inputs
     const handleChange = (input,value) => {
         const copy = Object.assign({}, dataForm);
         copy[input] = value;
@@ -82,7 +92,7 @@ const AddProduct = () => {
                     <Form.Control value={dataForm.deliveryPeriod} onChange={e => handleChange('deliveryPeriod',e.target.value)} placeholder={'Срок доставки (дни)'} />
                 </InputGroup>
 
-                <Form.Control type="file" multiple/>
+                <Form.Control onChange={e => setImages([...e.target.files])} type="file" multiple/>
 
                 <InputGroup className="mb-1 px-1">
                     <Form.Check
