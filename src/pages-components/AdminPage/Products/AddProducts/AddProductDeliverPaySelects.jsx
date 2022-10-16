@@ -8,7 +8,7 @@ const AddProductDeliverPaySelects = ({setSelectPay,setSelectDelivery,selectPay,s
 
     return (
         <>
-            <Form.Select onChange={e => setSelectDelivery(e.target.value)} value={selectDelivery}>
+            <Form.Select required onChange={e => setSelectDelivery(e.target.value)} value={selectDelivery}>
                 <option hidden>Варианты доставки*</option>
                 {
                     deliveryArr.map(elem => (
@@ -16,7 +16,7 @@ const AddProductDeliverPaySelects = ({setSelectPay,setSelectDelivery,selectPay,s
                     ))
                 }
             </Form.Select>
-            <Form.Select onChange={e => setSelectPay(e.target.value)} value={selectPay}>
+            <Form.Select required onChange={e => setSelectPay(e.target.value)} value={selectPay}>
                 <option hidden>Варианты оплаты*</option>
                 {
                     payArr.map(elem => (
