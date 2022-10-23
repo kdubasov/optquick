@@ -4,6 +4,7 @@ import MessageAlert from "../../general-components/MessageAlert/MessageAlert";
 import ListCategory from "../../pages-components/AdminPage/Categories/ListCategory";
 import {Badge} from "react-bootstrap";
 import AddProduct from "../../pages-components/AdminPage/Products/AddProducts/AddProduct";
+import ListProducts from "../../pages-components/AdminPage/Products/ListProducts";
 
 
 const AdminPage = () => {
@@ -26,6 +27,8 @@ const AdminPage = () => {
             <AddProduct />
             {/*list categories or sub categories*/}
             <ListCategory />
+            {/*products list*/}
+            <ListProducts />
         </div>
     );
 };

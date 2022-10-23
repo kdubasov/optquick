@@ -1,6 +1,7 @@
 import {realtimeDB} from "../../../database/firebase-connect";
 import {set,ref} from "firebase/database";
 import {getDate} from "../../../functions/getDate";
+import {handleAddProductsPhoto} from "./handleAddProductsPhoto";
 
 export const handleAddProducts = (
     e, userUid, productId, dataForm, selectCategory,
@@ -11,7 +12,10 @@ export const handleAddProducts = (
 
     e.preventDefault()
 
-    const url = `/categories/${selectCategory}/subcategories/${selectSubCategory}/products/${productId}`
+    const url = `/categories/${selectCategory}/subcategories/${selectSubCategory}/products/${productId}`;
+
+    handleAddProductsPhoto(e, userUid, productId, images)
+        .then(() => console.log('Картинки успешно загружены'))
 
     return set(ref(realtimeDB, url),{
         id:productId,

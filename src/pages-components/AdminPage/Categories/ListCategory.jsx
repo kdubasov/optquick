@@ -20,7 +20,7 @@ const ListCategory = () => {
 
             {/*categories*/}
             <h4 className={`mt-1 mx-1`}>
-                <Badge>Список катеорий и подкатегорий</Badge>
+                <Badge>Список катеорий</Badge>
             </h4>
             <ListGroup>
                 {
