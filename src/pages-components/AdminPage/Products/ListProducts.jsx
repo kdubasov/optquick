@@ -1,13 +1,17 @@
 import React, {useState} from 'react';
 import {Badge, InputGroup} from "react-bootstrap";
 import AddProductSelect from "./AddProducts/AddProductCategSelect";
+import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
 
 const ListProducts = () => {
 
     //for select input
     const [selectCategory,setSelectCategory] = useState('');
     const [selectSubCategory,setSubSelectCategory] = useState('');
-    console.log(selectCategory,selectSubCategory)
+    const link = `/categories/${selectCategory}/subcategories/${selectSubCategory}/products`
+    // console.log(selectCategory,selectSubCategory);
+
+    console.log(useGetCategory(link))
 
     return (
         <div className={'ListProducts p-1 border mb-1'}>
