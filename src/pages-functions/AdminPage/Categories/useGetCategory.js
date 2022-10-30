@@ -15,7 +15,7 @@ export const useGetCategory = (url) =>{
             if (dataInner){
                 // eslint-disable-next-line
                 Object.values(dataInner).map(elem => {
-                    setData((old) => [...old,elem])
+                    setData(old => [...old,elem])
                 })
             }else {
                 return []

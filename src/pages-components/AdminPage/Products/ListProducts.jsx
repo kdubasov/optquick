@@ -2,16 +2,18 @@ import React, {useState} from 'react';
 import {Badge, InputGroup} from "react-bootstrap";
 import AddProductSelect from "./AddProducts/AddProductCategSelect";
 import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
+import CardProduct from "./CardProduct/CardProduct";
 
 const ListProducts = () => {
 
     //for select input
     const [selectCategory,setSelectCategory] = useState('');
     const [selectSubCategory,setSubSelectCategory] = useState('');
-    const link = `/categories/${selectCategory}/subcategories/${selectSubCategory}/products`
     // console.log(selectCategory,selectSubCategory);
 
-    console.log(useGetCategory(link))
+    const linkDB = `/categories/${selectCategory}/subcategories/${selectSubCategory}/products`;
+    const listProducts = useGetCategory(linkDB);
+    // console.log(listProducts,'listProducts in ListProducts')
 
     return (
         <div className={'ListProducts p-1 border mb-1'}>
@@ -27,6 +29,16 @@ const ListProducts = () => {
                     }
                 </InputGroup>
             </InputGroup>
+
+            {
+                listProducts.length?
+                    listProducts.map(product => (
+                        <CardProduct key={product.id} product={product} />
+                    )):
+                    <Badge className={"text-center w-100"}>
+                        Вы не выбрали родительские категории или товаров в данной категории пока нет.
+                    </Badge>
+            }
         </div>
     );
 };
