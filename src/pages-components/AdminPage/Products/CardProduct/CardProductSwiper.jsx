@@ -3,12 +3,15 @@ import {Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {useGetProductsPhoto} from "../../../../pages-functions/AdminPage/GetProducts/useGetProductsPhoto";
 import {Badge} from "react-bootstrap";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 const CardProductSwiper = ({product}) => {
 
     const linkForDB = `/products/${product.userUid}/${product.id}`;
     const imagesList = useGetProductsPhoto(linkForDB);
-    console.log(imagesList,'Images for product card (CardProduct)')
+    // console.log(imagesList,'Images for product card (CardProduct)');
 
     return (
         <>
@@ -22,8 +25,8 @@ const CardProductSwiper = ({product}) => {
                         modules={[Pagination]}
                         className="mySwiper"
                     >
-                        {imagesList.map(image => (
-                            <SwiperSlide key={image.link}>
+                        {imagesList.map((image,ids) => (
+                            <SwiperSlide key={ids}>
                                 <img className={"w-100"} src={image.link} alt={product.title}/>
                             </SwiperSlide>
                         ))}

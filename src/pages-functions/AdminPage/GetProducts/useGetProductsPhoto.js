@@ -1,20 +1,21 @@
 import {ref, listAll,getDownloadURL,getMetadata } from "firebase/storage";
 import {storageDB} from "../../../database/firebase-connect";
-import {useEffect, useState} from "react";
+import {useLayoutEffect, useState} from "react";
 
 //получаем фото из storage
 export const useGetProductsPhoto = link => {
 
+    //for files from database
+    const [data,setData] = useState([]);
+    //ref for database
     const listRef = ref(storageDB,link);
 
-    //for files from db
-    const [data,setData] = useState([])
+    useLayoutEffect(() => {
 
-    useEffect(() => {
+        setData([])
 
         listAll(listRef)
             .then(res => {
-                setData([])
                 res.items.forEach(itemRef => {
                     getDownloadURL(itemRef).then(elemLink => {
                         getMetadata(itemRef).then(elemMD => {
@@ -24,7 +25,7 @@ export const useGetProductsPhoto = link => {
                     })
                 })
             })
-            .catch(() => setData([]));
+            .catch(() => setData([]))
 
         //eslint-disable-next-line
     }, [link]);

@@ -11,12 +11,15 @@ const CardProduct = ({product}) => {
 
             {/*Название*/}
             <Badge bg={"secondary"}>{product.title}</Badge>
+            <br />
             {/*Цена*/}
-            <small>{product.price + '₽/шт'}</small><br />
+            <small>{product.price + '₽/шт'}</small>
+            <br />
             {/*Мин заказ*/}
             <small style={{fontSize:12,textDecoration:"underline"}}>
                 Минимальный заказ от {product.minOrder} шт.
             </small>
+            <br />
             {/*Доставка*/}
             <Badge>
                 Доставка: {product.deliveryPeriod}дн.
