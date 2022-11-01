@@ -23,11 +23,13 @@ const CardProductSwiper = ({product}) => {
                             clickable: true,
                         }}
                         modules={[Pagination]}
-                        className="mySwiper"
+                        className="CardProductSwiper"
                     >
-                        {imagesList.map((image,ids) => (
-                            <SwiperSlide key={ids}>
-                                <img className={"w-100"} src={image.link} alt={product.title}/>
+                        {imagesList.map(image => (
+                            <SwiperSlide key={image.link}>
+                                <img className={"w-100"} src={image.link} alt={product.title} />
+                                {/*filename*/}
+                                {/*<p>{image.metaData.name}</p>*/}
                             </SwiperSlide>
                         ))}
                     </Swiper>:

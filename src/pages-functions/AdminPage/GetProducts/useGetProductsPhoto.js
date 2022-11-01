@@ -30,5 +30,6 @@ export const useGetProductsPhoto = link => {
         //eslint-disable-next-line
     }, [link]);
 
-    return data;
+    //удаляем повторяющиеся элементы массива
+    return data.filter((v,i,a) => a.findIndex(t => (t.link === v.link)) === i);
 }

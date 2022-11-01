@@ -16,7 +16,7 @@ const ListProducts = () => {
     // console.log(listProducts,'listProducts in ListProducts')
 
     return (
-        <div className={'ListProducts p-1 border mb-1'}>
+        <div className={'ListProducts p-1 border mb-1 d-flex flex-wrap'}>
             <h3><Badge>Список товаров</Badge></h3>
 
             <InputGroup>
