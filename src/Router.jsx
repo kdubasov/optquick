@@ -11,6 +11,7 @@ import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import SubcategoriesPage from "./pages/SubcategoriesPage/SubcategoriesPage";
 import SubProductsPage from "./pages/SubProductsPage/SubProductsPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
+import PostProductPage from "./pages/PostProductPage/PostProductPage";
 
 
 const Router = () => {
@@ -44,6 +45,16 @@ const Router = () => {
                     <Route path="/categories/:categoryID/:subcategoryID" element={<SubProductsPage />} />
                     <Route path="/categories/:categoryID/:subcategoryID/:productID" element={<ProductPage />} />
                     {/*categories routes end*/}
+
+                    {/*post product without admin*/}
+                    <Route
+                        path="/postProduct"
+                        element={
+                            <CheckLoginRoute>
+                                <PostProductPage />
+                            </CheckLoginRoute>
+                        }
+                    />
                 </Routes>
             </UserAuthContextProvider>
         </>

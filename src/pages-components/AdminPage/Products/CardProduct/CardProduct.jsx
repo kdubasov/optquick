@@ -22,9 +22,12 @@ const CardProduct = ({product}) => {
             </small>
             <br />
             {/*Доставка*/}
-            <Badge>
-                Доставка: {product.deliveryPeriod}дн.
-            </Badge>
+            {
+                product.deliveryPeriod &&
+                <Badge>
+                    Доставка: {product.deliveryPeriod}дн.
+                </Badge>
+            }
             {/*ссылка на страницу товара*/}
             <Link to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}>
                 <Button size={"sm"} variant={"outline-dark"} className={"mt-2 w-100"}>

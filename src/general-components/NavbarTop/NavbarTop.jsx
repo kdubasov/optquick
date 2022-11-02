@@ -32,17 +32,16 @@ const NavbarTop = () => {
                     <Nav className="me-auto d-flex align-items-center">
                         <Link to={`/categories`}>Каталог</Link>
                         <Link to={`/`}>О нас</Link>
+                        <Link to={`/postProduct`}>Разместить объявление</Link>
                     </Nav>
                     <Nav className="d-flex align-items-center">
                         <Link to={`/`}>Избр. товары</Link>
-                        <Link to={`/`}>Диалоги</Link>
                         { user && <Link to={`/userProfile`}>Профиль</Link> }
                         {
                             user?
                                 <ConfirmButton text={'Выйти'} func={handleLogout} />:
                                 <Link to={`/login`}>Войти</Link>
                         }
-
                     </Nav>
             </Container>
         </Navbar>

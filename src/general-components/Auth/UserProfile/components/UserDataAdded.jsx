@@ -3,6 +3,8 @@ import {Alert, Badge, Button} from "react-bootstrap";
 
 const UserDataAdded = ({user,userDataAdded,redactProfile,setRedactProfile}) => {
 
+    // console.log(userDataAdded);
+
     //get span with attributes
     const getSpanUserData = (text,value) =>{
         return (
@@ -43,7 +45,7 @@ const UserDataAdded = ({user,userDataAdded,redactProfile,setRedactProfile}) => {
                     </div>
 
                     {//alert what show if user add not all data
-                        (userDataAdded['vk'] || userDataAdded['telegram'] || userDataAdded['photo']) ?
+                        (userDataAdded['vk'] && userDataAdded['telegram'] && userDataAdded['photo']) ?
                         <Alert className={'w-100 mt-2 p-2 small'} variant={"success"}>
                             Вы заполнили все данные профиля, теперь в ваших товарах появится специальная табличка.
                         </Alert>
