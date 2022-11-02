@@ -63,6 +63,7 @@ const AddCategory = ({setRes}) => {
         await handleAddCategory(e,url,state.id,state.title,state.image)
             .then(() => setRes({error:false,res:"Добавлено."}))
             .catch(() => setRes({error:"Ошибка.",res:false}))
+            .finally(() => setSelectVal(""))
 
         //delete message
         setTimeout(() => setRes({error:false,res:false}),4000)

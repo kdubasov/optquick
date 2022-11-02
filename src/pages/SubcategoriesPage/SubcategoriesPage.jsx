@@ -19,16 +19,18 @@ const SubcategoriesPage = () => {
     return (
         <div className={'SubcategoriesPage container'}>
 
-            <Badge bg={"secondary"} className={'my-3'}>
-                <Link style={{color:"white"}} to={`/categories`}>
-                    Назад к категориям
-                </Link>
-            </Badge><br />
+            <header>
+                <Badge bg={"secondary"} className={'my-3'}>
+                    <Link style={{color:"white"}} to={`/categories`}>
+                        Назад к категориям
+                    </Link>
+                </Badge><br />
 
-            <Badge className={'mb-2'}>
-                На данной странице показаны подкатегории категории
-                "{categoryTitle.map(categ => (categ.title))}"
-            </Badge>
+                <Badge className={'mb-2'}>
+                    На данной странице показаны подкатегории категории
+                    "{categoryTitle.map(categ => (categ.title))}"
+                </Badge>
+            </header>
 
             {
                 (dataSubcategories && dataSubcategories.length) ?
@@ -37,7 +39,7 @@ const SubcategoriesPage = () => {
                             dataSubcategories.map(sub => (
                                 <ListGroupItem className={'d-flex align-items-center'} key={sub.id}>
                                     <img style={{borderRadius:5}} height={120} src={sub.image} alt=""/>
-                                    <Link to={`/`} className={'m-0 mx-2'}>{sub.title}</Link>
+                                    <Link to={`/categories/${getPathLastWord(path)}/${sub.id}`} className={'m-0 mx-2'}>{sub.title}</Link>
                                 </ListGroupItem>
                             ))
                         }

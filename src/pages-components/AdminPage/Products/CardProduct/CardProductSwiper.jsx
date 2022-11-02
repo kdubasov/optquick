@@ -24,6 +24,8 @@ const CardProductSwiper = ({product}) => {
                         }}
                         modules={[Pagination]}
                         className="CardProductSwiper"
+                        // !!!!!!!!!!!!!!! HEIGHT HERE !!!!!!!!!!!!!!!
+                        style={{height:350,userSelect:"none"}}
                     >
                         {imagesList.map(image => (
                             <SwiperSlide key={image.link}>

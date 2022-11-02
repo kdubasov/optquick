@@ -1,6 +1,7 @@
 import React from 'react';
 import {Badge, Button} from "react-bootstrap";
 import CardProductSwiper from "./CardProductSwiper";
+import {Link} from "react-router-dom";
 
 const CardProduct = ({product}) => {
 
@@ -25,9 +26,11 @@ const CardProduct = ({product}) => {
                 Доставка: {product.deliveryPeriod}дн.
             </Badge>
             {/*ссылка на страницу товара*/}
-            <Button size={"sm"} variant={"outline-dark"} className={"mt-2 w-100"}>
-                Перейти к товару
-            </Button>
+            <Link to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}>
+                <Button size={"sm"} variant={"outline-dark"} className={"mt-2 w-100"}>
+                    Перейти к товару
+                </Button>
+            </Link>
         </div>
     );
 };
