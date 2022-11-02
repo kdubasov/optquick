@@ -3,7 +3,7 @@ import {useGetProductObj} from "../../pages-functions/AdminPage/GetProducts/useG
 import {Badge, Spinner} from "react-bootstrap";
 import ProductHeader from "./components/ProductHeader";
 import {Link} from "react-router-dom";
-import ProductSimilarProducts from "./components/ ProductSimilarProducts";
+import ProductSimilarProducts from "./components/ProductSimilarProducts";
 
 const ProductPage = () => {
 
@@ -37,6 +37,7 @@ const ProductPage = () => {
 
                         {/*similar products slider*/}
                         <ProductSimilarProducts
+                            nowProductId={productData.id}
                             link={`/categories/${path[path.length - 3]}/subcategories/${path[path.length - 2]}/products`}
                         />
                     </>:

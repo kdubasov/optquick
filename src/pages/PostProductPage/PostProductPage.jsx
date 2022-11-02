@@ -11,7 +11,7 @@ const PostProductPage = () => {
     const { user } = useUserAuth();
 
     const userDataFromRealtimeDB = useGetUser(`/users/${user.uid}`);
-    console.log(userDataFromRealtimeDB,'UserDataAdded')
+    // console.log(userDataFromRealtimeDB,'UserDataAdded');
 
     return (
         <div className={'PostProductPage container py-3'}>
