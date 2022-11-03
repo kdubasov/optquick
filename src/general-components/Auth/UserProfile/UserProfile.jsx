@@ -44,7 +44,7 @@ const UserProfile = () => {
                  <AddUserData setRes={setRes} user={user} />
          }
 
-         {redactProfile && <UserDataRedact userData={data} res={res} setRes={setRes} />}
+         {redactProfile && <UserDataRedact userData={data} setRes={setRes} />}
     </div>
   );
 };

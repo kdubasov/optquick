@@ -1,6 +1,7 @@
 import React from 'react';
 import CardProductSwiper from "../../../pages-components/AdminPage/Products/CardProduct/CardProductSwiper";
 import {Badge, ListGroup, ListGroupItem} from "react-bootstrap";
+import ProductUserData from "./ProductUserData";
 
 const ProductHeader = ({productData}) => {
     return (
@@ -36,6 +37,8 @@ const ProductHeader = ({productData}) => {
                         <strong>{productData.date}</strong>
                     </ListGroupItem>
                 </ListGroup>
+
+                <ProductUserData productData={productData} />
             </div>
         </header>
     );

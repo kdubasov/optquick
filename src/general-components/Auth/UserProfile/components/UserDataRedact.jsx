@@ -3,7 +3,7 @@ import {Badge, Button, Form} from "react-bootstrap";
 import {useUserAuth} from "../../../../context/AuthContext";
 import {handleSetUserData} from "../functions/handleSetUserData";
 
-const UserDataRedact = ({userData,res,setRes}) => {
+const UserDataRedact = ({userData,setRes}) => {
 
     // console.log(userData, 'userData UserDataRedact')
 
