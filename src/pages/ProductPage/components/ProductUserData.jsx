@@ -20,7 +20,6 @@ const ProductUserData = ({productData}) => {
         }
         return true;
     }
-    checkUserData()
 
     return (
         <div className={"ProductUserData my-2"}>

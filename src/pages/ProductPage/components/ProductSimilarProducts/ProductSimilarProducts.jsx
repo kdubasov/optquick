@@ -1,9 +1,9 @@
 import React from 'react';
 import {Badge} from "react-bootstrap";
-import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
-import CardProduct from "../../../pages-components/AdminPage/Products/CardProduct/CardProduct";
+import {useGetCategory} from "../../../../pages-functions/AdminPage/Categories/useGetCategory";
+import CardSimilarProducts from "./CardSimilarProducts";
 
-const ProductSimilarProducts = ({link,nowProductId}) => {
+const ProductSimilarProducts = ({link,nowProductId,setPath}) => {
 
     const dataSimilarProducts = useGetCategory(link);
     // console.log(dataSimilarProducts);
@@ -19,7 +19,7 @@ const ProductSimilarProducts = ({link,nowProductId}) => {
                         dataSimilarProducts
                             .filter(product => product.id !== nowProductId)
                             .map(product => (
-                            <CardProduct key={product.id} product={product} />
+                            <CardSimilarProducts key={product.id} product={product} setPath={setPath} />
                         ))
                     }
                 </div>

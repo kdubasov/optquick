@@ -1,20 +1,19 @@
-import React from 'react';
-import {useGetProductObj} from "../../pages-functions/AdminPage/GetProducts/useGetProductObj";
+import React, {useState} from 'react';
 import {Badge, Spinner} from "react-bootstrap";
 import ProductHeader from "./components/ProductHeader";
 import {Link} from "react-router-dom";
-import ProductSimilarProducts from "./components/ProductSimilarProducts";
+import ProductSimilarProducts from "./components/ProductSimilarProducts/ProductSimilarProducts";
+import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
 
 const ProductPage = () => {
 
-    const path = (window.location.pathname).split('/');
+    const [path,setPath] = useState((window.location.pathname).split('/'));
     // console.log(path);
 
     //data for product
     const linkDBData = `/categories/${path[path.length - 3]}/subcategories/${path[path.length - 2]}/products/${path[path.length - 1]}`;
-    const productData = useGetProductObj(linkDBData);
+    const productData = useGetUser(linkDBData);
     // console.log(productData);
-
 
     return (
         <div className={'ProductPage container py-3'}>
@@ -37,6 +36,7 @@ const ProductPage = () => {
 
                         {/*similar products slider*/}
                         <ProductSimilarProducts
+                            setPath={setPath}
                             nowProductId={productData.id}
                             link={`/categories/${path[path.length - 3]}/subcategories/${path[path.length - 2]}/products`}
                         />

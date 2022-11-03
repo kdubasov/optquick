@@ -12,6 +12,7 @@ import SubcategoriesPage from "./pages/SubcategoriesPage/SubcategoriesPage";
 import SubProductsPage from "./pages/SubProductsPage/SubProductsPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import PostProductPage from "./pages/PostProductPage/PostProductPage";
+import UserPage from "./pages/UserPage/UserPage";
 
 
 const Router = () => {
@@ -55,6 +56,8 @@ const Router = () => {
                             </CheckLoginRoute>
                         }
                     />
+
+                    <Route path="/user/:userUid" element={<UserPage />} />
                 </Routes>
             </UserAuthContextProvider>
         </>
