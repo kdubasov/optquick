@@ -13,6 +13,7 @@ import SubProductsPage from "./pages/SubProductsPage/SubProductsPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import PostProductPage from "./pages/PostProductPage/PostProductPage";
 import UserPage from "./pages/UserPage/UserPage";
+import RedactUserProduct from "./general-components/Auth/UserProfile/components/RedactUserProduct/RedactUserProduct";
 
 
 const Router = () => {
@@ -58,6 +59,7 @@ const Router = () => {
                     />
 
                     <Route path="/user/:userUid" element={<UserPage />} />
+                    <Route path={`/userProfile/redactProduct/:productID`} element={<RedactUserProduct />} />
                 </Routes>
             </UserAuthContextProvider>
         </>

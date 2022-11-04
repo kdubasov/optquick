@@ -121,7 +121,6 @@ const AddProduct = () => {
                 <InputGroup className="mb-1 mt-2 px-1">
                     <Form.Check
                         type="switch"
-                        id="custom-switch"
                         label="Показывать телефон"
                         checked={dataForm.showPhoneNumber}
                         onChange={() => handleChange('showPhoneNumber',!dataForm.showPhoneNumber)}
@@ -129,7 +128,6 @@ const AddProduct = () => {
                     <Form.Check
                         className={'mx-3'}
                         type="switch"
-                        id="custom-switch"
                         label="Показывать почту"
                         checked={dataForm.showEmailAddress}
                         onChange={() => handleChange('showEmailAddress',!dataForm.showEmailAddress)}

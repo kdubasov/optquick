@@ -6,6 +6,7 @@ import UserDataAdded from "./components/UserDataAdded";
 import {useUserAuth} from "../../../context/AuthContext";
 import {useGetUser} from "./functions/useGetUser";
 import UserDataRedact from "./components/UserDataRedact";
+import AuthUserProducts from "./components/AuthUserProducts/AuthUserProducts";
 
 const UserProfile = () => {
 
@@ -45,6 +46,11 @@ const UserProfile = () => {
          }
 
          {redactProfile && <UserDataRedact userData={data} setRes={setRes} />}
+
+         {
+             user.uid &&
+             <AuthUserProducts userId={user.uid} />
+         }
     </div>
   );
 };

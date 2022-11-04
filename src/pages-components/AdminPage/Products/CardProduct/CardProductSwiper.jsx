@@ -2,7 +2,7 @@ import React from 'react';
 import {Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {useGetProductsPhoto} from "../../../../pages-functions/AdminPage/GetProducts/useGetProductsPhoto";
-import {Badge} from "react-bootstrap";
+import {Placeholder} from "react-bootstrap";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -35,7 +35,9 @@ const CardProductSwiper = ({product}) => {
                             </SwiperSlide>
                         ))}
                     </Swiper>:
-                    <Badge>Картинки загружаются</Badge>
+                    <Placeholder as="p" animation="glow">
+                        <Placeholder style={{height:350}} xs={12} />
+                    </Placeholder>
             }
         </>
     );

@@ -8,9 +8,9 @@ export const handleAddProducts = (
     selectSubCategory, selectDelivery, selectPay, images
 ) =>{
 
-    console.log(images.filter(img => img.name))
+    // console.log(images.filter(img => img.name));
 
-    e.preventDefault()
+    e.preventDefault();
 
     const url = `/categories/${selectCategory}/subcategories/${selectSubCategory}/products/${productId}`;
 
