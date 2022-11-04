@@ -2,6 +2,7 @@ import React from 'react';
 import {getPathLastWord} from "../../pages-functions/CategoriesPage/getPathLastWord";
 import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
 import UserPageData from "./components/UserPageData";
+import UserPageProducts from "./components/UserPageProducts/UserPageProducts";
 
 const UserPage = () => {
 
@@ -13,6 +14,8 @@ const UserPage = () => {
         <div className={`UserPage container`}>
 
             <UserPageData data={userData} />
+
+            <UserPageProducts userId={userId} />
 
         </div>
     );
