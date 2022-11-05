@@ -22,6 +22,10 @@ const ProductHeader = ({productData}) => {
                     <ListGroupItem>
                         Количество:
                         <strong>{productData.amount}шт.</strong>
+
+                        <Badge className={"mx-2"}>
+                            Мин заказ: {productData.minOrder + 'шт.'}
+                        </Badge>
                     </ListGroupItem>
 
                     {
@@ -35,6 +39,10 @@ const ProductHeader = ({productData}) => {
                     <ListGroupItem>
                         Дата публикации:
                         <strong>{productData.date}</strong>
+                        {
+                            productData.dateRedact &&
+                            <Badge>Дата последнего редактирования товара: <i>{productData.dateRedact}</i></Badge>
+                        }
                     </ListGroupItem>
                 </ListGroup>
 

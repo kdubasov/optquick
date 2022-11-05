@@ -6,10 +6,10 @@ import CardSimilarProducts from "./CardSimilarProducts";
 const ProductSimilarProducts = ({link,nowProductId,setPath}) => {
 
     const dataSimilarProducts = useGetCategory(link);
-    // console.log(dataSimilarProducts);
+    console.log(dataSimilarProducts);
 
 
-    if (dataSimilarProducts.length){
+    if (dataSimilarProducts.length && dataSimilarProducts.filter(product => product.id !== nowProductId).length){
         return (
             <div className={'ProductSimilarProducts border p-2'}>
                 <h4><Badge>Похожие товары</Badge></h4>
@@ -25,7 +25,7 @@ const ProductSimilarProducts = ({link,nowProductId,setPath}) => {
                 </div>
             </div>
         );
-    }else return false;
+    }
 };
 
 export default ProductSimilarProducts;

@@ -4,6 +4,7 @@ import ProductHeader from "./components/ProductHeader";
 import {Link} from "react-router-dom";
 import ProductSimilarProducts from "./components/ProductSimilarProducts/ProductSimilarProducts";
 import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
+import ProductInfoTabs from "./components/ProductInfoTabs";
 
 const ProductPage = () => {
 
@@ -27,12 +28,10 @@ const ProductPage = () => {
             {
                 Object.values(productData).length ?
                     <>
-                        <div className={'border p-3 w-100 my-3'}>
-                            <strong>{JSON.stringify(productData)}</strong>
-                        </div>
-
                         {/*header with slider and general info*/}
                         <ProductHeader productData={productData} />
+
+                        <ProductInfoTabs productData={productData} />
 
                         {/*similar products slider*/}
                         <ProductSimilarProducts
