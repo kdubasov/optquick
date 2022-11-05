@@ -5,8 +5,11 @@ import {Link} from "react-router-dom";
 import ProductSimilarProducts from "./components/ProductSimilarProducts/ProductSimilarProducts";
 import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
 import ProductInfoTabs from "./components/ProductInfoTabs";
+import ProductAlert from "./components/ProductAlert";
 
 const ProductPage = () => {
+
+    const [alertData,setAlertData] = useState({variant:'',show:false,text:''})
 
     const [path,setPath] = useState((window.location.pathname).split('/'));
     // console.log(path);
@@ -19,6 +22,8 @@ const ProductPage = () => {
     return (
         <div className={'ProductPage container py-3'}>
 
+            <ProductAlert show={alertData.show} variant={alertData.variant} text={alertData.text} />
+
             <Link to={`/categories/${path[path.length - 3]}/${path[path.length - 2]}`}>
                 <Badge>
                     Назад к товарам
@@ -29,7 +34,7 @@ const ProductPage = () => {
                 Object.values(productData).length ?
                     <>
                         {/*header with slider and general info*/}
-                        <ProductHeader productData={productData} />
+                        <ProductHeader productData={productData} setAlertData={setAlertData} />
 
                         <ProductInfoTabs productData={productData} />
 

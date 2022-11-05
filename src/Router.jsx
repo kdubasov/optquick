@@ -14,16 +14,22 @@ import ProductPage from "./pages/ProductPage/ProductPage";
 import PostProductPage from "./pages/PostProductPage/PostProductPage";
 import UserPage from "./pages/UserPage/UserPage";
 import RedactUserProduct from "./general-components/Auth/UserProfile/components/RedactUserProduct/RedactUserProduct";
+import BriefcasePage from "./pages/BriefcasePage/BriefcasePage";
 
 
 const Router = () => {
 
     return (
         <>
+            {/*user auth context*/}
             <UserAuthContextProvider>
                 <NavbarTop />
                 <Routes>
+
+                    {/*main page*/}
                     <Route path={`/`} element={<MainPage />} />
+
+                    {/*user profile*/}
                     <Route
                         path="/userProfile"
                         element={
@@ -32,7 +38,11 @@ const Router = () => {
                             </CheckLoginRoute>
                         }
                     />
+
+                    {/*login page*/}
                     <Route path="/login" element={<Login />} />
+
+                    {/*admin page*/}
                     <Route
                         path="/admin"
                         element={
@@ -58,8 +68,22 @@ const Router = () => {
                         }
                     />
 
+
+                    {/*страница пользователя не тот который сейчас зареган а тот чей товар*/}
                     <Route path="/user/:userUid" element={<UserPage />} />
+
+                    {/*редактирование товара*/}
                     <Route path={`/userProfile/redactProduct/:productID`} element={<RedactUserProduct />} />
+
+                    {/*избранные товары*/}
+                    <Route
+                        path={`/briefcase`}
+                        element={
+                            <CheckLoginRoute>
+                                <BriefcasePage />
+                            </CheckLoginRoute>
+                        }
+                    />
                 </Routes>
             </UserAuthContextProvider>
         </>

@@ -35,7 +35,7 @@ const NavbarTop = () => {
                         <Link to={`/postProduct`}>Разместить объявление</Link>
                     </Nav>
                     <Nav className="d-flex align-items-center">
-                        <Link to={`/`}>Избр. товары</Link>
+                        <Link to={`/briefcase`}>Избр. товары</Link>
                         { user && <Link to={`/userProfile`}>Профиль</Link> }
                         {
                             user?

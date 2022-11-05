@@ -6,7 +6,7 @@ import CardSimilarProducts from "./CardSimilarProducts";
 const ProductSimilarProducts = ({link,nowProductId,setPath}) => {
 
     const dataSimilarProducts = useGetCategory(link);
-    console.log(dataSimilarProducts);
+    // console.log(dataSimilarProducts);
 
 
     if (dataSimilarProducts.length && dataSimilarProducts.filter(product => product.id !== nowProductId).length){
