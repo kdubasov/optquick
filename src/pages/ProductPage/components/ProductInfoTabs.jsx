@@ -3,7 +3,7 @@ import {Alert, Badge, ListGroup, ListGroupItem, Tab, Tabs} from "react-bootstrap
 
 const ProductInfoTabs = ({productData}) => {
 
-    console.log(productData,'ProductInfoTabs');
+    // console.log(productData,'ProductInfoTabs');
 
     const getListGroup = (title,value) => {
         if (!productData[value].length || !productData[value][0]){

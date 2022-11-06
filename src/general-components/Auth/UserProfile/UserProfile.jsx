@@ -18,7 +18,7 @@ const UserProfile = () => {
 
     //user data from database
     const data = useGetUser(`/users/${user.uid}`);
-    // console.log(data,'UserDataAdded')
+    console.log(data,'UserDataAdded');
 
     //for redact profile check
     const [redactProfile,setRedactProfile] = useState(false);
@@ -34,7 +34,7 @@ const UserProfile = () => {
 
          {/*если (добавленные) данные о пользователе есть то показываем их если нет показываем форму*/}
          {
-             Object.values(data).length?
+             (data.name && data.surname)?
                  <UserDataAdded
                      user={user}
                      userDataAdded={data}

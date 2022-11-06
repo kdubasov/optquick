@@ -18,7 +18,9 @@ const AuthUserProducts = ({userId}) => {
                         userProducts.map(product => (
                             <AuthUserProductsCard key={product.id} product={product} />
                         )):
-                        <Alert>Вы не добавлили ни одного товара</Alert>
+                        <Alert className={"w-50 p-2 small"}>
+                            Вы не добавлили ни одного товара
+                        </Alert>
                 }
             </div>
         </div>

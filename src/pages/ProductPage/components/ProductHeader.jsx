@@ -53,6 +53,7 @@ const ProductHeader = ({productData,setAlertData}) => {
                     <ListGroupItem>
                         Дата публикации:
                         <strong>{productData.date}</strong>
+                        <br />
                         {
                             productData.dateRedact &&
                             <Badge>Дата последнего редактирования товара: <i>{productData.dateRedact}</i></Badge>

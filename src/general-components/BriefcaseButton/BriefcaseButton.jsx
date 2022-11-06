@@ -52,7 +52,7 @@ const BriefcaseButton = ({elemData,setAlertData}) => {
     // get data from briefcase
     const linkDB = `/users/${user?.uid}/briefcase`;
     const briefcaseData = useGetBriefcaseData(linkDB);
-    console.log(briefcaseData)
+    // console.log(briefcaseData);
 
     if (user && user.uid !== elemData.userUid){
         //проверяем добавлен ли данный товар в избранное

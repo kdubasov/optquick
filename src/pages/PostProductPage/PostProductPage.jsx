@@ -18,7 +18,7 @@ const PostProductPage = () => {
             <h4><Badge>Разместить объявление</Badge></h4>
 
             {
-                Object.values(userDataFromRealtimeDB).length ?
+                (userDataFromRealtimeDB.name && userDataFromRealtimeDB.surname) ?
                     <AddProduct />:
                     <Alert className={'w-50 p-2 small'}>
                         Вы должны заполнить обязательные поля в профиле для того, чтобы выкладывать товар.
