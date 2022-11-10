@@ -2,8 +2,9 @@ import React from 'react';
 import CardProductSwiper from "../../../../pages-components/AdminPage/Products/CardProduct/CardProductSwiper";
 import {Badge, Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
+import BriefcaseButton from "../../../../general-components/BriefcaseButton/BriefcaseButton";
 
-const CardSimilarProducts = ({product,setPath}) => {
+const CardSimilarProducts = ({product,setPath,setAlertData}) => {
 
     const navigate = useNavigate();
 
@@ -46,6 +47,8 @@ const CardSimilarProducts = ({product,setPath}) => {
             >
                 Перейти к товару
             </Button>
+
+            <BriefcaseButton elemData={product} setAlertData={setAlertData} />
         </div>
     );
 };

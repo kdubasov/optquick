@@ -15,38 +15,52 @@ const BriefcaseButton = ({elemData,setAlertData}) => {
     const addInBriefcase = e => {
         e.preventDefault();
         if (user){
-            handleAddInBriefcase(e,elemData.id,user.uid)
-                .then(() => setAlertData({
-                    variant: 'success',
-                    show: true,
-                    text: `Товар "${elemData.title}" добавлен в избранное`,
-                }))
-                .catch(() => setAlertData({
-                    variant: 'danger',
-                    show: true,
-                    text: `Ошибка добавления товара, пожалуйста, попробуйте позже.`,
-                }))
+            if (setAlertData){
+                handleAddInBriefcase(e,elemData.id,user.uid)
+                    .then(() => setAlertData({
+                        variant: 'success',
+                        show: true,
+                        text: `Товар "${elemData.title}" добавлен в избранное`,
+                    }))
+                    .catch(() => setAlertData({
+                        variant: 'danger',
+                        show: true,
+                        text: `Ошибка добавления товара, пожалуйста, попробуйте позже.`,
+                    }))
+            }else{
+                handleAddInBriefcase(e,elemData.id,user.uid)
+                    .then(res => console.log(res))
+            }
         }
-        setTimeout(() => setAlertData({variant:'',show:false,text:''}),5000)
+        if (setAlertData){
+            setTimeout(() => setAlertData({variant:'',show:false,text:''}),5000)
+        }
     }
 
     // delete from briefcase
     const deleteFromBriefcase = e => {
         e.preventDefault();
         if (user){
-            handleDeleteCategory(`/users/${user.uid}/briefcase/${elemData.id}`)
-                .then(() => setAlertData({
-                    variant: 'primary',
-                    show: true,
-                    text: `Товар "${elemData.title}" успешно удален из избранное`,
-                }))
-                .catch(() => setAlertData({
-                    variant: 'danger',
-                    show: true,
-                    text: `Ошибка удаления товара, пожалуйста, попробуйте позже.`,
-                }))
+            if (setAlertData){
+                handleDeleteCategory(`/users/${user.uid}/briefcase/${elemData.id}`)
+                    .then(() => setAlertData({
+                        variant: 'primary',
+                        show: true,
+                        text: `Товар "${elemData.title}" успешно удален из избранное`,
+                    }))
+                    .catch(() => setAlertData({
+                        variant: 'danger',
+                        show: true,
+                        text: `Ошибка удаления товара, пожалуйста, попробуйте позже.`,
+                    }))
+            }else{
+                handleDeleteCategory(`/users/${user.uid}/briefcase/${elemData.id}`)
+                    .then(res => console.log(res))
+            }
         }
-        setTimeout(() => setAlertData({variant:'',show:false,text:''}),5000)
+        if (setAlertData){
+            setTimeout(() => setAlertData({variant:'',show:false,text:''}),5000)
+        }
     }
 
     // get data from briefcase

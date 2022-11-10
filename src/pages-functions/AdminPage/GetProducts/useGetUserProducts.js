@@ -15,8 +15,10 @@ export const useGetUserProducts = userUid => {
                 // eslint-disable-next-line
                 Object.values(dataInner).map(categ => {
                     if(categ["subcategories"]){
+                        // eslint-disable-next-line
                         Object.values(categ["subcategories"]).map(sub => {
                             if(sub['products']){
+                                // eslint-disable-next-line
                                 Object.values(sub['products']).map(prod => {
                                     if((prod.id).startsWith(userUid)){
                                         setData(old => [...old,prod]);

@@ -43,6 +43,7 @@ const ProductPage = () => {
                             setPath={setPath}
                             nowProductId={productData.id}
                             link={`/categories/${path[path.length - 3]}/subcategories/${path[path.length - 2]}/products`}
+                            setAlertData={setAlertData}
                         />
                     </>:
                     <Spinner animation={"border"} variant={"primary"} className={'my-4'} />

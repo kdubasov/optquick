@@ -2,6 +2,7 @@ import React from 'react';
 import {Badge, Button} from "react-bootstrap";
 import CardProductSwiper from "./CardProductSwiper";
 import {Link} from "react-router-dom";
+import BriefcaseButton from "../../../../general-components/BriefcaseButton/BriefcaseButton";
 
 const CardProduct = ({product}) => {
 
@@ -34,6 +35,8 @@ const CardProduct = ({product}) => {
                 <Button size={"sm"} variant={"outline-dark"} className={"mt-2 w-100"}>
                     Перейти к товару
                 </Button>
+
+                <BriefcaseButton elemData={product} setAlertData={false} />
             </Link>
         </div>
     );
