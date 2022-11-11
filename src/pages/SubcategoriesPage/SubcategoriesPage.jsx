@@ -1,8 +1,9 @@
 import React from 'react';
-import {Badge, ListGroup, ListGroupItem, Spinner} from "react-bootstrap";
+import {Badge, ListGroup} from "react-bootstrap";
 import {getPathLastWord} from "../../pages-functions/CategoriesPage/getPathLastWord";
 import {Link} from "react-router-dom";
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
+import SubCard from "../../pages-components/SubcategoriesComps/SubCard";
 
 const SubcategoriesPage = () => {
 
@@ -37,14 +38,13 @@ const SubcategoriesPage = () => {
                     <ListGroup>
                         {
                             dataSubcategories.map(sub => (
-                                <ListGroupItem className={'d-flex align-items-center'} key={sub.id}>
-                                    <img style={{borderRadius:5}} height={120} src={sub.image} alt=""/>
-                                    <Link to={`/categories/${getPathLastWord(path)}/${sub.id}`} className={'m-0 mx-2'}>{sub.title}</Link>
-                                </ListGroupItem>
+                                <SubCard key={sub.id} sub={sub} />
                             ))
                         }
                     </ListGroup>:
-                    <Spinner animation={'border'} variant={"primary"} />
+                    <Badge className={"text-center w-100"}>
+                        Товаров в данной подкатегории пока нет.
+                    </Badge>
             }
         </div>
     );

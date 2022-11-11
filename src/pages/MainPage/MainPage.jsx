@@ -1,10 +1,12 @@
 import React from 'react';
 import {Badge} from "react-bootstrap";
+import GeneralSearch from "../../general-components/GeneralSearch/GeneralSearch";
 
 const MainPage = () => {
     return (
         <div className={`MainPage container`}>
-            <h4 className={`mt-3 mb-3`}><Badge>Главная страница</Badge></h4>
+            <h5 className={`my-2`}><Badge>Главная страница</Badge></h5>
+            <GeneralSearch />
         </div>
     );
 };

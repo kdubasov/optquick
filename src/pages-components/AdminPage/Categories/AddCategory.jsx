@@ -60,7 +60,7 @@ const AddCategory = ({setRes}) => {
             setRes({error:"Выберите родительскую категорию.",res:false})
             return false
         }
-        await handleAddCategory(e,url,state.id,state.title,state.image)
+        await handleAddCategory(e,url,state.id,state.title,state.image,state === subCategory && selectVal)
             .then(() => setRes({error:false,res:"Добавлено."}))
             .catch(() => setRes({error:"Ошибка.",res:false}))
             .finally(() => setSelectVal(""))

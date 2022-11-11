@@ -1,7 +1,7 @@
 import React from 'react';
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
-import {Badge, ListGroup, ListGroupItem, Spinner} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Alert, Badge, ListGroup} from "react-bootstrap";
+import CategoriesCard from "../../pages-components/CategoriesComps/CategCard";
 
 const CategoriesPage = () => {
 
@@ -17,14 +17,13 @@ const CategoriesPage = () => {
                     <ListGroup>
                         {
                             data.map(categ => (
-                                <ListGroupItem className={'d-flex align-items-center'} key={categ.id}>
-                                    <img style={{borderRadius:5}} height={120} src={categ.image} alt=""/>
-                                    <Link to={`/categories/${categ.id}`} className={'m-0 mx-2'}>{categ.title}</Link>
-                                </ListGroupItem>
+                                <CategoriesCard key={categ.id} categ={categ} />
                             ))
                         }
                     </ListGroup>:
-                    <Spinner animation={'border'} variant={"primary"} />
+                    <Alert className={'p-2 small'}>
+                        Катогории пока недоступны, пожалуйста попробуйте позже.
+                    </Alert>
             }
         </div>
     );
