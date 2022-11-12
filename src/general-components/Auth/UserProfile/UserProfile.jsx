@@ -18,7 +18,7 @@ const UserProfile = () => {
 
     //user data from database
     const data = useGetUser(`/users/${user.uid}`);
-    console.log(data,'UserDataAdded');
+    // console.log(data,'UserDataAdded');
 
     //for redact profile check
     const [redactProfile,setRedactProfile] = useState(false);

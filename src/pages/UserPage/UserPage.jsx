@@ -8,7 +8,7 @@ const UserPage = () => {
 
     const userId = getPathLastWord(window.location.pathname);
     const userData = useGetUser(`/users/${userId}`);
-    console.log(userData,'data in UserPage');
+    // console.log(userData,'data in UserPage');
 
     return (
         <div className={`UserPage container`}>

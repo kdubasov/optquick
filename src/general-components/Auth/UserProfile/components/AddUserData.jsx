@@ -4,7 +4,7 @@ import {handleAddUserData} from "../functions/handleAddUserData";
 
 const AddUserData = ({setRes,user}) => {
 
-    console.log(user)
+    // console.log(user)
 
     //data from form
     const [dataForm,setDataForm] = useState({

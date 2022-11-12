@@ -41,8 +41,16 @@ const ProductInfoTabs = ({productData}) => {
                 {getListGroup("Цвета","colors")}
 
                 <Alert className={"my-1 p-2 small"}>
-                    <small>Характеристики:</small> <br />
-                    <i><b>{productData.characteristics}</b></i>
+                    {
+                        productData.characteristics ?
+                            <>
+                                <small>Характеристики:</small> <br />
+                                <i><b>{productData.characteristics}</b></i>
+                            </>:
+                            <p className={"m-0"}>
+                                Продавец не указал характеристики для данного товара.
+                            </p>
+                    }
                 </Alert>
             </Tab>
 
@@ -68,7 +76,10 @@ const ProductInfoTabs = ({productData}) => {
                 <br />
 
                 <Alert className={"my-1 p-2 small"}>
-                    Способ доставки: {productData.selectDelivery} <br />
+                    {
+                        productData.selectDelivery &&
+                            <>Способ доставки: {productData.selectDelivery} <br /></>
+                    }
                     <small><i>О всех возможных способах отправки товара уточняйте у продавцов.</i></small>
                 </Alert>
 

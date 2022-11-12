@@ -6,7 +6,7 @@ import AuthUserProductsCard from "./AuthUserProductsCard";
 const AuthUserProducts = ({userId}) => {
 
     const userProducts = useGetUserProducts(userId);
-    console.log(userProducts,'data in UserPageProducts');
+    // console.log(userProducts,'data in UserPageProducts');
 
     return (
         <div className={'AuthUserProducts w-100 my-2 p-1 border'}>
