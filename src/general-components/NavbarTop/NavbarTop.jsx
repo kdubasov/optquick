@@ -31,7 +31,6 @@ const NavbarTop = () => {
                 <Navbar aria-controls="responsive-navbar-nav" />
                     <Nav className="me-auto d-flex align-items-center">
                         <Link to={`/categories`}>Каталог</Link>
-                        <Link to={`/`}>О нас</Link>
                         <Link to={`/postProduct`}>Разместить объявление</Link>
                     </Nav>
                     <Nav className="d-flex align-items-center">

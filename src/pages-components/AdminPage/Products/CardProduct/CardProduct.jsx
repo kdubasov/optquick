@@ -3,8 +3,12 @@ import {Badge, Button} from "react-bootstrap";
 import CardProductSwiper from "./CardProductSwiper";
 import {Link} from "react-router-dom";
 import BriefcaseButton from "../../../../general-components/BriefcaseButton/BriefcaseButton";
+import {getAdmin} from "../../../../pages-functions/AdminPage/getAdmin";
+import DeleteCategoryButton from "../../Categories/DeleteCategoryButton";
 
 const CardProduct = ({product}) => {
+
+    const databaseUrl = `/categories/${product.selectCategory}/subcategories/${product.selectSubCategory}/products/${product.id}`;
 
     return (
         <div className={"CardProduct w-25 m-1 p-2 border"}>
@@ -38,6 +42,12 @@ const CardProduct = ({product}) => {
 
                 <BriefcaseButton elemData={product} setAlertData={false} />
             </Link>
+
+            {/*delete product button with check admin*/}
+            {
+                getAdmin() &&
+                <DeleteCategoryButton url={databaseUrl} text={"Удалить товар"} />
+            }
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {handleDeleteCategory} from "../../../pages-functions/AdminPage/Categories/handleDeleteCategory";
 import {Button} from "react-bootstrap";
 
-const DeleteCategoryButton = ({url}) => {
+const DeleteCategoryButton = ({url,text = false}) => {
 
     //для подтверждения удаления
     const [confirm,setConfirm] = useState(false)
@@ -23,7 +23,7 @@ const DeleteCategoryButton = ({url}) => {
                         variant={`outline-danger`}
                         onClick={() => setConfirm(true)}
                     >
-                        Удалить
+                        {text ? text : "Удалить"}
                     </Button>
             }
         </>

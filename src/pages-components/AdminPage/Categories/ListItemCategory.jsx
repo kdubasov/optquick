@@ -75,8 +75,9 @@ const ListItemCategory = ({category,subcategory,selectCategory}) =>{
                     }
 
                     {/*delete category button with confirm*/}
-                    {!redact && <DeleteCategoryButton url={getUrl(getUrl(),(category||subcategory))} />}
+                    {!redact && <DeleteCategoryButton url={getUrl(getUrl(),(category||subcategory))} text={false} />}
 
+                    {/*redact category button*/}
                     <RedactCategoryButton redact={redact} setRedact={setRedact} />
 
                 </span>
