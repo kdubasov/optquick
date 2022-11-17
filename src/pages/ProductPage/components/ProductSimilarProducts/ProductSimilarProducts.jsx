@@ -14,7 +14,7 @@ const ProductSimilarProducts = ({link,nowProductId,setPath,setAlertData}) => {
             <div className={'ProductSimilarProducts border p-2'}>
                 <h4><Badge>Похожие товары</Badge></h4>
 
-                <div className="w-100 d-flex">
+                <div className="w-100 d-flex flex-wrap">
                     {
                         dataSimilarProducts
                             .filter(product => product.id !== nowProductId)

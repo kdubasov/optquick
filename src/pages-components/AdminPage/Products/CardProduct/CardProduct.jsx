@@ -14,7 +14,7 @@ const CardProduct = ({product}) => {
     const databaseUrl = `/categories/${product.selectCategory}/subcategories/${product.selectSubCategory}/products/${product.id}`;
 
     return (
-        <div className={"CardProduct w-25 m-1 p-2 border"}>
+        <div style={{width:"32%"}} className={"CardProduct m-1 p-2 border"}>
 
             {/*swiper with images for product*/}
             <CardProductSwiper product={product} />

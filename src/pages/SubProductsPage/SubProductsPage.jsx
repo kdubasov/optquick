@@ -45,7 +45,7 @@ const SubProductsPage = () => {
             </header>
 
 
-            <div className={'d-flex flex-wrap'}>
+            <div className={'d-flex flex-wrap justify-content-between'}>
                 {
                     dataSort[0].length?
                         // ((dataSort[0].length)?dataSort[0]:listProducts)

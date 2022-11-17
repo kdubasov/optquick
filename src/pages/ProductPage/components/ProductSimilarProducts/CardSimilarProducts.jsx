@@ -14,7 +14,7 @@ const CardSimilarProducts = ({product,setPath,setAlertData}) => {
     }
     
     return (
-        <div className={"CardSimilarProducts w-50 m-1 p-1 border"}>
+        <div style={{width:"32%"}} className={"CardSimilarProducts m-1 p-1 border"}>
             <CardProductSwiper product={product} />
 
             {/*Название*/}

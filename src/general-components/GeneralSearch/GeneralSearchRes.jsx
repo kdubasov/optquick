@@ -15,7 +15,7 @@ const GeneralSearchRes = ({result,setFocus}) => {
                     Скрыть результаты поиска
                 </Button>
 
-                <div className={"d-flex flex-wrap m-1 p-3 border"}>
+                <div className={"d-flex flex-wrap justify-content-between m-1 p-3 border"}>
                     <Badge className={"w-100"}>Товары</Badge>
                     {
                         result.products
