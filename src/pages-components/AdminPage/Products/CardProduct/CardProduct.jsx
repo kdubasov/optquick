@@ -5,8 +5,11 @@ import {Link} from "react-router-dom";
 import BriefcaseButton from "../../../../general-components/BriefcaseButton/BriefcaseButton";
 import {getAdmin} from "../../../../pages-functions/AdminPage/getAdmin";
 import DeleteCategoryButton from "../../Categories/DeleteCategoryButton";
+import {useUserAuth} from "../../../../context/AuthContext";
 
 const CardProduct = ({product}) => {
+
+    const { user } = useUserAuth();
 
     const databaseUrl = `/categories/${product.selectCategory}/subcategories/${product.selectSubCategory}/products/${product.id}`;
 
@@ -43,10 +46,21 @@ const CardProduct = ({product}) => {
                 <BriefcaseButton elemData={product} setAlertData={false} />
             </Link>
 
+            {/*/дата публикации товара*/}
+            <p className={"m-0"} style={{fontSize:11,opacity:.8}}>
+                Дата публикации: {product.date}
+            </p>
+
             {/*delete product button with check admin*/}
             {
                 getAdmin() &&
                 <DeleteCategoryButton url={databaseUrl} text={"Удалить товар"} />
+            }
+
+            {/*проверка на товар пользователя который сейчас смотрит его*/}
+            {
+                (user && (user.uid === product.userUid)) &&
+                <Badge>Ваше объявление</Badge>
             }
         </div>
     );

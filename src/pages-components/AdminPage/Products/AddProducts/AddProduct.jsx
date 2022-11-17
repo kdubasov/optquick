@@ -136,7 +136,7 @@ const AddProduct = () => {
 
                 {//res after send form
                     Object.values(sendRes).length ?
-                    <Alert bg={sendRes.type ==='error'?'danger':'success'}>
+                    <Alert bg={sendRes.type ==='error'?'danger':'success'} className={"small p-2"}>
                         {sendRes.text}
                     </Alert>:false
                 }
