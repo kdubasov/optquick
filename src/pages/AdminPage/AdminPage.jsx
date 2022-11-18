@@ -5,6 +5,7 @@ import ListCategory from "../../pages-components/AdminPage/Categories/ListCatego
 import {Badge} from "react-bootstrap";
 import AddProduct from "../../pages-components/AdminPage/Products/AddProducts/AddProduct";
 import ListProducts from "../../pages-components/AdminPage/Products/ListProducts";
+import FeedbackTable from "../../pages-components/AdminPage/FeedbackMessages/FeedbackTable";
 
 
 const AdminPage = () => {
@@ -29,6 +30,8 @@ const AdminPage = () => {
             <ListCategory />
             {/*products list*/}
             <ListProducts />
+            {/*Таблица с заявками feedback формы*/}
+            <FeedbackTable setRes={setRes} />
         </div>
     );
 };

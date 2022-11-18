@@ -17,7 +17,7 @@ const ListProducts = () => {
 
     return (
         <div className={'ListProducts p-1 border mb-1 d-flex flex-wrap'}>
-            <h3><Badge>Список товаров</Badge></h3>
+            <h4><Badge>Список товаров</Badge></h4>
 
             <InputGroup>
                 <InputGroup className="mb-1 px-1">

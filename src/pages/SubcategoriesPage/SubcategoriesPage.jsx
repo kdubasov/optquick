@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge, ListGroup} from "react-bootstrap";
+import {Alert, Badge, ListGroup} from "react-bootstrap";
 import {getPathLastWord} from "../../pages-functions/CategoriesPage/getPathLastWord";
 import {Link} from "react-router-dom";
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
@@ -27,14 +27,17 @@ const SubcategoriesPage = () => {
                     </Link>
                 </Badge><br />
 
-                <Badge className={'mb-2'}>
-                    На данной странице показаны подкатегории категории
-                    "{categoryTitle.map(categ => (categ.title))}"
-                </Badge>
+                {
+                    Boolean(dataSubcategories && dataSubcategories.length) &&
+                    <Badge className={'mb-2'}>
+                        На данной странице показаны подкатегории категории
+                        "{categoryTitle.map(categ => (categ.title))}"
+                    </Badge>
+                }
             </header>
 
             {
-                (dataSubcategories && dataSubcategories.length) ?
+                Boolean(dataSubcategories && dataSubcategories.length) ?
                     <ListGroup>
                         {
                             dataSubcategories.map(sub => (
@@ -42,9 +45,9 @@ const SubcategoriesPage = () => {
                             ))
                         }
                     </ListGroup>:
-                    <Badge className={"text-center w-100"}>
-                        Товаров в данной подкатегории пока нет.
-                    </Badge>
+                    <Alert className={"w-50 p-2 small"}>
+                        Подкатегорий в данной категории пока нет.
+                    </Alert>
             }
         </div>
     );
