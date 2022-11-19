@@ -19,6 +19,12 @@ const ProductHeader = ({productData,setAlertData}) => {
             <div style={{width:"calc(75% - 1em)"}} className={"text border p-2"}>
                 <h4><Badge>{productData.title}</Badge></h4>
 
+                {/*проверка на товар пользователя который сейчас смотрит его*/}
+                {
+                    (user && (user.uid === productData.userUid)) &&
+                    <Badge className={"mb-2"} bg={"secondary"}>Ваше объявление</Badge>
+                }
+
                 {!user &&
                     <Alert className={"p-2 small"}>
                         Для того чтобы добавить товар в избранное вы должны авторизоваться.

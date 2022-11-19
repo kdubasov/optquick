@@ -21,6 +21,7 @@ const SubProductsPage = () => {
 
     //for sort
     const [dataSort,setDataSort] = useState([[],false]);
+    // console.log(dataSort)
 
     return (
         <div className={'SubProductsPage container'}>
@@ -33,8 +34,8 @@ const SubProductsPage = () => {
                     </Link>
                 </Badge><br />
 
-                {
-                    Boolean(dataSort[0].length) &&
+                {//отображаем возможность сортировки только есть товары
+                    Boolean(listProducts.length) &&
                     <div className="d-flex justify-content-between">
                         <Badge className={'mb-2'}>
                             На данной странице показаны товары подкакатегории
