@@ -6,6 +6,7 @@ import {Badge} from "react-bootstrap";
 import AddProduct from "../../pages-components/AdminPage/Products/AddProducts/AddProduct";
 import ListProducts from "../../pages-components/AdminPage/Products/ListProducts";
 import FeedbackTable from "../../pages-components/AdminPage/FeedbackMessages/FeedbackTable";
+import ComplaintsTable from "../../pages-components/AdminPage/ComplaintsMessages/ComplaintsTable";
 
 
 const AdminPage = () => {
@@ -32,6 +33,8 @@ const AdminPage = () => {
             <ListProducts />
             {/*Таблица с заявками feedback формы*/}
             <FeedbackTable setRes={setRes} />
+            {/*Таблица с жалобами*/}
+            <ComplaintsTable setRes={setRes} />
         </div>
     );
 };

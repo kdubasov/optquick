@@ -7,6 +7,7 @@ import {useUserAuth} from "../../../context/AuthContext";
 import {useGetUser} from "./functions/useGetUser";
 import UserDataRedact from "./components/UserDataRedact";
 import AuthUserProducts from "./components/AuthUserProducts/AuthUserProducts";
+import UserReviewsList from "../../../pages/UserPage/components/UserReviews/UserReviewsList";
 
 const UserProfile = () => {
 
@@ -35,12 +36,15 @@ const UserProfile = () => {
          {/*если (добавленные) данные о пользователе есть то показываем их если нет показываем форму*/}
          {
              (data.name && data.surname)?
-                 <UserDataAdded
-                     user={user}
-                     userDataAdded={data}
-                     redactProfile={redactProfile}
-                     setRedactProfile={setRedactProfile}
-                 />
+                 <>
+                     <UserDataAdded
+                         user={user}
+                         userDataAdded={data}
+                         redactProfile={redactProfile}
+                         setRedactProfile={setRedactProfile}
+                     />
+                     <UserReviewsList userId={user.uid} />
+                 </>
                  :
                  <AddUserData setRes={setRes} user={user} />
          }

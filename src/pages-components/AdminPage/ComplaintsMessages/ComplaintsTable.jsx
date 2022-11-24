@@ -1,19 +1,19 @@
 import React from 'react';
-import {Badge, Table} from "react-bootstrap";
-import FeedbackTr from "./FeedbackTr";
+import {Alert, Badge, Table} from "react-bootstrap";
 import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
+import ComplaintsTr from "./ComplaintsTr";
 
-const FeedbackTable = ({setRes}) => {
+const ComplaintsTable = ({setRes}) => {
 
-    const data = useGetCategory('/forms/feedbackForm');
-    // console.log(data,'FeedbackTable');
+    const data = useGetCategory('/forms/complaint');
+    // console.log(data,'ComplaintsTable data');
 
-    if (Boolean(data && data.length)){
+    if (data.length) {
         return (
-            <div className={"FeedbackTable p-1 border"}>
+            <div className={'ComplaintsTable p-1 my-2 border'}>
                 <h5>
                     <Badge bg={"secondary"} className={"fw-light"}>
-                        Заявки с формы обратной связи
+                        Жалобы
                     </Badge>
                 </h5>
 
@@ -21,9 +21,9 @@ const FeedbackTable = ({setRes}) => {
                     <thead>
                     <tr className={"small"}>
                         <th>Дата</th>
-                        <th>Email</th>
+                        <th>Отправил</th>
+                        <th>На кого отправили</th>
                         <th>Сообщение</th>
-                        <th>Сотруд.</th>
                         <th>-</th>
                     </tr>
                     </thead>
@@ -31,7 +31,7 @@ const FeedbackTable = ({setRes}) => {
                     <tbody>
                     {
                         data.map((item, index) => (
-                            <FeedbackTr data={item} key={index} setRes={setRes} />
+                            <ComplaintsTr data={item} key={index} setRes={setRes} />
                         ))
                     }
                     </tbody>
@@ -40,13 +40,11 @@ const FeedbackTable = ({setRes}) => {
         );
     }else {
         return (
-            <h5>
-                <Badge bg={"secondary"} className={"fw-light"}>
-                    Сообщений с формы обратной связи пока нет.
-                </Badge>
-            </h5>
+            <Alert variant={"dark"} className={"my-2 small p-2"}>
+                Список жалоб пуст
+            </Alert>
         )
     }
 };
 
-export default FeedbackTable;
+export default ComplaintsTable;

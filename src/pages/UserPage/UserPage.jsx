@@ -12,14 +12,16 @@ const UserPage = () => {
 
     const userId = getPathLastWord(window.location.pathname);
     const userData = useGetUser(`/users/${userId}`);
-    // console.log(userData,'data in UserPage');
 
     return (
         <div className={`UserPage container`}>
 
-            <UserPageData data={userData} />
+            <UserPageData userId={userId} data={userData} />
 
-            <UserReviews userId={userId} nowUser={user} />
+            {//елаем так чтобы пользователь не мог сам себе написать отзыв
+                (user && (user.uid !== userId)) &&
+                <UserReviews userId={userId} nowUser={user} />
+            }
 
             <UserPageProducts userId={userId} />
 

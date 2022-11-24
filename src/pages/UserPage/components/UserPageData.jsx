@@ -1,7 +1,8 @@
 import React from 'react';
 import {Alert, Badge, ListGroup, ListGroupItem} from "react-bootstrap";
+import UserReviewsList from "./UserReviews/UserReviewsList";
 
-const UserPageData = ({data}) => {
+const UserPageData = ({data,userId}) => {
 
     //смотрим все ли данные профиля заполнены (для вывода таблички)
     const checkUserData = () => {
@@ -23,8 +24,8 @@ const UserPageData = ({data}) => {
                 alt={data.surname + ' ' + data.name}
             />
 
-            <ListGroup className={"w-50 mx-2"}>
-                <ListGroupItem>
+            <ListGroup className={"w-50 mx-2 small"}>
+                <ListGroupItem className={"fw-bolder"}>
                     {data.surname + ' ' + data.name}
                 </ListGroupItem>
 
@@ -67,6 +68,10 @@ const UserPageData = ({data}) => {
                         <Alert className={"small p-2 m-0"} variant={"success"}>Подтвержденный профиль</Alert>:
                         <Alert className={"small p-2 m-0"} variant={"danger"}>Продавец не заполнил все данные профиля.</Alert>
                     }
+                </ListGroupItem>
+
+                <ListGroupItem>
+                    <UserReviewsList userId={userId} />
                 </ListGroupItem>
             </ListGroup>
 

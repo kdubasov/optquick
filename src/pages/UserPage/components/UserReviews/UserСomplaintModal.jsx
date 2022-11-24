@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import {Alert, Button, Form, FormControl, Modal} from "react-bootstrap";
-import {useGetUser} from "../../../../general-components/Auth/UserProfile/functions/useGetUser";
 import {ref, set} from "firebase/database";
 import {realtimeDB} from "../../../../database/firebase-connect";
 import {getDate} from "../../../../functions/getDate";
 
 //пожаловаться на юзера
-const UserComplaintModal = ({show,onHide,nowUser,userId}) => {
+const UserComplaintModal = ({show,onHide,nowUser,userId,userData}) => {
 
     //стейт для сообщения в форме
     const [message,setMessage] = useState("");
@@ -14,21 +13,19 @@ const UserComplaintModal = ({show,onHide,nowUser,userId}) => {
     //ля алерта после отправки формы
     const [res,setRes] = useState({err:false,message:false});
 
-    //user data from realtime database
-    const userData = useGetUser(`/users/${nowUser.uid}`);
-    // console.log(userData,"user data in UserComplaintModal");
-
     //отправляем форму в бд
     const handleSend = e => {
         e.preventDefault();
 
         const dateNow = Date.now();
+        const id = getDate(dateNow) + '-' + dateNow + '-' + nowUser.uid;
 
         //добавляем в базу
-        set(ref(realtimeDB, `/forms/complaint/${getDate(dateNow) + '-' + dateNow + '-' + nowUser.uid}`),{
+        set(ref(realtimeDB, `/forms/complaint/${id}`),{
+            id:id,
             nowUserId: nowUser.uid,
             nowUserPhone: nowUser.phoneNumber,
-            newUserEmail:(userData && userData.email) && userData.email,
+            nowUserEmail:(userData && userData.email) && userData.email,
             badUserId: userId,
             message: message,
             dateTime: getDate(dateNow),
