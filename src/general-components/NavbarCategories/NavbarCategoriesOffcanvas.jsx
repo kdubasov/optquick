@@ -31,7 +31,7 @@ const NavbarCategoriesOffcanvas = ({showNavCateg, handleClose}) => {
                                         </Link>
                                         <ListGroup className={"small"}>
                                             {
-                                                (category.subcategories && Object.values(category.subcategories).length) &&
+                                                category.subcategories &&
                                                 (Object.values(category.subcategories)).map((sub) => (
                                                     <ListGroup.Item key={sub.id} action>
                                                         <Link to={`/categories/${category.id}/${sub.id}`}>

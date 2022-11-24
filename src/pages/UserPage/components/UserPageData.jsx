@@ -14,7 +14,7 @@ const UserPageData = ({data}) => {
     }
 
     return (
-        <div className={"w-100 my-3 p-2 border d-flex"}>
+        <div className={"w-100 my-3 p-2 border d-flex align-items-center justify-content-around"}>
 
             {/*user photo*/}
             <img
@@ -45,10 +45,27 @@ const UserPageData = ({data}) => {
                     </Badge>
                 </ListGroupItem>
 
+                {
+                    (data.vk && data.telegram) &&
+                    <ListGroupItem>
+                        Другие ссылки:
+                        <Badge className={"mx-1"} bg={"dark"}>
+                            Телеграм ник:
+                            {" " + data.telegram}
+                        </Badge>
+
+                        <a href={data.vk} target={"_blank"} rel={"noreferrer"}>
+                            <Badge className={"mx-1"}>
+                                Перейти к вк
+                            </Badge>
+                        </a>
+                    </ListGroupItem>
+                }
+
                 <ListGroupItem>
                     {checkUserData() ?
-                        <Alert className={"small p-2"} variant={"success"}>Подтвержденный профиль</Alert>:
-                        <Alert className={"small p-2"} variant={"danger"}>Продавец не заполнил все данные профиля.</Alert>
+                        <Alert className={"small p-2 m-0"} variant={"success"}>Подтвержденный профиль</Alert>:
+                        <Alert className={"small p-2 m-0"} variant={"danger"}>Продавец не заполнил все данные профиля.</Alert>
                     }
                 </ListGroupItem>
             </ListGroup>
