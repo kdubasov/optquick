@@ -7,6 +7,7 @@ import AddProduct from "../../pages-components/AdminPage/Products/AddProducts/Ad
 import ListProducts from "../../pages-components/AdminPage/Products/ListProducts";
 import FeedbackTable from "../../pages-components/AdminPage/FeedbackMessages/FeedbackTable";
 import ComplaintsTable from "../../pages-components/AdminPage/ComplaintsMessages/ComplaintsTable";
+import ReviewsTable from "../../pages-components/AdminPage/ReviewsMessages/ReviewsTable";
 
 
 const AdminPage = () => {
@@ -35,6 +36,8 @@ const AdminPage = () => {
             <FeedbackTable setRes={setRes} />
             {/*Таблица с жалобами*/}
             <ComplaintsTable setRes={setRes} />
+            {/*Таблица с отзывами*/}
+            <ReviewsTable setRes={setRes} />
         </div>
     );
 };
