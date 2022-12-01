@@ -51,6 +51,16 @@ const AddProduct = () => {
 
     const handleSend = e => {
         e.preventDefault()
+
+        if (!dataForm.showPhoneNumber && !dataForm.showEmailAddress){
+            setSendRes({type:'error',text:'Вы должны выбрать, что отображать: email или номер телефона.'})
+            return false;
+        }
+        if (!selectCategory || !selectSubCategory){
+            setSendRes({type:'error',text:'Выберите категорию и подкатегорию!'})
+            return false;
+        }
+
         handleAddProducts(e, user.uid, productId, dataForm, selectCategory, selectSubCategory, selectDelivery, selectPay, images)
             .then(() => setFormData({
                 title:'',price:'',
@@ -135,10 +145,10 @@ const AddProduct = () => {
                 </InputGroup>
 
                 {//res after send form
-                    Object.values(sendRes).length ?
-                    <Alert bg={sendRes.type ==='error'?'danger':'success'} className={"small p-2"}>
+                    Boolean(Object.values(sendRes).length) &&
+                    <Alert variant={sendRes.type === 'error' ? 'danger' : 'success'} className={"small p-2"}>
                         {sendRes.text}
-                    </Alert>:false
+                    </Alert>
                 }
 
                 <Button size={"sm"} type={"submit"} variant={'outline-success'}>Добавить</Button>

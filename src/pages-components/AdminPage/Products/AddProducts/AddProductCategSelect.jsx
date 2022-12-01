@@ -4,7 +4,7 @@ import {Form} from "react-bootstrap";
 
 const AddProductsSelect = ({url,text,state,setState}) => {
     return (
-        <Form.Select value={state} onChange={e => setState(e.target.value)}>
+        <Form.Select value={state} onChange={e => setState(e.target.value)} required>
             <option hidden>Выберите родительскую {text}.</option>
             {useGetCategory(url).map(elem =>(
                 <option key={elem.id} value={elem.id}>
