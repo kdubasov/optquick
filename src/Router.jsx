@@ -15,6 +15,7 @@ import PostProductPage from "./pages/PostProductPage/PostProductPage";
 import UserPage from "./pages/UserPage/UserPage";
 import RedactUserProduct from "./general-components/Auth/UserProfile/components/RedactUserProduct/RedactUserProduct";
 import BriefcasePage from "./pages/BriefcasePage/BriefcasePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 
 const Router = () => {
@@ -84,6 +85,9 @@ const Router = () => {
                             </CheckLoginRoute>
                         }
                     />
+
+                    {/*404*/}
+                    <Route path={"*"} element={<NotFoundPage />} />
                 </Routes>
             </UserAuthContextProvider>
         </>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Badge, Button, Table} from "react-bootstrap";
+import {Alert, Badge, Button, Table} from "react-bootstrap";
 import {useGetReviewsAll} from "../../../pages-functions/AdminPage/ReviewsMessages/useGetReviewsAll";
 import ReviewsTr from "./ReviewsTr";
 import {checkBadWords} from "../../../functions/checkBadWords";
@@ -13,19 +13,19 @@ const ReviewsTable = ({setRes}) => {
     const reviewsAll = useGetReviewsAll();
     // console.log(reviewsAll)
 
-    if (reviewsAll.length)
-    return (
-        <div className={'ReviewsTable p-1 border my-1'}>
-            <h5>
-                <Badge bg={"secondary"} className={"fw-light"}>Отзывы о пользователях</Badge>
-            </h5>
+    if (reviewsAll.length){
+        return (
+            <div className={'ReviewsTable p-1 border my-1'}>
+                <h5>
+                    <Badge bg={"secondary"} className={"fw-light"}>Отзывы о пользователях</Badge>
+                </h5>
 
-            <Button onClick={() => setShowBad(!showBad)} size={"sm"} className={"mb-2"}>
-                {showBad ? "Показать все" : "Показать сообщения с плохими словами"}
-            </Button>
+                <Button onClick={() => setShowBad(!showBad)} size={"sm"} className={"mb-2"}>
+                    {showBad ? "Показать все" : "Показать сообщения с плохими словами"}
+                </Button>
 
-            <Table striped bordered>
-                <thead>
+                <Table striped bordered>
+                    <thead>
                     <tr className={"small"}>
                         <th>Дата</th>
                         <th>ID отправителя</th>
@@ -34,19 +34,26 @@ const ReviewsTable = ({setRes}) => {
                         <th>Сообщение</th>
                         <th>-</th>
                     </tr>
-                </thead>
+                    </thead>
 
-                <tbody>
+                    <tbody>
                     {
                         (showBad ? reviewsAll.filter(elem => checkBadWords(elem.message)) : reviewsAll)
                             .map(rev => (
-                            <ReviewsTr key={rev.id} data={rev} setRes={setRes} />
-                        ))
+                                <ReviewsTr key={rev.id} data={rev} setRes={setRes} />
+                            ))
                     }
-                </tbody>
-            </Table>
-        </div>
-    );
+                    </tbody>
+                </Table>
+            </div>
+        );
+    }else {
+        return (
+            <Alert className={"p-2 small"} variant={"dark"}>
+                Список отзывов пуст.
+            </Alert>
+        )
+    }
 };
 
 export default ReviewsTable;

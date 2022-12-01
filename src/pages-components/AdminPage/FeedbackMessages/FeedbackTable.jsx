@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge, Table} from "react-bootstrap";
+import {Alert, Badge, Table} from "react-bootstrap";
 import FeedbackTr from "./FeedbackTr";
 import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
 
@@ -19,13 +19,13 @@ const FeedbackTable = ({setRes}) => {
 
                 <Table striped bordered>
                     <thead>
-                    <tr className={"small"}>
-                        <th>Дата</th>
-                        <th>Email</th>
-                        <th>Сообщение</th>
-                        <th>Сотруд.</th>
-                        <th>-</th>
-                    </tr>
+                        <tr className={"small"}>
+                            <th>Дата</th>
+                            <th>Email</th>
+                            <th>Сообщение</th>
+                            <th>Сотруд.</th>
+                            <th>-</th>
+                        </tr>
                     </thead>
 
                     <tbody>
@@ -40,11 +40,9 @@ const FeedbackTable = ({setRes}) => {
         );
     }else {
         return (
-            <h5>
-                <Badge bg={"secondary"} className={"fw-light"}>
-                    Сообщений с формы обратной связи пока нет.
-                </Badge>
-            </h5>
+            <Alert className={"p-2 small"} variant={"dark"}>
+                Сообщений с формы обратной связи пока нет.
+            </Alert>
         )
     }
 };
