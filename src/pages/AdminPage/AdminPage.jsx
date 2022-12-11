@@ -10,6 +10,7 @@ import ComplaintsTable from "../../pages-components/AdminPage/ComplaintsMessages
 import ReviewsTable from "../../pages-components/AdminPage/ReviewsMessages/ReviewsTable";
 import {useUserAuth} from "../../context/AuthContext";
 import {Navigate} from "react-router-dom";
+import UsersList from "../../pages-components/AdminPage/UsersList/UsersList";
 
 
 const AdminPage = () => {
@@ -44,6 +45,8 @@ const AdminPage = () => {
                     <ComplaintsTable setRes={setRes} />
                     {/*Таблица с отзывами*/}
                     <ReviewsTable setRes={setRes} />
+                    {/*Таблица пользователей*/}
+                    <UsersList />
                 </div>
             );
         }else{
