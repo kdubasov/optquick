@@ -1,0 +1,10 @@
+.NavbarCategories button{
+    width: calc(160px - .25em);
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+.NavbarCategories button img{
+    width: 25px;
+    margin-right: 5px;
+}

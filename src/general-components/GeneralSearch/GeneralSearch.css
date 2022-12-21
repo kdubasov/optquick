@@ -1,0 +1,13 @@
+.GeneralSearch{
+    padding: 1.5em 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+/*input search*/
+.GeneralSearch input{
+    width: calc(100% - 160px - .25em);
+    border-radius: var(--def-border-redius) !important;
+}

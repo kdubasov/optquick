@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import {Button} from "react-bootstrap";
 import NavbarCategoriesOffcanvas from "./NavbarCategoriesOffcanvas";
+import "./NavbarCategories.css";
 
 const NavbarCategories = () => {
 
@@ -10,13 +10,14 @@ const NavbarCategories = () => {
     const handleShow = () => setShowNavCateg(true);
 
     return (
-        <>
-            <Button size={"sm"} onClick={handleShow} className={"my-1"}>
+        <div className={"NavbarCategories"}>
+            <button className={"but-blue"} onClick={handleShow}>
+                <img src="/images/icons/menu.svg" alt=""/>
                 Все категории
-            </Button>
+            </button>
 
             <NavbarCategoriesOffcanvas handleClose={handleClose} showNavCateg={showNavCateg} />
-        </>
+        </div>
     );
 };
 

@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {FormControl} from "react-bootstrap";
 import {useGetQueryRes} from "../../pages-functions/GeneralSearch/useGetQueryRes";
-import GeneralSearchRes from "./GeneralSearchRes";
+import GeneralSearchRes from "./GeneralSearchRes/GeneralSearchRes";
+import NavbarCategories from "../NavbarCategories/NavbarCategories";
+import "./GeneralSearch.css";
 
 const GeneralSearch = () => {
 
@@ -15,17 +17,22 @@ const GeneralSearch = () => {
     // console.log(useGetQueryRes(query))
 
     return (
-        <>
+        <div className={"GeneralSearch"}>
+
+            {/*Все категории*/}
+            <NavbarCategories />
+
+            {/*input search*/}
             <FormControl
                 size={"sm"}
-                placeholder={"Введите ваш запрос, результаты поиска отображаются ниже."}
+                placeholder={"Поиск по категориям, подкатегориям и товарам."}
                 value={query}
                 onChange={e => setQuery(e.target.value)}
                 onFocus={() => setFocus(true)}
             />
 
             {focus && <GeneralSearchRes result={data} setFocus={setFocus} />}
-        </>
+        </div>
     );
 };
 

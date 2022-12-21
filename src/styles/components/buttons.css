@@ -1,0 +1,34 @@
+/*green button*/
+.but-green{
+    padding: .5em 1.25em;
+    background: var(--bs-green);
+    color: var(--bs-white) !important;
+    transition: .25s;
+    border:none;
+}
+.but-green:hover{
+    background: var(--bs-green-hover);
+}
+
+button.btn{
+    border-radius: var(--def-border-redius) !important;
+}
+
+/*blue button*/
+.but-blue{
+    padding: .5em 1.25em;
+    background: var(--bs-blue);
+    color: var(--bs-white) !important;
+    transition: .25s;
+    border:none;
+}
+.but-blue:hover{
+    background: var(--bs-blue-hover);
+}
+
+/*border radius for all buttons*/
+button.btn,
+button,
+.but-green{
+    border-radius: var(--def-border-redius) !important;
+}

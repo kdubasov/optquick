@@ -1,8 +1,8 @@
 import React from 'react';
 import {Alert, Badge, Button, ListGroup} from "react-bootstrap";
-import CardProduct from "../../pages-components/AdminPage/Products/CardProduct/CardProduct";
-import SubCard from "../../pages-components/SubcategoriesComps/SubCard";
-import CategoriesCard from "../../pages-components/CategoriesComps/CategCard";
+import CardProduct from "../../../pages-components/AdminPage/Products/CardProduct/CardProduct";
+import SubCard from "../../../pages-components/SubcategoriesComps/SubCard";
+import CategoriesCard from "../../../pages-components/CategoriesComps/CategCard";
 
 const GeneralSearchRes = ({result,setFocus}) => {
 

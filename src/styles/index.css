@@ -12,5 +12,14 @@
 
 :root{
     --white: #FFF;
-    --bs-blue: #0d6efd;
+    --bs-blue: #5182FF;
+    --bs-blue-hover: #376bef;
+    --bs-dark: #494949;
+    --bs-dark-hover: #1c1c1c;
+    --bs-light: #F9F9F9;
+    --bs-green: #90D23E;
+    --bs-green-hover: #6f9f34;
+    --bs-red: #DB2836;
+
+    --def-border-redius:10px;
 }

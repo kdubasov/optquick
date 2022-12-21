@@ -1,12 +1,45 @@
-.NavbarTop a{
-    margin: 0 .5em;
-    font-size: .85em;
-    color: var(--white);
-    text-decoration: none;
+.NavbarTop{
+    padding: .25em 0 !important;
+    background: var(--bs-light);
 }
+
+/*link*/
+.NavbarTop a{
+    margin: 0 .75em;
+    font-size: .8em;
+    font-weight: 500;
+    color: var(--bs-dark);
+    text-decoration: none;
+    transition: .25s;
+}
+.NavbarTop a:last-child{
+    margin-right: 0;
+}
+
+/*logo*/
 .NavbarTop a.logo{
     margin: 0 .5em 0 0;
-    color: var(--white);
+    color: var(--bs-dark);
     font-size: 1em;
-    font-weight: 700;
+    font-weight: 800;
+}
+
+/*hover*/
+.NavbarTop a:hover,
+.NavbarTop a.logo:hover{
+    opacity: .75;
+    color: var(--bs-dark);
+}
+.NavbarTop a.but-green:hover{
+    opacity: 1;
+}
+
+/*images for favorites link*/
+.NavbarTop a.images{
+    display: flex;
+    align-items: center;
+}
+.NavbarTop a.images img.like {
+    width: 20px;
+    margin-right: .25em;
 }

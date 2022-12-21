@@ -1,46 +1,40 @@
 import React from 'react';
 import {Container, Nav, Navbar, NavbarBrand} from "react-bootstrap";
-import {Link,useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import './NavbarTop.css';
 import {useUserAuth} from "../../context/AuthContext";
-import ConfirmButton from "../GeneralButtons/ConfirmButton";
 
 const NavbarTop = () => {
 
-    const { logOut, user } = useUserAuth();
-    const navigate = useNavigate();
-
-    const handleLogout = async () => {
-        try {
-            await logOut();
-            navigate("/login");
-        } catch (error) {
-            console.log(error.message);
-        }
-    };
+    const { user } = useUserAuth();
 
     return (
-        <Navbar className={'NavbarTop'} expand="lg" bg="dark">
+        <Navbar className={'NavbarTop'}>
             <Container>
 
                 <NavbarBrand className={`d-flex align-items-center`}>
-                    <img style={{marginRight:7}} width={30} src="/images/general/logo.svg" alt="optquick"/>
-                    <Link className={'logo'} to={`/`}>OptQuick</Link>
+                    <Link className={'logo'} to={`/`}>
+                        <img style={{marginRight:5}} width={30} src="/images/general/logo.svg" alt="optquick"/>
+                        optquick
+                    </Link>
                 </NavbarBrand>
 
                 <Navbar aria-controls="responsive-navbar-nav" />
-                    <Nav className="me-auto d-flex align-items-center">
-                        <Link to={`/categories`}>Каталог</Link>
-                        <Link to={`/postProduct`}>Разместить объявление</Link>
-                    </Nav>
                     <Nav className="d-flex align-items-center">
-                        <Link to={`/briefcase`}>Избр. товары</Link>
-                        { user && <Link to={`/userProfile`}>Профиль</Link> }
-                        {
-                            user?
-                                <ConfirmButton text={'Выйти'} func={handleLogout} />:
-                                <Link to={`/login`}>Войти</Link>
-                        }
+
+                        <Link className="images" to={`/briefcase`}>
+                            <img className={"like"} src="/images/icons/icon-love.svg" alt="like"/>
+                            Избранное
+                        </Link>
+
+                        <Link to={`/categories`}>Каталог</Link>
+
+                        { !user && <Link to={`/login`}>Вход и регистрация</Link> }
+                        { user && <Link to={`/userProfile`}>Мой профиль</Link> }
+
+                        <Link className={"but-green"} to={`/postProduct`}>
+                            Разместить товар
+                        </Link>
                     </Nav>
             </Container>
         </Navbar>
