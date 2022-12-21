@@ -27,8 +27,6 @@ button.btn{
 }
 
 /*border radius for all buttons*/
-button.btn,
-button,
-.but-green{
+button.btn, button, .but-green{
     border-radius: var(--def-border-redius) !important;
 }

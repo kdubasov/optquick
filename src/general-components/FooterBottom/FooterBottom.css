@@ -1,0 +1,14 @@
+.FooterBottom{
+    width: 100%;
+    min-height: 100px;
+    padding: 2.5em 0;
+    border-top: 3px solid var(--bs-blue);
+    background: var(--footer-bg);
+}
+
+/*main container*/
+.FooterBottom .container{
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+}

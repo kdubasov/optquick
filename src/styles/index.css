@@ -11,6 +11,7 @@
 }
 
 :root{
+    --footer-bg: #333333;
     --white: #FFF;
     --bs-blue: #5182FF;
     --bs-blue-hover: #376bef;

@@ -16,6 +16,8 @@ import UserPage from "./pages/UserPage/UserPage";
 import RedactUserProduct from "./general-components/Auth/UserProfile/components/RedactUserProduct/RedactUserProduct";
 import BriefcasePage from "./pages/BriefcasePage/BriefcasePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import FooterBottom from "./general-components/FooterBottom/FooterBottom";
+import {Container} from "react-bootstrap";
 
 
 const Router = () => {
@@ -24,71 +26,80 @@ const Router = () => {
         <>
             {/*user auth context*/}
             <UserAuthContextProvider>
+
+                {/*NAVBAR TOP*/}
                 <NavbarTop />
-                <Routes>
 
-                    {/*main page*/}
-                    <Route path={`/`} element={<MainPage />} />
+                {/*container for developer*/}
+                <Container style={{padding:0,minHeight:"90vh"}}>
+                    <Routes>
 
-                    {/*user profile*/}
-                    <Route
-                        path="/userProfile"
-                        element={
-                            <CheckLoginRoute>
-                                <UserProfile />
-                            </CheckLoginRoute>
-                        }
-                    />
+                        {/*main page*/}
+                        <Route path={`/`} element={<MainPage />} />
 
-                    {/*login page*/}
-                    <Route path="/login" element={<Login />} />
+                        {/*user profile*/}
+                        <Route
+                            path="/userProfile"
+                            element={
+                                <CheckLoginRoute>
+                                    <UserProfile />
+                                </CheckLoginRoute>
+                            }
+                        />
 
-                    {/*admin page*/}
-                    <Route
-                        path="/admin"
-                        element={
-                        <CheckLoginRoute>
-                            <AdminPage  />
-                        </CheckLoginRoute>
-                        }
-                    />
-                    {/*categories routes*/}
-                    <Route path="/categories" element={<CategoriesPage />} />
-                    <Route path="/categories/:categoryID" element={<SubcategoriesPage />} />
-                    <Route path="/categories/:categoryID/:subcategoryID" element={<SubProductsPage />} />
-                    <Route path="/categories/:categoryID/:subcategoryID/:productID" element={<ProductPage />} />
-                    {/*categories routes end*/}
+                        {/*login page*/}
+                        <Route path="/login" element={<Login />} />
 
-                    {/*post product without admin*/}
-                    <Route
-                        path="/postProduct"
-                        element={
-                            <CheckLoginRoute>
-                                <PostProductPage />
-                            </CheckLoginRoute>
-                        }
-                    />
+                        {/*admin page*/}
+                        <Route
+                            path="/admin"
+                            element={
+                                <CheckLoginRoute>
+                                    <AdminPage  />
+                                </CheckLoginRoute>
+                            }
+                        />
+                        {/*categories routes*/}
+                        <Route path="/categories" element={<CategoriesPage />} />
+                        <Route path="/categories/:categoryID" element={<SubcategoriesPage />} />
+                        <Route path="/categories/:categoryID/:subcategoryID" element={<SubProductsPage />} />
+                        <Route path="/categories/:categoryID/:subcategoryID/:productID" element={<ProductPage />} />
+                        {/*categories routes end*/}
+
+                        {/*post product without admin*/}
+                        <Route
+                            path="/postProduct"
+                            element={
+                                <CheckLoginRoute>
+                                    <PostProductPage />
+                                </CheckLoginRoute>
+                            }
+                        />
 
 
-                    {/*страница пользователя не тот который сейчас зареган а тот чей товар*/}
-                    <Route path="/user/:userUid" element={<UserPage />} />
+                        {/*страница пользователя не тот который сейчас зареган а тот чей товар*/}
+                        <Route path="/user/:userUid" element={<UserPage />} />
 
-                    {/*редактирование товара*/}
-                    <Route path={`/userProfile/redactProduct/:productID`} element={<RedactUserProduct />} />
+                        {/*редактирование товара*/}
+                        <Route path={`/userProfile/redactProduct/:productID`} element={<RedactUserProduct />} />
 
-                    {/*избранные товары*/}
-                    <Route
-                        path={`/briefcase`}
-                        element={
-                            <CheckLoginRoute>
-                                <BriefcasePage />
-                            </CheckLoginRoute>
-                        }
-                    />
+                        {/*избранные товары*/}
+                        <Route
+                            path={`/briefcase`}
+                            element={
+                                <CheckLoginRoute>
+                                    <BriefcasePage />
+                                </CheckLoginRoute>
+                            }
+                        />
 
-                    {/*404*/}
-                    <Route path={"*"} element={<NotFoundPage />} />
-                </Routes>
+                        {/*404*/}
+                        <Route path={"*"} element={<NotFoundPage />} />
+                    </Routes>
+                </Container>
+
+                {/*Footer*/}
+                <FooterBottom />
             </UserAuthContextProvider>
         </>
     );
