@@ -1,0 +1,6 @@
+.ProductPage .top-container{
+    width: 100%;
+    padding: 3em;
+    box-shadow: var(--def-shadow);
+    border-radius: var(--def-border-redius);
+}

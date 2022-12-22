@@ -1,0 +1,48 @@
+.ProductUserData{
+    padding: 2em;
+    border-radius: var(--def-border-redius);
+    box-shadow: var(--def-shadow);
+}
+
+/*inner block*/
+.ProductUserData .inner{
+    margin: 1em 0;
+}
+.ProductUserData .inner:first-child{
+    margin-top: 0;
+}
+
+/*text*/
+.ProductUserData p,
+.ProductUserData a{
+    margin: 0;
+    text-decoration: none;
+    transition: .25s;
+}
+.ProductUserData a:hover{
+    color: var(--bs-blue);
+}
+.ProductUserData p.title{
+    font-weight: 600;
+    color: var(--bs-dark-hover);
+}
+
+/*hr*/
+.ProductUserData hr{
+    margin: 2em 0;
+}
+
+/*footer*/
+.ProductUserData footer img{
+    width: 20px;
+    margin-right: .75em;
+}
+.ProductUserData footer p,
+.ProductUserData footer a{
+    font-weight: 500;
+    margin: .5em 0 !important;
+}
+.ProductUserData footer p.red,
+.ProductUserData footer a.red{
+    color: var(--bs-red) !important;
+}

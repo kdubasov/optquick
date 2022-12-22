@@ -1,11 +1,11 @@
 import React from 'react';
-import {Button} from "react-bootstrap";
+import "./BriefcaseButton.css";
 import {useUserAuth} from "../../context/AuthContext";
 import {handleAddInBriefcase} from "../../pages-functions/Briefcase/handleAddInBriefcase";
 import {useGetBriefcaseData} from "../../pages-functions/Briefcase/useGetBriefcaseData";
 import {handleDeleteCategory} from "../../pages-functions/AdminPage/Categories/handleDeleteCategory";
 
-const BriefcaseButton = ({elemData,setAlertData}) => {
+const BriefcaseButton = ({elemData,setAlertData,text = true}) => {
 
     // console.log(elemData,'elemData BriefcaseButton');
 
@@ -72,26 +72,24 @@ const BriefcaseButton = ({elemData,setAlertData}) => {
         //проверяем добавлен ли данный товар в избранное
         if(briefcaseData.includes(elemData.id)){
             return (
-                <Button
-                    size={"sm"}
-                    className={"my-2"}
-                    variant={"outline-danger"}
+                <button
+                    className={"BriefcaseButton"}
                     onClick={deleteFromBriefcase}
                 >
-                    Удалить из избранного
-                </Button>
+                    <img src={"/images/icons/like-red.svg"} alt={"delete"} />
+                    {text && "Удалить из избранного"}
+                </button>
             )
         }else {
             return (
                 <>
-                    <Button
-                        size={"sm"}
-                        className={"my-2"}
-                        variant={"outline-success"}
+                    <button
+                        className={"BriefcaseButton"}
                         onClick={addInBriefcase}
                     >
-                        Добавить в избранное
-                    </Button>
+                        <img src={"/images/icons/like-border.svg"} alt={"add"} />
+                        {text && "Добавить в избранное"}
+                    </button>
                 </>
             );
         }

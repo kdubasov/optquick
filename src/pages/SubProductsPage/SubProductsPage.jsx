@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
 import {Alert, Badge} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import CardProduct from "../../pages-components/AdminPage/Products/CardProduct/CardProduct";
+import CardProduct from "../../general-components/CardProduct/CardProduct";
 import SubProductSort from "../../pages-components/SubcategoriesComps/SubProductSort";
 
 const SubProductsPage = () => {

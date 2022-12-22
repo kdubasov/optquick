@@ -3,8 +3,8 @@ import {realtimeDB} from "../../../database/firebase-connect";
 
 export const handleRedactCategory = (url,elemId,elemTitle,elemImage) =>{
     return update(ref(realtimeDB, `${url}`),{
-        id:elemId,
-        title: elemTitle,
+        id:elemId.trim(),
+        title: elemTitle.trim(),
         image: elemImage,
     })
 }

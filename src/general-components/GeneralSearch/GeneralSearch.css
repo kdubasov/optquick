@@ -1,5 +1,5 @@
 .GeneralSearch{
-    padding: 1.5em 0;
+    padding: 1em 0;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -8,6 +8,6 @@
 
 /*input search*/
 .GeneralSearch input{
-    width: calc(100% - 160px - .25em);
+    width: calc(100% - 200px - .5em);
     border-radius: var(--def-border-redius) !important;
 }

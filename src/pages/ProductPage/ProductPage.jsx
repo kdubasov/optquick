@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
-import {Badge, Spinner} from "react-bootstrap";
-import ProductHeader from "./components/ProductHeader";
-import {Link} from "react-router-dom";
+import {Spinner} from "react-bootstrap";
+import ProductHeader from "./components/ProductHeader/ProductHeader";
 import ProductSimilarProducts from "./components/ProductSimilarProducts/ProductSimilarProducts";
 import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
-import ProductInfoTabs from "./components/ProductInfoTabs";
+import ProductInfoTabs from "./components/ProductInfoTabs/ProductInfoTabs";
 import ProductAlert from "./components/ProductAlert";
+import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";
+import GeneralSearch from "../../general-components/GeneralSearch/GeneralSearch";
+import "./ProductPage.css";
 
 const ProductPage = () => {
 
@@ -19,38 +21,42 @@ const ProductPage = () => {
     const productData = useGetUser(linkDBData);
     // console.log(productData);
 
-    return (
-        <div className={'ProductPage container py-3'}>
+    if (Object.values(productData).length){
+        return (
+            <div className={'ProductPage container py-3'}>
 
-            <ProductAlert show={alertData.show} variant={alertData.variant} text={alertData.text} />
+                {/*search*/}
+                <GeneralSearch />
 
-            <Link to={`/categories/${path[path.length - 3]}/${path[path.length - 2]}`}>
-                <Badge>
-                    Назад к товарам
-                </Badge>
-            </Link>
+                {/*alert with warnings and errors*/}
+                <ProductAlert show={alertData.show} variant={alertData.variant} text={alertData.text} />
 
-            {
-                Object.values(productData).length ?
-                    <>
-                        {/*header with slider and general info*/}
-                        <ProductHeader productData={productData} setAlertData={setAlertData} />
+                {/*breadcrumbs links*/}
+                <BreadCrumbs product={productData} />
 
-                        <ProductInfoTabs productData={productData} />
+                {/*box shadow container*/}
+                <div className="top-container">
+                    {/*header with slider and general info*/}
+                    <ProductHeader productData={productData} setAlertData={setAlertData} />
 
-                        {/*similar products slider*/}
-                        <ProductSimilarProducts
-                            setPath={setPath}
-                            nowProductId={productData.id}
-                            link={`/categories/${path[path.length - 3]}/subcategories/${path[path.length - 2]}/products`}
-                            setAlertData={setAlertData}
-                        />
-                    </>:
-                    <Spinner animation={"border"} variant={"primary"} className={'my-4'} />
-            }
+                    <ProductInfoTabs productData={productData} />
+                </div>
 
-        </div>
-    );
+                {/*similar products slider*/}
+                <ProductSimilarProducts
+                    setPath={setPath}
+                    nowProductId={productData.id}
+                    link={`/categories/${path[path.length - 3]}/subcategories/${path[path.length - 2]}/products`}
+                    setAlertData={setAlertData}
+                />
+
+            </div>
+        );
+    }else {
+        return (
+            <Spinner animation={"border"} variant={"primary"} />
+        )
+    }
 };
 
 export default ProductPage;

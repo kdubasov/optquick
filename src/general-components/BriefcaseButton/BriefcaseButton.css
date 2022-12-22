@@ -1,0 +1,13 @@
+.BriefcaseButton{
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+    border: none;
+    background: none;
+    font-weight: 500;
+}
+.BriefcaseButton img{
+    width: 20px;
+    margin-top: 2px;
+    margin-right: .25em;
+}

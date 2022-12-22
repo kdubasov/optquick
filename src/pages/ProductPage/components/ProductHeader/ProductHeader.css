@@ -1,0 +1,74 @@
+.ProductHeader{
+    width: 100%;
+    margin-bottom: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+/*container for slider*/
+.ProductHeader .left-container{
+    width: 62.5%;
+}
+.ProductHeader .left-container h2{
+    margin-bottom: .75em;
+}
+.ProductHeader .slider-container{
+    width: 100%;
+    height: 500px;
+}
+
+/*right container for main data*/
+.ProductHeader .right{
+    width: 32.5%;
+}
+
+/*market data (price min order ...)*/
+.ProductHeader .market-data{
+    margin-bottom: 1.5em;
+}
+.ProductHeader .market-data h1{
+    font-weight: 700;
+    margin:0;
+    line-height: 1;
+}
+.ProductHeader .market-data p{
+    text-decoration: underline;
+    color: var(--bs-blue);
+}
+.ProductHeader .market-data p.my-product{
+    text-decoration: none;
+    color: var(--bs-dark);
+}
+
+/*seller button*/
+button.seller{
+    width: 100%;
+    padding: .75em;
+    margin: 1.5em 0 1.5em;
+}
+button.seller img{
+    transition: .25s;
+    margin-left: .5em;
+}
+button.seller img.revert{
+    transform: rotate(180deg);
+}
+
+/*seller data*/
+.ProductHeader .user-data{
+    width: 100%;
+    padding: .75em 2em;
+    margin: -1em 0 .5em;
+    text-decoration: none;
+    border-radius: var(--def-border-redius);
+    box-shadow: var(--def-shadow);
+}
+.ProductHeader .user-data a{
+    text-decoration: none;
+    color: var(--bs-blue);
+    transition: .25s;
+}
+.ProductHeader .user-data a:hover{
+    color: var(--bs-dark);
+}

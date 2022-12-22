@@ -13,9 +13,9 @@ const NavbarTop = () => {
             <Container>
 
                 <NavbarBrand className={`d-flex align-items-center`}>
-                    <Link className={'logo'} to={`/`}>
+                    <Link className={'logo d-flex align-items-center'} to={`/`}>
                         <img style={{marginRight:5}} width={30} src="/images/general/logo.svg" alt="optquick"/>
-                        optquick
+                        <h5 className={"m-0 fw-bold"}>optquick</h5>
                     </Link>
                 </NavbarBrand>
 

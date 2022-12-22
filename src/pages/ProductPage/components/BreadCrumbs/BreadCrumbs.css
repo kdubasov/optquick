@@ -1,0 +1,21 @@
+.BreadCrumbs{
+    display: flex;
+    align-items: center;
+    padding: .5em 0 1.5em 0;
+}
+
+/*links and p*/
+.BreadCrumbs a,
+.BreadCrumbs p{
+    font-size: 14px;
+    margin: 0;
+    text-decoration: none;
+}
+.BreadCrumbs a{
+    color: var(--bs-blue);
+}
+
+/*images dot*/
+.BreadCrumbs img{
+    margin: .15em .5em 0 .5em;
+}

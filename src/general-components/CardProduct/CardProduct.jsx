@@ -1,11 +1,11 @@
 import React from 'react';
 import {Badge, Button} from "react-bootstrap";
-import CardProductSwiper from "./CardProductSwiper";
+import CardProductSwiper from "./CardProductSwiper/CardProductSwiper";
 import {Link} from "react-router-dom";
-import BriefcaseButton from "../../../../general-components/BriefcaseButton/BriefcaseButton";
-import {getAdmin} from "../../../../pages-functions/AdminPage/getAdmin";
-import DeleteCategoryButton from "../../Categories/DeleteCategoryButton";
-import {useUserAuth} from "../../../../context/AuthContext";
+import BriefcaseButton from "../BriefcaseButton/BriefcaseButton";
+import {getAdmin} from "../../pages-functions/AdminPage/getAdmin";
+import DeleteCategoryButton from "../../pages-components/AdminPage/Categories/DeleteCategoryButton";
+import {useUserAuth} from "../../context/AuthContext";
 
 const CardProduct = ({product}) => {
 
@@ -17,7 +17,9 @@ const CardProduct = ({product}) => {
         <div style={{width:"32%"}} className={"CardProduct m-1 p-2 border"}>
 
             {/*swiper with images for product*/}
-            <CardProductSwiper product={product} />
+            <div style={{height:200}}>
+                <CardProductSwiper product={product} />
+            </div>
 
             {/*Название*/}
             <Badge bg={"secondary"}>{product.title}</Badge>
@@ -43,7 +45,7 @@ const CardProduct = ({product}) => {
                     Перейти к товару
                 </Button>
 
-                <BriefcaseButton elemData={product} setAlertData={false} />
+                <BriefcaseButton elemData={product} setAlertData={false} text={false} />
             </Link>
 
             {/*/дата публикации товара*/}

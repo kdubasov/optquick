@@ -18,11 +18,11 @@ export const handleAddProducts = (
         .then(() => console.log('Картинки успешно загружены'))
 
     return set(ref(realtimeDB, url),{
-        id: productId,
+        id: productId.trim(),
         userUid: userUid,
         date: getDate(Date.now()),
         dateNoRedact: Date.now(),
-        title: dataForm.title,
+        title: dataForm.title.trim(),
         price: dataForm.price,
         amount: dataForm.amount,
         description: dataForm.description,

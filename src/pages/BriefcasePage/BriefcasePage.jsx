@@ -3,7 +3,7 @@ import {Alert, Badge} from "react-bootstrap";
 import {useGetBriefcaseProducts} from "../../pages-functions/Briefcase/useGetBriefcaseProducts";
 import {useUserAuth} from "../../context/AuthContext";
 import {useGetBriefcaseData} from "../../pages-functions/Briefcase/useGetBriefcaseData";
-import CardProduct from "../../pages-components/AdminPage/Products/CardProduct/CardProduct";
+import CardProduct from "../../general-components/CardProduct/CardProduct";
 import {Link} from "react-router-dom";
 
 const BriefcasePage = () => {

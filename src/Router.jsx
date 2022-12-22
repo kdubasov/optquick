@@ -18,9 +18,13 @@ import BriefcasePage from "./pages/BriefcasePage/BriefcasePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import FooterBottom from "./general-components/FooterBottom/FooterBottom";
 import {Container} from "react-bootstrap";
+import ScrollToTop from "./functions/scrollToTop";
 
 
 const Router = () => {
+
+    //поднимаем старницу вверх при переходе
+    ScrollToTop();
 
     return (
         <>

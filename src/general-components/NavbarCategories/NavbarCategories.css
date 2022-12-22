@@ -1,6 +1,7 @@
 .NavbarCategories button{
-    width: calc(160px - .25em);
+    width: calc(200px - .5em);
     display: flex;
+    justify-content: center;
     align-items: center;
     font-size: 13px;
 }

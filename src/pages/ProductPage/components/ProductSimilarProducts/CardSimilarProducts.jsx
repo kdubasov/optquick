@@ -1,5 +1,5 @@
 import React from 'react';
-import CardProductSwiper from "../../../../pages-components/AdminPage/Products/CardProduct/CardProductSwiper";
+import CardProductSwiper from "../../../../general-components/CardProduct/CardProductSwiper/CardProductSwiper";
 import {Badge, Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import BriefcaseButton from "../../../../general-components/BriefcaseButton/BriefcaseButton";
@@ -15,7 +15,9 @@ const CardSimilarProducts = ({product,setPath,setAlertData}) => {
     
     return (
         <div style={{width:"32%"}} className={"CardSimilarProducts m-1 p-1 border"}>
-            <CardProductSwiper product={product} />
+            <div style={{width:"100%",height:"200px"}}>
+                <CardProductSwiper product={product} />
+            </div>
 
             {/*Название*/}
             <Badge bg={"secondary"}>{product.title}</Badge>
@@ -35,9 +37,6 @@ const CardSimilarProducts = ({product,setPath,setAlertData}) => {
                     Доставка: {product.deliveryPeriod}дн.
                 </Badge>
             }
-            {/*ссылка на страницу товара*/}
-            {/*<Link to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}>*/}
-            {/*</Link>*/}
 
             <Button
                 size={"sm"}
@@ -48,7 +47,7 @@ const CardSimilarProducts = ({product,setPath,setAlertData}) => {
                 Перейти к товару
             </Button>
 
-            <BriefcaseButton elemData={product} setAlertData={setAlertData} />
+            <BriefcaseButton elemData={product} setAlertData={setAlertData} text={false} />
         </div>
     );
 };

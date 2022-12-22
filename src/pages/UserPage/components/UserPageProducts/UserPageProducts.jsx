@@ -1,7 +1,7 @@
 import React from 'react';
 import {Badge} from "react-bootstrap";
 import {useGetUserProducts} from "../../../../pages-functions/AdminPage/GetProducts/useGetUserProducts";
-import CardProduct from "../../../../pages-components/AdminPage/Products/CardProduct/CardProduct";
+import CardProduct from "../../../../general-components/CardProduct/CardProduct";
 
 const UserPageProducts = ({userId}) => {
 

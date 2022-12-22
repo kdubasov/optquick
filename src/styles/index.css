@@ -17,10 +17,21 @@
     --bs-blue-hover: #376bef;
     --bs-dark: #494949;
     --bs-dark-hover: #1c1c1c;
-    --bs-light: #F9F9F9;
+    --bs-light: #f6f6f6;
     --bs-green: #90D23E;
     --bs-green-hover: #6f9f34;
     --bs-red: #DB2836;
 
-    --def-border-redius:10px;
+    --def-border-redius: 5px;
+    --def-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+}
+
+body{
+    color: var(--bs-dark);
+}
+
+
+/*text*/
+p,a,button{
+    font-size: 14px !important;
 }

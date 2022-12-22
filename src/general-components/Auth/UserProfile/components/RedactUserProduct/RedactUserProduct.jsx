@@ -3,7 +3,7 @@ import {Alert, Badge, Spinner} from "react-bootstrap";
 import {useGetUserProducts} from "../../../../../pages-functions/AdminPage/GetProducts/useGetUserProducts";
 import {useUserAuth} from "../../../../../context/AuthContext";
 import {getPathLastWord} from "../../../../../pages-functions/CategoriesPage/getPathLastWord";
-import CardProductSwiper from "../../../../../pages-components/AdminPage/Products/CardProduct/CardProductSwiper";
+import CardProductSwiper from "../../../../CardProduct/CardProductSwiper/CardProductSwiper";
 import RedactUserProdForm from "./RedactUserProdForm";
 import MessageAlert from "../../../../MessageAlert/MessageAlert";
 import {Link} from "react-router-dom";

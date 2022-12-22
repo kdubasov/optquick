@@ -1,5 +1,5 @@
 import React from 'react';
-import CardProductSwiper from "../../../../../pages-components/AdminPage/Products/CardProduct/CardProductSwiper";
+import CardProductSwiper from "../../../../CardProduct/CardProductSwiper/CardProductSwiper";
 import {Badge, Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import DeleteCategoryButton from "../../../../../pages-components/AdminPage/Categories/DeleteCategoryButton";
