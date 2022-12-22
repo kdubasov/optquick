@@ -97,6 +97,11 @@ export const footerBottomData = [
                 link:"/",
             },
             {
+                id:"1145",
+                text:"Статьи",
+                link:"/",
+            },
+            {
                 id:"1142",
                 text:"Реквизиты",
                 link:"/",
