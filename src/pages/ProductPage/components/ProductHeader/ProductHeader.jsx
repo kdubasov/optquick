@@ -38,8 +38,10 @@ const ProductHeader = ({productData,setAlertData}) => {
                     }
                     <h1>{productData.price} ₽/шт.</h1>
                     <p className={"m-0"}>
-                        Всего {productData.amount} штук.
-                        Минимальный заказ от {productData.minOrder + ' штук.'}
+                        Минимальный заказ от {productData.minOrder + ' штук. '}
+                    </p>
+                    <p className={"m-0 text-decoration-none"} style={{color:"inherit"}}>
+                        В наличии {productData.amount} штук.
                     </p>
                 </div>
 

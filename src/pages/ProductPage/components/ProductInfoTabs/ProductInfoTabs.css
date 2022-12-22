@@ -1,0 +1,40 @@
+/*select buttons*/
+.ProductInfoTabs header button{
+    background: none;
+    border: none;
+    margin: 0 1.25em 0 0;
+    color: var(--bs-dark);
+    font-size: 20px !important;
+    font-weight: 500;
+    transition: .25s;
+}
+.ProductInfoTabs header button:disabled{
+    opacity: .5;
+    cursor: default;
+}
+.ProductInfoTabs header button:disabled:hover{
+    color: var(--bs-dark);
+}
+.ProductInfoTabs header button:hover{
+    color: var(--bs-dark-hover);
+}
+
+/*inner block*/
+.ProductInfoTabs .inner p{
+    font-size: 16px !important;
+    margin: 0;
+}
+.ProductInfoTabs .inner p span{
+    font-weight: 600;
+    margin-right: .25em;
+}
+
+/*warning div*/
+.ProductInfoTabs .warning{
+    margin: 1em 0;
+    padding: .5em;
+    text-align: center;
+    background: var(--bs-green);
+    color: var(--bs-white);
+    border-radius: var(--def-border-redius);
+}

@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import {Spinner} from "react-bootstrap";
+import {Alert, Spinner} from "react-bootstrap";
 import ProductHeader from "./components/ProductHeader/ProductHeader";
 import ProductSimilarProducts from "./components/ProductSimilarProducts/ProductSimilarProducts";
 import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
 import ProductInfoTabs from "./components/ProductInfoTabs/ProductInfoTabs";
-import ProductAlert from "./components/ProductAlert";
 import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";
 import GeneralSearch from "../../general-components/GeneralSearch/GeneralSearch";
 import "./ProductPage.css";
@@ -25,11 +24,13 @@ const ProductPage = () => {
         return (
             <div className={'ProductPage container py-3'}>
 
-                {/*search*/}
+                {/*search main*/}
                 <GeneralSearch />
 
-                {/*alert with warnings and errors*/}
-                <ProductAlert show={alertData.show} variant={alertData.variant} text={alertData.text} />
+                {//alert with warnings and errors
+                    alertData.show &&
+                    <Alert className={"fixed small"} variant={alertData.variant}>{alertData.text}</Alert>
+                }
 
                 {/*breadcrumbs links*/}
                 <BreadCrumbs product={productData} />
@@ -39,6 +40,7 @@ const ProductPage = () => {
                     {/*header with slider and general info*/}
                     <ProductHeader productData={productData} setAlertData={setAlertData} />
 
+                    {/*tabs with info*/}
                     <ProductInfoTabs productData={productData} />
                 </div>
 

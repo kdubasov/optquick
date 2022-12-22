@@ -1,0 +1,22 @@
+.alert{
+    padding: .75em 1em !important;
+    border: none !important;
+    text-align: center;
+    color: var(--bs-white) !important;
+}
+.alert.fixed{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 9999;
+    margin: 0;
+}
+.alert.alert-primary{
+    background: var(--bs-blue) !important;
+}
+.alert.alert-success{
+    background: var(--bs-green) !important;
+}
+.alert.alert-danger{
+    background: var(--bs-red) !important;
+}
