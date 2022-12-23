@@ -28,13 +28,3 @@
     font-weight: 600;
     margin-right: .25em;
 }
-
-/*warning div*/
-.ProductInfoTabs .warning{
-    margin: 1em 0;
-    padding: .5em;
-    text-align: center;
-    background: var(--bs-green);
-    color: var(--bs-white);
-    border-radius: var(--def-border-redius);
-}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge} from "react-bootstrap";
+import "./ProductSimilarProducts.css";
 import {useGetCategory} from "../../../../pages-functions/AdminPage/Categories/useGetCategory";
 import CardSimilarProducts from "./CardSimilarProducts";
 
@@ -11,10 +11,10 @@ const ProductSimilarProducts = ({link,nowProductId,setPath,setAlertData}) => {
 
     if (dataSimilarProducts.length && dataSimilarProducts.filter(product => product.id !== nowProductId).length){
         return (
-            <div className={'ProductSimilarProducts border p-2'}>
-                <h4><Badge>Похожие товары</Badge></h4>
+            <div className={'ProductSimilarProducts'}>
+                <h2>Смотрите также</h2>
 
-                <div className="w-100 d-flex flex-wrap">
+                <div className="products-container">
                     {
                         dataSimilarProducts
                             .filter(product => product.id !== nowProductId)

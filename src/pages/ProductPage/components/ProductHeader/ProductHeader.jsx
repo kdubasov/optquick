@@ -12,11 +12,11 @@ const ProductHeader = ({productData,setAlertData}) => {
 
     //data seller
     const userData = useGetUser(`/users/${productData.userUid}`);
-    console.log(userData)
+    // console.log(userData);
 
     const { user } = useUserAuth();
     const [showUser,setShowUser] = useState(false);
-    console.log(productData,"productData ProductHeader")
+    // console.log(productData,"productData ProductHeader")
 
     return (
         <header className={"ProductHeader"}>
