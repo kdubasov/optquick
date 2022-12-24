@@ -1,3 +1,9 @@
+.UserProfile .container{
+    display: flex;
+    justify-content: space-between;
+    min-height: 800px;
+}
+
 /*самая верхняя картинка*/
 .UserProfile .top-image{
     position: absolute;
@@ -10,4 +16,10 @@
 .UserProfile .left{
     padding-top: 100px;
     width: 280px;
+}
+
+/*right block*/
+.UserProfile .right{
+    width: calc(100% - 280px - 20px);
+    margin-top: 220px;
 }

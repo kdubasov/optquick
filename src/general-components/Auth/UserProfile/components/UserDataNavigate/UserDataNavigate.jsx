@@ -1,11 +1,11 @@
 import React from 'react';
 import {Nav} from "react-bootstrap";
 import {useUserAuth} from "../../../../../context/AuthContext";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import "./UserDataNavigate.css";
 import {getReviewsGrade} from "../../../../../functions/getReviewsGrade";
 
-const UserDataNavigate = ({data}) => {
+const UserDataNavigate = ({data,selectPage,setSelectPage}) => {
 
     const { logOut } = useUserAuth();
     const navigate = useNavigate();
@@ -43,7 +43,9 @@ const UserDataNavigate = ({data}) => {
                 {
                     (data?.name && data?.surname) ?
                         data.surname + " " + data.name:
-                        "Имя не добавлено"
+                        <span className={"add"}>
+                            Добавить имя
+                        </span>
                 }
                 {
                     (data?.vk && data?.telegram && data?.photo) &&
@@ -64,25 +66,39 @@ const UserDataNavigate = ({data}) => {
             }
 
             <Nav>
-                <button>
+                <button
+                    onClick={() => setSelectPage(1)}
+                    disabled={selectPage === 1}
+                >
                     <img src="/images/auth/prods.svg" alt="my products"/>
                     Мои объявления
                 </button>
-                <button>
+
+                <button
+                    onClick={() => setSelectPage(2)}
+                    disabled={selectPage === 2}
+                >
                     <img src="/images/auth/star-border.svg" alt="my otzivi"/>
                     Мои отзывы
                 </button>
-                <button>
-                    <img src="/images/icons/like-border.svg" alt="my favorites"/>
-                    Избранное
-                </button>
+
+                <Link to={"/briefcase"}>
+                    <button>
+                        <img src="/images/icons/like-border.svg" alt="my favorites"/>
+                        Избранное
+                    </button>
+                </Link>
 
                 <div className="line" />
 
-                <button>
+                <button
+                    onClick={() => setSelectPage(3)}
+                    disabled={selectPage === 3}
+                >
                     <img src="/images/auth/settings.svg" alt="settings"/>
-                    Настройки
+                    Данные аккаунта
                 </button>
+
                 <button className={"red"} onClick={handleLogout}>
                     <img src="/images/auth/logout.svg" alt="logout"/>
                     Выйти

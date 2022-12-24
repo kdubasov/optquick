@@ -12,7 +12,7 @@ const AuthUserProductsCard = ({product}) => {
         <div className={"AuthUserProductsCard w-25 m-1 p-2 border"}>
 
             {/*swiper with images for product*/}
-            <div style={{height:200}}>
+            <div style={{height:200,width:200}}>
                 <CardProductSwiper product={product} />
             </div>
 

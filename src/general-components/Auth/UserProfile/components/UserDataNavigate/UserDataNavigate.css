@@ -31,6 +31,9 @@
     align-items: center;
     margin-bottom: .25em;
 }
+.UserDataNavigate h5.name span.add{
+    cursor: pointer;
+}
 .UserDataNavigate .name img{
     margin-left: .25em;
     width: 22px;
@@ -46,7 +49,7 @@
 .UserDataNavigate .reviews img{
     width: 18px;
     margin-top: -3px;
-    margin-left: .15em;
+    margin-left: .25em;
     margin-right: .75em;
 }
 .UserDataNavigate .reviews span{
@@ -60,6 +63,9 @@
 }
 
 /*button nav*/
+.UserDataNavigate .nav a{
+    text-decoration: none;
+}
 .UserDataNavigate .nav button{
     width: 100%;
     margin: .75em 0;
@@ -78,6 +84,20 @@
     width: 22px;
     margin-right: .75em;
     transition: .25s;
+}
+
+/*disable*/
+.UserDataNavigate .nav button:disabled{
+    cursor: default;
+}
+.UserDataNavigate .nav button:disabled img{
+    opacity: .5;
+}
+.UserDataNavigate .nav button:disabled:hover img{
+    margin-right: .75em;
+}
+.UserDataNavigate .nav button:disabled:hover{
+    opacity: 1;
 }
 
 /*hover*/

@@ -26,7 +26,10 @@ const UserProfile = () => {
     //for redact profile check
     const [redactProfile,setRedactProfile] = useState(false);
 
-  return (
+    //выбираем какую страницу отображать
+    const [selectPage, setSelectPage] = useState(1);
+
+    return (
      <div className={'UserProfile'}>
 
          {/*самая верхняя картинка bg*/}
@@ -37,31 +40,48 @@ const UserProfile = () => {
 
          <Container>
              <div className="left">
-                 <UserDataNavigate data={data} />
+                 <UserDataNavigate
+                     data={data}
+                     selectPage={selectPage}
+                     setSelectPage={setSelectPage}
+                 />
              </div>
 
-             {/*если (добавленные) данные о пользователе есть то показываем их если нет показываем форму*/}
-             {
-                 (data.name && data.surname)?
-                     <>
-                         <UserDataAdded
-                             user={user}
-                             userDataAdded={data}
-                             redactProfile={redactProfile}
-                             setRedactProfile={setRedactProfile}
-                         />
-                         <UserReviewsList userId={user.uid} />
-                     </>
-                     :
-                     <AddUserData setRes={setRes} user={user} />
-             }
+             <div className="right">
+                 {/*если (добавленные) данные о пользователе есть то показываем их если нет показываем форму*/}
+                 {
+                     (data.name && data.surname)?
+                         <>
+                             {
+                                 selectPage === 3 &&
+                                 <UserDataAdded
+                                     user={user}
+                                     userDataAdded={data}
+                                     redactProfile={redactProfile}
+                                     setRedactProfile={setRedactProfile}
+                                 />
+                             }
+                             {
+                                 selectPage === 2 &&
+                                 <UserReviewsList userId={user.uid} />
+                             }
+                         </> :
+                         <>
+                             {
+                                 selectPage === 3 &&
+                                 <AddUserData setRes={setRes} user={user} />
+                             }
+                         </>
+                 }
 
-             {redactProfile && <UserDataRedact userData={data} setRes={setRes} />}
 
-             {
-                 user.uid &&
-                 <AuthUserProducts userId={user.uid} />
-             }
+                 {redactProfile && <UserDataRedact userData={data} setRes={setRes} />}
+
+                 {
+                     selectPage === 1 &&
+                     <AuthUserProducts userId={user.uid} />
+                 }
+             </div>
          </Container>
     </div>
   );

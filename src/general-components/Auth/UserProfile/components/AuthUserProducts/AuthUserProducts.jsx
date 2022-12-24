@@ -9,7 +9,7 @@ const AuthUserProducts = ({userId}) => {
     // console.log(userProducts,'data in UserPageProducts');
 
     return (
-        <div className={'AuthUserProducts w-100 my-2 p-1 border'}>
+        <div className={'AuthUserProducts w-100 p-1 border'}>
             <h4><Badge>Мои товары</Badge></h4>
 
             <div className="w-100 d-flex flex-wrap">
