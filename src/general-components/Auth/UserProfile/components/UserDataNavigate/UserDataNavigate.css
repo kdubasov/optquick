@@ -45,6 +45,7 @@
     align-items: center;
     font-weight: 500;
     margin-bottom: 2.5em;
+    cursor: pointer;
 }
 .UserDataNavigate .reviews img{
     width: 18px;

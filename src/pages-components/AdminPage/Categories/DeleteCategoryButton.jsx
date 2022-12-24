@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {handleDeleteCategory} from "../../../pages-functions/AdminPage/Categories/handleDeleteCategory";
-import {Button} from "react-bootstrap";
 
 const DeleteCategoryButton = ({url,text = false}) => {
 
@@ -11,20 +10,18 @@ const DeleteCategoryButton = ({url,text = false}) => {
         <>
             {
                 confirm?
-                    <Button
-                        size={"sm"}
-                        variant={`outline-success`}
+                    <button
+                        className={"but-green"}
                         onClick={() => handleDeleteCategory(url)}
                     >
                         Подтвердить
-                    </Button>:
-                    <Button
-                        size={"sm"}
-                        variant={`outline-danger`}
+                    </button>:
+                    <button
+                        className={"but-red"}
                         onClick={() => setConfirm(true)}
                     >
                         {text ? text : "Удалить"}
-                    </Button>
+                    </button>
             }
         </>
     );

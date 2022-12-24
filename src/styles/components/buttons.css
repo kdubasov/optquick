@@ -22,6 +22,9 @@ button.btn{
     transition: .25s;
     border:none;
 }
+.but-blue.border{
+    border:2px solid var(--bs-blue) !important;
+}
 .but-blue:hover{
     background: var(--bs-blue-hover);
 }
@@ -29,4 +32,30 @@ button.btn{
 /*border radius for all buttons*/
 button.btn, button, .but-green{
     border-radius: var(--def-border-redius) !important;
+}
+
+
+/*light button*/
+.but-light{
+    padding: .5em 1.25em;
+    background: var(--bs-white);
+    color: var(--bs-dark) !important;
+    transition: .25s;
+    border: 2px solid #F5F4FB ;
+}
+.but-light:hover{
+    background: #F5F4FB;
+}
+
+
+/*light button*/
+.but-red{
+    padding: .5em 1.25em;
+    background: var(--bs-white);
+    color: var(--bs-red) !important;
+    transition: .25s;
+    border: 2px solid #F5F4FB ;
+}
+.but-red:hover{
+    background: #F5F4FB;
 }

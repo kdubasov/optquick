@@ -35,6 +35,7 @@ const UserDataNavigate = ({data,selectPage,setSelectPage}) => {
                         src="/images/auth/redact-photo.svg"
                         alt="redact"
                         className={"redact"}
+                        onClick={() => setSelectPage(3)}
                     />
                 }
             </div>
@@ -43,7 +44,7 @@ const UserDataNavigate = ({data,selectPage,setSelectPage}) => {
                 {
                     (data?.name && data?.surname) ?
                         data.surname + " " + data.name:
-                        <span className={"add"}>
+                        <span className={"add"} onClick={() => setSelectPage(3)}>
                             Добавить имя
                         </span>
                 }
@@ -55,7 +56,7 @@ const UserDataNavigate = ({data,selectPage,setSelectPage}) => {
 
             {
                 data?.reviews ?
-                    <p className="reviews">
+                    <p className="reviews" onClick={() => setSelectPage(2)}>
                         {getReviewsGrade(data.reviews)}
                         <img src="/images/auth/star.svg" alt="star"/>
                         <span>

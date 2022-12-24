@@ -1,0 +1,42 @@
+/*container for reviews*/
+.UserReviewsList{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.UserReviewsList h4{
+    margin-bottom: .75em;
+}
+
+.UserReview{
+    width: calc(50% - .5em);
+    height: auto;
+    padding: 2em 1.5em;
+    margin-bottom: 1em;
+    box-shadow: var(--def-shadow);
+    border-radius: var(--def-border-redius);
+}
+.UserReview h6.user{
+    font-weight: 600;
+    margin: 0 0 -3px 0;
+    line-height: 1;
+}
+.UserReview small{
+    font-size: 12px;
+    opacity: .5;
+    margin: 0;
+}
+
+.UserReview .stars{
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+}
+.UserReview .stars img{
+    margin-top: -1px !important;
+    height: 16px;
+}
+.UserReview .stars img:last-child{
+    margin-right: .25em;
+}

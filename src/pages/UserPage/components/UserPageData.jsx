@@ -1,6 +1,6 @@
 import React from 'react';
 import {Alert, Badge, ListGroup, ListGroupItem} from "react-bootstrap";
-import UserReviewsList from "./UserReviews/UserReviewsList";
+import UserReviewsList from "./UserReviews/UserReviewsList/UserReviewsList";
 
 const UserPageData = ({data,userId}) => {
 

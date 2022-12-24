@@ -7,7 +7,7 @@ import {useUserAuth} from "../../../context/AuthContext";
 import {useGetUser} from "./functions/useGetUser";
 import UserDataRedact from "./components/UserDataRedact";
 import AuthUserProducts from "./components/AuthUserProducts/AuthUserProducts";
-import UserReviewsList from "../../../pages/UserPage/components/UserReviews/UserReviewsList";
+import UserReviewsList from "../../../pages/UserPage/components/UserReviews/UserReviewsList/UserReviewsList";
 import "./UserProfile.css";
 import {Container} from "react-bootstrap";
 
@@ -39,6 +39,8 @@ const UserProfile = () => {
          <MessageAlert res={res} />
 
          <Container>
+
+             {/*левый блок с навигацией*/}
              <div className="left">
                  <UserDataNavigate
                      data={data}
@@ -48,38 +50,40 @@ const UserProfile = () => {
              </div>
 
              <div className="right">
-                 {/*если (добавленные) данные о пользователе есть то показываем их если нет показываем форму*/}
-                 {
+
+                 {/*табличка с предложением для заполенения данных (если их нет)*/
+                     (!data.name && !data.surname) &&
+                     <button className={"but-green mb-2"} onClick={() => setSelectPage(3)}>
+                     Вы не заполнилил данные профиля, поэтому пока не можете выкладывать объявления,
+                     вы можете нажать на эту надпись и перейдете к настройке профиля.
+                     </button>
+                 }
+
+                 {/*если (добавленные) данные о пользователе есть то показываем их если нет показываем форму*/
                      (data.name && data.surname)?
-                         <>
-                             {
-                                 selectPage === 3 &&
-                                 <UserDataAdded
-                                     user={user}
-                                     userDataAdded={data}
-                                     redactProfile={redactProfile}
-                                     setRedactProfile={setRedactProfile}
-                                 />
-                             }
-                             {
-                                 selectPage === 2 &&
-                                 <UserReviewsList userId={user.uid} />
-                             }
-                         </> :
-                         <>
-                             {
-                                 selectPage === 3 &&
-                                 <AddUserData setRes={setRes} user={user} />
-                             }
-                         </>
+                         selectPage === 3 &&
+                         <UserDataAdded
+                             user={user}
+                             userDataAdded={data}
+                             redactProfile={redactProfile}
+                             setRedactProfile={setRedactProfile}
+                         /> :
+                         selectPage === 3 &&
+                         <AddUserData setRes={setRes} user={user} />
                  }
 
 
+                 {/*редактировать профиль*/}
                  {redactProfile && <UserDataRedact userData={data} setRes={setRes} />}
 
-                 {
+                 {//мои товары
                      selectPage === 1 &&
                      <AuthUserProducts userId={user.uid} />
+                 }
+
+                 {//отзывы
+                     selectPage === 2 &&
+                     <UserReviewsList userId={user.uid} />
                  }
              </div>
          </Container>
