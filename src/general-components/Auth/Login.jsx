@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {Form, Alert, Badge} from "react-bootstrap";
+import {Form, Alert} from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
@@ -47,7 +47,7 @@ const Login = () => {
     <div className={'container'}>
       <div className="p-4 box w-50 border mt-3">
 
-        <h4><Badge className="mb-3 fw-light">Авторизация</Badge></h4>
+        <h2>Авторизация</h2>
 
         {error && <Alert variant="danger">{error}</Alert>}
 

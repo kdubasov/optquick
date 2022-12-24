@@ -2,10 +2,9 @@ import React, {useState} from "react";
 import AddUserData from "./components/AddUserData";
 import UserDataNavigate from "./components/UserDataNavigate/UserDataNavigate";
 import MessageAlert from "../../MessageAlert/MessageAlert";
-import UserDataAdded from "./components/UserDataAdded";
 import {useUserAuth} from "../../../context/AuthContext";
 import {useGetUser} from "./functions/useGetUser";
-import UserDataRedact from "./components/UserDataRedact";
+import UserDataRedact from "./components/UserDataRedact/UserDataRedact";
 import AuthUserProducts from "./components/AuthUserProducts/AuthUserProducts";
 import UserReviewsList from "../../../pages/UserPage/components/UserReviews/UserReviewsList/UserReviewsList";
 import "./UserProfile.css";
@@ -22,9 +21,6 @@ const UserProfile = () => {
     //user data from database
     const data = useGetUser(`/users/${user.uid}`);
     // console.log(data,'UserDataAdded');
-
-    //for redact profile check
-    const [redactProfile,setRedactProfile] = useState(false);
 
     //выбираем какую страницу отображать
     const [selectPage, setSelectPage] = useState(1);
@@ -62,19 +58,10 @@ const UserProfile = () => {
                  {/*если (добавленные) данные о пользователе есть то показываем их если нет показываем форму*/
                      (data.name && data.surname)?
                          selectPage === 3 &&
-                         <UserDataAdded
-                             user={user}
-                             userDataAdded={data}
-                             redactProfile={redactProfile}
-                             setRedactProfile={setRedactProfile}
-                         /> :
+                         <UserDataRedact userData={data} setRes={setRes} /> :
                          selectPage === 3 &&
                          <AddUserData setRes={setRes} user={user} />
                  }
-
-
-                 {/*редактировать профиль*/}
-                 {redactProfile && <UserDataRedact userData={data} setRes={setRes} />}
 
                  {//мои товары
                      selectPage === 1 &&

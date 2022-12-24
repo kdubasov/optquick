@@ -1,0 +1,45 @@
+.UserDataRedact h4{
+    margin: 1em 0 .75em;
+}
+.UserDataRedact form{
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 2em 1.5em;
+    border-radius: var(--def-border-redius);
+    border: 2px solid #F5F4FB;
+    box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
+}
+
+.UserDataRedact form h5{
+    width: 100%;
+    font-weight: 400;
+    margin: 1.5em 0 .5em;
+}
+
+/*container for input container*/
+.UserDataRedact form .inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/*input container with label*/
+.UserDataRedact .input-container{
+    width: calc(50% - 1em);
+    margin: .35em 0;
+}
+.UserDataRedact .input-container input{
+    padding: .75em;
+    border: 2px solid #F2F2F2;
+    box-shadow: 15px 15px 35px rgba(112, 124, 151, 0.05);
+}
+.UserDataRedact .input-container input::placeholder{
+    opacity: .75;
+}
+
+/*button*/
+.UserDataRedact button{
+    margin-top: 2em;
+    padding: .75em 3em;
+}
