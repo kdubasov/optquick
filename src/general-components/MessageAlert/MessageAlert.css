@@ -1,6 +1,6 @@
 .MessageAlert{
     max-width: 50%;
-    position: absolute;
-    top: 5px;
-    right: 0;
+    position: fixed;
+    top: 10px;
+    right: 10px;
 }

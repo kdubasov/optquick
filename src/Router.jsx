@@ -35,7 +35,7 @@ const Router = () => {
                 <NavbarTop />
 
                 {/*container for developer*/}
-                <Container style={{padding:0,minHeight:"90vh"}}>
+                <div style={{padding:0,minHeight:"90vh"}}>
                     <Routes>
 
                         {/*main page*/}
@@ -100,7 +100,7 @@ const Router = () => {
                         {/*404*/}
                         <Route path={"*"} element={<NotFoundPage />} />
                     </Routes>
-                </Container>
+                </div>
 
                 {/*Footer*/}
                 <FooterBottom />

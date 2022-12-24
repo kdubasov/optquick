@@ -14,7 +14,7 @@ const UserPage = () => {
     const userData = useGetUser(`/users/${userId}`);
 
     return (
-        <div className={`UserPage container`}>
+        <div className={`UserPage`}>
 
             <UserPageData userId={userId} data={userData} />
 

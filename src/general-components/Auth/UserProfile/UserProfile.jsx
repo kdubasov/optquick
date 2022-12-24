@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import AddUserData from "./components/AddUserData";
-import UserData from "./components/UserData";
+import UserDataNavigate from "./components/UserDataNavigate/UserDataNavigate";
 import MessageAlert from "../../MessageAlert/MessageAlert";
 import UserDataAdded from "./components/UserDataAdded";
 import {useUserAuth} from "../../../context/AuthContext";
@@ -8,6 +8,8 @@ import {useGetUser} from "./functions/useGetUser";
 import UserDataRedact from "./components/UserDataRedact";
 import AuthUserProducts from "./components/AuthUserProducts/AuthUserProducts";
 import UserReviewsList from "../../../pages/UserPage/components/UserReviews/UserReviewsList";
+import "./UserProfile.css";
+import {Container} from "react-bootstrap";
 
 const UserProfile = () => {
 
@@ -25,36 +27,42 @@ const UserProfile = () => {
     const [redactProfile,setRedactProfile] = useState(false);
 
   return (
-     <div className={'container d-flex flex-wrap'}>
+     <div className={'UserProfile'}>
 
-         <div className="w-100">
-             <MessageAlert res={res} />
-         </div>
+         {/*самая верхняя картинка bg*/}
+         <div className="top-image" />
 
-         <UserData />
+         {/*alert*/}
+         <MessageAlert res={res} />
 
-         {/*если (добавленные) данные о пользователе есть то показываем их если нет показываем форму*/}
-         {
-             (data.name && data.surname)?
-                 <>
-                     <UserDataAdded
-                         user={user}
-                         userDataAdded={data}
-                         redactProfile={redactProfile}
-                         setRedactProfile={setRedactProfile}
-                     />
-                     <UserReviewsList userId={user.uid} />
-                 </>
-                 :
-                 <AddUserData setRes={setRes} user={user} />
-         }
+         <Container>
+             <div className="left">
+                 <UserDataNavigate data={data} />
+             </div>
 
-         {redactProfile && <UserDataRedact userData={data} setRes={setRes} />}
+             {/*если (добавленные) данные о пользователе есть то показываем их если нет показываем форму*/}
+             {
+                 (data.name && data.surname)?
+                     <>
+                         <UserDataAdded
+                             user={user}
+                             userDataAdded={data}
+                             redactProfile={redactProfile}
+                             setRedactProfile={setRedactProfile}
+                         />
+                         <UserReviewsList userId={user.uid} />
+                     </>
+                     :
+                     <AddUserData setRes={setRes} user={user} />
+             }
 
-         {
-             user.uid &&
-             <AuthUserProducts userId={user.uid} />
-         }
+             {redactProfile && <UserDataRedact userData={data} setRes={setRes} />}
+
+             {
+                 user.uid &&
+                 <AuthUserProducts userId={user.uid} />
+             }
+         </Container>
     </div>
   );
 };

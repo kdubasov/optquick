@@ -1,0 +1,99 @@
+.UserDataNavigate{
+    width: 100%;
+    padding: 1em;
+    background: var(--bs-white);
+    box-shadow: var(--def-shadow);
+    border-radius: var(--def-border-redius);
+}
+
+
+/*автарк*/
+.UserDataNavigate .avatar{
+    position: relative;
+    width: 80px;
+    margin-bottom: 1em;
+}
+.UserDataNavigate .avatar img{
+    width: 100%;
+    border-radius: var(--def-border-redius);
+}
+.UserDataNavigate .avatar img.redact{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/*имя*/
+.UserDataNavigate h5.name{
+    display: flex;
+    align-items: center;
+    margin-bottom: .25em;
+}
+.UserDataNavigate .name img{
+    margin-left: .25em;
+    width: 22px;
+}
+
+/*отзывы*/
+.UserDataNavigate .reviews{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 2.5em;
+}
+.UserDataNavigate .reviews img{
+    width: 18px;
+    margin-top: -3px;
+    margin-left: .15em;
+    margin-right: .75em;
+}
+.UserDataNavigate .reviews span{
+    color: var(--bs-blue);
+}
+
+/*меню*/
+.UserDataNavigate .nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*button nav*/
+.UserDataNavigate .nav button{
+    width: 100%;
+    margin: .75em 0;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 15px !important;
+    transition: .25s;
+}
+.UserDataNavigate .nav button.red{
+    color: var(--bs-red);
+}
+.UserDataNavigate .nav button img{
+    width: 22px;
+    margin-right: .75em;
+    transition: .25s;
+}
+
+/*hover*/
+.UserDataNavigate .nav button:hover{
+    opacity: .5;
+}
+.UserDataNavigate .nav button:hover img{
+    margin-right: 1em;
+}
+
+
+/*hr*/
+.UserDataNavigate .nav .line{
+    width: 100%;
+    height: 1px;
+    margin: 1em 0;
+    background: var(--bs-dark);
+    opacity: .25;
+}
