@@ -1,0 +1,12 @@
+/*отзывы*/
+.UserPageData .reviews{
+    margin-bottom: 0;
+}
+
+/*дата регистрации*/
+.UserPageData .date{
+    margin: 2em 0;
+}
+.UserPageData .date strong{
+    font-weight: 600 !important;
+}

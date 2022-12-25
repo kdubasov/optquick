@@ -1,0 +1,10 @@
+.UserPageProducts h4{
+    margin-bottom: .75em;
+}
+
+/*prods-container*/
+.UserPageProducts .prods-container{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}

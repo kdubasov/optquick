@@ -1,0 +1,59 @@
+.CardProduct{
+    width: calc(33.3% - 1em);
+    margin: 0 1em 1em 0;
+    border-radius: var(--def-border-redius);
+    box-shadow: var(--def-shadow);
+}
+
+/*slider container*/
+.CardProduct .slider-container{
+    height: 220px;
+}
+
+/*content container*/
+.CardProduct .content{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5em 1em;
+}
+
+/*Название*/
+.CardProduct .content h6{
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/*Цена*/
+.CardProduct .content h5{
+    width: 100%;
+    font-weight: 700;
+    margin-bottom: -3px;
+    line-height: 1;
+}
+
+/*Мин заказ*/
+.CardProduct .content .min-order{
+    width: 100%;
+    margin-bottom: 1.5em;
+    color: var(--bs-blue);
+    text-decoration: underline;
+}
+
+/*ссылка*/
+.CardProduct .content a{
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+/*в избранное*/
+.CardProduct .briefcase-container{
+    z-index: 10;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/*проверка на товар пользователя*/
+.CardProduct .my-product{
+    width: 100%;
+}

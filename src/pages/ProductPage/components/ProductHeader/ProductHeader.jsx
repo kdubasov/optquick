@@ -73,8 +73,8 @@ const ProductHeader = ({productData,setAlertData}) => {
                             productData.showPhoneNumber &&
                             <p className={"m-0"}>
                                 Номер телефона:
-                                <a href={`tel:${user.phoneNumber}`} className={"mx-1"}>
-                                    {user.phoneNumber}
+                                <a href={`tel:${userData.phoneNumber}`} className={"mx-1"}>
+                                    {userData.phoneNumber}
                                 </a>
                             </p>
                         }

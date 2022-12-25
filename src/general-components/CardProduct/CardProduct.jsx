@@ -1,11 +1,11 @@
 import React from 'react';
-import {Badge, Button} from "react-bootstrap";
 import CardProductSwiper from "./CardProductSwiper/CardProductSwiper";
 import {Link} from "react-router-dom";
 import BriefcaseButton from "../BriefcaseButton/BriefcaseButton";
 import {getAdmin} from "../../pages-functions/AdminPage/getAdmin";
 import DeleteCategoryButton from "../../pages-components/AdminPage/Categories/DeleteCategoryButton";
 import {useUserAuth} from "../../context/AuthContext";
+import "./CardProduct.css";
 
 const CardProduct = ({product}) => {
 
@@ -14,56 +14,50 @@ const CardProduct = ({product}) => {
     const databaseUrl = `/categories/${product.selectCategory}/subcategories/${product.selectSubCategory}/products/${product.id}`;
 
     return (
-        <div style={{width:"32%"}} className={"CardProduct m-1 p-2 border"}>
+        <div className={"CardProduct"}>
+
+            {/*добавить удлаить из избранного*/}
+            <div className={"briefcase-container"}>
+                <BriefcaseButton elemData={product} setAlertData={false} text={false} />
+            </div>
 
             {/*swiper with images for product*/}
-            <div style={{height:200}}>
+            <div className={"slider-container"}>
                 <CardProductSwiper product={product} />
             </div>
 
-            {/*Название*/}
-            <Badge bg={"secondary"}>{product.title}</Badge>
-            <br />
-            {/*Цена*/}
-            <small>{product.price + '₽/шт'}</small>
-            <br />
-            {/*Мин заказ*/}
-            <small style={{fontSize:12,textDecoration:"underline"}}>
-                Минимальный заказ от {product.minOrder} шт.
-            </small>
-            <br />
-            {/*Доставка*/}
-            {
-                product.deliveryPeriod &&
-                <Badge>
-                    Доставка: {product.deliveryPeriod}дн.
-                </Badge>
-            }
-            {/*ссылка на страницу товара*/}
-            <Link to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}>
-                <Button size={"sm"} variant={"outline-dark"} className={"mt-2 w-100"}>
+
+            <div className="content">
+                {/*Название*/}
+                <h6>{product.title}</h6>
+
+
+                {/*Цена*/}
+                <h5>{product.price + " ₽/шт"}</h5>
+
+                {/*Мин заказ*/}
+                <small className={"min-order"}>
+                    Минимальный заказ от {product.minOrder} шт.
+                </small>
+
+                {/*ссылка на страницу товара*/}
+                <Link
+                    className={"w-100 but-blue"}
+                    to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}
+                >
                     Перейти к товару
-                </Button>
+                </Link>
 
-                <BriefcaseButton elemData={product} setAlertData={false} text={false} />
-            </Link>
+                {//delete product button with check admin
+                    getAdmin() &&
+                    <DeleteCategoryButton url={databaseUrl} text={"Удалить товар"} />
+                }
 
-            {/*/дата публикации товара*/}
-            <p className={"m-0"} style={{fontSize:11,opacity:.8}}>
-                Дата публикации: {product.date}
-            </p>
-
-            {/*delete product button with check admin*/}
-            {
-                getAdmin() &&
-                <DeleteCategoryButton url={databaseUrl} text={"Удалить товар"} />
-            }
-
-            {/*проверка на товар пользователя который сейчас смотрит его*/}
-            {
-                (user && (user.uid === product.userUid)) &&
-                <Badge>Ваше объявление</Badge>
-            }
+                {//проверка на товар пользователя который сейчас смотрит его
+                    (user && (user.uid === product.userUid)) &&
+                    <p className={"my-product"}>Ваше объявление</p>
+                }
+            </div>
         </div>
     );
 };

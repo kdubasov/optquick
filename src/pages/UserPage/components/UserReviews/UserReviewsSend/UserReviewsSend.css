@@ -1,0 +1,32 @@
+.UserReviewsSend{
+    margin: 1em 0;
+}
+.UserReviewsSend h5{
+    margin-bottom: .75em;
+}
+
+/*form*/
+.UserReviewsSend form{
+    padding: 2em;
+    border: 2px solid #F5F4FB;
+    box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
+    border-radius: var(--def-border-redius);
+}
+
+/*label*/
+.UserReviewsSend form label{
+    margin-bottom: .5em;
+}
+
+/*input and textarea*/
+.UserReviewsSend form input,
+.UserReviewsSend form textarea{
+    margin-bottom: 1.5em;
+    padding: .5em .75em;
+    border: 2px solid #F2F2F2;
+    box-shadow: 15px 15px 35px rgba(112, 124, 151, 0.05);
+}
+.UserReviewsSend form input::placeholder,
+.UserReviewsSend form textarea::placeholder{
+    opacity: .5;
+}

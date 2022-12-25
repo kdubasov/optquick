@@ -1,11 +1,13 @@
-.UserProfile .container{
+.UserProfile .container,
+.UserPage .container{
     display: flex;
     justify-content: space-between;
     min-height: 800px;
 }
 
 /*самая верхняя картинка*/
-.UserProfile .top-image{
+.UserProfile .top-image,
+.UserPage .top-image{
     position: absolute;
     width: 100%;
     height: 200px;
@@ -13,13 +15,15 @@
 }
 
 /*for navigation block*/
-.UserProfile .left{
+.UserProfile .left,
+.UserPage .left{
     padding-top: 100px;
     width: 280px;
 }
 
 /*right block*/
-.UserProfile .right{
+.UserProfile .right,
+.UserPage .right{
     width: calc(100% - 280px - 20px);
     margin-top: 220px;
 }
