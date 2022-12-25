@@ -1,0 +1,67 @@
+.UserContacts{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.UserContacts h4{
+    width: 100%;
+    margin-bottom: .75em;
+}
+
+/*soc-block w-100*/
+.UserContacts .soc-block-link{
+    width: 100%;
+}
+.UserContacts .soc-block{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-bottom: .5em;
+    padding: 2em;
+    border-radius: var(--def-border-redius);
+    background-color: var(--bs-blue);
+    background-image: url("/public/images/auth/vk-bg.svg");
+    background-size: cover;
+    transition: .3s;
+}
+.UserContacts .soc-block:hover{
+    opacity: .75;
+}
+.UserContacts .soc-block h4{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    color: var(--bs-white);
+}
+.UserContacts .soc-block .arrow{
+    width: 15px;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    transform: rotate(-90deg);
+}
+
+/*default block*/
+.UserContacts .def-block{
+    width: calc(50% - .5em);
+    height: auto;
+    margin: .5em 0;
+    padding: 1em;
+    text-align: center;
+    color: var(--bs-white);
+    background: var(--bs-blue);
+    border-radius: var(--def-border-redius);
+    cursor: pointer;
+    transition: .3s;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.UserContacts .def-block:hover{
+    opacity: .75;
+}
+.UserContacts .def-block p.small{
+    font-weight: 300;
+}

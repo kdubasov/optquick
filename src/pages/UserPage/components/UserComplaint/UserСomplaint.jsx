@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {Alert, Button, Form, FormControl} from "react-bootstrap";
+import {Alert, Form, FormControl} from "react-bootstrap";
 import {ref, set} from "firebase/database";
 import {realtimeDB} from "../../../../database/firebase-connect";
 import {getDate} from "../../../../functions/getDate";
+import "./UserComplaint.css";
 
 //пожаловаться на юзера
 const UserComplaint = ({nowUser,userId,userData}) => {
@@ -47,34 +48,40 @@ const UserComplaint = ({nowUser,userId,userData}) => {
     }
 
     return (
-        <div className={"UserComplaintModal"}>
+        <div className={"UserComplaint"}>
             <h4>Пожаловаться на продавца</h4>
 
             <Form onSubmit={handleSend}>
-                <Alert className={"w-50 small p-2"}>Ваш телефон: {nowUser.phoneNumber}</Alert>
 
-                {
-                    (userData && userData.email) &&
-                    <Alert className={"w-50 small p-2"}>Ваш емаил: {userData.email}</Alert>
-                }
+                <p className={"small"}>
+                    Подробнее опишите вашу проблему с данным продавцом,
+                    мы постараемся принять меры как можно быстрее.
+                    Спасибо, что помогаете сделать наш сервис лучше!
+                </p>
+
+                <label>
+                    Введите текст жалобы
+                </label>
 
                 <FormControl
                     required
                     as={"textarea"}
                     size={"sm"}
-                    placeholder={"Введите сообщение жалобы*"}
+                    placeholder={"Обязательно к заполнению"}
                     value={message}
                     onChange={e => setMessage(e.target.value)}
                 />
 
                 {//aлерт с текстом после отправки формы
                     res.message &&
-                    <Alert variant={res.err ? "danger" : "success"} className={"small mt-2 p-2"}>
+                    <Alert variant={res.err ? "danger" : "success"} className={"small mb-4 p-2"}>
                         {res.message}
                     </Alert>
                 }
 
-                <Button className={"my-1"} type={"submit"} size={"sm"}>Отправить</Button>
+                <button type={"submit"} className={"but-blue px-5"}>
+                    Отправить жалобу
+                </button>
 
             </Form>
         </div>

@@ -6,7 +6,7 @@ import "./UserDataRedact.css";
 
 const UserDataRedact = ({userData,setRes}) => {
 
-    console.log(userData, 'userData UserDataRedact')
+    // console.log(userData, 'userData UserDataRedact');
 
     //user data state
     const [userDataState,setUserDataState] = useState(userData);
@@ -68,6 +68,14 @@ const UserDataRedact = ({userData,setRes}) => {
                     {getInput('name','Ваше имя',true)}
                     {getInput('surname','Ваша фамилия',true)}
                     {getInput('email','Электронная почта',true)}
+                    <div className={"input-container"}>
+                        <label className={"small"}>Номер телефона</label>
+                        <Form.Control
+                            size={"sm"}
+                            value={user?.phoneNumber + " (Нельзя поменять)"}
+                            disabled
+                        />
+                    </div>
                 </div>
 
                 <div className="inner">

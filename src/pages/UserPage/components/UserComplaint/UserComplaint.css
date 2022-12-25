@@ -1,0 +1,23 @@
+.UserComplaint h4{
+    margin-bottom: .75em;
+}
+
+/*form*/
+.UserComplaint form{
+    width: 100%;
+    padding: 2em;
+    border: 2px solid #F5F4FB;
+    box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
+}
+
+.UserComplaint form label{
+    font-weight: 500;
+    margin-bottom: .5em;
+}
+.UserComplaint form textarea{
+    height: 100px;
+    margin-bottom: 2em;
+}
+.UserComplaint form textarea::placeholder{
+    opacity: .5;
+}

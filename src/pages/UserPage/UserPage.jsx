@@ -7,8 +7,9 @@ import UserReviewsSend from "./components/UserReviews/UserReviewsSend/UserReview
 import {useUserAuth} from "../../context/AuthContext";
 import UserReviewsList from "./components/UserReviews/UserReviewsList/UserReviewsList";
 import {Alert, Container} from "react-bootstrap";
-import UserComplaint from "./components/UserReviews/UserСomplaint";
+import UserComplaint from "./components/UserComplaint/UserСomplaint";
 import "./UserPage.css";
+import UserContacts from "./components/UserContacts/UserContacts";
 
 const UserPage = () => {
 
@@ -62,6 +63,11 @@ const UserPage = () => {
                                     </Alert>
                             }
                         </>
+                    }
+
+                    {
+                        selectPage === 3 &&
+                        <UserContacts userData={userData} />
                     }
 
                     {/*пожаловаться на продавца*/}
