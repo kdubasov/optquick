@@ -1,0 +1,19 @@
+.BriefcasePage{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+/*products container*/
+.BriefcasePage .products-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*alert*/
+.BriefcasePage .alert{
+    padding: 1.5em !important;
+}
+.BriefcasePage .alert a{
+    color: var(--bs-white);
+}

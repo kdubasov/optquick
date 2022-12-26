@@ -35,7 +35,9 @@ const CardProductSwiper = ({product}) => {
         );
     }else {
         return (
-            <Spinner animation={"border"} variant={"primary"} />
+            <div className={"CardProductSwiper wait"}>
+                <Spinner animation={"border"} variant={"dark"} />
+            </div>
         )
     }
 };

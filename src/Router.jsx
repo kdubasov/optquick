@@ -5,7 +5,7 @@ import NavbarTop from "./general-components/NavbarTop/NavbarTop";
 import {UserAuthContextProvider} from "./context/AuthContext";
 import CheckLoginRoute from "./general-components/Auth/CheckLoginRoute";
 import UserProfile from "./general-components/Auth/UserProfile/UserProfile";
-import Login from "./general-components/Auth/Login";
+import Login from "./general-components/Auth/Login/Login";
 import AdminPage from "./pages/AdminPage/AdminPage";
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import SubcategoriesPage from "./pages/SubcategoriesPage/SubcategoriesPage";
@@ -17,7 +17,6 @@ import RedactUserProduct from "./general-components/Auth/UserProfile/components/
 import BriefcasePage from "./pages/BriefcasePage/BriefcasePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import FooterBottom from "./general-components/FooterBottom/FooterBottom";
-import {Container} from "react-bootstrap";
 import ScrollToTop from "./functions/scrollToTop";
 
 

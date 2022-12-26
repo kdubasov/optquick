@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {Form, Alert} from "react-bootstrap";
-import { Button } from "react-bootstrap";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-import { useUserAuth } from "../../context/AuthContext";
+import { useUserAuth } from "../../../context/AuthContext";
+import "./Login.css";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -44,55 +44,54 @@ const Login = () => {
   };
 
   return (
-    <div className={'container'}>
-      <div className="p-4 box w-50 border mt-3">
+    <div className={'Login'}>
 
-        <h2>Авторизация</h2>
+        <h3 className={"title"}>
+          Авторизация
+        </h3>
+        <p className="small">
+          Просто введите свой телефон, затем вам прийдет смс с кодом,
+          вам нужно будет ввести этот код в следующем открывшемся окне.
+        </p>
 
         {error && <Alert variant="danger">{error}</Alert>}
 
         <Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className={"PhoneInput-container"}>
             <PhoneInput
-                className={"w-75"}
                 defaultCountry={"RU"}
                 value={number}
                 onChange={setNumber}
                 placeholder="Введите номер телефона"
+                className={"phone-input"}
             />
-            <div className={'mt-3'} id="recaptcha-container" />
           </Form.Group>
 
-          <div className="button-right">
+          <div id="recaptcha-container" />
+
+          <div className="buttons-container">
             <Link to="/">
-              <Button size={"sm"} variant="secondary">На главную</Button>
+              <button className={"but-light"}>На главную</button>
             </Link>
 
-            <Button size={"sm"} type="submit" className={'mx-1'}>
+            <button type="submit" className={'but-green mx-2'}>
               Далее
-            </Button>
+            </button>
           </div>
         </Form>
 
         <Form onSubmit={verifyOtp} style={{ display: flag ? "block" : "none" }}>
-          <Form.Group className="mb-3" controlId="formBasicOtp">
             <Form.Control
-              type="otp"
-              placeholder="Enter OTP"
-              onChange={(e) => setOtp(e.target.value)}
+                className={"code"}
+                type="otp"
+                placeholder="Введите код из смс"
+                onChange={(e) => setOtp(e.target.value)}
             />
-          </Form.Group>
-          <div className="button-right">
-            <Link to="/login">
-              <Button size={"sm"} variant="secondary">Назад</Button>
-            </Link>
 
-            <Button size={"sm"} type="submit" className={'mx-1'}>
+            <button className={"but-green px-5"} type="submit">
               Отправить
-            </Button>
-          </div>
+            </button>
         </Form>
-      </div>
     </div>
   );
 };

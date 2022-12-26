@@ -1,0 +1,16 @@
+.PostProductPage{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+/*alert*/
+.PostProductPage .alert{
+    padding: 2em 0!important;
+}
+.PostProductPage .alert button{
+    margin-top: 1em;
+}
+.PostProductPage .alert button a{
+    color: var(--bs-white);
+    text-decoration: none;
+}

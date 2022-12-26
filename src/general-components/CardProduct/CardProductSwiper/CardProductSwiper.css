@@ -33,3 +33,9 @@
     background: var(--bs-blue);
     opacity: 1;
 }
+
+.CardProductSwiper.wait{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

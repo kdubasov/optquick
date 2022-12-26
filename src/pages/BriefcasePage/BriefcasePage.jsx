@@ -1,10 +1,11 @@
 import React from 'react';
-import {Alert, Badge} from "react-bootstrap";
+import {Alert, Container} from "react-bootstrap";
 import {useGetBriefcaseProducts} from "../../pages-functions/Briefcase/useGetBriefcaseProducts";
 import {useUserAuth} from "../../context/AuthContext";
 import {useGetBriefcaseData} from "../../pages-functions/Briefcase/useGetBriefcaseData";
 import CardProduct from "../../general-components/CardProduct/CardProduct";
 import {Link} from "react-router-dom";
+import "./BriefcasePage.css";
 
 const BriefcasePage = () => {
 
@@ -20,10 +21,12 @@ const BriefcasePage = () => {
     // console.log(briefcaseProducts,'data in BriefcasePage');
 
     return (
-        <div className={'BriefcasePage py-3 container'}>
-            <h4><Badge>Избранные товары</Badge></h4>
+        <Container className={'BriefcasePage'}>
+            <h3 className={"title"}>
+                Избранные товары
+            </h3>
 
-            <div className="w-100 d-flex flex-wrap">
+            <div className="products-container">
                 {
                     Boolean(briefcaseProducts.length) &&
                     briefcaseProducts.map(product => (
@@ -34,13 +37,13 @@ const BriefcasePage = () => {
 
             {
                 !Boolean(briefcaseProducts.length) &&
-                <Alert className={"w-50 p-2 small"}>
+                <Alert className={"small"}>
                     Вы не добавили ни одного товара в избранное. Вы можете
                     <Link to={'/categories'} className={"mx-1"}>перейти в каталог</Link>
                     товаров и выбрать интересные вам товары.
                 </Alert>
             }
-        </div>
+        </Container>
     );
 };
 

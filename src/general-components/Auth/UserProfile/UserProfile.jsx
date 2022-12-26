@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import AddUserData from "./components/AddUserData";
+import AddUserData from "./components/AddUserData/AddUserData";
 import UserDataNavigate from "./components/UserDataNavigate/UserDataNavigate";
 import MessageAlert from "../../MessageAlert/MessageAlert";
 import {useUserAuth} from "../../../context/AuthContext";

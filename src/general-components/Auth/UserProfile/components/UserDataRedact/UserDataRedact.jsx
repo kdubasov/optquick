@@ -11,6 +11,7 @@ const UserDataRedact = ({userData,setRes}) => {
     //user data state
     const [userDataState,setUserDataState] = useState(userData);
 
+    //user data context
     const { user } = useUserAuth();
 
     //for getting input for form add user
