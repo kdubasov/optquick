@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import AddCategory from "../../pages-components/AdminPage/Categories/AddCategory";
 import MessageAlert from "../../general-components/MessageAlert/MessageAlert";
-import ListCategory from "../../pages-components/AdminPage/Categories/ListCategory";
+import ListCategory from "../../pages-components/AdminPage/Categories/ListCategoty/ListCategory";
 import {Badge, Spinner} from "react-bootstrap";
 import AddProduct from "../../pages-components/AdminPage/Products/AddProducts/AddProduct";
 import ListProducts from "../../pages-components/AdminPage/Products/ListProducts";

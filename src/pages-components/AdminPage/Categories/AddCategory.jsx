@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Badge, Button, FloatingLabel, Form} from "react-bootstrap";
+import {Badge, Button, Form} from "react-bootstrap";
 import {handleAddCategory} from "../../../pages-functions/AdminPage/Categories/handleAddCategory";
 import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
 
@@ -10,6 +10,7 @@ const AddCategory = ({setRes}) => {
         id:'',
         title:'',
         image:'',
+        iconImage:'',
     })
 
 
@@ -20,6 +21,7 @@ const AddCategory = ({setRes}) => {
         id:'',
         title:'',
         image:'',
+        iconImage:'',
     })
 
     //for changes inputs
@@ -32,14 +34,12 @@ const AddCategory = ({setRes}) => {
     //get input for verstka
     const getInput = (value,state,setState) =>{
         return(
-            <FloatingLabel label={value} className={`mt-1 mb-1`}>
-                <Form.Control
-                    required={true}
-                    value={state[value]}
-                    onChange={e => handleChange(e.target.value,value,state,setState)}
-                    placeholder={value}
-                />
-            </FloatingLabel>
+            <Form.Control
+                required={true}
+                value={state[value]}
+                onChange={e => handleChange(e.target.value,value,state,setState)}
+                placeholder={value}
+            />
         )
     }
 
@@ -60,7 +60,7 @@ const AddCategory = ({setRes}) => {
             setRes({error:"Выберите родительскую категорию.",res:false})
             return false
         }
-        await handleAddCategory(e,url,(state.id).trim(),(state.title).trim(),state.image,state === subCategory && selectVal)
+        await handleAddCategory(e,url,state,state === subCategory && selectVal)
             .then(() => setRes({error:false,res:"Добавлено."}))
             .catch(() => setRes({error:"Ошибка.",res:false}))
             .finally(() => setSelectVal(""))
@@ -68,7 +68,7 @@ const AddCategory = ({setRes}) => {
         //delete message
         setTimeout(() => setRes({error:false,res:false}),4000)
 
-        setState({id:'', title:'', image:'',})
+        setState({id:'', title:'', image:'',iconImage:'',})
     }
 
     return (

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
+import {useGetCategory} from "../../../../pages-functions/AdminPage/Categories/useGetCategory";
 import {ListGroup, Form, Badge} from "react-bootstrap";
 import ListItemCategory from "./ListItemCategory";
 
