@@ -52,7 +52,7 @@ const AuthUserProductsCard = ({product}) => {
                 {/*ссылка на страницу товара*/}
                 <Link to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}>
                     <button className={"w-100 but-blue border"}>
-                        Подробнеее
+                        Подробнее
                     </button>
                 </Link>
 

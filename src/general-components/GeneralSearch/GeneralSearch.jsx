@@ -23,15 +23,17 @@ const GeneralSearch = () => {
             <NavbarCategories />
 
             {/*input search*/}
-            <FormControl
-                size={"sm"}
-                placeholder={"Поиск по категориям, подкатегориям и товарам."}
-                value={query}
-                onChange={e => setQuery(e.target.value)}
-                onFocus={() => setFocus(true)}
-            />
+            <div className="input-container">
+                <FormControl
+                    size={"sm"}
+                    placeholder={"Поиск по категориям, подкатегориям и товарам."}
+                    value={query}
+                    onChange={e => setQuery(e.target.value)}
+                    onFocus={() => setFocus(true)}
+                />
 
-            {focus && <GeneralSearchRes result={data} setFocus={setFocus} />}
+                {focus && <GeneralSearchRes result={data} setFocus={setFocus} />}
+            </div>
         </div>
     );
 };

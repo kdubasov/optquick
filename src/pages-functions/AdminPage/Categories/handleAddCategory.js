@@ -5,7 +5,7 @@ export const handleAddCategory = (e,url,state,sub = "") =>{
 
     e.preventDefault()
 
-    return set(ref(realtimeDB, `${url}/${state.id}`),{
+    return set(ref(realtimeDB, `${url}/${state.id.trim()}`),{
         id: state.id.trim(),
         title: state.title.trim(),
         image: state.image,

@@ -2,12 +2,18 @@
     padding: 1em 0;
     display: flex;
     justify-content: space-between;
-    align-content: center;
     flex-wrap: wrap;
 }
 
+.GeneralSearch .input-container{
+    height: inherit !important;
+    display: flex;
+    align-content: center;
+    width: calc(100% - 200px - .5em);
+    position: relative;
+}
 /*input search*/
 .GeneralSearch input{
-    width: calc(100% - 200px - .5em);
+    width: 100%;
     border-radius: var(--def-border-redius) !important;
 }

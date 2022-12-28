@@ -1,0 +1,61 @@
+.GeneralSearchRes{
+    width: 100%;
+    /*max height*/
+    max-height: 70vh;
+    min-height: 10px !important;
+    padding: 1em;
+    z-index: 2;
+    background: var(--bs-white);
+    box-shadow: var(--def-shadow);
+    border-radius: var(--def-border-redius);
+    overflow: auto;
+
+    position: absolute;
+    top: 45px;
+}
+
+/*header with buttons*/
+.GeneralSearchRes header{
+    width: 100%;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+.GeneralSearchRes header button,
+.GeneralSearchRes header a{
+    width: calc(50% - .5em);
+}
+.GeneralSearchRes header button:last-child{
+    width: 100%;
+}
+
+/*block with title and container for links*/
+.GeneralSearchRes .block{
+    margin-bottom: .5em;
+}
+
+/*inner block with links*/
+.GeneralSearchRes h5{
+    margin: .15em 0;
+    font-weight: 700;
+}
+.GeneralSearchRes .inner{
+    padding: .05em 0;
+    display: flex;
+    flex-direction: column;
+}
+.GeneralSearchRes .inner a{
+    text-decoration: none;
+    color: var(--bs-dark);
+    padding: .25em 0;
+    transition: .25s;
+}
+.GeneralSearchRes .inner a:hover{
+    color: var(--bs-blue);
+}
+
+/*no result text*/
+.GeneralSearchRes p.no-res{
+    opacity: .5;
+    margin: 0;
+}

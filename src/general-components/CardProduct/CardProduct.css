@@ -56,4 +56,5 @@
 /*проверка на товар пользователя*/
 .CardProduct .my-product{
     width: 100%;
+    margin: 0;
 }

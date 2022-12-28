@@ -25,11 +25,14 @@
     padding: .25em;
     text-align: center;
     border: 2px solid #F2F2F2;
-    font-size: 2em;
+    font-size: 20px !important;
     font-weight: 800;
     border-radius: var(--def-border-redius);
     box-shadow: 15px 15px 35px rgba(112, 124, 151, 0.05);
     transition: .25s;
+}
+.Login input.code{
+    font-size: 30px !important;
 }
 .Login input.code{
     margin-bottom: 1em;

@@ -1,54 +1,77 @@
-import React from 'react';
-import {Alert, ListGroup, Offcanvas} from "react-bootstrap";
+import React, {useEffect, useState} from 'react';
+import {Alert, Offcanvas} from "react-bootstrap";
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
 import {Link} from "react-router-dom";
 
+//блок для отображения всех категорий и подкатегорий
 const NavbarCategoriesOffcanvas = ({showNavCateg, handleClose}) => {
 
-    //блок для отображения всех категорий и подкатегорий
+    //выбранная категория
+    const [categorySelect,setCategorySelect] = useState("");
+    const [subcategory,setSubcategory] = useState([]);
+    const [noSubcateg,setNoSubcateg] = useState("");
+    // console.log(subcategory,"subcategory in NavbarCategoriesOffcanvas");
 
     const categories = useGetCategory("/categories");
     // console.log(categories,'NavbarCategoriesOffcanvas categories');
 
+    useEffect(() => {
+        if (categorySelect){
+            if(categories.filter(elem => elem.id === categorySelect)[0]["subcategories"]){
+                setNoSubcateg("")
+                setSubcategory(Object.values(categories.filter(elem => elem.id === categorySelect)[0]["subcategories"]))
+            }else {
+                setSubcategory([])
+                setNoSubcateg("Подкатегории не найдены.")
+            }
+        }
+    }, [categories,categorySelect]);
+
+
     return (
-        <Offcanvas show={showNavCateg} onHide={handleClose}>
+        <Offcanvas className={"NavbarCategoriesOffcanvas"} show={showNavCateg} onHide={handleClose}>
 
             <Offcanvas.Header closeButton>
-                <h4 className={"m-0"}>
-                    Все категории
-                </h4>
+                <h5 className={"m-0"}>Список категорий</h5>
             </Offcanvas.Header>
 
             <Offcanvas.Body>
                 {
                     categories.length ?
-                        <ListGroup className={"small"}>
-                            {
-                                categories.map((category) => (
-                                    <ListGroup.Item key={category.id}>
-                                        <Link to={`/categories/${category.id}`}>
+                        <div className={"content"}>
+                            <div className={"left"}>
+                                {
+                                    categories.map(category => (
+                                        <button key={category.id} onClick={() => setCategorySelect(category.id)}>
                                             <img src={category.iconImage} alt={category.title} width={30} />
                                             {category.title}
-                                        </Link>
-                                        <ListGroup className={"small"}>
-                                            {
-                                                category.subcategories &&
-                                                (Object.values(category.subcategories)).map((sub) => (
-                                                    <ListGroup.Item key={sub.id} action>
-                                                        <Link to={`/categories/${category.id}/${sub.id}`}>
-                                                            <img src={sub.iconImage} alt={sub.title} width={30} />
-                                                            {sub.title}
-                                                        </Link>
-                                                    </ListGroup.Item>
-                                                ))
-                                            }
-                                        </ListGroup>
-                                    </ListGroup.Item>
-                                ))
+                                        </button>
+                                    ))
+                                }
+                            </div>
+                            {
+                                (Boolean(subcategory.length) || noSubcateg) &&
+                                <div className={"right"}>
+                                    {
+                                        subcategory.map(sub => (
+                                            <Link to={`/categories/${sub.category}/${sub.id}`} key={sub.id}>
+                                                {sub.title}
+                                            </Link>
+                                        ))
+                                    }
+                                    {
+                                        noSubcateg &&
+                                        <div className={"cont-noSubcateg"}>
+                                            <p className={"small"}>
+                                                {noSubcateg}
+                                            </p>
+                                        </div>
+                                    }
+                                </div>
                             }
-                        </ListGroup> :
+                        </div> :
                         <Alert className={"small p-2"}>
-                            Полный список категорий пока не доступен, пожалуйста, попробуйте позже.
+                            Полный список категорий пока недоступен, пожалуйста, попробуйте позже.
                         </Alert>
                 }
             </Offcanvas.Body>

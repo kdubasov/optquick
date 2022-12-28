@@ -1,77 +1,82 @@
 import React from 'react';
-import {Alert, Badge, Button, ListGroup} from "react-bootstrap";
-import CardProduct from "../../CardProduct/CardProduct";
-import SubCard from "../../../pages-components/SubcategoriesComps/SubCard";
-import CategoriesCard from "../../../pages-components/CategoriesComps/CategCard";
+import "./GeneralSearchRes.css";
+import {Link} from "react-router-dom";
 
 const GeneralSearchRes = ({result,setFocus}) => {
 
-    if (Object.values(result).length){
-        return (
-            <div className={'GeneralSearchRes mt-2 border'} style={{minHeight:200}}>
+    // console.log(result);
 
-                {/*кнопка для того чтобы скрыть результаты поиска*/}
-                <Button onClick={() => setFocus(false)} className={"m-1"} size={"sm"}>
+    return (
+        <div className={'GeneralSearchRes'} style={{minHeight:200}}>
+
+            {/*кнопка для того чтобы скрыть результаты поиска*/}
+            <header>
+                <button onClick={() => setFocus(false)} className={"but-blue"}>
                     Скрыть результаты поиска
-                </Button>
+                </button>
+                <Link to={"/categories"}>
+                    <button onClick={() => setFocus(false)} className={"but-green"}>
+                        Перейти к каталогу
+                    </button>
+                </Link>
+            </header>
 
-                <div className={"d-flex flex-wrap justify-content-between m-1 p-3 border"}>
-                    <Badge className={"w-100"}>Товары</Badge>
+            <div className={"block"}>
+                {
+                    result.products.length ?
+                        <h5>Товары</h5>:
+                        <p className={"no-res small"}>Товары по данному запросу не найдены</p>
+                }
+                <div className="inner">
                     {
-                        result.products
-                            .slice(0,5)
-                            .map(prod => (
-                            <CardProduct key={prod.id} product={prod} />
+                        result.products.slice(0,5).map(prod => (
+                            <Link
+                                to={`/categories/${prod.selectCategory}/${prod.selectSubCategory}/${prod.id}`}
+                                key={prod.id}
+                            >
+                                {prod.title}
+                            </Link>
                         ))
-                    }
-                    {
-                        !result.products.length &&
-                        <Alert className={"p-2 small m-0"}>Товары по данному запросу не найдены</Alert>
-                    }
-                </div>
-
-                <div className={"d-flex flex-wrap m-1 p-3 border"}>
-                    <Badge className={"w-100"}>Подкатегории</Badge>
-                    <ListGroup>
-                        {
-                            result.subcategories
-                                .slice(0,5)
-                                .map(sub => (
-                                <SubCard key={sub.id} sub={sub} />
-                            ))
-                        }
-                    </ListGroup>
-                    {
-                        !result.subcategories.length &&
-                        <Alert className={"p-2 small m-0"}>Подкатегории по данному запросу не найдены</Alert>
-                    }
-                </div>
-
-                <div className={"d-flex flex-wrap m-1 p-3 border"}>
-                    <Badge className={"w-100"}>Категории</Badge>
-                    <ListGroup>
-                        {
-                            result.categories
-                                .slice(0,5)
-                                .map(categ => (
-                                <CategoriesCard key={categ.id} categ={categ} />
-                            ))
-                        }
-                    </ListGroup>
-                    {
-                        !result.categories.length &&
-                        <Alert className={"p-2 small m-0"}>Категории по данному запросу не найдены</Alert>
                     }
                 </div>
             </div>
-        );
-    }else {
-        result (
-            <Alert variant={"danger"}>
-                По вашему запросу результаты не найдены, пожалуйста попробуйте другой запрос.
-            </Alert>
-        )
-    }
+
+            <div className={"block"}>
+                {
+                    result.categories.length ?
+                        <h5>Категории</h5>:
+                        <p className={"no-res small"}>Категории по данному запросу не найдены</p>
+                }
+                <div className="inner">
+                    {
+                        result.categories.slice(0,5).map(categ => (
+                            <Link to={`/categories/${categ.id}`} key={categ.id + categ.category}>
+                                {categ.title}
+                            </Link>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div className={"block"}>
+                {
+                    result.subcategories.length ?
+                        <h5>Подкатегории</h5>:
+                        <p className={"no-res small"}>Подкатегории по данному запросу не найдены</p>
+                }
+                <div className="inner">
+                    {
+                        result.subcategories.slice(0,5).map(sub => (
+                            <Link to={`/categories/${sub.category}/${sub.id}`} key={sub.id + sub.category}>
+                                {sub.title}
+                            </Link>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    );
+
 };
 
 export default GeneralSearchRes;
