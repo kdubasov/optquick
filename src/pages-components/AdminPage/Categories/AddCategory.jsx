@@ -79,7 +79,7 @@ const AddCategory = ({setRes}) => {
             </h4>
 
             {/*category*/}
-            <Form className={`w-25 border p-2 m-1`} onSubmit={e => handleSendForm(e,"/categories",category,setCategory)}>
+            <Form className={`w-50 border p-2 m-1`} onSubmit={e => handleSendForm(e,"/categories",category,setCategory)}>
                 <h6>Добавить категорию</h6>
 
                 {getListInputs(category,setCategory)}
@@ -88,7 +88,7 @@ const AddCategory = ({setRes}) => {
             </Form>
 
             {/*subcategory*/}
-            <Form className={`w-25 border p-2 m-1`} onSubmit={e => handleSendForm(e,`/categories/${selectVal}/subcategories`,subCategory,setSubCategory)}>
+            <Form className={`w-50 border p-2 m-1`} onSubmit={e => handleSendForm(e,`/categories/${selectVal}/subcategories`,subCategory,setSubCategory)}>
                 <h6>Добавить подкатегорию</h6>
 
                 <Form.Select value={selectVal} onChange={e => setSelectVal(e.target.value)}>

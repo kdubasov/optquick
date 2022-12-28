@@ -23,7 +23,7 @@ const BriefcasePage = () => {
     return (
         <Container className={'BriefcasePage'}>
             <h3 className={"title"}>
-                Избранные товары
+                Избранные товары ({briefcaseProducts.length})
             </h3>
 
             <div className="products-container">

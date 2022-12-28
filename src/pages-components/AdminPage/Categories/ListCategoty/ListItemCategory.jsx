@@ -59,12 +59,10 @@ const ListItemCategory = ({category,subcategory,selectCategory}) =>{
                             {getInputRedact('Картинка','image')}
                             {getInputRedact('Иконка','iconImage')}
                         </>:
-                        <p className={'mb-2 d-flex align-items-center'}>
-                            <Badge>ID:</Badge>
-                            {(category||subcategory).id}
-                            <Badge className={"mx-2"}>Название:</Badge>
-                            {(category||subcategory).title}
-                        </p>
+                        <ListGroup horizontal className={"small mb-2"}>
+                            <ListGroup.Item>ID: {(category||subcategory).id}</ListGroup.Item>
+                            <ListGroup.Item>Название: {(category||subcategory).title}</ListGroup.Item>
+                        </ListGroup>
                 }
 
                 {/*delete category button with confirm*/}

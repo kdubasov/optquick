@@ -1,5 +1,5 @@
 import React from 'react';
-import {Alert, Badge, ListGroup, Offcanvas} from "react-bootstrap";
+import {Alert, ListGroup, Offcanvas} from "react-bootstrap";
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
 import {Link} from "react-router-dom";
 
@@ -14,9 +14,9 @@ const NavbarCategoriesOffcanvas = ({showNavCateg, handleClose}) => {
         <Offcanvas show={showNavCateg} onHide={handleClose}>
 
             <Offcanvas.Header closeButton>
-                <Offcanvas.Title>
-                    <Badge>Все категории</Badge>
-                </Offcanvas.Title>
+                <h4 className={"m-0"}>
+                    Все категории
+                </h4>
             </Offcanvas.Header>
 
             <Offcanvas.Body>
@@ -27,6 +27,7 @@ const NavbarCategoriesOffcanvas = ({showNavCateg, handleClose}) => {
                                 categories.map((category) => (
                                     <ListGroup.Item key={category.id}>
                                         <Link to={`/categories/${category.id}`}>
+                                            <img src={category.iconImage} alt={category.title} width={30} />
                                             {category.title}
                                         </Link>
                                         <ListGroup className={"small"}>
@@ -35,6 +36,7 @@ const NavbarCategoriesOffcanvas = ({showNavCateg, handleClose}) => {
                                                 (Object.values(category.subcategories)).map((sub) => (
                                                     <ListGroup.Item key={sub.id} action>
                                                         <Link to={`/categories/${category.id}/${sub.id}`}>
+                                                            <img src={sub.iconImage} alt={sub.title} width={30} />
                                                             {sub.title}
                                                         </Link>
                                                     </ListGroup.Item>

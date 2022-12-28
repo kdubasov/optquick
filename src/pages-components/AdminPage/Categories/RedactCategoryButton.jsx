@@ -1,28 +1,24 @@
 import React from 'react';
-import {Button} from "react-bootstrap";
 
 const RedactCategoryButton = ({redact,setRedact}) => {
     return (
         <>
             {
                 redact?
-                    <Button
-                        variant="danger"
-                        size="sm"
+                    <button
+                        className={"but-green"}
                         onClick={() => setRedact(false)}
                     >
                         Назад
-                    </Button>
+                    </button>
                     :
-                    <Button
-                        size={"sm"}
-                        className={`mx-2`}
-                        variant={"secondary"}
+                    <button
+                        className={"but-green mx-2"}
                         onClick={() => setRedact(true)}
                         // onClick={() => handleRedactCategory()}
                     >
                         Редактировать
-                    </Button>
+                    </button>
             }
         </>
     );
