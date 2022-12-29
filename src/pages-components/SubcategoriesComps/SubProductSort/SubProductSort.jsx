@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import {Dropdown} from "react-bootstrap";
+import "./SubProductSort.css";
 
 const SubProductSort = ({listProducts,setDataSort}) => {
 
@@ -26,13 +27,14 @@ const SubProductSort = ({listProducts,setDataSort}) => {
     },[sort,listProducts])
 
     return (
-        <Dropdown>
-            <Dropdown.Toggle size={"sm"} variant="secondary">
-                Сортировать по
-                {sort === "price-min" && " цене (мин)"}
-                {sort === "price-max" && " цене (макс)"}
-                {sort === "date-new" && " дате (новые)"}
-                {sort === "date-old" && " дате (старые)"}
+        <Dropdown align="end" className={"SubProductSort"}>
+            <Dropdown.Toggle size={"sm"}>
+                <img src="/images/icons/sort.svg" alt=""/>
+                Сортировать
+                {sort === "price-min" && " по цене (мин)"}
+                {sort === "price-max" && " по цене (макс)"}
+                {sort === "date-new" && " по дате (новые)"}
+                {sort === "date-old" && " по дате (старые)"}
             </Dropdown.Toggle>
 
             <Dropdown.Menu>

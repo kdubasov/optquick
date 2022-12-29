@@ -1,0 +1,21 @@
+.SubProductSort button{
+    background: none;
+    color: var(--bs-dark);
+    font-weight: 500;
+    border: none;
+}
+.SubProductSort button:hover{
+    color: var(--bs-dark) !important;
+    background: var(--bs-light) !important;
+}
+.SubProductSort button{
+    display: flex;
+    align-items: center;
+}
+.SubProductSort button img{
+    height: 15px;
+    margin-right: 3px;
+}
+.SubProductSort button::after{
+    display: none;
+}

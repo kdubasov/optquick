@@ -1,0 +1,16 @@
+.SubProductsPage header{
+    padding: 2em 0;
+}
+.SubProductsPage header a{
+    color: var(--bs-blue);
+    text-decoration: none;
+}
+.SubProductsPage header h5{
+    font-weight: 700;
+    margin: 0;
+}
+
+.SubProductsPage header .inner{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
-import {Alert, Badge} from "react-bootstrap";
+import {Alert} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import CardProduct from "../../general-components/CardProduct/CardProduct";
-import SubProductSort from "../../pages-components/SubcategoriesComps/SubProductSort";
+import SubProductSort from "../../pages-components/SubcategoriesComps/SubProductSort/SubProductSort";
+import "./SubProductsPage.css";
 
 const SubProductsPage = () => {
 
@@ -28,19 +29,17 @@ const SubProductsPage = () => {
 
             <header>
 
-                <Badge bg={"secondary"} className={'my-3'}>
-                    <Link style={{color:"white"}} to={`/categories/${path[path.length - 2]}`}>
-                        Назад к подкатегориям
-                    </Link>
-                </Badge><br />
+                <Link to={`/categories/${path[path.length - 2]}`}>
+                    Назад к подкатегориям
+                </Link>
 
                 {//отображаем возможность сортировки только есть товары
                     Boolean(listProducts.length) &&
-                    <div className="d-flex justify-content-between">
-                        <Badge className={'mb-2'}>
+                    <div className="inner">
+                        <h5>
                             На данной странице показаны товары подкакатегории
                             "{subcategoryTitle.map(sub => (sub.title))}"
-                        </Badge>
+                        </h5>
 
                         <SubProductSort listProducts={listProducts} setDataSort={setDataSort} />
                     </div>
