@@ -6,6 +6,11 @@
     transition: .25s;
     border:none;
 }
+.but-green:disabled{
+    cursor: not-allowed;
+    opacity: .25;
+    background: var(--bs-dark);
+}
 .but-green:hover{
     background: var(--bs-green-hover);
 }

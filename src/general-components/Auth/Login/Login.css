@@ -21,8 +21,8 @@
 }
 .Login .PhoneInput-container,
 .Login input.code{
-    color: var(--bs-dark);
-    padding: .25em;
+    color: var(--bs-dark) !important;
+    padding: .25em 1em;
     text-align: center;
     border: 2px solid #F2F2F2;
     font-size: 20px !important;
@@ -32,12 +32,11 @@
     transition: .25s;
 }
 .Login input.code{
+    margin-bottom: 1em;
     font-size: 30px !important;
 }
-.Login input.code{
-    margin-bottom: 1em;
-}
 .Login .PhoneInputInput{
+    color: var(--bs-dark);
     border: none;
     padding-left: .25em;
     font-size: 1.5em;

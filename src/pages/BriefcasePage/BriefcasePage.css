@@ -11,9 +11,9 @@
 }
 
 /*alert*/
-.BriefcasePage .alert{
-    padding: 1.5em !important;
+.BriefcasePage .no-products{
+    opacity: .6;
 }
-.BriefcasePage .alert a{
-    color: var(--bs-white);
+.BriefcasePage .no-products a{
+    margin: 0 .4em;
 }

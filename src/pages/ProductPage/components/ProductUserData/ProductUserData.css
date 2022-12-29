@@ -19,6 +19,7 @@
     text-decoration: none;
     transition: .25s;
 }
+.ProductUserData a,
 .ProductUserData a:hover{
     color: var(--bs-blue);
 }

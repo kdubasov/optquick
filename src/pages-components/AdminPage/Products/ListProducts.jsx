@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Badge, InputGroup} from "react-bootstrap";
-import AddProductSelect from "./AddProducts/AddProductCategSelect";
+import AddProductSelect from "../../../pages/PostProductPage/AddProducts/AddProductsSelect";
 import {useGetCategory} from "../../../pages-functions/AdminPage/Categories/useGetCategory";
 import CardProduct from "../../../general-components/CardProduct/CardProduct";
 

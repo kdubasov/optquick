@@ -3,14 +3,11 @@
     padding-bottom: 2em;
 }
 
-/*alert*/
-.PostProductPage .alert{
-    padding: 2em 0!important;
+/*no-user-data text*/
+.PostProductPage .no-user-data{
+    width: 50%;
+    opacity: .6;
 }
-.PostProductPage .alert button{
-    margin-top: 1em;
-}
-.PostProductPage .alert button a{
-    color: var(--bs-white);
-    text-decoration: none;
+.PostProductPage .no-user-data a{
+    margin: 0 .4em;
 }

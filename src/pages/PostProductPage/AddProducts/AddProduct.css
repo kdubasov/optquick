@@ -1,0 +1,79 @@
+.AddProduct{
+    padding: 2em;
+    border: 2px solid #F5F4FB;
+    border-radius: var(--def-border-redius);
+    box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
+}
+
+
+/*inner block*/
+.AddProduct .inner{
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.AddProduct .inner.selects{
+    align-items: flex-end;
+}
+.AddProduct .inner h5,
+.AddProduct .checkboxes-container h5{
+    width: 100%;
+    margin-bottom: .5em;
+    font-weight: 700;
+}
+
+.AddProduct .inp-inner{
+    width: calc(50% - 1em);
+    margin-bottom: 1em;
+}
+/*label*/
+.AddProduct label{
+    font-size: 14px;
+    margin-bottom: .5em;
+}
+/*inputs*/
+.AddProduct input,
+.AddProduct select,
+.AddProduct textarea{
+    padding: .75em 1em;
+    border: 2px solid #F2F2F2;
+    border-radius: var(--def-border-redius);
+    box-shadow: 15px 15px 35px rgba(112, 124, 151, 0.05);
+}
+.AddProduct input::placeholder,
+.AddProduct select::placeholder,
+.AddProduct textarea::placeholder{
+    opacity: .5;
+}
+.AddProduct textarea{
+    height: 150px;
+}
+
+.AddProduct .checkboxes-container{
+    margin: 1em 0 2em;
+}
+.AddProduct .checkbox-container{
+    display: flex;
+    align-items: center;
+    margin: .5em 0;
+}
+.AddProduct .checkbox-container label{
+    margin: 2px 0 0 0;
+}
+.AddProduct input[type=checkbox]{
+    display: flex;
+    padding: 0;
+    height: 20px !important;
+}
+
+/*policy-container*/
+.AddProduct .policy-container{
+    display: flex;
+    margin-bottom: 1em;
+}
+.AddProduct .policy-container a{
+    color: var(--bs-blue);
+    margin: 0 0 0 .4em;
+}

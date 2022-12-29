@@ -3,7 +3,7 @@ import AddCategory from "../../pages-components/AdminPage/Categories/AddCategory
 import MessageAlert from "../../general-components/MessageAlert/MessageAlert";
 import ListCategory from "../../pages-components/AdminPage/Categories/ListCategoty/ListCategory";
 import {Badge, Spinner} from "react-bootstrap";
-import AddProduct from "../../pages-components/AdminPage/Products/AddProducts/AddProduct";
+import AddProduct from "../PostProductPage/AddProducts/AddProduct";
 import ListProducts from "../../pages-components/AdminPage/Products/ListProducts";
 import FeedbackTable from "../../pages-components/AdminPage/FeedbackMessages/FeedbackTable";
 import ComplaintsTable from "../../pages-components/AdminPage/ComplaintsMessages/ComplaintsTable";

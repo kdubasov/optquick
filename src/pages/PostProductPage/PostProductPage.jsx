@@ -1,6 +1,6 @@
 import React from 'react';
-import {Alert, Container} from "react-bootstrap";
-import AddProduct from "../../pages-components/AdminPage/Products/AddProducts/AddProduct";
+import {Container} from "react-bootstrap";
+import AddProduct from "./AddProducts/AddProduct";
 import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
 import {useUserAuth} from "../../context/AuthContext";
 import {Link} from "react-router-dom";
@@ -23,13 +23,13 @@ const PostProductPage = () => {
             {
                 (userDataFromRealtimeDB.name && userDataFromRealtimeDB.surname) ?
                     <AddProduct />:
-                    <Alert>
-                        Вы должны заполнить обязательные поля в профиле для того, чтобы выкладывать товар.
-                        <br />
-                        <button className={"but-green"}>
-                            <Link to={'/userProfile'}>Перейти в профиль</Link>
-                        </button>
-                    </Alert>
+                    <p className="no-user-data">
+                        Вы должны заполнить основную информацию о себе в профиле,
+                        для возможности выкладывать товар на площадку.
+                        Вы можете сделать это в
+                        <Link to={"/userProfile"}>личном кабинете</Link>
+                        в разделе "Данные аккаунта".
+                    </p>
             }
         </Container>
     );

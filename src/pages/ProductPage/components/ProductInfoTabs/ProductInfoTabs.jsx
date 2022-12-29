@@ -35,11 +35,11 @@ const ProductInfoTabs = ({productData}) => {
                     selectValue === 1 &&
                     <div className={"inner"}>
                         <p className={"blue"}>
-                            <span>Описание:</span>
+                            <span>Описание:</span><br/>
                             {productData.description}
                         </p>
                         <p>
-                            <span>Дата публикации товара:</span>
+                            <span>Дата публикации товара:</span><br/>
                             {productData.date}.
                         </p>
                     </div>
@@ -48,28 +48,28 @@ const ProductInfoTabs = ({productData}) => {
                     selectValue === 2 &&
                     <div className={"inner"}>
                         <p className={"blue"}>
-                            <span>Характеристики:</span>
+                            <span>Характеристики:</span><br/>
                             {productData.characteristics || "Характеристики отсутствуют для данного товара."}
                         </p>
                         <p className={"blue"}>
-                            <span>Всего товара в наличии:</span>
+                            <span>Всего товара в наличии:</span><br/>
                             {productData.amount + " штук."}
                         </p>
                         <p>
-                            <span>Минимальный заказ:</span>
+                            <span>Минимальный заказ:</span><br/>
                             {productData.minOrder + " штук."}
                         </p>
                         {
                             productData.sizes[0] &&
                             <p>
-                                <span>Размеры:</span>
+                                <span>Размеры:</span><br/>
                                 {productData.sizes.map(elem => " " + elem)}.
                             </p>
                         }
                         {
                             productData.colors[0] &&
                             <p>
-                                <span>Цвета:</span>
+                                <span>Цвета:</span><br/>
                                 {productData.colors.map(elem => " " + elem)}.
                             </p>
                         }
@@ -79,19 +79,23 @@ const ProductInfoTabs = ({productData}) => {
                     selectValue === 3 &&
                     <div className={"inner"}>
                         <p>
-                            <span>Нахождение товара:</span>
+                            <span>Нахождение товара:</span><br/>
                             {productData.location || "Не указано"}.
                         </p>
                         <p>
-                            <span>Время доставки:</span>
-                            {productData.deliveryPeriod + " дней" || "Не указано"}.
+                            <span>Время доставки:</span><br/>
+                            {
+                                productData.deliveryPeriod ?
+                                    productData.deliveryPeriod + " дней" :
+                                    "Продавец не указал время доставки"
+                            }.
                         </p>
                         <p>
-                            <span>Варианты доставки:</span>
+                            <span>Варианты доставки:</span><br/>
                             {productData.selectDelivery || "Не указано"}.
                         </p>
                         <p>
-                            <span>Варианты оплаты:</span>
+                            <span>Варианты оплаты:</span><br/>
                             {productData.selectPay || "Не указано"}.
                         </p>
                     </div>
