@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
-import {Alert} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import CardProduct from "../../general-components/CardProduct/CardProduct";
-import SubProductSort from "../../pages-components/SubcategoriesComps/SubProductSort/SubProductSort";
+import SubProductSort from "./SubProductSort/SubProductSort";
 import "./SubProductsPage.css";
 
 const SubProductsPage = () => {
@@ -35,29 +34,36 @@ const SubProductsPage = () => {
 
                 {//отображаем возможность сортировки только есть товары
                     Boolean(listProducts.length) &&
-                    <div className="inner">
-                        <h5>
-                            На данной странице показаны товары подкакатегории
-                            "{subcategoryTitle.map(sub => (sub.title))}"
-                        </h5>
+                    <h3>
+                        На данной странице показаны товары подкакатегории
+                        "{subcategoryTitle.map(sub => (sub.title))}"
+                    </h3>
+                }
 
-                        <SubProductSort listProducts={listProducts} setDataSort={setDataSort} />
-                    </div>
+                {
+                    Boolean(dataSort[0].length) &&
+                    <SubProductSort listProducts={listProducts} setDataSort={setDataSort} />
                 }
 
             </header>
 
 
-            <div className={'d-flex flex-wrap justify-content-between'}>
+            <div className={'container-products'}>
                 {
                     Boolean(dataSort[0].length) ?
                         // ((dataSort[0].length)?dataSort[0]:listProducts)
                         dataSort[0].map(product => (
                             <CardProduct key={product.id} product={product} />
                         )):
-                        <Alert className={"w-50 p-2 small"}>
+                        <p className={"no-products"}>
                             Товаров в данной категории пока нет.
-                        </Alert>
+                            В скором времени мы наполним товарами все категории,
+                            а сейчас вы можете
+                            <Link to={`/categories/${path[path.length - 2]}`}>
+                                вернуться назад
+                            </Link>
+                            и посмотреть другие товары. Спасибо за понимание!
+                        </p>
                 }
             </div>
 

@@ -1,0 +1,26 @@
+.CategoriesPage{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.CategoriesPage h3{
+    margin: .5em 0;
+    font-weight: 800;
+}
+
+.CategoriesPage h5{
+    font-weight: 700;
+}
+
+/*no data p*/
+.CategoriesPage .no-data{
+    width: 50%;
+    opacity: .5;
+}
+
+/*container for subcategories*/
+.CategoriesPage .sub-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

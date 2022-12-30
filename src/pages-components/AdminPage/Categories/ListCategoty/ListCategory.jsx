@@ -58,11 +58,7 @@ const ListCategory = () => {
                 {
                     subcategories.length?
                         subcategories.map(subcategory => (
-                            <ListItemCategory
-                                key={subcategory.id}
-                                selectCategory={selectCategory}
-                                subcategory={subcategory}
-                            />
+                            <ListItemCategory key={subcategory.id} subcategory={subcategory}/>
                         )):
                         <Badge>Нет данных</Badge>
                 }

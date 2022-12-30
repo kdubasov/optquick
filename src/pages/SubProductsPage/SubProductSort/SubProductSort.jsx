@@ -27,7 +27,7 @@ const SubProductSort = ({listProducts,setDataSort}) => {
     },[sort,listProducts])
 
     return (
-        <Dropdown align="end" className={"SubProductSort"}>
+        <Dropdown align="start" className={"SubProductSort"}>
             <Dropdown.Toggle size={"sm"}>
                 <img src="/images/icons/sort.svg" alt=""/>
                 Сортировать

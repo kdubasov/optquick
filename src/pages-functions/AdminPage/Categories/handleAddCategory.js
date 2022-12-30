@@ -7,7 +7,7 @@ export const handleAddCategory = (e,url,state,sub = "") =>{
 
     return set(ref(realtimeDB, `${url}/${state.id.trim()}`),{
         id: state.id.trim(),
-        title: state.title.trim(),
+        title: state.title,
         image: state.image,
         iconImage: state.iconImage,
         category: sub ? sub : "",

@@ -1,0 +1,34 @@
+.CategSubCard{
+    width: calc(25% - 1.5em);
+    margin: 1em 0;
+    border-radius: var(--def-border-redius);
+    box-shadow: var(--def-shadow);
+    background-size: cover;
+    background-position: center center;
+    height: 25vh;
+    position: relative;
+    transition: .25s;
+}
+.CategSubCard:hover .dark{
+    background: var(--bs-dark-op-5);
+}
+
+.CategSubCard .dark{
+    width: 100%;
+    height: 100%;
+    border-radius: var(--def-border-redius);
+    background: var(--bs-dark-op-75);
+    transition: .25s;
+}
+
+/*link*/
+.CategSubCard h4{
+    margin: 0;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--bs-white);
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    line-height: 1.2;
+}

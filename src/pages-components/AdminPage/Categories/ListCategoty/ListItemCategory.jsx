@@ -6,14 +6,17 @@ import DeleteCategoryButton from "../DeleteCategoryButton";
 import RedactCategoryButton from "../RedactCategoryButton";
 import {handleRedactCategory} from "../../../../pages-functions/AdminPage/Categories/handleRedactCategory";
 
-const ListItemCategory = ({category,subcategory,selectCategory}) =>{
+const ListItemCategory = ({category,subcategory}) =>{
+
+    //check category or sub select now
+    const selectValue = category || subcategory;
 
     //getting url for set in database
     const getUrl = () =>{
         if (category){
             return `/categories/${category.id}`
         }else {
-            return `/categories/${selectCategory}/subcategories/${subcategory.id}`
+            return `/categories/${subcategory.category}/subcategories/${subcategory.id}`
         }
     }
 
@@ -24,10 +27,11 @@ const ListItemCategory = ({category,subcategory,selectCategory}) =>{
     const handleChange = (value,elem) =>{
         return handleRedactCategory(
             getUrl(),
-            (category||subcategory).id,
-            elem === "title" ? value : (category||subcategory).title,
-            elem === "image" ? value : (category||subcategory).image,
-            elem === "iconImage" ? value : (category||subcategory).iconImage,
+            selectValue.id,
+            elem === "title" ? value : selectValue.title,
+            elem === "image" ? value : selectValue.image,
+            elem === "iconImage" ? value : selectValue.iconImage,
+            selectValue.category,
         )
     };
 
@@ -38,7 +42,7 @@ const ListItemCategory = ({category,subcategory,selectCategory}) =>{
                 <Badge>{label}:</Badge>
                 <Form.Control
                     className={'mx-2'}
-                    value={(category||subcategory)[value]}
+                    value={selectValue[value]}
                     onChange={e => handleChange(e.target.value,value)}
                 />
             </div>
@@ -46,10 +50,10 @@ const ListItemCategory = ({category,subcategory,selectCategory}) =>{
     }
 
     return(
-        <ListGroup.Item className={'d-flex m-1 align-items-center'} key={(category||subcategory).id}>
+        <ListGroup.Item className={'d-flex m-1 align-items-center'}>
 
-            <img width={90} src={(category||subcategory).image} alt={(category||subcategory).title}/>
-            <img width={90} src={(category||subcategory).iconImage} alt={(category||subcategory).title}/>
+            <img width={90} src={selectValue.image} alt={selectValue.title}/>
+            <img width={90} src={selectValue.iconImage} alt={selectValue.title}/>
 
             <span className={'m-3'}>
                 {
@@ -60,13 +64,13 @@ const ListItemCategory = ({category,subcategory,selectCategory}) =>{
                             {getInputRedact('Иконка','iconImage')}
                         </>:
                         <ListGroup horizontal className={"small mb-2"}>
-                            <ListGroup.Item>ID: {(category||subcategory).id}</ListGroup.Item>
-                            <ListGroup.Item>Название: {(category||subcategory).title}</ListGroup.Item>
+                            <ListGroup.Item>ID: {selectValue.id}</ListGroup.Item>
+                            <ListGroup.Item>Название: {selectValue.title}</ListGroup.Item>
                         </ListGroup>
                 }
 
                 {/*delete category button with confirm*/}
-                {!redact && <DeleteCategoryButton url={getUrl(getUrl(),(category||subcategory))} text={false} />}
+                {!redact && <DeleteCategoryButton url={getUrl(getUrl(),selectValue)} text={false} />}
 
                 {/*redact category button*/}
                 <RedactCategoryButton redact={redact} setRedact={setRedact} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
-import {Alert, Badge, ListGroup} from "react-bootstrap";
-import CategoriesCard from "../../pages-components/CategoriesComps/CategCard";
+import CategoriesCard from "./CategSubCard/CategSubCard";
+import "./CategoriesPage.css";
 
 const CategoriesPage = () => {
 
@@ -10,20 +10,22 @@ const CategoriesPage = () => {
 
     return (
         <div className={'CategoriesPage container'}>
-            <Badge className={'mt-4 mb-2'}>Категории</Badge>
+            <h3>Все категории</h3>
 
             {
                 (data && data.length) ?
-                    <ListGroup>
+                    <div className={"sub-container"}>
                         {
                             data.map(categ => (
                                 <CategoriesCard key={categ.id} categ={categ} />
                             ))
                         }
-                    </ListGroup>:
-                    <Alert className={'p-2 small'}>
+                    </div>:
+                    <p className={"no-data"}>
                         Катогории пока недоступны, пожалуйста попробуйте позже.
-                    </Alert>
+                        Вы можете попробовать перезагрузить страницу, если это не поможет,
+                        пожалуйста, сообщите о проблеме в поддержку.
+                    </p>
             }
         </div>
     );

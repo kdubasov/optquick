@@ -16,6 +16,10 @@
     --bs-blue: #5182FF;
     --bs-blue-hover: #376bef;
     --bs-dark: #494949;
+    --bs-dark-op-75: rgba(73, 73, 73, 0.75);
+    --bs-dark-op-5: rgba(73, 73, 73, 0.5);
+    --bs-dark-op-25: rgba(73, 73, 73, 0.25);
+    --bs-dark-op-1: rgba(73, 73, 73, 0.1);
     --bs-dark-hover: #1c1c1c;
     --bs-light: #f6f6f6;
     --bs-green: #90D23E;

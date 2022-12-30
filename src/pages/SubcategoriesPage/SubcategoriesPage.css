@@ -1,30 +1,33 @@
-.SubProductsPage header{
-    display: flex;
-    flex-direction: column;
+.SubcategoriesPage header{
     padding: 2em 0;
 }
-.SubProductsPage header a{
+.SubcategoriesPage header a{
     font-weight: 500;
     color: var(--bs-blue);
     text-decoration: none;
 }
-.SubProductsPage header h3{
+.SubcategoriesPage header h3{
     font-weight: 700;
-    margin: 0 0 .75em 0;
+    margin: 0;
+}
+
+.SubcategoriesPage header .inner{
+    display: flex;
+    justify-content: space-between;
 }
 
 /*container for products*/
-.SubProductsPage .container-products{
+.SubcategoriesPage .sub-container{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 /*p no-products*/
-.SubProductsPage .no-products{
+.SubcategoriesPage .no-products{
     width: 50%;
     opacity: .5;
 }
-.SubProductsPage .no-products a{
+.SubcategoriesPage .no-products a{
     margin: 0 .25em;
 }

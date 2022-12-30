@@ -1,9 +1,9 @@
 import React from 'react';
-import {Alert, Badge, ListGroup} from "react-bootstrap";
 import {getPathLastWord} from "../../pages-functions/CategoriesPage/getPathLastWord";
 import {Link} from "react-router-dom";
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
-import SubCard from "../../pages-components/SubcategoriesComps/SubCard";
+import SubCard from "./SubCard/SubCard";
+import "./SubcategoriesPage.css";
 
 const SubcategoriesPage = () => {
 
@@ -21,33 +21,37 @@ const SubcategoriesPage = () => {
         <div className={'SubcategoriesPage container'}>
 
             <header>
-                <Badge bg={"secondary"} className={'my-3'}>
-                    <Link style={{color:"white"}} to={`/categories`}>
-                        Назад к категориям
-                    </Link>
-                </Badge><br />
+                <Link to={`/categories`}>
+                    Вернуться к категориям
+                </Link>
 
                 {
                     Boolean(dataSubcategories && dataSubcategories.length) &&
-                    <Badge className={'mb-2'}>
+                    <h3>
                         На данной странице показаны подкатегории категории
                         "{categoryTitle.map(categ => (categ.title))}"
-                    </Badge>
+                    </h3>
                 }
             </header>
 
             {
                 Boolean(dataSubcategories && dataSubcategories.length) ?
-                    <ListGroup>
+                    <div className={"sub-container"}>
                         {
                             dataSubcategories.map(sub => (
                                 <SubCard key={sub.id} sub={sub} />
                             ))
                         }
-                    </ListGroup>:
-                    <Alert className={"w-50 p-2 small"}>
-                        Подкатегорий в данной категории пока нет.
-                    </Alert>
+                    </div>:
+                    <p className={"no-products"}>
+                        Товаров в данной категории пока нет.
+                        В скором времени мы наполним товарами все категории,
+                        а сейчас вы можете
+                        <Link to={`/categories}`}>
+                            вернуться назад
+                        </Link>
+                        и посмотреть другие товары. Спасибо за понимание!
+                    </p>
             }
         </div>
     );
