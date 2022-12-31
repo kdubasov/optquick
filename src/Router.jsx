@@ -18,6 +18,7 @@ import BriefcasePage from "./pages/BriefcasePage/BriefcasePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import FooterBottom from "./general-components/FooterBottom/FooterBottom";
 import ScrollToTop from "./functions/scrollToTop";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage/PrivacyPolicyPage";
 
 
 const Router = () => {
@@ -98,6 +99,9 @@ const Router = () => {
 
                         {/*404*/}
                         <Route path={"*"} element={<NotFoundPage />} />
+
+                        {/*политика конфеденциальности*/}
+                        <Route path={`/privacyPolicy`} element={<PrivacyPolicyPage />} />
                     </Routes>
                 </div>
 

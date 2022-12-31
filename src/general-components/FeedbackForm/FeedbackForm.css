@@ -1,0 +1,35 @@
+.FeedbackForm{
+    width: 50%;
+    padding: 2em;
+    border: 2px solid #F5F4FB;
+    border-radius: var(--def-border-redius);
+    box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
+}
+.FeedbackForm h5{
+    font-weight: 700;
+    margin-bottom: .5em;
+}
+
+.FeedbackForm .inner{
+    margin-bottom: 1.25em;
+}
+.FeedbackForm label{
+    font-size: 14px;
+    opacity: .75;
+    margin-bottom: .25em;
+}
+.FeedbackForm .inner input,
+.FeedbackForm .inner textarea{
+    padding: .75em;
+    border: 2px solid #F2F2F2;
+    box-shadow: 15px 15px 35px rgba(112, 124, 151, 0.05);
+    border-radius: var(--def-border-redius) !important;
+}
+.FeedbackForm .inner textarea{
+    resize: none;
+    height: 100px;
+}
+/*check*/
+.FeedbackForm .switch-check{
+    margin-bottom: 1em;
+}

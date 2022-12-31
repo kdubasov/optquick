@@ -1,8 +1,16 @@
-import React, {useState} from 'react';
-import {Alert, Badge, Button, Form} from "react-bootstrap";
+import React, {useState, useEffect} from 'react';
+import {Alert, Form} from "react-bootstrap";
 import {addFeedbackForm} from "../../functions/FeedbackForm/addFeedbackForm";
+import {useUserAuth} from "../../context/AuthContext";
+import {useGetUser} from "../Auth/UserProfile/functions/useGetUser";
+import "./FeedbackForm.css";
 
 const FeedbackForm = () => {
+
+    // user data form context
+    const { user } = useUserAuth();
+    //user data from database
+    const userDataDatabase = useGetUser(`/users/${user?.uid}`);
 
     //data form
     const [email,setEmail] = useState('');
@@ -24,11 +32,19 @@ const FeedbackForm = () => {
         setCooperation(false)
     }
 
-    return (
-        <Form onSubmit={handleSend} className={"w-50 my-2 p-2 border"} style={{borderRadius:10}}>
-            <h5><Badge>Вы можете задать нам свои вопросы</Badge></h5>
+    //set user email if he has it in database
+    useEffect(() => {
+        if (userDataDatabase?.email){
+            setEmail(userDataDatabase.email)
+        }
+    }, [userDataDatabase]);
 
-            <Form.Group className="mb-3">
+
+    return (
+        <Form onSubmit={handleSend} className={"FeedbackForm"}>
+            <h5>Вы можете задать нам свои вопросы</h5>
+
+            <Form.Group className="inner">
                 <Form.Label>Введите вашу почту</Form.Label>
                 <Form.Control
                     value={email}
@@ -40,25 +56,23 @@ const FeedbackForm = () => {
                 />
             </Form.Group>
 
-            <Form.Group className="mb-3">
+            <Form.Group className="inner">
                 <Form.Label>Введите ваше сообщение</Form.Label>
                 <Form.Control
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     size={"sm"}
                     as={"textarea"}
-                    placeholder={"Если вы не заполните текст заявки, то мы сами напишем вам на почту."}
                 />
             </Form.Group>
 
             <Form.Check
-                className={"mb-3 small"}
-                type="checkbox"
+                className={"switch-check small"}
+                type="switch"
                 label={"Отметьте, если вы хотите предложить нам сотрудничество."}
                 checked={cooperation}
                 onChange={() => setCooperation(!cooperation)}
             />
-
 
             {/*показываем после отправки*/}
             <Alert
@@ -69,9 +83,9 @@ const FeedbackForm = () => {
                 {sendMess.message}
             </Alert>
 
-            <Button size={"sm"} variant="outline-primary" type="submit">
+            <button className={"but-green px-5"} type="submit">
                 Отправить
-            </Button>
+            </button>
         </Form>
     );
 };

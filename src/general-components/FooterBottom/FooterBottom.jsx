@@ -11,7 +11,7 @@ const FooterBottom = () => {
                 <div className="inner left">
                     <img src="/images/general/logo.svg" alt=""/>
                     <h6 className={"w-100"}>2004-{new Date().getFullYear()} © OPTQUICK</h6>
-                    <Link to="/">Политика конфиденциальности</Link><br />
+                    <Link to="/privacyPolicy">Политика конфиденциальности</Link><br />
                     <Link to="/">Политика обработки персональных данных</Link>
                 </div>
 
