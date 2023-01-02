@@ -88,9 +88,12 @@ const Login = () => {
                 onChange={(e) => setOtp(e.target.value)}
             />
 
+          <div className="w-100 d-flex justify-content-center">
             <button className={"but-green px-5"} type="submit">
               Отправить
             </button>
+          </div>
+
         </Form>
     </div>
   );

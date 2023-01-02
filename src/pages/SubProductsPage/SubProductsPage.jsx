@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
 import {Link} from "react-router-dom";
 import CardProduct from "../../general-components/CardProduct/CardProduct";
@@ -21,7 +21,15 @@ const SubProductsPage = () => {
 
     //for sort
     const [dataSort,setDataSort] = useState([[],false]);
-    // console.log(dataSort)
+    // console.log(dataSort);
+
+    //set data sort state
+    useEffect(() => {
+        if (listProducts.length){
+            setDataSort([[...listProducts],false])
+        }
+    }, [listProducts]);
+
 
     return (
         <div className={'SubProductsPage container'}>

@@ -21,7 +21,11 @@ const AuthUserProductsCard = ({product}) => {
                 <div className={"content"}>
                     {/*Название*/}
                     <h5 className={"m-0"}>
-                        {product.title}
+                        {
+                            product.title.length >= 50 ?
+                                product.title.slice(0,50) + "...":
+                                product.title
+                        }
                     </h5>
 
                     {//Доставка
