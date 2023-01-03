@@ -64,7 +64,9 @@ const SubProductsPage = () => {
                             <CardProduct key={product.id} product={product} />
                         )):
                         <p className={"no-products"}>
-                            Товаров в данной категории пока нет.
+                            Товаров категории
+                            "{subcategoryTitle.map(sub => (sub.title))}"
+                            пока нет.
                             В скором времени мы наполним товарами все категории,
                             а сейчас вы можете
                             <Link to={`/categories/${path[path.length - 2]}`}>

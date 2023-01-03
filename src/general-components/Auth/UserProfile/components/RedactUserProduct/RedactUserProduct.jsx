@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import {Alert, Badge, Spinner} from "react-bootstrap";
+import {Container, Spinner} from "react-bootstrap";
 import {useGetUserProducts} from "../../../../../pages-functions/AdminPage/GetProducts/useGetUserProducts";
 import {useUserAuth} from "../../../../../context/AuthContext";
 import {getPathLastWord} from "../../../../../pages-functions/CategoriesPage/getPathLastWord";
-import CardProductSwiper from "../../../../CardProduct/CardProductSwiper/CardProductSwiper";
 import RedactUserProdForm from "./RedactUserProdForm";
 import MessageAlert from "../../../../MessageAlert/MessageAlert";
 import {Link} from "react-router-dom";
+import "./RedactUserProduct.css";
 
 const RedactUserProduct = () => {
 
@@ -26,35 +26,24 @@ const RedactUserProduct = () => {
 
 
     return (
-        <div className={'RedactUserProduct py-3 container'}>
+        <Container className={'RedactUserProduct'}>
 
-            <Badge className={"mb-2"}>
-                <Link className={"text-white"} to={'/userProfile'}>Назад</Link>
-            </Badge>
+            <Link className={"back-link"} to={'/userProfile'}>
+                Вернуться назад
+            </Link>
 
             {
                 nowProduct ?
                     <>
-                        <h4><Badge>Редактирование товара "{nowProduct.title}"</Badge></h4>
-
-                            {/*slider with product photo*/}
-                            <div className="w-50 mb-3">
-                                <CardProductSwiper product={nowProduct} />
-                            </div>
-
-                            <div className={"w-100 p-2 border"}>
-                                <RedactUserProdForm data={nowProduct} setRes={setRes} />
-                            </div>
+                        <h3>Редактирование товара "{nowProduct.title}"</h3>
+                        <RedactUserProdForm data={nowProduct} setRes={setRes} />
                     </>:
-                    <Alert className={"p-2 small d-flex justify-content-between align-items-center"}>
-                        Дождитесь загрузки данных о товаре...
-                        <Spinner animation={"border"} size={"sm"} />
-                    </Alert>
+                    <Spinner animation={"border"} size={"sm"} />
             }
 
             <MessageAlert res={res} />
 
-        </div>
+        </Container>
     )
 };
 

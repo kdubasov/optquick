@@ -1,0 +1,19 @@
+.RedactUserProduct{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.RedactUserProduct .back-link{
+    color: var(--bs-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/*form*/
+.RedactUserProdForm{
+    margin-top: 2em;
+    padding: 2em;
+    border: 2px solid #F5F4FB;
+    border-radius: var(--def-border-redius);
+    box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
+}
+

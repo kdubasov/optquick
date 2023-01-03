@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Form, FormControl} from "react-bootstrap";
+import {Form, FormControl} from "react-bootstrap";
 import {handleRedactProducts} from "../../../../../pages-functions/AdminPage/AddProducts/handleRedactProducts";
 
 const RedactUserProdForm = ({data,setRes}) => {
@@ -43,7 +43,7 @@ const RedactUserProdForm = ({data,setRes}) => {
     }
 
     return (
-        <Form onSubmit={handleSend}>
+        <Form className={"RedactUserProdForm AddProduct"} onSubmit={handleSend}>
 
             {getFormGroup("Название","title",false)}
             {getFormGroup("Цена","price",false,false)}
@@ -61,21 +61,27 @@ const RedactUserProdForm = ({data,setRes}) => {
             {getFormGroup("Цвета","colors",false,true)}
             {getFormGroup("Размеры","sizes",false,true)}
 
-            <Form.Check
-                type="switch"
-                label="Показывать телефон"
-                checked={prodState.showPhoneNumber}
-                onChange={() => handleChange(!prodState.showPhoneNumber,"showPhoneNumber",false)}
-            />
 
-            <Form.Check
-                type="switch"
-                label="Показывать почту"
-                checked={prodState.showEmailAddress}
-                onChange={() => handleChange(!prodState.showEmailAddress,"showEmailAddress",false)}
-            />
+            <div className="my-4 d-flex">
+                <Form.Check
+                    type="switch"
+                    label="Показывать телефон"
+                    checked={prodState.showPhoneNumber}
+                    onChange={() => handleChange(!prodState.showPhoneNumber,"showPhoneNumber",false)}
+                />
 
-            <Button type={"submit"} size={"sm"}>Изменить товар</Button>
+                <Form.Check
+                    className={"mx-4"}
+                    type="switch"
+                    label="Показывать почту"
+                    checked={prodState.showEmailAddress}
+                    onChange={() => handleChange(!prodState.showEmailAddress,"showEmailAddress",false)}
+                />
+            </div>
+
+            <button className={"but-green px-5"} type={"submit"}>
+                Изменить товар
+            </button>
 
         </Form>
     );
