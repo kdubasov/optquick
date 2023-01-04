@@ -17,3 +17,36 @@
     box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
 }
 
+.RedactUserProdForm .inp-group{
+    width: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.RedactUserProdForm .inp-group h4{
+    width: 100%;
+    margin-bottom: 1em;
+    font-weight: 700;
+}
+
+.RedactUserProdForm .for-one-inp{
+    width: calc(50% - 1em);
+    margin-bottom: 1em;
+}
+.RedactUserProdForm .for-one-inp label{
+    margin-bottom: .5em !important;
+}
+
+.RedactUserProdForm .checks-container{
+    display: flex;
+    margin-bottom: 25px;
+}
+.RedactUserProdForm .form-check{
+    display: flex;
+    align-items: center;
+}
+.RedactUserProdForm .checks-container label{
+    margin: 5px 0 0 .5em;
+}

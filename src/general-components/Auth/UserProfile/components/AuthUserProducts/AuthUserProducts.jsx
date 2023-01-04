@@ -13,7 +13,7 @@ const AuthUserProducts = ({userId}) => {
             {
                 Boolean(userProducts.length) &&
                 <h4 className={"mb-3"}>
-                    Мои объявления {userProducts.length}
+                    Мои объявления ({userProducts.length})
                 </h4>
             }
 

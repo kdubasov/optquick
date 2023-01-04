@@ -22,14 +22,14 @@ const RedactUserProdForm = ({data,setRes}) => {
     //get input for form with label
     const getFormGroup = (label,value,textarea,arr) => {
       return (
-          <Form.Group className="mb-1">
+          <div className={"for-one-inp"}>
               <Form.Label className={"m-0"}>{label}</Form.Label>
               <FormControl
                   as={textarea ? "textarea" : "input"}
                   value={arr?prodState[value].join(' '):prodState[value]}
                   onChange={e => handleChange(e.target.value,value,arr)}
               />
-          </Form.Group>
+          </div>
       )
     }
 
@@ -45,24 +45,38 @@ const RedactUserProdForm = ({data,setRes}) => {
     return (
         <Form className={"RedactUserProdForm AddProduct"} onSubmit={handleSend}>
 
-            {getFormGroup("Название","title",false)}
-            {getFormGroup("Цена","price",false,false)}
-            {getFormGroup("Количество","amount",false,false)}
-            {getFormGroup("Минимальный заказ","minOrder",false,false)}
-            {getFormGroup("Время доставки","deliveryPeriod",false,false)}
+            <div className="inp-group">
+                <h4>Основная информация</h4>
+                {getFormGroup("Название","title",false)}
+                {getFormGroup("Цена","price",false,false)}
+                {getFormGroup("Количество","amount",false,false)}
+            </div>
 
-            {getFormGroup("Нахождение товара","location",false,false)}
-            {getFormGroup("Описание","description",true,false)}
-            {getFormGroup("Характеристики","characteristics",true,false)}
+            <div className="inp-group">
+                <h4>Описание и характеристики</h4>
+                {getFormGroup("Описание","description",true,false)}
+                {getFormGroup("Характеристики","characteristics",true,false)}
+            </div>
 
-            {getFormGroup("Способ доставки","selectDelivery",false,false)}
-            {getFormGroup("Способ оплаты","selectPay",false,false)}
+            <div className="inp-group">
+                <h4>Доставка и заказ</h4>
+                {getFormGroup("Минимальный заказ","minOrder",false,false)}
+                {getFormGroup("Нахождение товара","location",false,false)}
+            </div>
 
-            {getFormGroup("Цвета","colors",false,true)}
-            {getFormGroup("Размеры","sizes",false,true)}
+            <div className="inp-group">
+                {getFormGroup("Время доставки","deliveryPeriod",false,false)}
+                {getFormGroup("Способ доставки","selectDelivery",false,false)}
+                {getFormGroup("Способ оплаты","selectPay",false,false)}
+            </div>
+
+            <div className="inp-group">
+                {getFormGroup("Цвета","colors",false,true)}
+                {getFormGroup("Размеры","sizes",false,true)}
+            </div>
 
 
-            <div className="my-4 d-flex">
+            <div className="checks-container">
                 <Form.Check
                     type="switch"
                     label="Показывать телефон"
