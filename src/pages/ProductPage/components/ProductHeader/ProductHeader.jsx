@@ -36,7 +36,7 @@ const ProductHeader = ({productData,setAlertData}) => {
                         (user && (user.uid === productData.userUid)) &&
                         <p className={"m-0 my-product"}>Ваше объявление</p>
                     }
-                    <h1>{productData.price} ₽/шт.</h1>
+                    <h1>{Number(productData.price).toLocaleString("RU")} ₽/шт.</h1>
                     <p className={"m-0"}>
                         Минимальный заказ от {productData.minOrder + ' штук. '}
                     </p>

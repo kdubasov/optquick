@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import AddCategory from "../../pages-components/AdminPage/Categories/AddCategory";
 import MessageAlert from "../../general-components/MessageAlert/MessageAlert";
 import ListCategory from "../../pages-components/AdminPage/Categories/ListCategoty/ListCategory";
-import {Badge, Spinner} from "react-bootstrap";
+import {Badge} from "react-bootstrap";
 import AddProduct from "../PostProductPage/AddProducts/AddProduct";
 import ListProducts from "../../pages-components/AdminPage/Products/ListProducts";
 import FeedbackTable from "../../pages-components/AdminPage/FeedbackMessages/FeedbackTable";
@@ -11,6 +11,7 @@ import ReviewsTable from "../../pages-components/AdminPage/ReviewsMessages/Revie
 import {useUserAuth} from "../../context/AuthContext";
 import {Navigate} from "react-router-dom";
 import UsersList from "../../pages-components/AdminPage/UsersList/UsersList";
+import Loader from "../../general-components/Loader/Loader";
 
 
 const AdminPage = () => {
@@ -53,7 +54,7 @@ const AdminPage = () => {
             return <Navigate to="/404" />;
         }
     }else {
-        return <Spinner variant={"primary"} animation={"border"} />
+        return <Loader />
     }
 };
 

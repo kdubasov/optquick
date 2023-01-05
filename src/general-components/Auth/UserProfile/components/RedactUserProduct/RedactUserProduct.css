@@ -8,6 +8,12 @@
     font-weight: 500;
 }
 
+/*p warning*/
+.RedactUserProduct p.warning{
+    opacity: .5;
+    margin: 2em 0 0 0;
+}
+
 /*form*/
 .RedactUserProdForm{
     margin-top: 2em;
@@ -25,7 +31,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
 }
-.RedactUserProdForm .inp-group h4{
+.RedactUserProdForm .inp-group h5{
     width: 100%;
     margin-bottom: 1em;
     font-weight: 700;
@@ -39,9 +45,12 @@
     margin-bottom: .5em !important;
 }
 
+/*checkboxes*/
 .RedactUserProdForm .checks-container{
     display: flex;
-    margin-bottom: 25px;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-bottom: 2em;
 }
 .RedactUserProdForm .form-check{
     display: flex;

@@ -31,9 +31,8 @@ const CardProduct = ({product}) => {
                 {/*Название*/}
                 <h6>{product.title}</h6>
 
-
                 {/*Цена*/}
-                <h5>{product.price + " ₽/шт"}</h5>
+                <h5>{Number(product.price).toLocaleString("RU") + " ₽/шт"}</h5>
 
                 {/*Мин заказ*/}
                 <small className={"min-order"}>

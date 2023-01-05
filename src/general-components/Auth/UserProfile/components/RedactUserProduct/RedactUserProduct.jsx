@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, Spinner} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import {useGetUserProducts} from "../../../../../pages-functions/AdminPage/GetProducts/useGetUserProducts";
 import {useUserAuth} from "../../../../../context/AuthContext";
 import {getPathLastWord} from "../../../../../pages-functions/CategoriesPage/getPathLastWord";
@@ -7,6 +7,7 @@ import RedactUserProdForm from "./RedactUserProdForm";
 import MessageAlert from "../../../../MessageAlert/MessageAlert";
 import {Link} from "react-router-dom";
 import "./RedactUserProduct.css";
+import Loader from "../../../../Loader/Loader";
 
 const RedactUserProduct = () => {
 
@@ -36,9 +37,15 @@ const RedactUserProduct = () => {
                 nowProduct ?
                     <>
                         <h3>Редактирование товара "{nowProduct.title}"</h3>
+
+                        <p className="small warning">
+                            В настоящее время редактирование фото для товаров невозможно,
+                            в скором времени мы решим эту проблему. Спасибо за понимание.
+                        </p>
+
                         <RedactUserProdForm data={nowProduct} setRes={setRes} />
                     </>:
-                    <Spinner animation={"border"} size={"sm"} />
+                    <Loader />
             }
 
             <MessageAlert res={res} />

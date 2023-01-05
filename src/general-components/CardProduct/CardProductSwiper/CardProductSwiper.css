@@ -34,7 +34,10 @@
     opacity: 1;
 }
 
+/*wait loader*/
 .CardProductSwiper.wait{
+    height: 100%;
+    background: var(--bs-light);
     display: flex;
     justify-content: center;
     align-items: center;

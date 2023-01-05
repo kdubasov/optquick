@@ -19,7 +19,7 @@ const BreadCrumbs = ({product}) => {
 
     return (
         <div className={"BreadCrumbs"}>
-            <Link to={"/"}>Главная</Link>
+            <Link to={"/categories"}>Каталог</Link>
             <img src="/images/icons/dot-dark.svg" alt="space"/>
             <Link to={`/categories/${category.id}`}>{category.title}</Link>
             <img src="/images/icons/dot-dark.svg" alt="space"/>

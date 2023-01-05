@@ -42,7 +42,7 @@ const AuthUserProductsCard = ({product}) => {
 
                     {/*Цена*/}
                     <h4 className={"m-0"}>
-                        {product.price + " ₽/шт"}
+                        {Number(product.price).toLocaleString("RU") + " ₽/шт"}
                     </h4>
 
                     {/*Мин заказ i kolvo*/}

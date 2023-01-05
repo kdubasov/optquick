@@ -2,11 +2,12 @@ import React from 'react';
 import {Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {useGetProductsPhoto} from "../../../pages-functions/AdminPage/GetProducts/useGetProductsPhoto";
-import {Spinner} from "react-bootstrap";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "./CardProductSwiper.css";
+import Loader from "../../Loader/Loader";
 
 const CardProductSwiper = ({product}) => {
 
@@ -36,7 +37,7 @@ const CardProductSwiper = ({product}) => {
     }else {
         return (
             <div className={"CardProductSwiper wait"}>
-                <Spinner animation={"border"} variant={"dark"} />
+                <Loader />
             </div>
         )
     }

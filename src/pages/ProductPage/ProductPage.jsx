@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Alert, Spinner} from "react-bootstrap";
+import {Alert} from "react-bootstrap";
 import ProductHeader from "./components/ProductHeader/ProductHeader";
 import ProductSimilarProducts from "./components/ProductSimilarProducts/ProductSimilarProducts";
 import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
@@ -7,6 +7,7 @@ import ProductInfoTabs from "./components/ProductInfoTabs/ProductInfoTabs";
 import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";
 import GeneralSearch from "../../general-components/GeneralSearch/GeneralSearch";
 import "./ProductPage.css";
+import Loader from "../../general-components/Loader/Loader";
 
 const ProductPage = () => {
 
@@ -56,7 +57,7 @@ const ProductPage = () => {
         );
     }else {
         return (
-            <Spinner animation={"border"} variant={"primary"} />
+            <Loader />
         )
     }
 };

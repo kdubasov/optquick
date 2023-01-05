@@ -5,7 +5,7 @@ import {handleRedactProducts} from "../../../../../pages-functions/AdminPage/Add
 const RedactUserProdForm = ({data,setRes}) => {
 
     const [prodState,setProdState] = useState(data);
-    // console.log(prodState,"prod state in RedactUserProdForm");
+    console.log(prodState,"prod state in RedactUserProdForm");
 
     //change for input and state
     const handleChange = (nowValue,stateValue,arr) =>{
@@ -20,13 +20,15 @@ const RedactUserProdForm = ({data,setRes}) => {
     }
 
     //get input for form with label
-    const getFormGroup = (label,value,textarea,arr) => {
+    const getFormGroup = (label,value,textarea,arr,req) => {
       return (
           <div className={"for-one-inp"}>
               <Form.Label className={"m-0"}>{label}</Form.Label>
               <FormControl
+                  required={req}
+                  placeholder={req ? "Обязательно к заполнению" : ""}
                   as={textarea ? "textarea" : "input"}
-                  value={arr?prodState[value].join(' '):prodState[value]}
+                  value={arr ? prodState[value].join(' ') : prodState[value]}
                   onChange={e => handleChange(e.target.value,value,arr)}
               />
           </div>
@@ -46,35 +48,32 @@ const RedactUserProdForm = ({data,setRes}) => {
         <Form className={"RedactUserProdForm AddProduct"} onSubmit={handleSend}>
 
             <div className="inp-group">
-                <h4>Основная информация</h4>
-                {getFormGroup("Название","title",false)}
-                {getFormGroup("Цена","price",false,false)}
-                {getFormGroup("Количество","amount",false,false)}
+                <h5>Основная информация</h5>
+                {getFormGroup("Название товара","title",false,false,true)}
+                {getFormGroup("Цена товара (за 1шт)","price",false,false,true)}
+                {getFormGroup("Количество товара","amount",false,false,true)}
             </div>
 
             <div className="inp-group">
-                <h4>Описание и характеристики</h4>
-                {getFormGroup("Описание","description",true,false)}
-                {getFormGroup("Характеристики","characteristics",true,false)}
+                <h5>Описание товара и характеристики</h5>
+                {getFormGroup("Описание","description",true,false,true)}
+                {getFormGroup("Характеристики","characteristics",true,false,false)}
             </div>
 
             <div className="inp-group">
-                <h4>Доставка и заказ</h4>
-                {getFormGroup("Минимальный заказ","minOrder",false,false)}
-                {getFormGroup("Нахождение товара","location",false,false)}
+                <h5>Доставка и оплата</h5>
+                {getFormGroup("Минимальный заказ","minOrder",false,false,true)}
+                {getFormGroup("Способ доставки","selectDelivery",false,false,false)}
+                {getFormGroup("Способ оплаты","selectPay",false,false,false)}
             </div>
 
             <div className="inp-group">
-                {getFormGroup("Время доставки","deliveryPeriod",false,false)}
-                {getFormGroup("Способ доставки","selectDelivery",false,false)}
-                {getFormGroup("Способ оплаты","selectPay",false,false)}
+                <h5>Дополнительная информация</h5>
+                {getFormGroup("Время доставки","deliveryPeriod",false,false,false)}
+                {getFormGroup("Цвета","colors",false,true,false)}
+                {getFormGroup("Размеры","sizes",false,true,false)}
+                {getFormGroup("Нахождение товара","location",false,false,false)}
             </div>
-
-            <div className="inp-group">
-                {getFormGroup("Цвета","colors",false,true)}
-                {getFormGroup("Размеры","sizes",false,true)}
-            </div>
-
 
             <div className="checks-container">
                 <Form.Check
@@ -85,7 +84,6 @@ const RedactUserProdForm = ({data,setRes}) => {
                 />
 
                 <Form.Check
-                    className={"mx-4"}
                     type="switch"
                     label="Показывать почту"
                     checked={prodState.showEmailAddress}
@@ -94,7 +92,7 @@ const RedactUserProdForm = ({data,setRes}) => {
             </div>
 
             <button className={"but-green px-5"} type={"submit"}>
-                Изменить товар
+                Применить изменения
             </button>
 
         </Form>
