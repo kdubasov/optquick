@@ -3,6 +3,7 @@ import CardProductSwiper from "../../../../CardProduct/CardProductSwiper/CardPro
 import {Link} from "react-router-dom";
 import DeleteCategoryButton from "../../../../../pages-components/AdminPage/Categories/DeleteCategoryButton";
 import "./AuthUserProducts.css";
+import {getCutWord} from "../../../../../functions/getCutWord";
 
 const AuthUserProductsCard = ({product}) => {
 
@@ -20,13 +21,7 @@ const AuthUserProductsCard = ({product}) => {
 
                 <div className={"content"}>
                     {/*Название*/}
-                    <h5 className={"m-0"}>
-                        {
-                            product.title.length >= 50 ?
-                                product.title.slice(0,50) + "...":
-                                product.title
-                        }
-                    </h5>
+                    <h5 className={"m-0"}>{getCutWord(product.title,50)}</h5>
 
                     {//Доставка
                         product.deliveryPeriod ?

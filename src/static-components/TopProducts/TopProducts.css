@@ -8,3 +8,19 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+/*show more block*/
+.show-more{
+    width: 100%;
+    margin: .25em 0 1em 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.show-more p{
+    cursor: pointer;
+    transition: .25s;
+    color: var(--bs-blue);
+}
+.show-more p:hover{
+    color: var(--bs-dark);
+}

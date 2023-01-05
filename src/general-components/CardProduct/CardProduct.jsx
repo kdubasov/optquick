@@ -6,6 +6,7 @@ import {getAdmin} from "../../pages-functions/AdminPage/getAdmin";
 import DeleteCategoryButton from "../../pages-components/AdminPage/Categories/DeleteCategoryButton";
 import {useUserAuth} from "../../context/AuthContext";
 import "./CardProduct.css";
+import {getCutWord} from "../../functions/getCutWord";
 
 const CardProduct = ({product}) => {
 
@@ -29,7 +30,7 @@ const CardProduct = ({product}) => {
 
             <div className="content">
                 {/*Название*/}
-                <h6>{product.title}</h6>
+                <h6>{getCutWord(product.title,50)}</h6>
 
                 {/*Цена*/}
                 <h5>{Number(product.price).toLocaleString("RU") + " ₽/шт"}</h5>
@@ -53,8 +54,12 @@ const CardProduct = ({product}) => {
                 }
 
                 {//проверка на товар пользователя который сейчас смотрит его
-                    (user && (user.uid === product.userUid)) &&
-                    <p className={"my-product"}>Ваше объявление</p>
+                    (user && (user.uid === product.userUid)) ?
+                        <p className={"bottom"}>Ваше объявление</p>:
+                        <p className={"bottom"}>
+                            В наличии:
+                            <strong>{product.amount}</strong>шт.
+                        </p>
                 }
             </div>
         </div>

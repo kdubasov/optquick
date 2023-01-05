@@ -6,12 +6,12 @@ import CardProduct from "../../general-components/CardProduct/CardProduct";
 const TopProducts = () => {
 
     //для отображения определенного кол-ва товара
-    const [sliceValue,setSliceValue] = useState(6);
+    const [sliceValue,setSliceValue] = useState(8);
     const handleSlice = () => {
-        if (sliceValue > 6){
-            setSliceValue(6)
+        if (sliceValue > 8){
+            setSliceValue(8)
         }else {
-            sliceValue(20)
+            setSliceValue(20)
         }
     }
 
@@ -32,13 +32,10 @@ const TopProducts = () => {
                     ))
                 }
 
-                <div className="w-100 d-flex justify-content-center">
-                    <button
-                        onClick={() => handleSlice()}
-                        className={"but-blue px-5"}
-                    >
-                        {sliceValue > 6 ? "Скрыть" : "Показать еще"}
-                    </button>
+                <div className="show-more">
+                    <p onClick={() => handleSlice()}>
+                        {sliceValue > 8 ? "Скрыть дополнительные товары" : "Показать больше товаров"}
+                    </p>
                 </div>
             </div>
         );

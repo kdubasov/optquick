@@ -42,7 +42,9 @@ const FeedbackForm = () => {
 
     return (
         <Form onSubmit={handleSend} className={"FeedbackForm"}>
-            <h5>Вы можете задать нам свои вопросы</h5>
+            <h4 className={"title"}>
+                Оставьте заявку на обратную связь
+            </h4>
 
             <Form.Group className="inner">
                 <Form.Label>Введите вашу почту</Form.Label>

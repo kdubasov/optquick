@@ -1,5 +1,5 @@
 .CardProduct{
-    width: calc(33.3% - 1em);
+    width: calc(25% - 1em);
     margin: 0 0 1em 0;
     border-radius: var(--def-border-redius);
     box-shadow: var(--def-shadow);
@@ -54,7 +54,10 @@
 }
 
 /*проверка на товар пользователя*/
-.CardProduct .my-product{
+.CardProduct .bottom{
     width: 100%;
     margin: 0;
+}
+.CardProduct .bottom strong{
+    margin: 0 .25em;
 }

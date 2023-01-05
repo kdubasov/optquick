@@ -1,0 +1,22 @@
+.TopSubcateg{
+    width: 100%;
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.TopSubcateg h4{
+    width: 100%;
+}
+
+/*inner block*/
+.TopSubcateg .inner{
+    width: calc(100% / 6 - 1em);
+    transition: .25s;
+}
+.TopSubcateg .inner:hover{
+    opacity: .75;
+}
+.TopSubcateg .inner img{
+    width: 100%;
+}
