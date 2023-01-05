@@ -35,7 +35,9 @@ export const useGetQueryRes = query => {
                                 //eslint-disable-next-line
                                 Object.values(sub['products']).map(prod => {
                                     if(((prod.title).toLowerCase()).includes(query.toLowerCase())){
-                                        setProducts(old => [...old,prod]);
+                                        if(products.length < 10){
+                                            setProducts(old => [...old,prod]);
+                                        }
                                     }
                                 })
                             }

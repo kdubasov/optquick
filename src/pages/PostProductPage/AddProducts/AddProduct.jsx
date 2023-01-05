@@ -136,7 +136,7 @@ const AddProduct = () => {
             <div className={"inner"}>
                 <h5>Основная информация*</h5>
                 {getFormGroup("title",true,"Название товара")}
-                {getFormGroup("price",true,"Цена товара (за 1шт)")}
+                {getFormGroup("price",true,"Цена товара (за 1шт). В рублях.")}
                 {getFormGroup("amount",true,"Количество товара")}
             </div>
 

@@ -14,7 +14,7 @@ const GeneralSearch = () => {
 
     //data for queris from database
     const data = useGetQueryRes(query);
-    // console.log(useGetQueryRes(query))
+    // console.log(useGetQueryRes(query));
 
     return (
         <div className={"GeneralSearch"}>

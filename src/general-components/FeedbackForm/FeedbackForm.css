@@ -1,5 +1,5 @@
 .FeedbackForm{
-    width: 50%;
+    width: calc(50% - 1em);
     padding: 2em;
     border: 2px solid #F5F4FB;
     border-radius: var(--def-border-redius);

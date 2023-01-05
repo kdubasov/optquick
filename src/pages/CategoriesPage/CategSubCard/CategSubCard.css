@@ -1,6 +1,6 @@
 .CategSubCard{
-    width: calc(25% - 1.5em);
-    margin: 1em 0;
+    width: calc(25% - 1em);
+    margin: 1em 1em 0 0;
     border-radius: var(--def-border-redius);
     box-shadow: var(--def-shadow);
     background-size: cover;

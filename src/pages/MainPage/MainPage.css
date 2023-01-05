@@ -1,0 +1,6 @@
+.MainPage .form-and-categs{
+    margin: 3em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}

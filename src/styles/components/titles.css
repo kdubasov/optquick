@@ -1,4 +1,5 @@
-h3.title{
+h3.title,
+h4.title{
     font-weight: 700;
     margin-bottom: .75em;
 }

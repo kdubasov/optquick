@@ -1,4 +1,5 @@
 .CategoriesPage{
+    margin-bottom: 2em;
     padding-top: 2em;
     padding-bottom: 2em;
 }
@@ -21,6 +22,6 @@
 /*container for subcategories*/
 .CategoriesPage .sub-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
