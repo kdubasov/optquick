@@ -3,7 +3,7 @@ import CardProductSwiper from "./CardProductSwiper/CardProductSwiper";
 import {Link} from "react-router-dom";
 import BriefcaseButton from "../BriefcaseButton/BriefcaseButton";
 import {getAdmin} from "../../pages-functions/AdminPage/getAdmin";
-import DeleteCategoryButton from "../../pages-components/AdminPage/Categories/DeleteCategoryButton";
+import DeleteCategoryButton from "../AdminPage/Categories/DeleteCategoryButton";
 import {useUserAuth} from "../../context/AuthContext";
 import "./CardProduct.css";
 import {getCutWord} from "../../functions/getCutWord";

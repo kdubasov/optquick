@@ -32,7 +32,7 @@ const CryptoAdv = () => {
                     <p className="small adv">
                         *Рекламная запись от ©{new Date().getFullYear()} cryptoQuick.ru
                         <br />
-                        Все права защищены.
+                        *Все права защищены.
                     </p>
                 </footer>
             </div>

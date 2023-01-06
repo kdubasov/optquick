@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
-import AddCategory from "../../pages-components/AdminPage/Categories/AddCategory";
+import AddCategory from "../../general-components/AdminPage/Categories/AddCategory";
 import MessageAlert from "../../general-components/MessageAlert/MessageAlert";
-import ListCategory from "../../pages-components/AdminPage/Categories/ListCategoty/ListCategory";
+import ListCategory from "../../general-components/AdminPage/Categories/ListCategoty/ListCategory";
 import {Badge} from "react-bootstrap";
 import AddProduct from "../PostProductPage/AddProducts/AddProduct";
-import ListProducts from "../../pages-components/AdminPage/Products/ListProducts";
-import FeedbackTable from "../../pages-components/AdminPage/FeedbackMessages/FeedbackTable";
-import ComplaintsTable from "../../pages-components/AdminPage/ComplaintsMessages/ComplaintsTable";
-import ReviewsTable from "../../pages-components/AdminPage/ReviewsMessages/ReviewsTable";
+import ListProducts from "../../general-components/AdminPage/Products/ListProducts";
+import FeedbackTable from "../../general-components/AdminPage/FeedbackMessages/FeedbackTable";
+import ComplaintsTable from "../../general-components/AdminPage/ComplaintsMessages/ComplaintsTable";
+import ReviewsTable from "../../general-components/AdminPage/ReviewsMessages/ReviewsTable";
 import {useUserAuth} from "../../context/AuthContext";
 import {Navigate} from "react-router-dom";
-import UsersList from "../../pages-components/AdminPage/UsersList/UsersList";
+import UsersList from "../../general-components/AdminPage/UsersList/UsersList";
 import Loader from "../../general-components/Loader/Loader";
 
 

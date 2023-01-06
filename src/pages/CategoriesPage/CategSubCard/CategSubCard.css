@@ -24,11 +24,11 @@
 /*link*/
 .CategSubCard h4{
     margin: 0;
-    font-weight: 700;
+    font-weight: 300;
     text-decoration: none;
     color: var(--bs-white);
     position: absolute;
-    bottom: 5px;
-    left: 10px;
+    bottom: 10px;
+    left: 15px;
     line-height: 1.2;
 }

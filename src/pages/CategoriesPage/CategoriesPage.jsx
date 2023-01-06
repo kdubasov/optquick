@@ -10,7 +10,9 @@ const CategoriesPage = () => {
 
     return (
         <div className={'CategoriesPage container'}>
-            <h3>Все категории</h3>
+            <h3 className={"title"}>
+                Все категории
+            </h3>
 
             {
                 (data && data.length) ?

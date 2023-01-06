@@ -27,7 +27,7 @@ const SubcategoriesPage = () => {
 
                 {
                     Boolean(dataSubcategories && dataSubcategories.length) &&
-                    <h3>
+                    <h3 className={"title m-0"}>
                         На данной странице показаны подкатегории категории
                         "{categoryTitle.map(categ => (categ.title))}"
                     </h3>

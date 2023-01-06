@@ -15,10 +15,11 @@ import PostProductPage from "./pages/PostProductPage/PostProductPage";
 import UserPage from "./pages/UserPage/UserPage";
 import RedactUserProduct from "./general-components/Auth/UserProfile/components/RedactUserProduct/RedactUserProduct";
 import BriefcasePage from "./pages/BriefcasePage/BriefcasePage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import NotFoundPage from "./static-pages/NotFoundPage/NotFoundPage";
 import FooterBottom from "./general-components/FooterBottom/FooterBottom";
 import ScrollToTop from "./functions/scrollToTop";
-import PrivacyPolicyPage from "./pages/PrivacyPolicyPage/PrivacyPolicyPage";
+import PrivacyPolicyPage from "./static-pages/PrivacyPolicyPage/PrivacyPolicyPage";
+import FeedbackPage from "./static-pages/FeedbackPage/FeedbackPage";
 
 
 const Router = () => {
@@ -34,8 +35,8 @@ const Router = () => {
                 {/*NAVBAR TOP*/}
                 <NavbarTop />
 
-                {/*container for developer*/}
-                <div style={{padding:0,minHeight:"90vh"}}>
+                {/*container for dev*/}
+                <div style={{padding:0,minHeight:"100vh"}}>
                     <Routes>
 
                         {/*main page*/}
@@ -102,6 +103,8 @@ const Router = () => {
 
                         {/*политика конфеденциальности*/}
                         <Route path={`/privacyPolicy`} element={<PrivacyPolicyPage />} />
+                        {/*страница с формой обртаной связи*/}
+                        <Route path={`/feedback`} element={<FeedbackPage />} />
                     </Routes>
                 </div>
 

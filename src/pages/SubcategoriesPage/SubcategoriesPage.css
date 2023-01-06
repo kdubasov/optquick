@@ -6,10 +6,6 @@
     color: var(--bs-blue);
     text-decoration: none;
 }
-.SubcategoriesPage header h3{
-    font-weight: 700;
-    margin: 0;
-}
 
 .SubcategoriesPage header .inner{
     display: flex;

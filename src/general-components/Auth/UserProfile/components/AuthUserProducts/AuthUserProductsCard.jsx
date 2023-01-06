@@ -1,7 +1,7 @@
 import React from 'react';
 import CardProductSwiper from "../../../../CardProduct/CardProductSwiper/CardProductSwiper";
 import {Link} from "react-router-dom";
-import DeleteCategoryButton from "../../../../../pages-components/AdminPage/Categories/DeleteCategoryButton";
+import DeleteCategoryButton from "../../../../AdminPage/Categories/DeleteCategoryButton";
 import "./AuthUserProducts.css";
 import {getCutWord} from "../../../../../functions/getCutWord";
 

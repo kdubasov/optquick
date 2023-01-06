@@ -52,7 +52,7 @@ export const footerBottomData = [
             {
                 id:"1122",
                 text:"Обратная связь",
-                link:"/",
+                link:"/feedback",
             },
             {
                 id:"1123",
