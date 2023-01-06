@@ -37,7 +37,7 @@ const SubProductsPage = () => {
             <header>
 
                 <Link to={`/categories/${path[path.length - 2]}`}>
-                    Назад к подкатегориям
+                    Вернуться к подкатегориям
                 </Link>
 
                 {//отображаем возможность сортировки только есть товары
@@ -49,7 +49,7 @@ const SubProductsPage = () => {
                 }
 
                 {
-                    Boolean(dataSort[0].length) &&
+                    dataSort[0].length > 1 &&
                     <SubProductSort listProducts={listProducts} setDataSort={setDataSort} />
                 }
 

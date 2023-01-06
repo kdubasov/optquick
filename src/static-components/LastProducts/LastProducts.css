@@ -1,0 +1,15 @@
+.LastProducts{
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.LastProducts h4{
+    width: 100%;
+    margin-bottom: 0;
+}
+.LastProducts p.descr{
+    width: 100%;
+    margin-bottom: 2em;
+    opacity: .75;
+}

@@ -15,5 +15,17 @@
 /*input search*/
 .GeneralSearch input{
     width: 100%;
+    padding-left: 35px;
+    border: 1px solid #E4E4E4 !important;
     border-radius: var(--def-border-redius) !important;
+}
+.GeneralSearch input::placeholder{
+    color: #A3A3A3;
+}
+/*image search*/
+.GeneralSearch .search-img{
+    width: 20px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
 }

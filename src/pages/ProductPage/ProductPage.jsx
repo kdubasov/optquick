@@ -8,6 +8,7 @@ import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";
 import GeneralSearch from "../../general-components/GeneralSearch/GeneralSearch";
 import "./ProductPage.css";
 import Loader from "../../general-components/Loader/Loader";
+import LastProducts from "../../static-components/LastProducts/LastProducts";
 
 const ProductPage = () => {
 
@@ -53,6 +54,8 @@ const ProductPage = () => {
                     setAlertData={setAlertData}
                 />
 
+                {/*last products*/}
+                <LastProducts />
             </div>
         );
     }else {

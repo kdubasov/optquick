@@ -32,6 +32,8 @@ const GeneralSearch = () => {
                     onFocus={() => setFocus(true)}
                 />
 
+                <img src="/images/icons/search.svg" className={"search-img"} alt="search"/>
+
                 {focus && <GeneralSearchRes result={data} setFocus={setFocus} />}
             </div>
         </div>

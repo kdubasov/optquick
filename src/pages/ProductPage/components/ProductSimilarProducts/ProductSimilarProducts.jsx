@@ -12,7 +12,7 @@ const ProductSimilarProducts = ({link,nowProductId,setPath,setAlertData}) => {
     if (dataSimilarProducts.length && dataSimilarProducts.filter(product => product.id !== nowProductId).length){
         return (
             <div className={'ProductSimilarProducts'}>
-                <h2>Смотрите также</h2>
+                <h4 className={"title"}>Смотрите также</h4>
 
                 <div className="products-container">
                     {

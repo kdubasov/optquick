@@ -1,3 +1,8 @@
+.MainPage{
+    padding: 1em 0;
+}
+
+/*для формы и категорий*/
 .MainPage .form-and-categs{
     margin: 3em 0;
     display: flex;

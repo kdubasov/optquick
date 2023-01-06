@@ -8,32 +8,32 @@ const TopSubcateg = () => {
         {
             id: 1,
             img: "/images/static/sub1.svg",
-            link: "/categories/"
+            link: "/categories/electronic"
         },
         {
             id: 2,
             img: "/images/static/sub2.svg",
-            link: "/categories/"
+            link: "/categories/houseProducts"
         },
         {
             id: 3,
             img: "/images/static/sub3.svg",
-            link: "/categories/"
+            link: "/notFound"
         },
         {
             id: 4,
             img: "/images/static/sub4.svg",
-            link: "/categories/"
+            link: "/categories/sport"
         },
         {
             id: 5,
             img: "/images/static/sub5.svg",
-            link: "/categories/"
+            link: "/categories/kidsProducts"
         },
         {
             id: 6,
             img: "/images/static/sub6.svg",
-            link: "/categories/"
+            link: "/categories/clothes/woomans"
         },
     ];
 

@@ -5,6 +5,7 @@ import TopCategories from "../../static-components/TopCategories/TopCategories";
 import "./MainPage.css";
 import TopProducts from "../../static-components/TopProducts/TopProducts";
 import TopSubcateg from "../../static-components/TopSubcateg/TopSubcateg";
+import LastProducts from "../../static-components/LastProducts/LastProducts";
 
 const MainPage = () => {
     return (
@@ -12,9 +13,10 @@ const MainPage = () => {
             {/*Поиск*/}
             <GeneralSearch />
 
-            {/*top subcategories*/}
+            {/*top subcategories***/}
             <TopSubcateg />
 
+            {/*лучши е продукты**/}
             <TopProducts />
 
             <div className="form-and-categs">
@@ -23,6 +25,9 @@ const MainPage = () => {
                 {/*Популярные категории*/}
                 <TopCategories />
             </div>
+
+            {/*последние продукты*/}
+            <LastProducts />
         </div>
     );
 };
