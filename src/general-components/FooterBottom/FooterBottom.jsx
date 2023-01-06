@@ -10,7 +10,7 @@ const FooterBottom = () => {
             <Container>
                 <div className="inner left">
                     <img src="/images/general/logo.svg" alt=""/>
-                    <h6 className={"w-100"}>2004-{new Date().getFullYear()} © OPTQUICK</h6>
+                    <h6 className={"w-100"}>2022-{new Date().getFullYear()} © OPTQUICK</h6>
                     <Link to="/privacyPolicy">Политика конфиденциальности</Link><br />
                     <Link to="/">Политика обработки персональных данных</Link>
                 </div>

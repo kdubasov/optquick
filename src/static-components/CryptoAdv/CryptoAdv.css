@@ -1,0 +1,50 @@
+.CryptoAdv{
+    width: 100%;
+    margin: 4em 0;
+    padding: 2em;
+    background: var(--bs-light);
+    /*box-shadow: var(--def-shadow);*/
+    border: 2px solid #F5F4FB;
+    border-radius: var(--def-border-redius);
+
+    /*flex*/
+    display: flex;
+    align-items: center;
+
+    /*bg image*/
+    background-image: url("/public/images/advertisement/banner-crypto.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+/*content*/
+.CryptoAdv .content{
+    width: 65%;
+}
+
+/*text*/
+.CryptoAdv .content h4{
+    font-weight: 500;
+    margin: 0;
+}
+.CryptoAdv .content p{
+    opacity: .75;
+    margin: 0;
+}
+.CryptoAdv .content p a{
+    color: var(--bs-blue);
+    font-weight: 600;
+    margin-left: .25em;
+}
+
+/*button*/
+.CryptoAdv .content footer{
+    margin-top: 1em;
+}
+.CryptoAdv .content footer p.small{
+    margin-top: 3em;
+    font-size: 12px !important;
+    line-height: 1;
+    opacity: .5;
+}

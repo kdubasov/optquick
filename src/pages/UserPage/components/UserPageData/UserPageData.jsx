@@ -25,14 +25,6 @@ const UserPageData = ({data,selectPage,setSelectPage}) => {
                         <img src={data.photo} alt={data.name} />:
                         <img src="/images/auth/noAvatar.svg" alt="add"/>
                 }
-                {
-                    !data?.photo &&
-                    <img
-                        src="/images/auth/redact-photo.svg"
-                        alt="redact"
-                        className={"redact"}
-                    />
-                }
             </div>
 
             <h5 className={"name"}>
@@ -55,7 +47,7 @@ const UserPageData = ({data,selectPage,setSelectPage}) => {
                         {getReviewsGrade(data.reviews)}
                         <img src="/images/auth/star.svg" alt="star"/>
                         <span>
-                            {Object.values(data.reviews).length + " отзыва"}
+                            {Object.values(data.reviews).length + " отзыв(а,ов)"}
                         </span>
                     </p>:
                     <p className="reviews">Отзывов нет</p>

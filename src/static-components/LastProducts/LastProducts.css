@@ -1,15 +1,36 @@
 .LastProducts{
-    margin: 2em 0;
+    margin: 4em 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.LastProducts header{
+    width: 100%;
+}
 .LastProducts h4{
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: .4em !important;
 }
 .LastProducts p.descr{
-    width: 100%;
+    width: 75%;
     margin-bottom: 2em;
     opacity: .75;
+}
+.LastProducts p.descr a{
+    color: var(--bs-blue);
+    margin-left: .25em;
+}
+
+.LastProducts .link-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.LastProducts .link-container a{
+    color: var(--bs-blue);
+    text-decoration: none;
+    transition: .25s;
+}
+.LastProducts .link-container :hover{
+    color: var(--bs-dark);
 }

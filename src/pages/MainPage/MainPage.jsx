@@ -6,6 +6,8 @@ import "./MainPage.css";
 import TopProducts from "../../static-components/TopProducts/TopProducts";
 import TopSubcateg from "../../static-components/TopSubcateg/TopSubcateg";
 import LastProducts from "../../static-components/LastProducts/LastProducts";
+import NewProducts from "../../static-components/NewProducts/NewProducts";
+import CryptoAdv from "../../static-components/CryptoAdv/CryptoAdv";
 
 const MainPage = () => {
     return (
@@ -28,6 +30,11 @@ const MainPage = () => {
 
             {/*последние продукты*/}
             <LastProducts />
+
+            <CryptoAdv />
+
+            {/*новые товары*/}
+            <NewProducts />
         </div>
     );
 };
