@@ -1,14 +1,28 @@
 import React from 'react';
 import "./SliderNews.css";
+import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
 
 //swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import {Link} from "react-router-dom";
 
 
 const SliderNews = () => {
+
+    //database data
+    const data = useGetCategory("/articles");
+
+    //styles for slider
+    const getStyles = (bgColor) => {
+        return {
+            backgroundColor: bgColor,
+        }
+    }
+
+    if (data.length)
     return (
         <Swiper
             slidesPerView={2}
@@ -20,15 +34,24 @@ const SliderNews = () => {
             modules={[Navigation]}
             className="SliderNews"
         >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide>
+            {
+                data.map(news => (
+                    <SwiperSlide
+                        key={news.id}
+                        style={getStyles(news.cardBG,news.cardPhoto)}
+                    >
+                        <img src={news.cardPhoto} alt={news.title} className="static-img"/>
+
+                        {/*link to news page*/}
+                        <Link to={`/articles/${news.id}`} />
+
+                        <div className="content">
+                            <h5>{news.title}</h5>
+                            <p className={"m-0"}>{news.openingText}</p>
+                        </div>
+                    </SwiperSlide>
+                ))
+            }
         </Swiper>
     );
 };

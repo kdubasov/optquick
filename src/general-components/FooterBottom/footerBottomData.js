@@ -4,6 +4,11 @@ export const footerBottomData = [
         text:"Покупателям",
         links: [
             {
+                id:"1110",
+                text:"Каталог товаров",
+                link:"/",
+            },
+            {
                 id:"1111",
                 text:"Как сделать заказ",
                 link:"/",
@@ -30,7 +35,7 @@ export const footerBottomData = [
             },
             {
                 id:"1116",
-                text:"Правила пользования торговой площадкой",
+                text:"Правила пользования площадкой",
                 link:"/",
             },
             {
@@ -46,7 +51,7 @@ export const footerBottomData = [
         links: [
             {
                 id:"1121",
-                text:"Продавайте на optquick",
+                text:"Продавайте на OptQuick",
                 link:"/",
             },
             {
@@ -62,6 +67,11 @@ export const footerBottomData = [
             {
                 id:"1124",
                 text:"О проекте",
+                link:"/",
+            },
+            {
+                id:"1124",
+                text:"Поддержать проект",
                 link:"/",
             },
         ],
@@ -97,23 +107,18 @@ export const footerBottomData = [
                 link:"/",
             },
             {
-                id:"1145",
+                id:"1142",
                 text:"Статьи",
                 link:"/",
             },
             {
-                id:"1142",
-                text:"Реквизиты",
-                link:"/",
-            },
-            {
                 id:"1143",
-                text:"Пресс-центр",
+                text:"Контакты",
                 link:"/",
             },
             {
                 id:"1144",
-                text:"Контакты",
+                text:"Сотрудничество",
                 link:"/",
             },
         ],

@@ -8,3 +8,10 @@
     align-content: flex-start;
     flex-wrap: wrap;
 }
+
+
+/*card product width*/
+.UserPageProducts .prods-container .CardProduct{
+    width: calc(33.33% - 1em);
+    margin: .5em;
+}

@@ -20,6 +20,7 @@ import FooterBottom from "./general-components/FooterBottom/FooterBottom";
 import ScrollToTop from "./functions/scrollToTop";
 import PrivacyPolicyPage from "./static-pages/PrivacyPolicyPage/PrivacyPolicyPage";
 import FeedbackPage from "./static-pages/FeedbackPage/FeedbackPage";
+import OneArticlePage from "./static-pages/OneArticlePage/OneArticlePage";
 
 
 const Router = () => {
@@ -105,6 +106,8 @@ const Router = () => {
                         <Route path={`/privacyPolicy`} element={<PrivacyPolicyPage />} />
                         {/*страница с формой обртаной связи*/}
                         <Route path={`/feedback`} element={<FeedbackPage />} />
+                        {/*страница с одной статьей*/}
+                        <Route path={`/articles/:articleID`} element={<OneArticlePage />} />
                     </Routes>
                 </div>
 

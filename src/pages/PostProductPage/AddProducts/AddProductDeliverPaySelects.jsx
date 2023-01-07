@@ -16,7 +16,7 @@ const AddProductDeliverPaySelects = ({setSelectPay,setSelectDelivery,selectPay,s
                     value={selectDelivery}
                     size={"sm"}
                 >
-                    <option hidden value={""}>Варианты доставки*</option>
+                    <option hidden value={""}>Варианты доставки</option>
                     {
                         deliveryArr.map(elem => (
                             <option key={elem} value={elem}>{elem}</option>
