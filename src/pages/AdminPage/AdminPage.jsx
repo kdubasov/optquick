@@ -12,6 +12,7 @@ import {useUserAuth} from "../../context/AuthContext";
 import {Navigate} from "react-router-dom";
 import UsersList from "../../general-components/AdminPage/UsersList/UsersList";
 import Loader from "../../general-components/Loader/Loader";
+import NewsAdmin from "../../general-components/AdminPage/News/NewsAdmin";
 
 
 const AdminPage = () => {
@@ -48,6 +49,8 @@ const AdminPage = () => {
                     <ReviewsTable setRes={setRes} />
                     {/*Таблица пользователей*/}
                     <UsersList />
+                    {/*статьи*/}
+                    <NewsAdmin />
                 </div>
             );
         }else{

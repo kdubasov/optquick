@@ -7,12 +7,15 @@ import LastProducts from "../../static-components/LastProducts/LastProducts";
 import NewProducts from "../../static-components/NewProducts/NewProducts";
 import CryptoAdv from "../../static-components/CryptoAdv/CryptoAdv";
 import ThreeInfoBlock from "../../static-components/ThreeInfoBlock/ThreeInfoBlock";
+import SliderNews from "../../general-components/SliderNews/SliderNews";
 
 const MainPage = () => {
     return (
         <div className={`MainPage container`}>
             {/*Поиск*/}
             <GeneralSearch />
+
+            <SliderNews />
 
             {/*top subcategories***/}
             <TopSubcateg />

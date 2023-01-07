@@ -1,0 +1,14 @@
+/*ListNewsItem*/
+.ListNewsItem img.card-img{
+    width: 100px;
+    margin-right: 1em;
+}
+
+.ListNewsItem p,
+.ListNewsItem h5{
+    margin: 0;
+}
+
+.ListNewsItem .color{
+    font-weight: 900;
+}

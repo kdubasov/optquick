@@ -22,7 +22,9 @@ const TopProducts = () => {
     if (data.length){
         return (
             <div className={"TopProducts"}>
-                <h4 className={"title"}>Популярные товары</h4>
+                <h4 className={"title"}>
+                    Рекомендации для вас
+                </h4>
 
                 {
                     data

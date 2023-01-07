@@ -1,0 +1,10 @@
+.SliderNews{
+    margin: 1.25em 0 3em;
+}
+.SliderNews .swiper-slide{
+    height: 150px;
+    background: var(--bs-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
