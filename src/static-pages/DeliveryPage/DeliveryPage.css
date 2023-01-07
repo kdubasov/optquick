@@ -1,0 +1,19 @@
+.DeliveryPage{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.DeliveryPage h6{
+    font-weight: 300;
+}
+.DeliveryPage h6 strong{
+    font-weight: 500;
+}
+
+.DeliveryPage ul{
+    padding-left: 1.5em;
+}
+.DeliveryPage li{
+    margin-bottom: .5em;
+}

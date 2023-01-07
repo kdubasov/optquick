@@ -6,7 +6,7 @@ import UserPageProducts from "./components/UserPageProducts/UserPageProducts";
 import UserReviewsSend from "./components/UserReviews/UserReviewsSend/UserReviewsSend";
 import {useUserAuth} from "../../context/AuthContext";
 import UserReviewsList from "./components/UserReviews/UserReviewsList/UserReviewsList";
-import {Alert, Container} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import UserComplaint from "./components/UserComplaint/UserСomplaint";
 import "./UserPage.css";
 import UserContacts from "./components/UserContacts/UserContacts";
@@ -55,12 +55,14 @@ const UserPage = () => {
                             {//делаем так чтобы пользователь не мог сам себе написать отзыв
                                 (user && (user.uid !== userId) && nowUserData.email) ?
                                     <UserReviewsSend userId={userId} nowUser={user} />:
-                                    <Alert className={"small"}>
+                                    <p className={"small warning"}>
                                         Вы не можете оставлять отзыв самому себе.
                                         Также для того чтобы оставить отзыв о продавце или
                                         отправить на него жалобу, вы должны авторизоваться
                                         и заполнить обязательные данные о себе.
-                                    </Alert>
+                                        Процесс авторизации занимает около 20 секунд вашего времени.
+                                        Спасибо за понимание!
+                                    </p>
                             }
                         </>
                     }
@@ -76,11 +78,13 @@ const UserPage = () => {
                         (
                             (user && nowUserData.email) ?
                                 <UserComplaint nowUser={user} userId={userId} userData={nowUserData} />:
-                                <Alert className={"small"}>
+                                <p className={"small warning"}>
                                     Для того чтобы оставить отзыв о продавце или
                                     отправить на него жалобу, вы должны авторизоваться
                                     и заполнить обязательные данные о себе.
-                                </Alert>
+                                    Процесс авторизации занимает около 20 секунд вашего времени.
+                                    Спасибо за понимание!
+                                </p>
                         )
                     }
                 </div>

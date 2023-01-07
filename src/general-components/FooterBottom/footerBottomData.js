@@ -4,6 +4,11 @@ export const footerBottomData = [
         text:"Покупателям",
         links: [
             {
+                id:"1118",
+                text:"Связь с продавцом",
+                link:"/sellerComm",
+            },
+            {
                 id:"1110",
                 text:"Каталог товаров",
                 link:"/",
@@ -21,17 +26,17 @@ export const footerBottomData = [
             {
                 id:"1113",
                 text:"Доставка",
-                link:"/",
+                link:"/delivery",
             },
             {
                 id:"1114",
                 text:"Возврат товара",
-                link:"/",
+                link:"/productsReturns",
             },
             {
                 id:"1115",
                 text:"Возврат денежных средств",
-                link:"/",
+                link:"/payRefund",
             },
             {
                 id:"1116",

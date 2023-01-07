@@ -45,7 +45,7 @@
 button.seller{
     width: 100%;
     padding: .75em;
-    margin: 1.5em 0 1.5em;
+    margin: 1.5em 0 .5em;
 }
 button.seller img{
     transition: .25s;
@@ -59,7 +59,7 @@ button.seller img.revert{
 .ProductHeader .user-data{
     width: 100%;
     padding: .75em 2em;
-    margin: -1em 0 .5em;
+    margin: .1em 0 .5em;
     text-decoration: none;
     border-radius: var(--def-border-redius);
     box-shadow: var(--def-shadow);

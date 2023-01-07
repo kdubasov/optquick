@@ -47,7 +47,8 @@ const ProductHeader = ({productData,setAlertData}) => {
 
                 {!user &&
                     <Alert className={"m-0 p-2 small"}>
-                        Для того чтобы добавить товар в избранное вы должны авторизоваться.
+                        Для того чтобы добавить товар в избранное
+                        и видеть контакты продавца вы должны пройти авторизацию.
                     </Alert>
                 }
 
@@ -55,17 +56,21 @@ const ProductHeader = ({productData,setAlertData}) => {
                 <BriefcaseButton elemData={productData} setAlertData={setAlertData} />
 
                 {/*seller show*/}
-                <button
-                    className={"but-blue seller"}
-                    onClick={() => setShowUser(!showUser)}
-                >
-                    Связаться с продавцом
-                    <img
-                        className={showUser ? "revert" : ""}
-                        src={"/images/icons/arrow.svg"}
-                        alt={"arrow-down"}
-                    />
-                </button>
+                {
+                    user &&
+                    <button
+                        className={"but-blue seller"}
+                        onClick={() => setShowUser(!showUser)}
+                    >
+                        Связаться с продавцом
+                        <img
+                            className={showUser ? "revert" : ""}
+                            src={"/images/icons/arrow.svg"}
+                            alt={"arrow-down"}
+                        />
+                    </button>
+                }
+
                 {//user info
                     showUser &&
                     <div className={"user-data"}>
@@ -91,7 +96,7 @@ const ProductHeader = ({productData,setAlertData}) => {
                 }
 
                 {//user data
-                    Object.values(userData).length &&
+                    Boolean(Object.values(userData).length) &&
                     <ProductUserData productData={productData} userData={userData} />
                 }
             </div>

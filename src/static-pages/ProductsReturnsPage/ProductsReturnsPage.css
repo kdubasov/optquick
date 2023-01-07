@@ -1,0 +1,20 @@
+.ProductsReturnsPage{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.ProductsReturnsPage h6{
+    font-weight: 300;
+    margin-bottom: 2em;
+}
+.ProductsReturnsPage i.warning{
+    font-weight: inherit;
+    opacity: .5;
+}
+
+.ProductsReturnsPage p.small a{
+    margin-left: .25em;
+    text-decoration: none;
+    color: var(--bs-blue);
+}

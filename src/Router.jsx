@@ -21,6 +21,10 @@ import ScrollToTop from "./functions/scrollToTop";
 import PrivacyPolicyPage from "./static-pages/PrivacyPolicyPage/PrivacyPolicyPage";
 import FeedbackPage from "./static-pages/FeedbackPage/FeedbackPage";
 import OneArticlePage from "./static-pages/OneArticlePage/OneArticlePage";
+import SellerCommPage from "./static-pages/SellerCommPage/SellerCommPage";
+import DeliveryPage from "./static-pages/DeliveryPage/DeliveryPage";
+import ProductsReturnsPage from "./static-pages/ProductsReturnsPage/ProductsReturnsPage";
+import PayRefundPage from "./static-pages/PayRefundPage/PayRefundPage";
 
 
 const Router = () => {
@@ -108,6 +112,14 @@ const Router = () => {
                         <Route path={`/feedback`} element={<FeedbackPage />} />
                         {/*страница с одной статьей*/}
                         <Route path={`/articles/:articleID`} element={<OneArticlePage />} />
+                        {/*страница "Связь с продавцом"*/}
+                        <Route path={`/sellerComm`} element={<SellerCommPage />} />
+                        {/*страница "доставка товара"*/}
+                        <Route path={`/delivery`} element={<DeliveryPage />} />
+                        {/*страница Возврат товара*/}
+                        <Route path={`/productsReturns`} element={<ProductsReturnsPage />} />
+                        {/*страница Возврат денежных средств*/}
+                        <Route path={`/payRefund`} element={<PayRefundPage />} />
                     </Routes>
                 </div>
 

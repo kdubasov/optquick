@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import "./UserContacts.css";
+import {useUserAuth} from "../../../../context/AuthContext";
 
 const UserContacts = ({userData}) => {
+
+    const { user } = useUserAuth();
 
     const [showValue,setShowValue] = useState([false,false,false]);
 
@@ -32,30 +35,43 @@ const UserContacts = ({userData}) => {
         return false;
     }
 
-    return (
-        <div className={"UserContacts"}>
-            <h4>Связаться с продавцом</h4>
+    if (user){
+        return (
+            <div className={"UserContacts"}>
+                <h4>Связаться с продавцом</h4>
 
-            {
-                userData.vk &&
-                <a
-                    className={"soc-block-link"}
-                    href={userData.vk}
-                    target={"_blank"}
-                    rel={"noreferrer"}
-                >
-                    <div className="soc-block vk">
-                        <h4>Вконтакте</h4>
-                        <img className={"arrow"} src="/images/icons/arrow.svg" alt="arrow"/>
-                    </div>
-                </a>
-            }
+                {
+                    userData.vk &&
+                    <a
+                        className={"soc-block-link"}
+                        href={userData.vk}
+                        target={"_blank"}
+                        rel={"noreferrer"}
+                    >
+                        <div className="soc-block vk">
+                            <h4>Вконтакте</h4>
+                            <img className={"arrow"} src="/images/icons/arrow.svg" alt="arrow"/>
+                        </div>
+                    </a>
+                }
 
-            {getBlock("Email","email",0)}
-            {getBlock("Номер телефона","phoneNumber",1)}
-            {getBlock("Telegram","telegram",2)}
-        </div>
-    );
+                {getBlock("Email","email",0)}
+                {getBlock("Номер телефона","phoneNumber",1)}
+                {getBlock("Telegram","telegram",2)}
+            </div>
+        );
+    }else {
+        return (
+            <div className={"UserContacts"}>
+                <h4>Связаться с продавцом</h4>
+
+                <p className="small warning">
+                    Для того чтобы видеть контакты других пользователей вы должны пройти авторизацию.
+                    Процесс авторизации занимает около 20 секунд вашего времени. Спасибо за понимание!
+                </p>
+            </div>
+        )
+    }
 };
 
 export default UserContacts;

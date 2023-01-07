@@ -1,4 +1,5 @@
 .ProductUserData{
+    margin-top: 1em;
     padding: 2em;
     border-radius: var(--def-border-redius);
     box-shadow: var(--def-shadow);

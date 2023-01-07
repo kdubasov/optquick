@@ -1,3 +1,8 @@
 .UserPage{
     padding-bottom: 3em;
 }
+
+.UserPage p.warning{
+    opacity: .5;
+    margin: 0;
+}
