@@ -9,6 +9,7 @@ import AuthUserProducts from "./components/AuthUserProducts/AuthUserProducts";
 import UserReviewsList from "../../../pages/UserPage/components/UserReviews/UserReviewsList/UserReviewsList";
 import "./UserProfile.css";
 import {Container} from "react-bootstrap";
+import AuthProfileSEO from "../../../seo/AuthProfileSEO";
 
 const UserProfile = () => {
 
@@ -27,6 +28,9 @@ const UserProfile = () => {
 
     return (
      <div className={'UserProfile'}>
+
+         {/*SEO*/}
+         <AuthProfileSEO />
 
          {/*самая верхняя картинка bg*/}
          <div className="top-image" />

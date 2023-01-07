@@ -8,10 +8,15 @@ import NewProducts from "../../static-components/NewProducts/NewProducts";
 import CryptoAdv from "../../static-components/CryptoAdv/CryptoAdv";
 import ThreeInfoBlock from "../../static-components/ThreeInfoBlock/ThreeInfoBlock";
 import SliderNews from "../../general-components/SliderNews/SliderNews";
+import MainPageSEO from "../../seo/MainPageSEO";
 
 const MainPage = () => {
     return (
         <div className={`MainPage container`}>
+
+            {/*SEO HELMET*/}
+            <MainPageSEO />
+
             {/*Поиск*/}
             <GeneralSearch />
 

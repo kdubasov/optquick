@@ -6,6 +6,7 @@ import {useGetBriefcaseData} from "../../pages-functions/Briefcase/useGetBriefca
 import CardProduct from "../../general-components/CardProduct/CardProduct";
 import {Link} from "react-router-dom";
 import "./BriefcasePage.css";
+import BriefcaseSEO from "../../seo/BriefcaseSEO";
 
 const BriefcasePage = () => {
 
@@ -22,6 +23,10 @@ const BriefcasePage = () => {
 
     return (
         <Container className={'BriefcasePage'}>
+
+            {/*SEO*/}
+            <BriefcaseSEO />
+
             <h3 className={"title"}>
                 Избранные товары ({briefcaseProducts.length})
             </h3>

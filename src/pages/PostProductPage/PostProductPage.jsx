@@ -5,6 +5,7 @@ import {useGetUser} from "../../general-components/Auth/UserProfile/functions/us
 import {useUserAuth} from "../../context/AuthContext";
 import {Link} from "react-router-dom";
 import "./PostProductPage.css";
+import PostProductSEO from "../../seo/PostProductSEO";
 
 const PostProductPage = () => {
 
@@ -16,6 +17,10 @@ const PostProductPage = () => {
 
     return (
         <Container className={'PostProductPage'}>
+
+            {/*SEO*/}
+            <PostProductSEO />
+
             <h3 className={"title"}>
                 Разместить объявление
             </h3>

@@ -70,7 +70,7 @@ export const footerBottomData = [
                 link:"/",
             },
             {
-                id:"1124",
+                id:"1125",
                 text:"Поддержать проект",
                 link:"/",
             },

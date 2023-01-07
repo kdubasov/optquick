@@ -2,16 +2,21 @@ import React from 'react';
 import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
 import {Container} from "react-bootstrap";
 import SliderNews from "../../general-components/SliderNews/SliderNews";
+import OneArticleSEO from "../../seo/OneArticleSEO";
 
 const OneArticlePage = () => {
 
     const path = (window.location.pathname).split('/');
     const articleID = path[path.length - 1];
     const data = useGetUser(`/articles/${articleID}`);
-    console.log(data);
+    // console.log(data);
 
     return (
         <Container className={"OneArticlePage py-4"}>
+
+            {/*SEO*/}
+            <OneArticleSEO data={data} />
+
             <div className="content">
                 <img src={data.cardPhoto} alt={data.title}/>
                 <h3 className={"title"}>

@@ -2,6 +2,7 @@ import React from 'react';
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
 import CategoriesCard from "./CategSubCard/CategSubCard";
 import "./CategoriesPage.css";
+import CatalogSEO from "../../seo/CatalogSEO";
 
 const CategoriesPage = () => {
 
@@ -10,6 +11,10 @@ const CategoriesPage = () => {
 
     return (
         <div className={'CategoriesPage container'}>
+
+            {/*SEO*/}
+            <CatalogSEO />
+
             <h3 className={"title"}>
                 Все категории
             </h3>

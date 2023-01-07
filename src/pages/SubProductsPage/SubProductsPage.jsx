@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import CardProduct from "../../general-components/CardProduct/CardProduct";
 import SubProductSort from "./SubProductSort/SubProductSort";
 import "./SubProductsPage.css";
+import SubcategoriesSEO from "../../seo/SubcategoriesSEO";
 
 const SubProductsPage = () => {
 
@@ -35,6 +36,12 @@ const SubProductsPage = () => {
         <div className={'SubProductsPage container'}>
 
             <header>
+
+                {/*SEO*/}
+                {
+                    subcategoryTitle[0]?.title &&
+                    <SubcategoriesSEO titleSub={subcategoryTitle[0].title} />
+                }
 
                 <Link to={`/categories/${path[path.length - 2]}`}>
                     Вернуться к подкатегориям

@@ -13,8 +13,8 @@ import './styles/components/titles.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-        <React.StrictMode>
+        {/*<React.StrictMode>*/}
             <Router />
-        </React.StrictMode>
+        {/*</React.StrictMode>*/}
     </BrowserRouter>
 );

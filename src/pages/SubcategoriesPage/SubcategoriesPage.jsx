@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
 import SubCard from "./SubCard/SubCard";
 import "./SubcategoriesPage.css";
+import SubcategoriesSEO from "../../seo/SubcategoriesSEO";
 
 const SubcategoriesPage = () => {
 
@@ -14,11 +15,17 @@ const SubcategoriesPage = () => {
 
     //for title category
     const dataCategories = useGetCategory("/categories");
-    const categoryTitle = dataCategories.filter(category => category.id === getPathLastWord(path));
+    const categoryTitle = dataCategories?.filter(category => category.id === getPathLastWord(path));
     // console.log(categoryTitle)
 
     return (
         <div className={'SubcategoriesPage container'}>
+
+            {/*SEO*/}
+            {
+                categoryTitle[0]?.title &&
+                <SubcategoriesSEO titleSub={categoryTitle[0]?.title} />
+            }
 
             <header>
                 <Link to={`/categories`}>

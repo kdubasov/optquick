@@ -9,6 +9,7 @@ import GeneralSearch from "../../general-components/GeneralSearch/GeneralSearch"
 import "./ProductPage.css";
 import Loader from "../../general-components/Loader/Loader";
 import LastProducts from "../../static-components/LastProducts/LastProducts";
+import ProductSEO from "../../seo/ProductSEO";
 
 const ProductPage = () => {
 
@@ -25,6 +26,9 @@ const ProductPage = () => {
     if (Object.values(productData).length){
         return (
             <div className={'ProductPage container py-3'}>
+
+                {/*SEO*/}
+                <ProductSEO data={productData} />
 
                 {/*search main*/}
                 <GeneralSearch />
