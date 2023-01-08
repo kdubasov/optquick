@@ -11,7 +11,7 @@ export const footerBottomData = [
             {
                 id:"1110",
                 text:"Каталог товаров",
-                link:"/",
+                link:"/categories",
             },
             {
                 id:"1111",
@@ -41,7 +41,7 @@ export const footerBottomData = [
             {
                 id:"1116",
                 text:"Правила пользования площадкой",
-                link:"/",
+                link:"/websiteRules",
             },
             {
                 id:"1117",
@@ -88,17 +88,20 @@ export const footerBottomData = [
             {
                 id:"1131",
                 text:"cryptoQuick.ru",
-                link:"/",
+                link:"https://cryptoquick.ru/",
+                target:"_blank",
             },
             {
                 id:"1132",
                 text:"kdubasov",
-                link:"/",
+                link:"https://github.com/kdubasov",
+                target:"_blank",
             },
             {
                 id:"1133",
                 text:"mihael",
-                link:"/",
+                link:"https://github.com/pokemzed",
+                target:"_blank",
             },
         ],
     },

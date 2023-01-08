@@ -25,6 +25,7 @@ import SellerCommPage from "./static-pages/SellerCommPage/SellerCommPage";
 import DeliveryPage from "./static-pages/DeliveryPage/DeliveryPage";
 import ProductsReturnsPage from "./static-pages/ProductsReturnsPage/ProductsReturnsPage";
 import PayRefundPage from "./static-pages/PayRefundPage/PayRefundPage";
+import WebsiteRulesPage from "./static-pages/WebsiteRulesPage/WebsiteRulesPage";
 
 
 const Router = () => {
@@ -120,6 +121,8 @@ const Router = () => {
                         <Route path={`/productsReturns`} element={<ProductsReturnsPage />} />
                         {/*страница Возврат денежных средств*/}
                         <Route path={`/payRefund`} element={<PayRefundPage />} />
+                        {/*страница Правила пользования площадкой*/}
+                        <Route path={`/websiteRules`} element={<WebsiteRulesPage />} />
                     </Routes>
                 </div>
 

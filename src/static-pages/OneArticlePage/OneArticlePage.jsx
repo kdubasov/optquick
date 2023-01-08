@@ -14,8 +14,10 @@ const OneArticlePage = () => {
     return (
         <Container className={"OneArticlePage py-4"}>
 
-            {/*SEO*/}
-            <OneArticleSEO data={data} />
+            {//SEO
+                Boolean(Object.values(data).length) &&
+                <OneArticleSEO data={data} />
+            }
 
             <div className="content">
                 <img src={data.cardPhoto} alt={data.title}/>

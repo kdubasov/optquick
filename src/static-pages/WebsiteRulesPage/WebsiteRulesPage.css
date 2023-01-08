@@ -1,0 +1,9 @@
+.WebsiteRulesPage{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.WebsiteRulesPage h6{
+    font-weight: 300;
+}

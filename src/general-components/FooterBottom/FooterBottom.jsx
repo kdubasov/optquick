@@ -21,7 +21,13 @@ const FooterBottom = () => {
                             <h6>{elem.text}</h6>
                             <ul>
                                 {elem.links.map(link => (
-                                    <li key={link.id}><Link to={link.link}>{link.text}</Link></li>
+                                    link.target ?
+                                        <li key={link.id}>
+                                            <a href={link.link} target={"_blank"} rel={"noreferrer"}>
+                                                {link.text}
+                                            </a>
+                                        </li>:
+                                        <li key={link.id}><Link to={link.link}>{link.text}</Link></li>
                                 ))}
                             </ul>
                         </div>
