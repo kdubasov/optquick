@@ -10,6 +10,11 @@
     flex-wrap: wrap;
 }
 
+/*card product*/
+.BriefcasePage .products-container .CardProduct{
+    margin: 0 1em 1em 0;
+}
+
 /*alert*/
 .BriefcasePage .no-products{
     opacity: .6;

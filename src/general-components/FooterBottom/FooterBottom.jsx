@@ -5,6 +5,9 @@ import {Container} from "react-bootstrap";
 import {footerBottomData} from "./footerBottomData";
 
 const FooterBottom = () => {
+
+    const path = window.location.pathname;
+
     return (
         <div className={"FooterBottom"}>
             <Container>
@@ -27,7 +30,9 @@ const FooterBottom = () => {
                                                 {link.text}
                                             </a>
                                         </li>:
-                                        <li key={link.id}><Link to={link.link}>{link.text}</Link></li>
+                                        <li key={link.id} className={path === link.link ? "active" : ""}>
+                                            <Link to={link.link}>{link.text}</Link>
+                                        </li>
                                 ))}
                             </ul>
                         </div>

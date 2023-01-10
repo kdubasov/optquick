@@ -16,12 +16,12 @@ export const footerBottomData = [
             {
                 id:"1111",
                 text:"Как сделать заказ",
-                link:"/",
+                link:"/howOrder",
             },
             {
                 id:"1112",
                 text:"Способы оплаты",
-                link:"/",
+                link:"/waysPay",
             },
             {
                 id:"1113",
@@ -46,7 +46,7 @@ export const footerBottomData = [
             {
                 id:"1117",
                 text:"Вопросы и ответы",
-                link:"/",
+                link:"/answers",
             },
         ],
     },
@@ -57,7 +57,7 @@ export const footerBottomData = [
             {
                 id:"1121",
                 text:"Продавайте на OptQuick",
-                link:"/",
+                link:"/sellers",
             },
             {
                 id:"1122",
@@ -67,17 +67,17 @@ export const footerBottomData = [
             {
                 id:"1123",
                 text:"Контакты разработчиков",
-                link:"/",
+                link:"/devContacts",
             },
             {
                 id:"1124",
                 text:"О проекте",
-                link:"/",
+                link:"/aboutProject",
             },
             {
                 id:"1125",
                 text:"Поддержать проект",
-                link:"/",
+                link:"/supportProject",
             },
         ],
     },
@@ -112,22 +112,22 @@ export const footerBottomData = [
             {
                 id:"1141",
                 text:"О нас",
-                link:"/",
+                link:"/aboutProject",
             },
             {
                 id:"1142",
-                text:"Статьи",
-                link:"/",
+                text:"Все статьи",
+                link:"/allArticles",
             },
             {
                 id:"1143",
                 text:"Контакты",
-                link:"/",
+                link:"/devContacts",
             },
             {
                 id:"1144",
                 text:"Сотрудничество",
-                link:"/",
+                link:"/supportProject",
             },
         ],
     },

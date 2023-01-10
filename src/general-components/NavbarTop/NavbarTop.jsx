@@ -3,10 +3,16 @@ import {Container, Nav, Navbar, NavbarBrand} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import './NavbarTop.css';
 import {useUserAuth} from "../../context/AuthContext";
+import {useGetBriefcaseData} from "../../pages-functions/Briefcase/useGetBriefcaseData";
 
 const NavbarTop = () => {
 
     const { user } = useUserAuth();
+
+    // get data from briefcase for icon to briefcase
+    const linkDB = `/users/${user?.uid}/briefcase`;
+    const briefcaseData = useGetBriefcaseData(linkDB);
+    // console.log(briefcaseData);
 
     return (
         <Navbar className={'NavbarTop'}>
@@ -23,7 +29,11 @@ const NavbarTop = () => {
                     <Nav className="d-flex align-items-center">
 
                         <Link className="images" to={`/briefcase`}>
-                            <img className={"like"} src="/images/icons/icon-love.svg" alt="like"/>
+                            {
+                                briefcaseData.length ?
+                                    <img className={"like active"} src="/images/icons/icon-love-active.svg" alt="like"/>:
+                                    <img className={"like"} src="/images/icons/icon-love.svg" alt="like"/>
+                            }
                             Избранное
                         </Link>
 

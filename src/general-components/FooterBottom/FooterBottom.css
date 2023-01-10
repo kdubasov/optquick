@@ -37,10 +37,16 @@
 
 /*links*/
 .FooterBottom a{
+    cursor: pointer;
     color: inherit;
     text-decoration: none;
     transition: .25s;
     opacity: .75;
+}
+.FooterBottom li.active a{
+    cursor: default;
+    color: var(--bs-blue);
+    opacity: 1;
 }
 .FooterBottom a:hover{
     color: var(--bs-blue);

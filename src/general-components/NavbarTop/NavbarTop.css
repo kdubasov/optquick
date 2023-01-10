@@ -40,6 +40,9 @@
     align-items: center;
 }
 .NavbarTop a.images img.like {
-    width: 20px;
+    width: 17px;
     margin-right: .25em;
+}
+.NavbarTop a.images img.like.active{
+    width: 20px;
 }
