@@ -1,0 +1,20 @@
+.FeedbackPage{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+/*text and link*/
+.FeedbackPage p.warning{
+    opacity: .5;
+    margin-bottom: 2em;
+}
+.FeedbackPage p.warning a{
+    color: var(--bs-blue);
+    text-decoration: none;
+    transition: .25s;
+}
+.FeedbackPage p.warning a:hover{
+    color: var(--bs-dark);
+}

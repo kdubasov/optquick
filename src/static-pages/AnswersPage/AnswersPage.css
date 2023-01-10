@@ -1,0 +1,63 @@
+.AnswersPage{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+/*text and link*/
+.AnswersPage p.warning{
+    opacity: .5;
+    margin-bottom: 2em;
+}
+.AnswersPage p.warning a{
+    color: var(--bs-blue);
+    margin-left: .3em;
+    text-decoration: none;
+    transition: .25s;
+}
+.AnswersPage p.warning a:hover{
+    color: var(--bs-dark);
+}
+
+/*inner-container with title and inner blocks*/
+.AnswersPage .inner-container{
+    width: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.AnswersPage .inner-container h5{
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+/*block*/
+.AnswersPage .inner{
+    position: relative;
+    width: calc(50% - 1em);
+    margin-bottom: 1em;
+    border-radius: var(--def-border-redius);
+    padding: 1.25em 1.5em;
+    border: 2px solid #F5F4FB;
+    box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
+    transition: .25s;
+    cursor: pointer;
+}
+.AnswersPage .inner header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.AnswersPage .inner header.active{
+    padding-bottom: 1.5em;
+}
+.AnswersPage .inner header.active h6{
+    color: var(--bs-blue);
+}
+.AnswersPage .inner .top img{
+    width: 15px;
+    transition: .25s;
+}

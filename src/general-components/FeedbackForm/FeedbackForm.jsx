@@ -85,7 +85,7 @@ const FeedbackForm = () => {
                 {sendMess.message}
             </Alert>
 
-            <button className={"but-green px-5"} type="submit">
+            <button className={"but-blue px-5"} type="submit">
                 Отправить
             </button>
         </Form>

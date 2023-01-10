@@ -26,6 +26,8 @@ import DeliveryPage from "./static-pages/DeliveryPage/DeliveryPage";
 import ProductsReturnsPage from "./static-pages/ProductsReturnsPage/ProductsReturnsPage";
 import PayRefundPage from "./static-pages/PayRefundPage/PayRefundPage";
 import WebsiteRulesPage from "./static-pages/WebsiteRulesPage/WebsiteRulesPage";
+import AnswersPage from "./static-pages/AnswersPage/AnswersPage";
+import AboutProject from "./static-pages/AboutProject/AboutProject";
 
 
 const Router = () => {
@@ -92,11 +94,11 @@ const Router = () => {
                         <Route path="/user/:userUid" element={<UserPage />} />
 
                         {/*редактирование товара*/}
-                        <Route path={`/userProfile/redactProduct/:productID`} element={<RedactUserProduct />} />
+                        <Route path={"/userProfile/redactProduct/:productID"} element={<RedactUserProduct />} />
 
                         {/*избранные товары*/}
                         <Route
-                            path={`/briefcase`}
+                            path={"/briefcase"}
                             element={
                                 <CheckLoginRoute>
                                     <BriefcasePage />
@@ -108,21 +110,25 @@ const Router = () => {
                         <Route path={"*"} element={<NotFoundPage />} />
 
                         {/*политика конфеденциальности*/}
-                        <Route path={`/privacyPolicy`} element={<PrivacyPolicyPage />} />
+                        <Route path={"/privacyPolicy"} element={<PrivacyPolicyPage />} />
                         {/*страница с формой обртаной связи*/}
-                        <Route path={`/feedback`} element={<FeedbackPage />} />
+                        <Route path={"/feedback"} element={<FeedbackPage />} />
                         {/*страница с одной статьей*/}
-                        <Route path={`/articles/:articleID`} element={<OneArticlePage />} />
+                        <Route path={"/articles/:articleID"} element={<OneArticlePage />} />
                         {/*страница "Связь с продавцом"*/}
-                        <Route path={`/sellerComm`} element={<SellerCommPage />} />
+                        <Route path={"/sellerComm"} element={<SellerCommPage />} />
                         {/*страница "доставка товара"*/}
-                        <Route path={`/delivery`} element={<DeliveryPage />} />
+                        <Route path={"/delivery"} element={<DeliveryPage />} />
                         {/*страница Возврат товара*/}
-                        <Route path={`/productsReturns`} element={<ProductsReturnsPage />} />
+                        <Route path={"/productsReturns"} element={<ProductsReturnsPage />} />
                         {/*страница Возврат денежных средств*/}
-                        <Route path={`/payRefund`} element={<PayRefundPage />} />
+                        <Route path={"/payRefund"} element={<PayRefundPage />} />
                         {/*страница Правила пользования площадкой*/}
-                        <Route path={`/websiteRules`} element={<WebsiteRulesPage />} />
+                        <Route path={"/websiteRules"} element={<WebsiteRulesPage />} />
+                        {/*страница Вопросы и ответы*/}
+                        <Route path={"/answers"} element={<AnswersPage />} />
+                        {/*страница О проекте*/}
+                        <Route path={"/aboutProject"} element={<AboutProject />} />
                     </Routes>
                 </div>
 

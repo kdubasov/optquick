@@ -1,0 +1,17 @@
+.AboutProject{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.AboutProject img.title{
+    width: 30%;
+}
+
+.AboutProject h5{
+    margin-top: 2em;
+}
+.AboutProject h6{
+    font-weight: 300;
+}
