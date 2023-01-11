@@ -9,6 +9,11 @@
     justify-content: space-between;
 }
 
+/*card product*/
+/*.TopProducts .CardProduct{*/
+/*    margin: 0 1em 1em 0;*/
+/*}*/
+
 /*show more block*/
 .show-more{
     width: 100%;

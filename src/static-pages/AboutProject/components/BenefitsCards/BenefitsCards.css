@@ -1,0 +1,31 @@
+.BenefitsCards{
+    width: 100%;
+    margin: 4em 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/*card*/
+.BenefitsCards .inner-card{
+    width: calc(50% - 1em);
+    margin-bottom: 2.5em;
+    display: flex;
+    align-items: flex-start;
+}
+
+/*color block*/
+.BenefitsCards .inner-card .color{
+    width: 25px;
+    height: 25px;
+    margin-right: 1.5em;
+    border-radius: 25%;
+}
+
+/*text container*/
+.BenefitsCards .inner-card .text{
+    width: calc(100% - 25px - 1.5em);
+}
+.BenefitsCards .inner-card .text h5{
+    margin: 2px 0 .5em 0;
+}

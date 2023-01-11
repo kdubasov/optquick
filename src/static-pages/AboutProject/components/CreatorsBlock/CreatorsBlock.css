@@ -1,0 +1,83 @@
+.CreatorsBlock{
+    position: relative;
+    padding: 65px 0 3em 0;
+}
+
+/*title img*/
+.CreatorsBlock .title{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 75% !important;
+}
+
+/*container*/
+.CreatorsBlock .inner-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*inner block*/
+.CreatorsBlock .inner{
+    width: calc(50% - 1em);
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bs-white);
+    border: 2px solid #F5F4FB;
+    border-radius: var(--def-border-redius);
+}
+
+/*dev img*/
+.CreatorsBlock .inner .img-dev{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center center;
+}
+.CreatorsBlock .inner .img-dev.kirill{
+    background-image: url(/public/images/static/kirill.jpeg);
+}
+.CreatorsBlock .inner .img-dev.mihail{
+    background-image: url(/public/images/static/mihail.jpeg);
+}
+
+/*text in card*/
+.CreatorsBlock .inner .text{
+    width: calc(100% - 130px - 25px);
+    padding: 0 2em;
+}
+.CreatorsBlock .inner h5{
+    margin: 0;
+}
+.CreatorsBlock .inner h6.warning{
+    opacity: .5;
+    margin-bottom: .5em !important;
+}
+.CreatorsBlock .inner p.small{
+    margin: 0;
+    font-weight: 400;
+}
+
+
+/*block with social icons*/
+.CreatorsBlock .inner .links{
+    display: flex;
+    flex-direction: column;
+}
+.CreatorsBlock .inner .links a{
+    transition: .25s;
+}
+.CreatorsBlock .inner .links a img{
+    width: 25px;
+    padding: 5px 0;
+}
+.CreatorsBlock .inner .links a:hover{
+    opacity: .5;
+}
+.CreatorsBlock .inner .links a:last-child{
+    margin-bottom: 0;
+}

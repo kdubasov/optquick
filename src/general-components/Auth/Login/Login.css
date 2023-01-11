@@ -32,7 +32,7 @@
     transition: .25s;
 }
 .Login input.code{
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     font-size: 30px !important;
 }
 .Login .PhoneInputInput{

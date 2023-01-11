@@ -84,11 +84,7 @@ const ProductInfoTabs = ({productData}) => {
                         </p>
                         <p>
                             <span>Время доставки:</span><br/>
-                            {
-                                productData.deliveryPeriod ?
-                                    productData.deliveryPeriod + " дней" :
-                                    "Продавец не указал время доставки"
-                            }.
+                            {productData.deliveryPeriod ? productData.deliveryPeriod + " дней" : "Не указано"}.
                         </p>
                         <p>
                             <span>Варианты доставки:</span><br/>

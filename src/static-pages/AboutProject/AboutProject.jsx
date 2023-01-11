@@ -1,6 +1,8 @@
 import React from 'react';
 import {Container} from "react-bootstrap";
 import "./AboutProject.css";
+import BenefitsCards from "./components/BenefitsCards/BenefitsCards";
+import CreatorsBlock from "./components/CreatorsBlock/CreatorsBlock";
 
 const AboutProject = () => {
     return (
@@ -28,6 +30,11 @@ const AboutProject = () => {
                 Система публичного размещения контактной информации о продавце поможет
                 потребителю сэкономить время при поиске контактов для коммуникации.
             </h6>
+
+            {/*Блок с плюсами проекта*/}
+            <BenefitsCards />
+            {/*Блок с создателями проекта*/}
+            <CreatorsBlock />
         </Container>
     );
 };
