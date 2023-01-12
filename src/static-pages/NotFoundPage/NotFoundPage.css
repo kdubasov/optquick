@@ -1,0 +1,28 @@
+.NotFoundPage{
+    width: 100%;
+    padding: 20vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*404 image*/
+.NotFoundPage img{
+    width: 50%;
+    margin-bottom: 3em;
+}
+
+/*text*/
+.NotFoundPage .text{
+    text-align: center;
+}
+.NotFoundPage .text h5{
+    font-weight: 400;
+    margin-bottom: 0;
+    line-height: 1;
+}
+.NotFoundPage .text a{
+    color: var(--bs-blue);
+    text-decoration: none;
+    margin: 0;
+}

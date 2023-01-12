@@ -1,0 +1,23 @@
+.SupportProjectPage{
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.SupportProjectPage h6{
+    font-weight: 300;
+    margin-bottom: 3em;
+}
+
+/*footer with title*/
+.SupportProjectPage footer{
+    margin-bottom: 3em;
+    padding: 1.5em 0;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #F8F8F8;
+    background-image: url("/public/images/static/bg-podderjka.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.SupportProjectPage footer h5{
+    margin: 0;
+}

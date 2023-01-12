@@ -6,6 +6,9 @@
 }
 
 /*text and link*/
+.FeedbackPage h5{
+    margin-bottom: 0;
+}
 .FeedbackPage p.warning{
     opacity: .5;
     margin-bottom: 2em;
@@ -17,4 +20,30 @@
 }
 .FeedbackPage p.warning a:hover{
     color: var(--bs-dark);
+}
+
+/*contacts-data with emails and phone numbers*/
+.FeedbackPage .contacts-data{
+    padding: 1.5em 0 3.5em;
+    display: flex;
+    align-items: flex-start;
+}
+.FeedbackPage .contacts-data .column{
+    display: flex;
+    flex-direction: column;
+}
+.FeedbackPage .contacts-data .column:last-child{
+    margin-left: 3em;
+}
+.FeedbackPage .contacts-data .column .inner{
+    display: flex;
+    align-items: center;
+    margin: .5em 0;
+}
+.FeedbackPage .contacts-data .column .inner img{
+    width: 25px;
+    margin-right: .75em;
+}
+.FeedbackPage .contacts-data .column .inner h6{
+    margin: 0;
 }
