@@ -17,13 +17,19 @@
     position: relative;
     width: 100%;
     height: 100px;
-    margin-bottom: .5em;
+    margin-bottom: 1.5em;
     padding: 2em;
     border-radius: var(--def-border-redius);
-    background-color: var(--bs-blue);
-    background-image: url("/public/images/auth/vk-bg.svg");
     background-size: cover;
     transition: .3s;
+}
+.UserContacts .soc-block.vk{
+    background-color: #0077FF;
+    background-image: url("/public/images/auth/vk-bg.svg");
+}
+.UserContacts .soc-block.tg{
+    background-color: #0088CC;
+    background-image: url("/public/images/auth/tg-bg.svg");
 }
 .UserContacts .soc-block:hover{
     opacity: .75;
@@ -45,25 +51,52 @@
 /*default block*/
 .UserContacts .def-block{
     width: calc(50% - .5em);
-    height: auto;
-    margin: .5em 0;
+    height: 70px;
+    margin: 0;
     padding: 1em;
-    text-align: center;
     color: var(--bs-white);
     background: var(--bs-blue);
     border-radius: var(--def-border-redius);
     cursor: pointer;
     transition: .3s;
+}
 
+/*for hide block*/
+.UserContacts .def-block .hide{
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
 }
-.UserContacts .def-block:hover{
+/*for show block*/
+.UserContacts .def-block .show{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.UserContacts .def-block .show h6{
+    font-weight: 300;
+    margin: 0;
+}
+.UserContacts .def-block .show .copy{
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    font-weight: 300;
+    transition: .25s;
+}
+.UserContacts .def-block .show .copy:hover{
     opacity: .75;
 }
-.UserContacts .def-block p.small{
+
+.UserContacts .def-block .hide h6{
     font-weight: 300;
+    margin: 0 0 0 .5em;
+}
+.UserContacts .def-block .hide .arrow-back{
+    width: 20px;
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
 }
 
 /*p opacity*/

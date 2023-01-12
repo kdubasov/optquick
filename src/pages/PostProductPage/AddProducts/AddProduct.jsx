@@ -56,11 +56,12 @@ const AddProduct = () => {
     }
 
     //get input group
-    const getFormGroup = (value,req,text) => {
+    const getFormGroup = (value,req,text,type) => {
         return (
             <div className={"inp-inner"}>
                 <label>{text}</label>
                 <Form.Control
+                    type={type}
                     size={"sm"}
                     required={req}
                     value={dataForm[value]}
@@ -135,9 +136,9 @@ const AddProduct = () => {
 
             <div className={"inner"}>
                 <h5>Основная информация*</h5>
-                {getFormGroup("title",true,"Название товара")}
-                {getFormGroup("price",true,"Цена товара (за 1шт). В рублях.")}
-                {getFormGroup("amount",true,"Количество товара")}
+                {getFormGroup("title",true,"Название товара","text")}
+                {getFormGroup("price",true,"Цена товара (за 1шт). В рублях.","number")}
+                {getFormGroup("amount",true,"Количество товара","number")}
             </div>
 
             <div className={"inner"}>
@@ -162,14 +163,14 @@ const AddProduct = () => {
                         value={dataForm.characteristics}
                         onChange={e => handleChange('characteristics',e.target.value)}
                         as="textarea"
-                        placeholder={"Характеристики (Если есть)"}
+                        placeholder={"Характеристики"}
                     />
                 </div>
             </div>
 
             <div className={"inner"}>
                 <h5>Доставка и оплата</h5>
-                {getFormGroup("minOrder",true,"Минимальный заказ")}
+                {getFormGroup("minOrder",true,"Минимальный заказ","number")}
 
                 <AddProductDeliverPaySelects
                     selectPay={selectPay}
@@ -182,10 +183,10 @@ const AddProduct = () => {
             <div className={"inner"}>
                 <h5>Дополнительная информация (Если есть)</h5>
 
-                {getFormGroup("colors",false,"Цвета (через пробел)")}
-                {getFormGroup("location",false,"Место нахождения товара")}
-                {getFormGroup("sizes",false,"Размеры (через пробел)")}
-                {getFormGroup("deliveryPeriod",false,"Срок доставки (дни)")}
+                {getFormGroup("colors",false,"Цвета (через пробел)","text")}
+                {getFormGroup("location",false,"Место нахождения товара","text")}
+                {getFormGroup("sizes",false,"Размеры (через пробел)","text")}
+                {getFormGroup("deliveryPeriod",false,"Срок доставки (дни)","number")}
             </div>
 
 

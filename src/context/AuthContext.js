@@ -1,10 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import {
-    onAuthStateChanged,
-    signOut,
-    RecaptchaVerifier,
-    signInWithPhoneNumber,
-} from "firebase/auth";
+import {onAuthStateChanged, signOut, RecaptchaVerifier, signInWithPhoneNumber} from "firebase/auth";
 import { auth } from "../database/firebase-connect";
 
 const userAuthContext = createContext();

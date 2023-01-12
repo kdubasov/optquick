@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
 import "./UserContacts.css";
 import {useUserAuth} from "../../../../context/AuthContext";
+import {handleCopy} from "../../../../functions/handleCopy";
 
 const UserContacts = ({userData}) => {
 
     const { user } = useUserAuth();
 
-    const [showValue,setShowValue] = useState([false,false,false]);
+    const [showValue,setShowValue] = useState([false,false]);
 
     // console.log(userData,'user data in userContacts');
 
     //set value in state array
     const handleChange = valueNum => {
         const copy = Object.assign([],showValue);
-        copy[valueNum] = !copy[valueNum];
+        copy[valueNum] = true;
         setShowValue(copy);
     }
 
@@ -23,11 +24,22 @@ const UserContacts = ({userData}) => {
                 <div className="def-block" onClick={() => handleChange(num)}>
                     {
                         showValue[num]?
-                            <h5 className={"w-100 m-0"}>{userData[value]}</h5>:
-                            <>
-                                <p className="small m-0 w-100">Нажмите, чтобы увидеть</p>
-                                <h5 className={"w-100 m-0"}>{text}</h5>
-                            </>
+                            <div className={"show"}>
+                                <h6>{userData[value]}</h6>
+
+                                <p className="small copy" onClick={() => handleCopy(userData[value])}>
+                                    Скопировать
+                                </p>
+                            </div> :
+                            <div className={"hide"}>
+                                <img src={`/images/icons/${value}.svg`} alt={value} />
+                                <h6>{text}</h6>
+                                <img
+                                    src="/images/icons/back-arrow.svg"
+                                    alt={`show ${value}`}
+                                    className={"arrow-back"}
+                                />
+                            </div>
                     }
                 </div>
             )
@@ -55,9 +67,23 @@ const UserContacts = ({userData}) => {
                     </a>
                 }
 
-                {getBlock("Email","email",0)}
-                {getBlock("Номер телефона","phoneNumber",1)}
-                {getBlock("Telegram","telegram",2)}
+                {
+                    userData.telegram &&
+                    <a
+                        className={"soc-block-link"}
+                        href={userData.telegram}
+                        target={"_blank"}
+                        rel={"noreferrer"}
+                    >
+                        <div className="soc-block tg">
+                            <h4>Telegram</h4>
+                            <img className={"arrow"} src="/images/icons/arrow.svg" alt="arrow"/>
+                        </div>
+                    </a>
+                }
+
+                {getBlock("Показать E-mail","email",0)}
+                {getBlock("Показать телефон","phoneNumber",1)}
             </div>
         );
     }else {

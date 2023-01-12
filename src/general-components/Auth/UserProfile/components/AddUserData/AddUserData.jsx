@@ -91,7 +91,7 @@ const AddUserData = ({setRes,user}) => {
                 <div className={"inner"}>
                     <h5>Социальные сети</h5>
                     {getInput('vk','Ссылка на ВК (Вконтакте)',false)}
-                    {getInput('telegram','Никнейм в Телеграм',false)}
+                    {getInput('telegram','Ссылка на Телеграм',false)}
                 </div>
 
                 <div className={"inner"}>
