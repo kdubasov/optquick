@@ -117,7 +117,7 @@ export const footerBottomData = [
             {
                 id:"1142",
                 text:"Все статьи",
-                link:"/allArticles",
+                link:"/articles",
             },
             {
                 id:"1143",

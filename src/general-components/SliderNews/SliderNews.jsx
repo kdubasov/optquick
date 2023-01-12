@@ -39,6 +39,7 @@ const SliderNews = () => {
                     <SwiperSlide
                         key={news.id}
                         style={getStyles(news.cardBG,news.cardPhoto)}
+                        className={"NewsCard"}
                     >
                         <img src={news.cardPhoto} alt={news.title} className="static-img"/>
 

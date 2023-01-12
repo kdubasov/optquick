@@ -1,7 +1,7 @@
 .SliderNews{
     margin: 1.25em 0 3em;
 }
-.SliderNews .swiper-slide{
+.NewsCard{
     position: relative;
     height: 180px;
     padding: 1.5em;
@@ -13,12 +13,12 @@
     cursor: pointer;
     transition: .25s;
 }
-.SliderNews .swiper-slide:hover{
+.NewsCard:hover{
     opacity: .75;
 }
 
 /*img in card*/
-.SliderNews .swiper-slide .static-img{
+.NewsCard .static-img{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -26,7 +26,7 @@
 }
 
 /*link to articles page*/
-.SliderNews .swiper-slide a{
+.NewsCard a{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -35,10 +35,10 @@
 }
 
 /*content text*/
-.SliderNews .swiper-slide .content{
+.NewsCard .content{
     width: 70%;
 }
-.SliderNews .swiper-slide .content h5{
+.NewsCard .content h5{
     font-weight: 600;
     margin-bottom: .15em;
 }

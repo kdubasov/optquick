@@ -1,0 +1,32 @@
+.ArticlesPage{
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.ArticlesPage h3.title{
+    margin: 0 0 .25em 0;
+    line-height: 1;
+}
+.ArticlesPage p.warning{
+    opacity: .5;
+    margin-bottom: 3em;
+}
+
+
+/*cards container*/
+.ArticlesPage .cards-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/*cards*/
+.ArticlesPage .NewsCard{
+    width: calc(50% - .5em);
+    margin: .5em 0;
+}
+.ArticlesPage .NewsCard h5{
+    margin-bottom: 0;
+}
+.ArticlesPage .NewsCard p.warning{
+    font-size: 12px !important;
+    margin: 0 0 .5em 0;
+}

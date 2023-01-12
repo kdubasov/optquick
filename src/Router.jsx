@@ -28,6 +28,7 @@ import PayRefundPage from "./static-pages/PayRefundPage/PayRefundPage";
 import WebsiteRulesPage from "./static-pages/WebsiteRulesPage/WebsiteRulesPage";
 import AnswersPage from "./static-pages/AnswersPage/AnswersPage";
 import AboutProject from "./static-pages/AboutProject/AboutProject";
+import ArticlesPage from "./static-pages/ArticlesPage/ArticlesPage";
 
 
 const Router = () => {
@@ -44,7 +45,7 @@ const Router = () => {
                 <NavbarTop />
 
                 {/*container for dev*/}
-                <div style={{padding:0,minHeight:"100vh"}}>
+                <div className={"height-container"} style={{padding:0,minHeight:"100vh"}}>
                     <Routes>
 
                         {/*main page*/}
@@ -113,6 +114,8 @@ const Router = () => {
                         <Route path={"/privacyPolicy"} element={<PrivacyPolicyPage />} />
                         {/*страница с формой обртаной связи*/}
                         <Route path={"/feedback"} element={<FeedbackPage />} />
+                        {/*страница с всеми статьями*/}
+                        <Route path={"/articles"} element={<ArticlesPage />} />
                         {/*страница с одной статьей*/}
                         <Route path={"/articles/:articleID"} element={<OneArticlePage />} />
                         {/*страница "Связь с продавцом"*/}
