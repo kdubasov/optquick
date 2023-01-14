@@ -2,6 +2,7 @@ import React from 'react';
 import "./BreadCrumbs.css";
 import {useGetUser} from "../../../../general-components/Auth/UserProfile/functions/useGetUser";
 import {Link} from "react-router-dom";
+import {getCutWord} from "../../../../functions/getCutWord";
 
 const BreadCrumbs = ({product}) => {
 
@@ -25,7 +26,7 @@ const BreadCrumbs = ({product}) => {
             <img src="/images/icons/dot-dark.svg" alt="space"/>
             <Link to={`/categories/${category.id}/${subcategory.id}`}>{subcategory.title}</Link>
             <img src="/images/icons/dot-dark.svg" alt="space"/>
-            <p>{product.title}</p>
+            <p>{getCutWord(product.title,20)}</p>
         </div>
     );
 };

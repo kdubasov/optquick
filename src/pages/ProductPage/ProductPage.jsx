@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {Alert} from "react-bootstrap";
 import ProductHeader from "./components/ProductHeader/ProductHeader";
 import ProductSimilarProducts from "./components/ProductSimilarProducts/ProductSimilarProducts";
@@ -10,9 +10,11 @@ import "./ProductPage.css";
 import Loader from "../../general-components/Loader/Loader";
 import LastProducts from "../../static-components/LastProducts/LastProducts";
 import ProductSEO from "../../seo/ProductSEO";
+import {handleAddView} from "../../functions/ProductViews/handleAddView";
 
 const ProductPage = () => {
 
+    //data for alert
     const [alertData,setAlertData] = useState({variant:'',show:false,text:''})
 
     const [path,setPath] = useState((window.location.pathname).split('/'));
@@ -22,6 +24,12 @@ const ProductPage = () => {
     const linkDBData = `/categories/${path[path.length - 3]}/subcategories/${path[path.length - 2]}/products/${path[path.length - 1]}`;
     const productData = useGetUser(linkDBData);
     // console.log(productData);
+
+    useEffect(() => {
+        //add views for product
+        handleAddView(linkDBData,productData)
+        //eslint-disable-next-line
+    },[productData.id])
 
     if (Object.values(productData).length){
         return (
