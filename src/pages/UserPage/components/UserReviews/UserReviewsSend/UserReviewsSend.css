@@ -26,6 +26,9 @@
     border: 2px solid #F2F2F2;
     box-shadow: 15px 15px 35px rgba(112, 124, 151, 0.05);
 }
+.UserReviewsSend form textarea{
+    height: 80px;
+}
 .UserReviewsSend form input::placeholder,
 .UserReviewsSend form textarea::placeholder{
     opacity: .5;

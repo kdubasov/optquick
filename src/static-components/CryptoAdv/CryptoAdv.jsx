@@ -4,37 +4,30 @@ import "./CryptoAdv.css";
 const CryptoAdv = () => {
     return (
         <div className={"CryptoAdv"}>
+            <img
+                src="/images/advertisement/logo.svg"
+                alt="cryptoQuick"
+                className="logo"
+            />
+
             <div className="content">
-
-                <h4>
-                    Следите за изменением криптовалют вместе с cryptoQuick!
-                </h4>
-                <p className={"small"}>
+                <h3>
+                    Следите за изменением криптовалют вместе с
+                    <b>crypto<span>Quick</span></b>
+                </h3>
+                <h6>
                     Отслеживайте основную информацию о криптовалютном рынке,
-                    биржах, деривативах и многом другом на сайте
-                    <a
-                        href={"https://cryptoquick.ru/"}
-                        rel={"noreferrer"}
-                        target={"_blank"}
-                    >cryptoQuick.ru</a>.
-                </p>
+                    биржах, деривативах и многом другом.
+                </h6>
 
-                <footer>
-                    <a//зеленая кнопка с ссылкой
-                        className={"but-green px-5"}
-                        href={"https://cryptoquick.ru/"}
-                        rel={"noreferrer"}
-                        target={"_blank"}
-                    >
-                        Перейти к источнику
-                    </a>
-
-                    <p className="small adv">
-                        *Рекламная запись от ©{new Date().getFullYear()} cryptoQuick.ru
-                        <br />
-                        *Все права защищены.
-                    </p>
-                </footer>
+                <a//blue кнопка с ссылкой
+                    className={"but-blue"}
+                    href={"https://cryptoquick.ru/"}
+                    rel={"noreferrer"}
+                    target={"_blank"}
+                >
+                    Перейти
+                </a>
             </div>
         </div>
     );

@@ -4,29 +4,19 @@ export const footerBottomData = [
         text:"Покупателям",
         links: [
             {
-                id:"1118",
-                text:"Связь с продавцом",
-                link:"/sellerComm",
-            },
-            {
                 id:"1110",
                 text:"Каталог товаров",
                 link:"/categories",
             },
             {
-                id:"1111",
-                text:"Как сделать заказ",
-                link:"/howOrder",
-            },
-            {
-                id:"1112",
-                text:"Способы оплаты",
-                link:"/waysPay",
-            },
-            {
                 id:"1113",
                 text:"Доставка",
                 link:"/delivery",
+            },
+            {
+                id:"1118",
+                text:"Связь с продавцом",
+                link:"/sellerComm",
             },
             {
                 id:"1114",
@@ -55,19 +45,9 @@ export const footerBottomData = [
         text:"Партнерам",
         links: [
             {
-                id:"1121",
-                text:"Продавайте на OptQuick",
-                link:"/sellers",
-            },
-            {
                 id:"1122",
                 text:"Обратная связь",
                 link:"/feedback",
-            },
-            {
-                id:"1123",
-                text:"Контакты разработчиков",
-                link:"/devContacts",
             },
             {
                 id:"1124",
@@ -107,13 +87,8 @@ export const footerBottomData = [
     },
     {
         id:"114",
-        text:"Компания",
+        text:"Дополнительно",
         links: [
-            {
-                id:"1141",
-                text:"О нас",
-                link:"/aboutProject",
-            },
             {
                 id:"1142",
                 text:"Все статьи",
@@ -121,13 +96,13 @@ export const footerBottomData = [
             },
             {
                 id:"1143",
-                text:"Контакты",
-                link:"/devContacts",
+                text:"Регистрация",
+                link:"/login",
             },
             {
                 id:"1144",
-                text:"Сотрудничество",
-                link:"/supportProject",
+                text:"Избранные товары",
+                link:"/briefcase",
             },
         ],
     },

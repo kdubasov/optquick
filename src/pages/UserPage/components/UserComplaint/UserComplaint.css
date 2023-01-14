@@ -15,8 +15,11 @@
     margin-bottom: .5em;
 }
 .UserComplaint form textarea{
-    height: 100px;
+    height: 120px;
+    padding: .75em 1em;
     margin-bottom: 2em;
+    border: 2px solid #F2F2F2;
+    box-shadow: 15px 15px 35px rgba(112, 124, 151, 0.05);
 }
 .UserComplaint form textarea::placeholder{
     opacity: .5;

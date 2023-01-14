@@ -1,3 +1,7 @@
+.SubProductsPage{
+    padding-bottom: 4em;
+}
+/*header*/
 .SubProductsPage header{
     display: flex;
     flex-direction: column;

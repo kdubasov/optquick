@@ -1,4 +1,21 @@
 .PrivacyPolicyPage{
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.PrivacyPolicyPage h6{
+    font-weight: 300;
+}
+.PrivacyPolicyPage h6 span{
+    font-size: 1.25em;
+    font-weight: 500;
+}
+.PrivacyPolicyPage h6 b{
+    font-weight: 500;
+}
+.PrivacyPolicyPage ul{
+    list-style: none;
+    padding-left: 0;
+}
+.PrivacyPolicyPage ul li{
+    margin: .5em 0;
 }
