@@ -11,6 +11,7 @@ import Loader from "../../general-components/Loader/Loader";
 import LastProducts from "../../static-components/LastProducts/LastProducts";
 import ProductSEO from "../../seo/ProductSEO";
 import {handleAddView} from "../../functions/ProductViews/handleAddView";
+import ViewsCounter from "./components/ViewsCounter/ViewsCounter";
 
 const ProductPage = () => {
 
@@ -56,6 +57,9 @@ const ProductPage = () => {
 
                     {/*tabs with info*/}
                     <ProductInfoTabs productData={productData} />
+
+                    {/*счетчик просмотров*/}
+                    <ViewsCounter productData={productData} />
                 </div>
 
                 {/*similar products slider*/}

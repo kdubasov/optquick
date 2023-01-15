@@ -4,17 +4,23 @@ import {useUserAuth} from "../../context/AuthContext";
 import {handleAddInBriefcase} from "../../pages-functions/Briefcase/handleAddInBriefcase";
 import {useGetBriefcaseData} from "../../pages-functions/Briefcase/useGetBriefcaseData";
 import {handleDeleteCategory} from "../../pages-functions/AdminPage/Categories/handleDeleteCategory";
+import {handleAddBriefcase} from "../../functions/ProductViews/handleAddBriefcase";
+import {handleDeleteBriefcase} from "../../functions/ProductViews/handleDeleteBriefcase";
 
 const BriefcaseButton = ({elemData,setAlertData,text = true}) => {
 
     // console.log(elemData,'elemData BriefcaseButton');
 
     const { user } = useUserAuth();
+    const urlProduct = `/categories/${elemData.selectCategory}/subcategories/${elemData.selectSubCategory}/products/${elemData.id}`;
 
     //add in briefcase
     const addInBriefcase = e => {
         e.preventDefault();
+
+
         if (user){
+            handleAddBriefcase(urlProduct,elemData)
             if (setAlertData){
                 handleAddInBriefcase(e,elemData.id,user.uid)
                     .then(() => setAlertData({
@@ -41,6 +47,7 @@ const BriefcaseButton = ({elemData,setAlertData,text = true}) => {
     const deleteFromBriefcase = e => {
         e.preventDefault();
         if (user){
+            handleDeleteBriefcase(urlProduct,elemData)
             if (setAlertData){
                 handleDeleteCategory(`/users/${user.uid}/briefcase/${elemData.id}`)
                     .then(() => setAlertData({

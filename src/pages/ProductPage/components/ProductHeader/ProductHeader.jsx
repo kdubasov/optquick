@@ -6,6 +6,7 @@ import BriefcaseButton from "../../../../general-components/BriefcaseButton/Brie
 import {useUserAuth} from "../../../../context/AuthContext";
 import "./ProductHeader.css";
 import {useGetUser} from "../../../../general-components/Auth/UserProfile/functions/useGetUser";
+import {handleAddContacts} from "../../../../functions/ProductViews/handleAddContacts";
 
 
 const ProductHeader = ({productData,setAlertData}) => {
@@ -16,6 +17,15 @@ const ProductHeader = ({productData,setAlertData}) => {
 
     const { user } = useUserAuth();
     const [showUser,setShowUser] = useState(false);
+    const handleOpenContacts = () => {
+        if (!showUser){
+            setShowUser(true);
+            const url = `/categories/${productData.selectCategory}/subcategories/${productData.selectSubCategory}/products/${productData.id}`;
+            handleAddContacts(url,productData);
+        }else {
+            setShowUser(false);
+        }
+    }
     // console.log(productData,"productData ProductHeader")
 
     return (
@@ -60,7 +70,7 @@ const ProductHeader = ({productData,setAlertData}) => {
                     user &&
                     <button
                         className={"but-blue seller"}
-                        onClick={() => setShowUser(!showUser)}
+                        onClick={handleOpenContacts}
                     >
                         Связаться с продавцом
                         <img

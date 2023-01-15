@@ -1,0 +1,22 @@
+.ViewsCounter{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+}
+.ViewsCounter .inner{
+    display: flex;
+    align-items: center;
+    margin-right: 1.5em;
+}
+.ViewsCounter .inner img{
+    height: 20px;
+    margin-right: .5em;
+}
+.ViewsCounter .inner:first-child img{
+    height: 15px;
+}
+.ViewsCounter .inner p.small{
+    margin: 0;
+}
