@@ -4,6 +4,20 @@
     padding-top: 3em;
     padding-bottom: 3em;
 }
+.WebsiteRulesPage h5{
+    margin-top: 2em;
+    margin-bottom: .75em;
+}
+
 .WebsiteRulesPage h6{
     font-weight: 300;
+}
+.WebsiteRulesPage h6 b{
+    font-weight: 600;
+}
+
+/*ul*/
+.WebsiteRulesPage ul{
+    list-style: none;
+    padding-left: .5em;
 }

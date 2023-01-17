@@ -68,5 +68,6 @@
 .SliderNews .swiper-button-prev:after,
 .SliderNews .swiper-button-next:after{
     color: var(--bs-dark);
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 900;
 }
