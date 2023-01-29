@@ -42,7 +42,7 @@ const CardProduct = ({product}) => {
 
                 {/*ссылка на страницу товара*/}
                 <Link
-                    className={"w-100 but-blue"}
+                    className={"w-75 but-blue"}
                     to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}
                 >
                     Перейти к товару

@@ -20,8 +20,11 @@
 /*container for products*/
 .SubProductsPage .container-products{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+}
+.SubProductsPage .container-products .CardProduct{
+    margin: 0 1em 1em 0;
 }
 
 /*p no-products*/

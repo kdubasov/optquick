@@ -3,6 +3,7 @@ import CardProductSwiper from "../../../../general-components/CardProduct/CardPr
 import {useNavigate} from "react-router-dom";
 import BriefcaseButton from "../../../../general-components/BriefcaseButton/BriefcaseButton";
 import {useUserAuth} from "../../../../context/AuthContext";
+import {getCutWord} from "../../../../functions/getCutWord";
 
 const CardSimilarProducts = ({product,setPath,setAlertData}) => {
 
@@ -32,9 +33,7 @@ const CardSimilarProducts = ({product,setPath,setAlertData}) => {
                     <small className={"text-decoration-none"}>Ваш товар</small>
                 }
                 {/*Название*/}
-                <h6>
-                    {product.title}
-                </h6>
+                <h6>{getCutWord(product.title,50)}</h6>
                 {/*price*/}
                 <h5>{product.price + ' ₽/шт'}</h5>
                 {/*Мин заказ*/}
@@ -42,7 +41,7 @@ const CardSimilarProducts = ({product,setPath,setAlertData}) => {
                     Мин. заказ от {product.minOrder} штук.
                 </small>
 
-                <button className={"w-100 but-blue mt-3"} onClick={() => handleSetProduct()}>
+                <button className={"w-75 but-blue mt-3"} onClick={() => handleSetProduct()}>
                     Перейти к товару
                 </button>
             </div>

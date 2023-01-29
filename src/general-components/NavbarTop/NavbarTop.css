@@ -1,12 +1,11 @@
 .NavbarTop{
-    padding: .35em 0 !important;
+    padding: .5em 0 !important;
     background: var(--bs-light);
 }
 
 /*link*/
 .NavbarTop a{
     margin: 0 .75em;
-    font-size: .8em;
     font-weight: 500;
     color: var(--bs-dark);
     text-decoration: none;
@@ -20,8 +19,10 @@
 .NavbarTop a.logo{
     margin: 0 .5em 0 0;
     color: var(--bs-dark);
-    font-size: 1em;
-    font-weight: 800;
+}
+.NavbarTop a.logo img{
+    width: 30px;
+    margin-right: 5px;
 }
 
 /*hover*/

@@ -45,7 +45,7 @@ const Router = () => {
                 {/*NAVBAR TOP*/}
                 <NavbarTop />
 
-                <div style={{minHeight:"80vh"}}>
+                <div style={{minHeight:"100vh"}}>
                     <Routes>
                         {/*main page*/}
                         <Route path={`/`} element={<MainPage />} />
