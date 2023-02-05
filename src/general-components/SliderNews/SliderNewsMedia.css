@@ -1,0 +1,19 @@
+@media (max-width: 1200px) {
+    .SliderNews .NewsCard .static-img{
+        opacity: .3;
+    }
+    .SliderNews .NewsCard .content{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .SliderNews .swiper-button-next,
+    .SliderNews .swiper-button-prev{
+        display: none;
+    }
+    .SliderNews .NewsCard{
+        height: 150px;
+        padding: 1em;
+    }
+}

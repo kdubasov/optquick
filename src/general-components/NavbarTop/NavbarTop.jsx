@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Container, Nav, Navbar, NavbarBrand} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import './NavbarTop.css';
+import './NavbarTopMedia.css';
 import {useUserAuth} from "../../context/AuthContext";
 import {useGetBriefcaseData} from "../../pages-functions/Briefcase/useGetBriefcaseData";
+import NTCanvas from "./components/NTCanvas/NTCanvas";
 
 const NavbarTop = () => {
 
@@ -14,19 +16,23 @@ const NavbarTop = () => {
     const briefcaseData = useGetBriefcaseData(linkDB);
     // console.log(briefcaseData);
 
+    // offcanvas show
+    const [showOffCanvas, setShowOffCanvas] = useState(false);
+
     return (
-        <Navbar className={'NavbarTop'}>
-            <Container>
+        <>
+            <Navbar className={'NavbarTop'}>
+                <Container>
 
-                <NavbarBrand className={`d-flex align-items-center`}>
-                    <Link className={'logo d-flex align-items-center'} to={`/`}>
-                        <img src="/images/general/logo.svg" alt="optquick"/>
-                        <h5 className={"m-0 fw-bold"}>optquick</h5>
-                    </Link>
-                </NavbarBrand>
+                    <NavbarBrand className={`d-flex align-items-center`}>
+                        <Link className={'logo d-flex align-items-center'} to={`/`}>
+                            <img src="/images/general/logo.svg" alt="optquick"/>
+                            <h5 className={"m-0 fw-bold"}>optquick</h5>
+                        </Link>
+                    </NavbarBrand>
 
-                <Navbar aria-controls="responsive-navbar-nav" />
-                    <Nav className="d-flex align-items-center">
+                    <Navbar aria-controls="responsive-navbar-nav" />
+                    <Nav className="links-right d-flex align-items-center">
 
                         <Link className="images" to={`/briefcase`}>
                             {
@@ -42,12 +48,32 @@ const NavbarTop = () => {
                         { !user && <Link to={`/login`}>Вход и регистрация</Link> }
                         { user && <Link to={`/userProfile`}>Мой профиль</Link> }
 
-                        <Link className={"but-green"} to={`/postProduct`}>
+                        <Link className={"but-green post-product"} to={`/postProduct`}>
                             Разместить товар
                         </Link>
                     </Nav>
-            </Container>
-        </Navbar>
+
+                    {/*mobile elements*/}
+                    <div className="mobile-right">
+                        <Link className={"but-green post-product"} to={`/postProduct`}>
+                            Разместить товар
+                        </Link>
+                        <img
+                            src="/images/icons/open-nav.svg"
+                            alt="open"
+                            onClick={() => setShowOffCanvas(true)}
+                            className={"offcanvas-open"}
+                        />
+                    </div>
+                </Container>
+            </Navbar>
+
+            {/*canvas navbar*/}
+            <NTCanvas
+                show={showOffCanvas}
+                handleClose={() => setShowOffCanvas(false)}
+            />
+        </>
     );
 };
 

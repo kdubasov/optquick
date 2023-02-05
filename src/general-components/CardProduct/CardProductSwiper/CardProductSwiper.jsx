@@ -18,7 +18,7 @@ const CardProductSwiper = ({product}) => {
     if (imagesList.length){
         return (
             <Swiper
-                spaceBetween={30}
+                // spaceBetween={30}
                 pagination={{
                     clickable: true,
                 }}

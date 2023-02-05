@@ -1,4 +1,5 @@
 .NavbarTop{
+    position: relative;
     padding: .5em 0 !important;
     background: var(--bs-light);
 }
@@ -46,4 +47,21 @@
 }
 .NavbarTop a.images img.like.active{
     width: 20px;
+}
+
+
+/*mobile right block*/
+.NavbarTop .mobile-right{
+    display: none;
+}
+
+/*offcanvas open button*/
+.NavbarTop .offcanvas-open{
+    height: 15px;
+    margin-left: .25em;
+    transition: .25s;
+    cursor: pointer;
+}
+.NavbarTop .offcanvas-open:hover{
+    opacity: .75;
 }

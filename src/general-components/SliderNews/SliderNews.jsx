@@ -1,6 +1,8 @@
 import React from 'react';
 import "./SliderNews.css";
+import "./SliderNewsMedia.css";
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
+import { useMediaQuery } from 'react-responsive'
 
 //swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,6 +17,9 @@ const SliderNews = () => {
     //database data
     const data = useGetCategory("/articles");
 
+    //media query
+    const media991px = useMediaQuery({query: '(max-width: 991px)'});
+
     //styles for slider
     const getStyles = (bgColor) => {
         return {
@@ -25,8 +30,8 @@ const SliderNews = () => {
     if (data.length)
     return (
         <Swiper
-            slidesPerView={2}
-            spaceBetween={20}
+            slidesPerView={media991px?1:2}
+            spaceBetween={media991px?0:20}
             slidesPerGroup={3}
             loop={true}
             loopFillGroupWithBlank={true}

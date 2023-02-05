@@ -13,11 +13,11 @@
 
 /*NavbarCategoriesOffcanvas*/
 
-.offcanvas{
+.NavbarCategoriesOffcanvas{
     width: auto;
     min-width: 500px;
 }
-.offcanvas .offcanvas-body{
+.NavbarCategoriesOffcanvas .offcanvas-body{
     padding: 0;
 }
 
@@ -55,7 +55,8 @@
 .NavbarCategoriesOffcanvas .left button:hover{
     opacity: .5;
 }
-.NavbarCategoriesOffcanvas .left button:hover img{
+.NavbarCategoriesOffcanvas .left button:hover img,
+.NavbarCategoriesOffcanvas .left button:disabled img{
     margin-right: 5px;
 }
 

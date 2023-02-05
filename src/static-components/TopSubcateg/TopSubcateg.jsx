@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import "./TopSubcateg.css";
+import "./TopSubcategMedia.css";
+import {useMediaQuery} from "react-responsive";
 
 const TopSubcateg = () => {
 
@@ -37,11 +39,15 @@ const TopSubcateg = () => {
         },
     ];
 
+    //media query
+    const media991px = useMediaQuery({query: '(max-width: 991px)'});
+
     return (
         <div className={"TopSubcateg"}>
             <h4 className={"title"}>Популярные подкатегории</h4>
             {
-                data.map(sub => (
+                (media991px ? data.slice(0,4) : data)
+                .map(sub => (
                     <Link className={"inner"} to={sub.link} key={sub.id}>
                         <img src={sub.img} alt={""} />
                     </Link>

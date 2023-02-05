@@ -17,14 +17,18 @@
 
 /*container left with logo*/
 .FooterBottom .inner.left{
-    width: 30%;
+    width: 25%;
     display: flex;
-    flex-wrap: wrap;
-    align-content: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 /*logo*/
 .FooterBottom .inner.left img{
     width: 100px;
+}
+/*a*/
+.FooterBottom .inner.left a{
+    width: 100%;
 }
 
 /*h6*/
@@ -33,6 +37,14 @@
 }
 .FooterBottom .inner.left h6{
     margin: 1.5em 0 .5em;
+}
+
+/*right container*/
+.FooterBottom .right-container{
+    width: calc(75% - 1em);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /*links*/

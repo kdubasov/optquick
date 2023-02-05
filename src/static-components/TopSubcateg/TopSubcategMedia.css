@@ -1,0 +1,12 @@
+@media (max-width: 991px){
+    .TopSubcateg .inner{
+        width: calc(100% / 4 - .5em);
+        transition: .25s;
+    }
+}
+
+@media (max-width: 469px){
+    .TopSubcateg{
+        display: none;
+    }
+}

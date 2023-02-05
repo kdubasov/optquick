@@ -1,5 +1,6 @@
 import React from 'react';
 import "./CryptoAdv.css";
+import "./CryptoAdvMedia.css";
 
 const CryptoAdv = () => {
     return (

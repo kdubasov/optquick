@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-phone-number-input": "^3.2.11",
+    "react-responsive": "^9.0.2",
     "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",
     "swiper": "^8.4.4",

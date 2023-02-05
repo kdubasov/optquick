@@ -1,0 +1,32 @@
+@media (max-width: 1200px) {
+    .ThreeInfoBlock .inner.default{
+        display: none;
+    }
+    .ThreeInfoBlock .inner h6{
+        width: 100%;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 991px) {
+    .ThreeInfoBlock .inner{
+        height: auto;
+        padding: 3em 2em;
+    }
+    .ThreeInfoBlock .inner h1{
+        font-size: 1.75em;
+    }
+}
+
+@media (max-width: 550px) {
+    .ThreeInfoBlock .inner{
+        height: auto;
+        padding: 2em 1em;
+    }
+    .ThreeInfoBlock .inner h1{
+        font-size: 1.25em;
+    }
+    .ThreeInfoBlock .inner h6{
+        font-size: 14px;
+    }
+}

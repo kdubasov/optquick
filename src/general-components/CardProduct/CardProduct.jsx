@@ -6,11 +6,16 @@ import {getAdmin} from "../../pages-functions/AdminPage/getAdmin";
 import DeleteCategoryButton from "../AdminPage/Categories/DeleteCategoryButton";
 import {useUserAuth} from "../../context/AuthContext";
 import "./CardProduct.css";
+import "./CardProductMedia.css";
 import {getCutWord} from "../../functions/getCutWord";
+import {useMediaQuery} from "react-responsive";
 
 const CardProduct = ({product}) => {
 
     const { user } = useUserAuth();
+
+    //media query
+    const media991px = useMediaQuery({query: '(max-width: 768px)'});
 
     const databaseUrl = `/categories/${product.selectCategory}/subcategories/${product.selectSubCategory}/products/${product.id}`;
 
@@ -30,14 +35,19 @@ const CardProduct = ({product}) => {
 
             <div className="content">
                 {/*Название*/}
-                <h6>{getCutWord(product.title,50)}</h6>
+                <Link
+                    className={"title"}
+                    to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}
+                >
+                    <h6>{getCutWord(product.title,media991px?20:50)}</h6>
+                </Link>
 
                 {/*Цена*/}
                 <h5>{Number(product.price).toLocaleString("RU") + " ₽/шт"}</h5>
 
                 {/*Мин заказ*/}
                 <small className={"min-order"}>
-                    Минимальный заказ от {product.minOrder} шт.
+                    {media991px ? "Заказ" : "Минимальный заказ"} от {product.minOrder} шт.
                 </small>
 
                 {/*ссылка на страницу товара*/}

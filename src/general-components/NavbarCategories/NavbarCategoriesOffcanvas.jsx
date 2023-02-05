@@ -42,7 +42,11 @@ const NavbarCategoriesOffcanvas = ({showNavCateg, handleClose}) => {
                             <div className={"left"}>
                                 {
                                     categories.map(category => (
-                                        <button key={category.id} onClick={() => setCategorySelect(category.id)}>
+                                        <button
+                                            disabled={categorySelect === category.id}
+                                            key={category.id}
+                                            onClick={() => setCategorySelect(category.id)}
+                                        >
                                             <img src={category.iconImage} alt={category.title} width={30} />
                                             {category.title}
                                         </button>

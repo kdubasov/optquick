@@ -1,5 +1,6 @@
 import React from 'react';
 import "./ThreeInfoBlock.css";
+import "./ThreeInfoBlockMedia.css";
 
 const ThreeInfoBlock = () => {
     return (
@@ -19,7 +20,7 @@ const ThreeInfoBlock = () => {
                 <h3>Электротовары</h3>
                 <h6 className="half">
                     Вы можете найти гаджет для любого устройства или даже само устройство!
-                    В разделе "Электротовары" вас ждет много полезных товаров.
+                    В разделе "Электротовары" вас ждет много интересного.
                 </h6>
             </div>
 

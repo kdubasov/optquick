@@ -9,6 +9,7 @@ import './styles/index.css';
 import './styles/components/buttons.css';
 import './styles/components/alerts.css';
 import './styles/components/titles.css';
+import './styles/components/text.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

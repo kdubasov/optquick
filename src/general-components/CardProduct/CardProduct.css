@@ -20,7 +20,15 @@
 /*Название*/
 .CardProduct .content h6{
     width: 100%;
+}
+.CardProduct .content a.title{
+    text-decoration: none;
+    color: inherit;
     margin-bottom: 1em;
+    transition: .25s;
+}
+.CardProduct .content a.title:hover{
+    color: var(--bs-blue);
 }
 
 /*Цена*/
@@ -40,7 +48,7 @@
 }
 
 /*ссылка*/
-.CardProduct .content a{
+.CardProduct .content a.but-blue{
     text-align: center;
     margin-bottom: .5em;
 }

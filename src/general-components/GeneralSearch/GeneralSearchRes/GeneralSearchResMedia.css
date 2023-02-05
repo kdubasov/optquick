@@ -1,0 +1,8 @@
+@media (max-width: 991px){
+    .GeneralSearchRes header a{
+        display: none;
+    }
+    .GeneralSearchRes header button{
+        width: 100%;
+    }
+}

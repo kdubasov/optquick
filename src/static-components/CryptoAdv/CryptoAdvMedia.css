@@ -1,0 +1,49 @@
+@media (max-width: 1200px) {
+    /*img logo absolute*/
+    .CryptoAdv img.logo{
+        width: 25%;
+        top: auto;
+        bottom: -10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .CryptoAdv{
+        padding: 2em;
+        background-size: cover;
+    }
+
+    /*img logo absolute*/
+    .CryptoAdv img.logo{
+        width: 20%;
+        bottom: -10%;
+    }
+
+    /*content*/
+    .CryptoAdv .content{
+        width: 100%;
+    }
+    /*title*/
+    .CryptoAdv .content h3{
+        margin: 0 0 1.5em;
+    }
+    /*text*/
+    .CryptoAdv .content h6{
+        display: none;
+    }
+}
+
+@media (max-width: 469px) {
+    .CryptoAdv{
+        padding: 1em;
+    }
+    /*img logo absolute*/
+    .CryptoAdv img.logo{
+        width: 30%;
+        bottom: -10%;
+    }
+    /*text*/
+    .CryptoAdv .content h3{
+        font-size: 18px;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import "./GeneralSearchRes.css";
+import "./GeneralSearchResMedia.css";
 import {Link} from "react-router-dom";
 
 const GeneralSearchRes = ({result,setFocus}) => {

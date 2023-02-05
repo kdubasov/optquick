@@ -1,5 +1,6 @@
 import React from 'react';
 import "./LastProducts.css";
+import "./LastProductsMedia.css";
 import {useLastProducts} from "../../pages-functions/MainPage/useLastProducts";
 import CardProduct from "../../general-components/CardProduct/CardProduct";
 import {Link} from "react-router-dom";

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import "./TopProducts.css";
+import "./TopProductsMedia.css";
 import {useTopProducts} from "../../pages-functions/MainPage/useTopProducts";
 import CardProduct from "../../general-components/CardProduct/CardProduct";
 

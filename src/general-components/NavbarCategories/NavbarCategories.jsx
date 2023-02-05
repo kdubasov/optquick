@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import NavbarCategoriesOffcanvas from "./NavbarCategoriesOffcanvas";
 import "./NavbarCategories.css";
+import "./NavbarCategoriesMedia.css";
 
 const NavbarCategories = () => {
 

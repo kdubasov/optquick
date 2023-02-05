@@ -35,9 +35,3 @@ body{
     /*background: #F0F0F0;*/
     color: var(--bs-dark);
 }
-
-
-/*text*/
-p,a,button{
-    font-size: 14px !important;
-}

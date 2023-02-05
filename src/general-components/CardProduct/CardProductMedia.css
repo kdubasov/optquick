@@ -1,0 +1,55 @@
+@media (max-width: 1200px) {
+    .CardProduct{
+        width: calc(33% - 1em);
+    }
+}
+
+@media (max-width: 991px) {
+    .CardProduct{
+        width: calc(50% - .5em);
+    }
+    .CardProduct .content a.but-blue{
+        display: none;
+    }
+    .CardProduct .bottom{
+        display: none;
+    }
+    .CardProduct small.min-order{
+        margin-bottom: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /*slider container*/
+    .CardProduct .slider-container{
+        height: 160px;
+    }
+    .CardProduct .content{
+        padding: 16px 12px;
+    }
+}
+
+@media (max-width: 469px) {
+    .CardProduct{
+        width: calc(50% - .25em);
+    }
+    /*slider container*/
+    .CardProduct .slider-container{
+        height: 130px;
+    }
+    /*title*/
+    .CardProduct .content a.title{
+        margin-bottom: 0;
+    }
+    .CardProduct .content a.title h6{
+        font-size: 14px;
+    }
+    /*price*/
+    .CardProduct .content h5{
+        font-size: 16px;
+    }
+    /*Мин заказ*/
+    .CardProduct .content .min-order{
+        font-size: 12px;
+    }
+}

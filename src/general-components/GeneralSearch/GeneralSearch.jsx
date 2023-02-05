@@ -4,6 +4,7 @@ import {useGetQueryRes} from "../../pages-functions/GeneralSearch/useGetQueryRes
 import GeneralSearchRes from "./GeneralSearchRes/GeneralSearchRes";
 import NavbarCategories from "../NavbarCategories/NavbarCategories";
 import "./GeneralSearch.css";
+import "./GeneralSearchMedia.css";
 
 const GeneralSearch = () => {
 

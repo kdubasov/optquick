@@ -1,0 +1,47 @@
+.NTCanvas{
+    width: 420px !important;
+    height: 100vh;
+}
+.NTCanvas .logo h5{
+    font-size: 16px;
+}
+
+/*offcanvas-body*/
+.NTCanvas .offcanvas-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*nav*/
+.NTCanvas nav{
+    display: flex;
+    flex-direction: column;
+}
+.NTCanvas nav a{
+    margin: 0 0 .5em 0;
+    text-align: center;
+}
+
+/*footer*/
+.NTCanvas footer{
+    display: flex;
+    flex-direction: column;
+}
+.NTCanvas footer a.but-blue{
+    padding: .75em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    margin-bottom: 1em;
+}
+.NTCanvas footer a.but-blue img{
+    margin-right: .5em;
+}
+.NTCanvas footer a{
+    text-align: center;
+    margin: .15em 0 0 0;
+    opacity: .6;
+    font-weight: 300;
+}

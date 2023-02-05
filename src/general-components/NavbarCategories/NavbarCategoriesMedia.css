@@ -1,0 +1,15 @@
+@media (max-width: 500px) {
+    .NavbarCategoriesOffcanvas{
+        min-width: 320px;
+    }
+
+    /*category button and subcategory a*/
+    .NavbarCategoriesOffcanvas .left button,
+    .NavbarCategoriesOffcanvas .right a{
+        margin: .45em 0;
+    }
+    /*img*/
+    .NavbarCategoriesOffcanvas .left button img{
+        display: none;
+    }
+}

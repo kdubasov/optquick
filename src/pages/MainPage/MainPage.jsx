@@ -20,6 +20,7 @@ const MainPage = () => {
             {/*Поиск*/}
             <GeneralSearch />
 
+            {/*slider with news*/}
             <SliderNews />
 
             {/*top subcategories***/}
@@ -28,6 +29,7 @@ const MainPage = () => {
             {/*лучши е продукты**/}
             <TopProducts />
 
+            {/*info block*/}
             <ThreeInfoBlock />
 
             {/*последние продукты*/}
