@@ -1,19 +1,26 @@
 import React, {useState,useEffect} from 'react';
-import {Alert} from "react-bootstrap";
+import {Alert, Container} from "react-bootstrap";
 import ProductHeader from "./components/ProductHeader/ProductHeader";
 import ProductSimilarProducts from "./components/ProductSimilarProducts/ProductSimilarProducts";
 import {useGetUser} from "../../general-components/Auth/UserProfile/functions/useGetUser";
 import ProductInfoTabs from "./components/ProductInfoTabs/ProductInfoTabs";
 import BreadCrumbs from "./components/BreadCrumbs/BreadCrumbs";
 import GeneralSearch from "../../general-components/GeneralSearch/GeneralSearch";
-import "./ProductPage.css";
 import Loader from "../../general-components/Loader/Loader";
 import ProductSEO from "../../seo/ProductSEO";
 import {handleAddView} from "../../functions/ProductViews/handleAddView";
 import ViewsCounter from "./components/ViewsCounter/ViewsCounter";
 import ProductLastProducts from "./components/ProductLastProducts/ProductLastProducts";
 
+// css
+import "./ProductPage.css";
+import "./ProductPageMedia.css";
+import {useMediaQuery} from "react-responsive";
+
 const ProductPage = () => {
+
+    //media query
+    const media768px = useMediaQuery({query: '(max-width: 768px)'});
 
     //data for alert
     const [alertData,setAlertData] = useState({variant:'',show:false,text:''})
@@ -59,7 +66,7 @@ const ProductPage = () => {
                     <ProductInfoTabs productData={productData} />
 
                     {/*счетчик просмотров*/}
-                    <ViewsCounter productData={productData} />
+                    {!media768px && <ViewsCounter productData={productData} />}
                 </div>
 
                 {/*similar products slider*/}
@@ -79,7 +86,9 @@ const ProductPage = () => {
         );
     }else {
         return (
-            <Loader />
+            <Container className={"mt-3"}>
+                <Loader />
+            </Container>
         )
     }
 };

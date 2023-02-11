@@ -1,8 +1,12 @@
 import React from 'react';
-import "./BreadCrumbs.css";
 import {useGetUser} from "../../../../general-components/Auth/UserProfile/functions/useGetUser";
 import {Link} from "react-router-dom";
 import {getCutWord} from "../../../../functions/getCutWord";
+
+//css
+import "./BreadCrumbs.css";
+import "./BreadCrumbsMedia.css";
+import {useMediaQuery} from "react-responsive";
 
 const BreadCrumbs = ({product}) => {
 
@@ -18,12 +22,21 @@ const BreadCrumbs = ({product}) => {
     const subcategory = useGetUser(urlSubcategory);
     // console.log(subcategory);
 
+    //media query
+    const media500px = useMediaQuery({query: '(max-width: 500px)'});
+
     return (
         <div className={"BreadCrumbs"}>
-            <Link to={"/categories"}>Каталог</Link>
-            <img src="/images/icons/dot-dark.svg" alt="space"/>
-            <Link to={`/categories/${category.id}`}>{category.title}</Link>
-            <img src="/images/icons/dot-dark.svg" alt="space"/>
+            {
+                !media500px &&
+                <>
+                    <Link to={"/categories"}>Каталог</Link>
+                    <img src="/images/icons/dot-dark.svg" alt="space"/>
+                    <Link to={`/categories/${category.id}`}>{category.title}</Link>
+                    <img src="/images/icons/dot-dark.svg" alt="space"/>
+                </>
+            }
+
             <Link to={`/categories/${category.id}/${subcategory.id}`}>{subcategory.title}</Link>
             <img src="/images/icons/dot-dark.svg" alt="space"/>
             <p>{getCutWord(product.title,20)}</p>

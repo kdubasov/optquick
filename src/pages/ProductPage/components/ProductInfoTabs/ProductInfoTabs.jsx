@@ -1,10 +1,17 @@
 import React, {useState} from 'react';
-import "./ProductInfoTabs.css";
 import {Alert} from "react-bootstrap";
+import {useMediaQuery} from "react-responsive";
+
+//css
+import "./ProductInfoTabs.css";
+import "./ProductInfoTabsMedia.css";
 
 const ProductInfoTabs = ({productData}) => {
 
     const [selectValue,setSelectValue] = useState(1);
+
+    //media query
+    const media350px = useMediaQuery({query: '(max-width: 350px)'});
 
     //get button for header
     const getButton = (text,value) => {
@@ -26,9 +33,13 @@ const ProductInfoTabs = ({productData}) => {
                 {getButton("Доставка и оплата",3)}
             </header>
 
-            <Alert variant={"success"} className={"small my-3"}>
-                При покупке товара мы рекомендуем уточнять информацию о нем у продавца.
-            </Alert>
+            {
+                media350px ?
+                    <hr className={"mobile-hr"}/>:
+                    <Alert variant={"success"} className={"small my-3"}>
+                        При покупке товара мы рекомендуем уточнять информацию о нем у продавца.
+                    </Alert>
+            }
 
             <div className="container-data">
                 {

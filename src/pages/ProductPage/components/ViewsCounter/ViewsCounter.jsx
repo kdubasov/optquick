@@ -1,5 +1,8 @@
 import React from 'react';
+
+//css
 import "./ViewsCounter.css";
+import "./ViewsCounterMedia.css";
 
 const ViewsCounter = ({productData}) => {
 

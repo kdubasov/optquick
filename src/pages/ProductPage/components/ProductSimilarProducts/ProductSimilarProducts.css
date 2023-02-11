@@ -9,39 +9,3 @@
     align-content: flex-start;
     flex-wrap: wrap;
 }
-
-/*card product*/
-.CardSimilarProducts{
-    position: relative;
-    width: calc(25% - 1em);
-    margin: 0 1em 1em 0;
-    box-shadow: var(--def-shadow);
-    border-radius: var(--def-border-redius);
-}
-
-/*swiper*/
-.CardSimilarProducts .swiper-container{
-    height: 250px;
-}
-
-/*content*/
-.CardSimilarProducts .content{
-    padding: 1em;
-    color: #333;
-}
-.CardSimilarProducts .content h5{
-    margin: 0;
-}
-.CardSimilarProducts .content small{
-    font-size: 13px;
-    color: var(--bs-blue);
-    text-decoration: underline;
-}
-
-/*add to favorites*/
-.CardSimilarProducts .briefcase-container{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: 2;
-}

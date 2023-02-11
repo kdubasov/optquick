@@ -4,12 +4,20 @@ import {Alert} from "react-bootstrap";
 import ProductUserData from "../ProductUserData/ProductUserData";
 import BriefcaseButton from "../../../../general-components/BriefcaseButton/BriefcaseButton";
 import {useUserAuth} from "../../../../context/AuthContext";
-import "./ProductHeader.css";
 import {useGetUser} from "../../../../general-components/Auth/UserProfile/functions/useGetUser";
 import {handleAddContacts} from "../../../../functions/ProductViews/handleAddContacts";
 
+//css
+import "./ProductHeader.css";
+import "./ProductHeaderMedia.css";
+import ViewsCounter from "../ViewsCounter/ViewsCounter";
+import {useMediaQuery} from "react-responsive";
+
 
 const ProductHeader = ({productData,setAlertData}) => {
+
+    //media query
+    const media768px = useMediaQuery({query: '(max-width: 768px)'});
 
     //data seller
     const userData = useGetUser(`/users/${productData.userUid}`);
@@ -33,6 +41,12 @@ const ProductHeader = ({productData,setAlertData}) => {
 
             <div className="left-container">
                 <h2>{productData.title}</h2>
+
+                {
+                    media768px &&
+                    <ViewsCounter productData={productData} />
+                }
+
                 <div className="slider-container">
                     <CardProductSwiper product={productData} />
                 </div>

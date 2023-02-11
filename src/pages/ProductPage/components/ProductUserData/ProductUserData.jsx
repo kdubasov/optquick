@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+
+//css
 import "./ProductUserData.css";
+import "./ProductUserDataMedia.css";
 
 const ProductUserData = ({userData,productData}) => {
 

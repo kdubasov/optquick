@@ -1,5 +1,5 @@
 import React from 'react';
-import CardSimilarProducts from "../ProductSimilarProducts/CardSimilarProducts";
+import CardSimilarProducts from "../../../../general-components/CardSimilarProducts/CardSimilarProducts";
 import {useLastProducts} from "../../../../pages-functions/MainPage/useLastProducts";
 
 const ProductLastProducts = ({nowProductId,setPath,setAlertData}) => {

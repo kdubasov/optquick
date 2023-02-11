@@ -15,7 +15,7 @@ const CardProduct = ({product}) => {
     const { user } = useUserAuth();
 
     //media query
-    const media991px = useMediaQuery({query: '(max-width: 768px)'});
+    const media768px = useMediaQuery({query: '(max-width: 768px)'});
 
     const databaseUrl = `/categories/${product.selectCategory}/subcategories/${product.selectSubCategory}/products/${product.id}`;
 
@@ -39,7 +39,7 @@ const CardProduct = ({product}) => {
                     className={"title"}
                     to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}
                 >
-                    <h6>{getCutWord(product.title,media991px?20:50)}</h6>
+                    <h6>{getCutWord(product.title,media768px?20:50)}</h6>
                 </Link>
 
                 {/*Цена*/}
@@ -47,7 +47,7 @@ const CardProduct = ({product}) => {
 
                 {/*Мин заказ*/}
                 <small className={"min-order"}>
-                    {media991px ? "Заказ" : "Минимальный заказ"} от {product.minOrder} шт.
+                    {media768px ? "Заказ" : "Минимальный заказ"} от {product.minOrder} шт.
                 </small>
 
                 {/*ссылка на страницу товара*/}

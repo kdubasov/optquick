@@ -1,0 +1,22 @@
+@media (max-width: 991px) {
+    .ProductInfoTabs header button{
+        font-size: 17px !important;
+    }
+    /*inner block*/
+    .ProductInfoTabs .inner p{
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .ProductInfoTabs header button{
+        font-size: 15px !important;
+        background: var(--bs-dark-op-1);
+        padding: .25em .75em;
+        margin: 0 .5em .5em 0;
+    }
+    /*inner block*/
+    .ProductInfoTabs .inner p{
+        font-size: 13px !important;
+    }
+}

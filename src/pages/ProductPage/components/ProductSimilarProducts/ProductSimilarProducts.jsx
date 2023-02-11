@@ -1,7 +1,7 @@
 import React from 'react';
 import "./ProductSimilarProducts.css";
 import {useGetCategory} from "../../../../pages-functions/AdminPage/Categories/useGetCategory";
-import CardSimilarProducts from "./CardSimilarProducts";
+import CardSimilarProducts from "../../../../general-components/CardSimilarProducts/CardSimilarProducts";
 
 const ProductSimilarProducts = ({link,nowProductId,setPath,setAlertData}) => {
 

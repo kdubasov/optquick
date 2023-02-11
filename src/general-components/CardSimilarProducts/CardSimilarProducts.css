@@ -1,0 +1,50 @@
+/*card product*/
+.CardSimilarProducts{
+    position: relative;
+    width: calc(25% - 1em);
+    margin: 0 1em 1em 0;
+    box-shadow: var(--def-shadow);
+    border-radius: var(--def-border-redius);
+}
+
+/*swiper*/
+.CardSimilarProducts .swiper-container{
+    height: 250px;
+}
+
+/*content*/
+.CardSimilarProducts .content{
+    padding: 1em;
+    color: #333;
+}
+
+.CardSimilarProducts .content h6{
+    cursor: pointer;
+    transition: .25s;
+}
+.CardSimilarProducts .content h6:hover{
+    color: var(--bs-blue);
+}
+
+.CardSimilarProducts .content h5{
+    margin: .75em 0 -5px 0;
+}
+
+.CardSimilarProducts .content small{
+    font-size: 13px;
+    color: var(--bs-blue);
+    text-decoration: underline;
+}
+
+/*strong text*/
+.CardSimilarProducts .content b{
+    margin: 0 .25em;
+}
+
+/*add to favorites*/
+.CardSimilarProducts .briefcase-container{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 2;
+}

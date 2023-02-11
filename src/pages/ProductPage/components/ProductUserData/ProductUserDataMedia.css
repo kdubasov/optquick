@@ -1,0 +1,16 @@
+@media (max-width: 991px) {
+    .ProductUserData{
+        padding: 1em;
+    }
+
+    /*hr*/
+    .ProductUserData hr{
+        margin: 1.25em 0;
+    }
+
+    /*footer*/
+    .ProductUserData footer img{
+        width: 17px;
+        margin-right: .375em;
+    }
+}

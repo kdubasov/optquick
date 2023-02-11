@@ -1,0 +1,45 @@
+@media (max-width: 1200px) {
+    .CardSimilarProducts{
+        width: calc(33% - 1em);
+    }
+}
+
+@media (max-width: 991px) {
+    .CardSimilarProducts{
+        width: calc(50% - .5em);
+        margin: 0 .5em .5em 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /*slider container*/
+    .CardSimilarProducts .swiper-container{
+        height: 160px;
+    }
+    .CardSimilarProducts .content{
+        padding: 16px 12px;
+    }
+}
+
+@media (max-width: 469px) {
+    /*slider container*/
+    .CardSimilarProducts .swiper-container{
+        height: 130px;
+    }
+    /*title*/
+    .CardSimilarProducts .content h6.title{
+        font-size: 14px;
+    }
+    /*price*/
+    .CardSimilarProducts .content h5{
+        font-size: 16px;
+    }
+    /*min order*/
+    .CardSimilarProducts .content small.min-order{
+        font-size: 12px;
+    }
+    /*нижний текст*/
+    .CardSimilarProducts .content p.bottom{
+        display: none;
+    }
+}

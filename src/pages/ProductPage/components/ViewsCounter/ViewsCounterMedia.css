@@ -1,0 +1,20 @@
+@media (max-width:768px) {
+    .ViewsCounter{
+        width: 100%;
+        margin-bottom: .5em;
+        justify-content: flex-end;
+        position: relative;
+        right: 0;
+        bottom: 0;
+    }
+    .ViewsCounter .inner{
+        margin-right: .75em;
+    }
+    .ViewsCounter .inner img{
+        height: 15px;
+        margin-right: .25em;
+    }
+    .ViewsCounter .inner:first-child img{
+        height: 10px;
+    }
+}

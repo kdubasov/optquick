@@ -1,0 +1,13 @@
+@media ( max-width: 1200px ) {
+    .ProductPage .top-container{
+        padding: 2.5em 1.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .ProductPage .top-container{
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}

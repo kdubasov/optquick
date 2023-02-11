@@ -1,0 +1,33 @@
+@media (max-width: 1200px) {
+    /*container for slider*/
+    .ProductHeader .left-container{
+        width: 55%;
+    }
+    .ProductHeader .slider-container{
+        height: 400px;
+    }
+    /*right container for main data*/
+    .ProductHeader .right{
+        width: 42.5%;
+    }
+}
+
+@media (max-width: 768px) {
+    /*top blocks*/
+    .ProductHeader .left-container,
+    .ProductHeader .right{
+        width: 100%;
+    }
+    /*slider*/
+    .ProductHeader .slider-container{
+        height: 300px;
+        margin-bottom: 2em;
+    }
+}
+
+@media (max-width: 500px) {
+    /*slider*/
+    .ProductHeader .slider-container{
+        height: 250px;
+    }
+}
