@@ -7,9 +7,12 @@ import {useGetUser} from "./functions/useGetUser";
 import UserDataRedact from "./components/UserDataRedact/UserDataRedact";
 import AuthUserProducts from "./components/AuthUserProducts/AuthUserProducts";
 import UserReviewsList from "../../../pages/UserPage/components/UserReviews/UserReviewsList/UserReviewsList";
-import "./UserProfile.css";
 import {Container} from "react-bootstrap";
 import AuthProfileSEO from "../../../seo/AuthProfileSEO";
+
+//css
+import "./UserProfile.css";
+import "./UserProfileMedia.css";
 
 const UserProfile = () => {
 

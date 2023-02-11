@@ -1,0 +1,63 @@
+@media (max-width: 768px) {
+
+    .UserDataNavigate .user{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .UserDataNavigate .user .avatar{
+        margin-right: 1em;
+    }
+
+    /*меню*/
+    .UserDataNavigate .nav{
+        display: flex;
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+    }
+    .UserDataNavigate .nav::-webkit-scrollbar{
+        display: none;
+    }
+
+    /*reviews*/
+    .UserDataNavigate .reviews{
+        margin-bottom: 1em;
+    }
+
+    /*nav*/
+    .UserDataNavigate .nav a,
+    .UserDataNavigate .nav button{
+        font-size: 1em !important;
+        margin-right: 2em;
+        white-space: nowrap;
+    }
+    .UserDataNavigate .nav a img,
+    .UserDataNavigate .nav button img{
+        display: none;
+    }
+    .UserDataNavigate .nav a>button{
+        margin-right: 0;
+    }
+    .UserDataNavigate .nav div.line{
+        display: none;
+    }
+    /*disable button*/
+    .UserDataNavigate .nav button:disabled{
+        cursor: default;
+        color: var(--bs-blue);
+        border-bottom: 1px solid var(--bs-blue);
+        border-radius: 0 !important;
+    }
+}
+
+@media (max-width: 469px){
+    .UserDataNavigate .nav a,
+    .UserDataNavigate .nav button{
+        font-size: .9em !important;
+    }
+    .UserDataNavigate .name img,
+    .UserDataNavigate .reviews img{
+        width: 16px;
+    }
+}

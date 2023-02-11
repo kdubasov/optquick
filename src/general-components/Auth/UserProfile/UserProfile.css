@@ -1,8 +1,9 @@
 .UserProfile .container,
 .UserPage .container{
+    min-height: 800px;
+    padding-bottom: 1.5em;
     display: flex;
     justify-content: space-between;
-    min-height: 800px;
 }
 
 /*самая верхняя картинка*/

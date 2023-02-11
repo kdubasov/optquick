@@ -4,30 +4,23 @@ p,a,button{
 }
 
 @media (max-width: 1200px){
-    h1 {
-        font-size: calc(1.1rem + 1.25vw);
-    }
-    h2 {
-        font-size: calc(1.1rem + .75vw);
-    }
+    h1 {font-size: calc(1.1rem + 1.25vw);}
+    h2 {font-size: calc(1.1rem + .75vw);}
+    h4 {font-size: calc(1rem + .65vw);}
+    h5 {font-size: calc(.8rem + .55vw);}
 }
 
 @media (max-width: 991px){
-    h1 {
-        font-size: calc(1.1rem + 1.15vw);
-    }
-    h2 {
-        font-size: calc(1.1rem + .65vw);
-    }
+    h1 {font-size: calc(1.1rem + 1.15vw);}
+    h2 {font-size: calc(1.1rem + .65vw);}
+    h4 {font-size: calc(1rem + .45vw);}
+    h5 {font-size: calc(.75rem + .5vw);}
 }
 
 @media (max-width: 768px){
-    h1 {
-        font-size: calc(1.1rem + 1vw);
-    }
-    h2 {
-        font-size: calc(1.1rem + .45vw);
-    }
+    h1 {font-size: calc(1.1rem + 1vw);}
+    h2 {font-size: calc(1.1rem + .45vw);}
+    h4 {font-size: calc(1rem + .25vw);}
     p,a,button{
         font-size: 13px !important;
     }

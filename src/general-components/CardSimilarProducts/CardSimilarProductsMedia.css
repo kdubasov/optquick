@@ -29,10 +29,12 @@
     /*title*/
     .CardSimilarProducts .content h6.title{
         font-size: 14px;
+        margin-bottom: .35em;
     }
     /*price*/
     .CardSimilarProducts .content h5{
         font-size: 16px;
+        margin-top: 0;
     }
     /*min order*/
     .CardSimilarProducts .content small.min-order{

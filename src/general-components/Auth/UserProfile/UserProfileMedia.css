@@ -1,0 +1,32 @@
+@media (max-width:991px){
+    /*for navigation block*/
+    .UserProfile .left,
+    .UserPage .left{
+        width: 220px;
+    }
+    /*right block*/
+    .UserProfile .right,
+    .UserPage .right{
+        width: calc(100% - 220px - 20px);
+    }
+}
+
+@media (max-width: 768px){
+    .UserProfile .container,
+    .UserPage .container{
+        display: flex;
+        flex-direction: column;
+    }
+    /*for navigation block*/
+    .UserProfile .left,
+    .UserPage .left,
+    .UserProfile .right,
+    .UserPage .right{
+        width: 100%;
+    }
+    /*right block*/
+    .UserProfile .right,
+    .UserPage .right{
+        margin-top: 30px;
+    }
+}

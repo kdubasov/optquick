@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {handleDeleteCategory} from "../../../pages-functions/AdminPage/Categories/handleDeleteCategory";
 
-const DeleteCategoryButton = ({url,text = false}) => {
+const DeleteCategoryButton = ({url,text = false, img = false}) => {
 
     //для подтверждения удаления
     const [confirm,setConfirm] = useState(false)
@@ -20,7 +20,8 @@ const DeleteCategoryButton = ({url,text = false}) => {
                         className={"but-red"}
                         onClick={() => setConfirm(true)}
                     >
-                        {text ? text : "Удалить"}
+                        {img && <img src="/images/icons/delete-product.svg" alt="delete"/>}
+                        {!img && (text ? text : "Удалить")}
                     </button>
             }
         </>

@@ -1,0 +1,38 @@
+@media (max-width: 991px) {
+    .AuthUserProductsCard{
+        height: auto;
+        flex-direction: column;
+    }
+    .AuthUserProductsCard .left{
+        width: 100% !important;
+        height: 180px;
+    }
+    /*content in left block container*/
+    .AuthUserProductsCard .left .content{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1em;
+    }
+    .AuthUserProductsCard .right{
+        width: 100% !important;
+        margin-top: .5em !important;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center !important;
+    }
+    .AuthUserProductsCard .right .line{
+        display: none;
+    }
+    .AuthUserProductsCard .right a,
+    .AuthUserProductsCard .right .but-red{
+        width: calc(33% - .5em);
+    }
+}
+
+@media (max-width: 469px) {
+    .AuthUserProductsCard .left{
+        height: 120px;
+    }
+}

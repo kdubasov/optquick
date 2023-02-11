@@ -1,7 +1,7 @@
 import React from 'react';
 import {useGetUserProducts} from "../../../../../pages-functions/AdminPage/GetProducts/useGetUserProducts";
 import {Alert} from "react-bootstrap";
-import AuthUserProductsCard from "./AuthUserProductsCard";
+import AuthUserProductsCard from "./AuthUserProductsCard/AuthUserProductsCard";
 
 const AuthUserProducts = ({userId}) => {
 

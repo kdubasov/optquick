@@ -2,8 +2,11 @@ import React from 'react';
 import {Nav} from "react-bootstrap";
 import {useUserAuth} from "../../../../../context/AuthContext";
 import {Link, useNavigate} from "react-router-dom";
-import "./UserDataNavigate.css";
 import {getReviewsGrade} from "../../../../../functions/getReviewsGrade";
+
+//css
+import "./UserDataNavigate.css";
+import "./UserDataNavigateMedia.css";
 
 const UserDataNavigate = ({data,selectPage,setSelectPage}) => {
 
@@ -23,48 +26,52 @@ const UserDataNavigate = ({data,selectPage,setSelectPage}) => {
     return (
         <div className="UserDataNavigate">
             
-            <div className="avatar">
-                {
-                    data?.photo ?
-                        <img src={data.photo} alt={data.name} />:
-                        <img src="/images/auth/noAvatar.svg" alt="add"/>
-                }
-                {
-                    !data?.photo &&
-                    <img
-                        src="/images/auth/redact-photo.svg"
-                        alt="redact"
-                        className={"redact"}
-                        onClick={() => setSelectPage(3)}
-                    />
-                }
-            </div>
+            <div className="user">
+                <div className="avatar">
+                    {
+                        data?.photo ?
+                            <img src={data.photo} alt={data.name} />:
+                            <img src="/images/auth/noAvatar.svg" alt="add"/>
+                    }
+                    {
+                        !data?.photo &&
+                        <img
+                            src="/images/auth/redact-photo.svg"
+                            alt="redact"
+                            className={"redact"}
+                            onClick={() => setSelectPage(3)}
+                        />
+                    }
+                </div>
 
-            <h5 className={"name"}>
-                {
-                    (data?.name && data?.surname) ?
-                        data.surname + " " + data.name:
-                        <span className={"add"} onClick={() => setSelectPage(3)}>
+                <div>
+                    <h5 className={"name"}>
+                        {
+                            (data?.name && data?.surname) ?
+                                data.surname + " " + data.name:
+                                <span className={"add"} onClick={() => setSelectPage(3)}>
                             Добавить имя
                         </span>
-                }
-                {
-                    (data?.vk && data?.telegram && data?.photo) &&
-                    <img src="/images/icons/user-success.svg" alt=""/>
-                }
-            </h5>
+                        }
+                        {
+                            (data?.vk && data?.telegram && data?.photo) &&
+                            <img src="/images/icons/user-success.svg" alt=""/>
+                        }
+                    </h5>
 
-            {
-                data?.reviews ?
-                    <p className="reviews" onClick={() => setSelectPage(2)}>
-                        {getReviewsGrade(data.reviews)}
-                        <img src="/images/auth/star.svg" alt="star"/>
-                        <span>
+                    {
+                        data?.reviews ?
+                            <p className="reviews" onClick={() => setSelectPage(2)}>
+                                {getReviewsGrade(data.reviews)}
+                                <img src="/images/auth/star.svg" alt="star"/>
+                                <span>
                             {Object.values(data.reviews).length + " отзыва"}
                         </span>
-                    </p>:
-                    <p className="reviews">Отзывов нет</p>
-            }
+                            </p>:
+                            <p className="reviews">Отзывов нет</p>
+                    }
+                </div>
+            </div>
 
             <Nav>
                 <button
