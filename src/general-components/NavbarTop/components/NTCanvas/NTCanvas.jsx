@@ -2,12 +2,30 @@ import React from 'react';
 import {Offcanvas} from "react-bootstrap";
 import "./NTCanvas.css";
 import "./NTCanvasMedia.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useUserAuth} from "../../../../context/AuthContext";
 
 const NTCanvas = ({show,handleClose}) => {
 
     const { user } = useUserAuth();
+    const navigate = useNavigate();
+
+    //go to link and close menu
+    const handleNavigate = link => {
+        navigate(link);
+        handleClose();
+    }
+
+    const getLink = (text, link) => {
+        return (
+            <button
+                className={"but-light"}
+                onClick={() => handleNavigate(link)}
+            >
+                {text}
+            </button>
+        )
+    }
 
     return (
         <Offcanvas
@@ -23,9 +41,12 @@ const NTCanvas = ({show,handleClose}) => {
                 </Link>
 
                 <div>
-                    <Link className={"but-green post-product"} to={`/postProduct`}>
+                    <button
+                        className={"but-green post-product"}
+                        onClick={() => handleNavigate("/postProduct")}
+                    >
                         Разместить
-                    </Link>
+                    </button>
                     <img
                         src="/images/icons/close-nav.svg"
                         alt="close"
@@ -36,45 +57,33 @@ const NTCanvas = ({show,handleClose}) => {
             </Offcanvas.Header>
             <Offcanvas.Body>
                 <nav>
-                    <Link to={"/categories"} className={"but-light"}>
-                        Все категории
-                    </Link>
-                    <Link to={"/briefcase"} className={"but-light"}>
-                        Избранные товары
-                    </Link>
-                    <Link to={"/articles"} className={"but-light"}>
-                        Статьи
-                    </Link>
-                    <Link to={"/answers"} className={"but-light"}>
-                        Вопросы и ответы
-                    </Link>
-                    <Link to={"/aboutProject"} className={"but-light"}>
-                        О проекте
-                    </Link>
-                    <Link to={"/feedback"} className={"but-light"}>
-                        Обратная связь
-                    </Link>
+                    {getLink("Все категории","/categories")}
+                    {getLink("Избранные товары","/briefcase")}
+                    {getLink("Статьи","/articles")}
+                    {getLink("Вопросы и ответы","/answers")}
+                    {getLink("О проекте","/aboutProject")}
+                    {getLink("Обратная связь","/feedback")}
                 </nav>
 
                 <footer>
                     {
                         user ?
-                            <Link to={"/userProfile"} className="but-blue">
+                            <button onClick={() => handleNavigate("/userProfile")} className="but-blue">
                                 <img src="/images/icons/users-white.svg" alt=""/>
                                 Личный кабинет
-                            </Link>:
-                            <Link to={"/login"} className="but-blue">
+                            </button>:
+                            <button onClick={() => handleNavigate("/login")} className="but-blue">
                                 <img src="/images/icons/users-white.svg" alt=""/>
                                 Вход и регистрация
-                            </Link>
+                            </button>
                     }
 
-                    <Link to={"/privacyPolicy"}>
+                    <button onClick={() => handleNavigate("/privacyPolicy")} className={"def"}>
                         Политика обработки персональных данных
-                    </Link>
-                    <Link to={"/websiteRules"}>
+                    </button>
+                    <button onClick={() => handleNavigate("/websiteRules")} className={"def"}>
                         Правила пользования торговой площадкой
-                    </Link>
+                    </button>
                 </footer>
             </Offcanvas.Body>
         </Offcanvas>

@@ -6,6 +6,11 @@
     font-size: 16px;
 }
 
+.NTCanvas .post-product{
+    padding: .4em 1.2em;
+    margin-right: .75em;
+}
+
 /*offcanvas-body*/
 .NTCanvas .offcanvas-body{
     display: flex;
@@ -18,7 +23,7 @@
     display: flex;
     flex-direction: column;
 }
-.NTCanvas nav a{
+.NTCanvas nav button{
     margin: 0 0 .5em 0;
     text-align: center;
 }
@@ -28,7 +33,7 @@
     display: flex;
     flex-direction: column;
 }
-.NTCanvas footer a.but-blue{
+.NTCanvas footer button.but-blue{
     padding: .75em 1em;
     display: flex;
     justify-content: center;
@@ -39,7 +44,9 @@
 .NTCanvas footer a.but-blue img{
     margin-right: .5em;
 }
-.NTCanvas footer a{
+.NTCanvas footer button.def{
+    background: none;
+    border: none;
     text-align: center;
     margin: .15em 0 0 0;
     opacity: .6;

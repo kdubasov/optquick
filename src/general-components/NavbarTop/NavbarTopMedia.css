@@ -19,7 +19,7 @@
         font-size: 16px;
     }
     /*post product button*/
-    .NavbarTop a.post-product{
+    .NavbarTop .post-product{
         margin-left: 0;
     }
 }
