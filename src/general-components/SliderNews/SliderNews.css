@@ -10,7 +10,7 @@
     background: var(--bs-light);
     display: flex;
     align-items: flex-end;
-    cursor: pointer;
+    cursor: grab;
     transition: .25s;
 }
 .NewsCard:hover{

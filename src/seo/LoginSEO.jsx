@@ -1,8 +1,7 @@
 import React from 'react';
 import {Helmet} from "react-helmet";
 
-const UserProfileSEO = ({data}) => {
-
+const LoginSEO = () => {
     return (
         <Helmet>
             <meta charSet="utf-8" />
@@ -13,18 +12,22 @@ const UserProfileSEO = ({data}) => {
             <meta name="Copyright" content="Дубасов Кирилл Сергеевич" />
             <meta name="Copyright" content="Воробушков Михаил Евгеньевич" />
             <meta name="robots" content="all"/>
-            <title>Продавец {data?.surname + " " + data?.name} | OptQuick</title>
+            <title>Авторизация | OptQuick</title>
             <meta
                 name="description"
-                content={"На странице продавца вы можете уидеть основуню информацию о нем, " +
-                    "а также товары, отзывы и контакты. Вы можете оставить свой отзыв о продавце или отправить на него жалобу."}
+                content={
+                    "После прохождения авторизации вы можете начать продавать свои товары, " +
+                    "а также получите доступ к контактам других продавцов." +
+                    "Optquick заботится о своих клиентах, поэтому мы максимально упростили " +
+                    "процесс авторизации."
+                }
             />
             <meta
                 name="keywords"
-                content={`optquick, товары оптом, оптов товар, вход, личный кабинет, продавец, оптовик каталог, профиль`}
+                content={"optquick, авторизация оптовик, оптов товар, авторизация optquick, оптовик, сайт оптовиков, оптовик каталог"}
             />
         </Helmet>
     );
 };
 
-export default UserProfileSEO;
+export default LoginSEO;

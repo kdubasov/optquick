@@ -1,0 +1,23 @@
+@media (max-width: 1200px) {
+    .SubProductsPage .no-products{
+        width: 75%;
+    }
+}
+
+@media (max-width: 991px) {
+    .SubProductsPage .no-products{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .SubProductsPage h3.title{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 469px) {
+    .SubProductsPage h3.title{
+        font-size: 15px;
+    }
+}

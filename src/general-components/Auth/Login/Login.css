@@ -1,18 +1,21 @@
 .Login{
-    width: calc(600px + 2em);
+    width: 630px;
     margin: 5em auto;
-    padding: 2em;
+    padding: 3em 2em;
     border-top: 5px solid var(--bs-blue);
     border-radius: var(--def-border-redius);
     box-shadow: var(--def-shadow);
+    text-align: center;
 }
 
 /*top text*/
-.Login h3{
-    margin: 0;
+.Login h2{
+    font-weight: 600;
+    margin-bottom: .25em;
 }
-.Login p.small{
-    margin-bottom: 20px;
+.Login h6{
+    font-weight: 300;
+    margin-bottom: 2em;
 }
 
 /*input*/
@@ -22,9 +25,9 @@
 .Login .PhoneInput-container,
 .Login input.code{
     color: var(--bs-dark) !important;
-    padding: .25em 1em;
+    padding: .5em 1em;
     text-align: center;
-    border: 2px solid #F2F2F2;
+    border: 2px solid var(--bs-light);
     font-size: 20px !important;
     font-weight: 800;
     border-radius: var(--def-border-redius);
@@ -44,10 +47,19 @@
 }
 .Login .PhoneInputInput::placeholder,
 .Login input::placeholder{
-    color: #c2c2c2;
+    color: #d5d5d5;
+    font-weight: 800;
 }
 
 /*buttons-container*/
 .Login .buttons-container{
-    margin-top: 1.25em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+.Login .buttons-container button,
+.Login .buttons-container a{
+    padding: .75em .5em;
+    width: calc(50% - .25em);
+    text-decoration: none;
 }

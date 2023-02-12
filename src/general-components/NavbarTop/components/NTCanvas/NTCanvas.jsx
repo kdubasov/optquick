@@ -16,6 +16,7 @@ const NTCanvas = ({show,handleClose}) => {
         handleClose();
     }
 
+    //пуе игеещт цшер дщтл
     const getLink = (text, link) => {
         return (
             <button

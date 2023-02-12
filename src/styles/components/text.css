@@ -8,6 +8,7 @@ p,a,button{
     h2 {font-size: calc(1.1rem + .75vw);}
     h4 {font-size: calc(1rem + .65vw);}
     h5 {font-size: calc(.8rem + .55vw);}
+    h6 {font-size: calc(.6rem + .45vw);}
 }
 
 @media (max-width: 991px){

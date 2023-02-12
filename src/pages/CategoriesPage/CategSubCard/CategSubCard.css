@@ -1,11 +1,11 @@
 .CategSubCard{
     width: calc(25% - 1em);
+    height: 30vh;
     margin: 1em 1em 0 0;
     border-radius: var(--def-border-redius);
     box-shadow: var(--def-shadow);
     background-size: cover;
     background-position: center center;
-    height: 30vh;
     position: relative;
     transition: .25s;
 }
@@ -13,6 +13,7 @@
     background: var(--bs-dark-op-5);
 }
 
+/* слой поверх */
 .CategSubCard .dark{
     width: 100%;
     height: 100%;

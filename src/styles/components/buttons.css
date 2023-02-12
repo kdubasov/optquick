@@ -47,10 +47,10 @@ button.btn, .but-blue, button, .but-green{
     background: var(--bs-white);
     color: var(--bs-dark) !important;
     transition: .25s;
-    border: 2px solid #F5F4FB ;
+    border: 2px solid var(--bs-light) ;
 }
 .but-light:hover{
-    background: #F5F4FB;
+    background: var(--bs-light);
 }
 
 

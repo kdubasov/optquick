@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+
+//css
 import "./CategSubCard.css";
+import "./CategSubCardMedia.css";
 
 const CategSubCard = ({categ}) => {
     return (

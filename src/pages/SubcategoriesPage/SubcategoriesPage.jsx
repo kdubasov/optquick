@@ -3,8 +3,11 @@ import {getPathLastWord} from "../../pages-functions/CategoriesPage/getPathLastW
 import {Link} from "react-router-dom";
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
 import SubCard from "./SubCard/SubCard";
-import "./SubcategoriesPage.css";
 import SubcategoriesSEO from "../../seo/SubcategoriesSEO";
+
+//css
+import "./SubcategoriesPage.css";
+import "./SubcategoriesPageMedia.css";
 
 const SubcategoriesPage = () => {
 

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {Form, Alert} from "react-bootstrap";
-import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useUserAuth } from "../../../context/AuthContext";
+import LoginSEO from "../../../seo/LoginSEO";
+
+//css
 import "./Login.css";
+import "./LoginMedia.css";
+import "react-phone-number-input/style.css";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -46,13 +50,15 @@ const Login = () => {
   return (
     <div className={'Login'}>
 
-        <h3 className={"title"}>
+      <LoginSEO />
+
+        <h2 className={"title"}>
           Авторизация
-        </h3>
-        <p className="small">
+        </h2>
+        <h6>
           Просто введите свой телефон, затем вам прийдет смс с кодом,
           вам нужно будет ввести этот код в следующем открывшемся окне.
-        </p>
+        </h6>
 
         {error && <Alert variant="danger">{error}</Alert>}
 
@@ -70,12 +76,12 @@ const Login = () => {
           <div id="recaptcha-container" />
 
           <div className="buttons-container">
-            <Link to="/">
-              <button className={"but-light"}>На главную</button>
+            <Link to="/" className={"but-light"}>
+              На главную
             </Link>
 
-            <button type="submit" className={'but-green mx-2'}>
-              Далее
+            <button type={"submit"} className={"but-green mx-2"}>
+              Получить код
             </button>
           </div>
         </Form>
@@ -88,8 +94,8 @@ const Login = () => {
                 onChange={(e) => setOtp(e.target.value)}
             />
 
-          <div className="w-100 d-flex justify-content-center">
-            <button className={"but-green px-5"} type="submit">
+          <div className="buttons-container justify-content-center">
+            <button className={"but-green"} type="submit">
               Отправить
             </button>
           </div>

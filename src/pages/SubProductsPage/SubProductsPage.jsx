@@ -3,8 +3,11 @@ import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetC
 import {Link} from "react-router-dom";
 import CardProduct from "../../general-components/CardProduct/CardProduct";
 import SubProductSort from "./SubProductSort/SubProductSort";
-import "./SubProductsPage.css";
 import SubcategoriesSEO from "../../seo/SubcategoriesSEO";
+
+//css
+import "./SubProductsPage.css";
+import "./SubProductsPageMedia.css";
 
 const SubProductsPage = () => {
 
@@ -36,9 +39,7 @@ const SubProductsPage = () => {
         <div className={'SubProductsPage container'}>
 
             <header>
-
-                {/*SEO*/}
-                {
+                {//SEO
                     subcategoryTitle[0]?.title &&
                     <SubcategoriesSEO titleSub={subcategoryTitle[0].title} />
                 }
@@ -49,7 +50,7 @@ const SubProductsPage = () => {
 
                 {//отображаем возможность сортировки только есть товары
                     Boolean(listProducts.length) &&
-                    <h3>
+                    <h3 className={"title"}>
                         На данной странице показаны товары подкакатегории
                         "{subcategoryTitle.map(sub => (sub.title))}"
                     </h3>
