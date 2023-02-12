@@ -1,38 +1,47 @@
 @media (max-width: 991px) {
     .AuthUserProductsCard{
-        height: auto;
+        height: auto !important;
+        margin: 0 0 1em 0;
         flex-direction: column;
     }
-    .AuthUserProductsCard .left{
+    .AuthUserProductsCard .left-card{
         width: 100% !important;
-        height: 180px;
+        height: 160px !important;
+        margin: 0;
     }
     /*content in left block container*/
-    .AuthUserProductsCard .left .content{
+    .AuthUserProductsCard .left-card .content{
         display: flex;
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
         padding: 1em;
     }
-    .AuthUserProductsCard .right{
+    /*content in right block container*/
+    .AuthUserProductsCard .right-card{
         width: 100% !important;
         margin-top: .5em !important;
-        flex-direction: row;
+        flex-direction: row !important;
         justify-content: space-between;
-        align-items: center !important;
+        align-items: center;
     }
-    .AuthUserProductsCard .right .line{
+    .AuthUserProductsCard .right-card .line{
         display: none;
     }
-    .AuthUserProductsCard .right a,
-    .AuthUserProductsCard .right .but-red{
+    .AuthUserProductsCard .right-card a,
+    .AuthUserProductsCard .right-card .but-red{
         width: calc(33% - .5em);
     }
 }
 
 @media (max-width: 469px) {
-    .AuthUserProductsCard .left{
-        height: 120px;
+    .AuthUserProductsCard .left-card{
+        height: 120px !important;
+    }
+    .AuthUserProductsCard .left-card .content p.center{
+        display: none;
+    }
+    .AuthUserProductsCard .left-card .content h5{
+        margin-bottom: .5em !important;
     }
 }

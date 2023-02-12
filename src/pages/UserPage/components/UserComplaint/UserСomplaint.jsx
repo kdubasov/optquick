@@ -3,7 +3,10 @@ import {Alert, Form, FormControl} from "react-bootstrap";
 import {ref, set} from "firebase/database";
 import {realtimeDB} from "../../../../database/firebase-connect";
 import {getDate} from "../../../../functions/getDate";
+
+//css
 import "./UserComplaint.css";
+import "./UserComplaintMedia.css";
 
 //пожаловаться на юзера
 const UserComplaint = ({nowUser,userId,userData}) => {

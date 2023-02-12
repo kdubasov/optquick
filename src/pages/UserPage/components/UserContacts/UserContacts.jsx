@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
-import "./UserContacts.css";
 import {useUserAuth} from "../../../../context/AuthContext";
 import {handleCopy} from "../../../../functions/handleCopy";
+
+//css
+import "./UserContacts.css";
+import "./UserContactsMedia.css";
 
 const UserContacts = ({userData}) => {
 

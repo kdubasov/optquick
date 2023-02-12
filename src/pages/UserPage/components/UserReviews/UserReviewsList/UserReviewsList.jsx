@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
-import "./UserReviewsList.css";
 import {useGetCategory} from "../../../../../pages-functions/AdminPage/Categories/useGetCategory";
 import {Alert} from "react-bootstrap";
+
+//css
+import "./UserReviewsList.css";
+import "./UserReviewsListMedia.css";
 
 const UserReviewsList = ({userId}) => {
 

@@ -1,0 +1,15 @@
+@media (max-width: 991px) {
+    .UserDataRedact form{
+        padding: 1.5em 1em;
+    }
+
+    .UserDataRedact form h5{
+        font-weight: 600;
+    }
+
+    /*input container with label*/
+    .UserDataRedact .input-container{
+        width: 100%;
+        margin: .35em 0;
+    }
+}

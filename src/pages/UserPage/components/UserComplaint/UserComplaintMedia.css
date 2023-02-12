@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+    /*form*/
+    .UserComplaint form{
+        padding: 1em;
+    }
+}

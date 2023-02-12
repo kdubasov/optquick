@@ -1,7 +1,10 @@
 import React from 'react';
-import "./UserPageProducts.css";
 import {useGetUserProducts} from "../../../../pages-functions/AdminPage/GetProducts/useGetUserProducts";
 import CardProduct from "../../../../general-components/CardProduct/CardProduct";
+
+//css
+import "./UserPageProducts.css";
+import "./UserPageProductsMedia.css";
 
 const UserPageProducts = ({userId}) => {
 

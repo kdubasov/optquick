@@ -4,7 +4,10 @@ import {useGetUser} from "../../../../../general-components/Auth/UserProfile/fun
 import {ref, set} from "firebase/database";
 import {realtimeDB} from "../../../../../database/firebase-connect";
 import {getDate} from "../../../../../functions/getDate";
+
+//css
 import "./UserReviewsSend.css";
+import "./UserReviewsSendMedia.css";
 
 const UserReviewsSend = ({userId,nowUser}) => {
 

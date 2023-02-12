@@ -1,0 +1,7 @@
+@media (max-width: 768px) {
+    /*default block*/
+    .UserContacts .def-block{
+        width: 100%;
+        margin-bottom: 1em;
+    }
+}

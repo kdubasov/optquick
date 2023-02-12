@@ -16,6 +16,7 @@
     .UserPage .container{
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
     }
     /*for navigation block*/
     .UserProfile .left,
@@ -27,6 +28,6 @@
     /*right block*/
     .UserProfile .right,
     .UserPage .right{
-        margin-top: 30px;
+        margin-top: 40px;
     }
 }

@@ -10,6 +10,7 @@ import {Container} from "react-bootstrap";
 import UserComplaint from "./components/UserComplaint/UserСomplaint";
 import "./UserPage.css";
 import UserContacts from "./components/UserContacts/UserContacts";
+import UserProfileSEO from "../../seo/UserProfileSEO";
 
 const UserPage = () => {
 
@@ -26,6 +27,11 @@ const UserPage = () => {
 
     return (
         <div className={`UserPage`}>
+
+            {//SEO
+                Boolean(Object.values(userData).length) &&
+                <UserProfileSEO data={userData} />
+            }
 
             {/*самая верхняя картинка bg*/}
             <div className="top-image" />

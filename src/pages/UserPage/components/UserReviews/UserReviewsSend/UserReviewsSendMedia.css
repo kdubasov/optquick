@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+    /*form*/
+    .UserReviewsSend form{
+        padding: 1em;
+    }
+    /*label*/
+    .UserReviewsSend form label{
+        margin-bottom: .25em;
+    }
+}

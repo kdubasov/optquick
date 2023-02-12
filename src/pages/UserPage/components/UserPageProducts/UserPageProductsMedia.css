@@ -1,0 +1,6 @@
+@media (max-width: 1200px) {
+    /*card product width*/
+    .UserPageProducts .prods-container .CardProduct{
+        width: calc(50% - .5em);
+    }
+}

@@ -5,13 +5,14 @@
 /*prods-container*/
 .UserPageProducts .prods-container{
     display: flex;
-    align-content: flex-start;
+    justify-content: space-between;
+    align-content: space-between;
     flex-wrap: wrap;
 }
 
 
 /*card product width*/
 .UserPageProducts .prods-container .CardProduct{
-    width: calc(33.33% - 1em);
-    margin: .5em;
+    width: calc(33.33% - .5em);
+    margin: .5em 0;
 }

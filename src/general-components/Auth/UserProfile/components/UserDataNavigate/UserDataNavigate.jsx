@@ -1,7 +1,7 @@
 import React from 'react';
 import {Nav} from "react-bootstrap";
 import {useUserAuth} from "../../../../../context/AuthContext";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {getReviewsGrade} from "../../../../../functions/getReviewsGrade";
 
 //css
@@ -90,12 +90,10 @@ const UserDataNavigate = ({data,selectPage,setSelectPage}) => {
                     Мои отзывы
                 </button>
 
-                <Link to={"/briefcase"}>
-                    <button>
-                        <img src="/images/icons/like-border.svg" alt="my favorites"/>
-                        Избранное
-                    </button>
-                </Link>
+                <button onClick={() => navigate("/briefcase")}>
+                    <img src="/images/icons/like-border.svg" alt="my favorites"/>
+                    Избранное
+                </button>
 
                 <div className="line" />
 

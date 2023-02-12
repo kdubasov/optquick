@@ -1,0 +1,13 @@
+@media (max-width: 991px) {
+    /*card product*/
+    .BriefcasePage .products-container .CardProduct{
+        margin: 0 .5em .5em 0;
+    }
+}
+
+@media (max-width: 469px) {
+    /*card product*/
+    .BriefcasePage .products-container .CardProduct{
+        margin: 0 .25em .5em 0;
+    }
+}

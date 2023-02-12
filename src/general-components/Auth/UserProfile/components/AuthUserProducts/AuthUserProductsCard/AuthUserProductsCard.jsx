@@ -3,11 +3,11 @@ import CardProductSwiper from "../../../../../CardProduct/CardProductSwiper/Card
 import {Link} from "react-router-dom";
 import DeleteCategoryButton from "../../../../../AdminPage/Categories/DeleteCategoryButton";
 import {getCutWord} from "../../../../../../functions/getCutWord";
+import {useMediaQuery} from "react-responsive";
 
 //css
-import "./AuthUserProductsCardMedia.css";
 import "./AuthUserProductsCard.css";
-import {useMediaQuery} from "react-responsive";
+import "./AuthUserProductsCardMedia.css";
 
 const AuthUserProductsCard = ({product}) => {
 
@@ -20,7 +20,7 @@ const AuthUserProductsCard = ({product}) => {
     return (
         <div className={"AuthUserProductsCard"}>
 
-            <div className="left">
+            <div className="left-card">
 
                 {/*swiper with images for product*/}
                 <div className={"slider-container"}>
@@ -57,7 +57,7 @@ const AuthUserProductsCard = ({product}) => {
                 </div>
             </div>
 
-            <div className="right">
+            <div className="right-card">
                 {/*ссылка на страницу товара*/}
                 <Link to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}>
                     <button className={"w-100 but-blue border"}>

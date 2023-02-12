@@ -26,18 +26,13 @@
     }
 
     /*nav*/
-    .UserDataNavigate .nav a,
     .UserDataNavigate .nav button{
         font-size: 1em !important;
         margin-right: 2em;
         white-space: nowrap;
     }
-    .UserDataNavigate .nav a img,
     .UserDataNavigate .nav button img{
         display: none;
-    }
-    .UserDataNavigate .nav a>button{
-        margin-right: 0;
     }
     .UserDataNavigate .nav div.line{
         display: none;
@@ -52,7 +47,6 @@
 }
 
 @media (max-width: 469px){
-    .UserDataNavigate .nav a,
     .UserDataNavigate .nav button{
         font-size: .9em !important;
     }

@@ -5,8 +5,11 @@ import {useUserAuth} from "../../context/AuthContext";
 import {useGetBriefcaseData} from "../../pages-functions/Briefcase/useGetBriefcaseData";
 import CardProduct from "../../general-components/CardProduct/CardProduct";
 import {Link} from "react-router-dom";
-import "./BriefcasePage.css";
 import BriefcaseSEO from "../../seo/BriefcaseSEO";
+
+//css
+import "./BriefcasePage.css";
+import "./BriefcasePageMedia.css";
 
 const BriefcasePage = () => {
 

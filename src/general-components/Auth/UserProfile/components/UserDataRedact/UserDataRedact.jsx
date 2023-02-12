@@ -2,7 +2,10 @@ import React, {useState} from 'react';
 import {Alert, Form} from "react-bootstrap";
 import {useUserAuth} from "../../../../../context/AuthContext";
 import {handleSetUserData} from "../../functions/handleSetUserData";
+
+//css
 import "./UserDataRedact.css";
+import "./UserDataRedactMedia.css";
 
 const UserDataRedact = ({userData,setRes}) => {
 

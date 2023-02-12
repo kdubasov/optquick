@@ -7,7 +7,7 @@
 .CardProductSwiper .swiper-slide{
     display: flex;
     justify-content: center;
-    background: var(--bs-light);
+    background: #F5F4FB;
     border-radius: var(--def-border-redius);
 }
 /*slide img*/
