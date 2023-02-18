@@ -1,6 +1,9 @@
 import React from 'react';
 import {BenefitsCardsData} from "./BenefitsCardsData";
+
+//css
 import "./BenefitsCards.css";
+import "./BenefitsCardsMedia.css";
 
 const BenefitsCards = () => {
     return (

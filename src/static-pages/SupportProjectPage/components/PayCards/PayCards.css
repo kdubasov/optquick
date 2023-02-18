@@ -2,6 +2,7 @@
     padding: 3em 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .PayCards .inner{
@@ -10,7 +11,7 @@
     padding: 1em;
     display: flex;
     align-items: center;
-    background: #F8F8F8;
+    background: var(--bs-light);
     border-radius: var(--def-border-redius);
 }
 .PayCards .inner img{

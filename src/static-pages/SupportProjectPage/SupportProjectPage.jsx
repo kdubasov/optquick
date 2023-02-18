@@ -1,7 +1,10 @@
 import React from 'react';
 import PayCards from "./components/PayCards/PayCards";
 import {Container} from "react-bootstrap";
+
+//css
 import "./SupportProjectPage.css";
+import "./SupportProjectPageMedia.css";
 
 const SupportProjectPage = () => {
     return (

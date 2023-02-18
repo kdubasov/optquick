@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
-import "./AnswersPage.css";
 import {Container} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {AnswerPageData} from "./AnswerPageData";
+
+//css
+import "./AnswersPage.css";
+import "./AnswersPageMedia.css";
 
 const AnswersPage = () => {
 

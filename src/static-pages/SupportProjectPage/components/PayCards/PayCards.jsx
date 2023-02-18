@@ -1,5 +1,8 @@
 import React from 'react';
+
+//css
 import "./PayCards.css";
+import "./PayCardsMedia.css";
 
 const PayCards = () => {
     return (

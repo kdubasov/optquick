@@ -1,6 +1,9 @@
 import React from 'react';
 import {Container} from "react-bootstrap";
+
+//css
 import "./SellerCommPage.css";
+import "./SellerCommPageMedia.css";
 
 const SellerCommPage = () => {
     return (

@@ -1,8 +1,11 @@
 import React from 'react';
 import {Container} from "react-bootstrap";
-import "./AboutProject.css";
 import BenefitsCards from "./components/BenefitsCards/BenefitsCards";
 import CreatorsBlock from "./components/CreatorsBlock/CreatorsBlock";
+
+//css
+import "./AboutProject.css";
+import "./AboutProjectMedia.css";
 
 const AboutProject = () => {
     return (

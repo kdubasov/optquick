@@ -1,0 +1,6 @@
+@media (max-width: 991px) {
+    .AnswersPage .inner {
+        width: 100%;
+        margin-bottom: .75em;
+    }
+}

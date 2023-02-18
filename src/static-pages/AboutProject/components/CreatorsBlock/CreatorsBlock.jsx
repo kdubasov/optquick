@@ -1,5 +1,8 @@
 import React from 'react';
+
+//css
 import "./CreatorsBlock.css";
+import "./CreatorsBlockMedia.css";
 
 const CreatorsBlock = () => {
 
@@ -26,7 +29,7 @@ const CreatorsBlock = () => {
                         <p className={"small"}>
                             Зачастую говорят, что мотивации хватает ненадолго.
                             Но то же самое происходит и с освежающим душем,
-                            поэтому и рекомендуют его принимать ежедневно.
+                            поэтому и рекомендуют принимать его ежедневно.
                         </p>
                     </div>
                     <div className="links">

@@ -1,0 +1,21 @@
+@media (max-width: 991px) {
+    .ArticlesPage .static-img{
+        width: 50%;
+        opacity: .35;
+    }
+    .ArticlesPage .NewsCard{
+        padding: 1em;
+    }
+    .ArticlesPage .NewsCard p:last-child{
+        display: none;
+    }
+    .ArticlesPage .NewsCard p.warning{
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .ArticlesPage .NewsCard{
+        width: 100%;
+    }
+}

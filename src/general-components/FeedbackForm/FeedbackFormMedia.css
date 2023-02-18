@@ -1,0 +1,15 @@
+@media (max-width: 991px) {
+    .FeedbackForm{
+        width: calc(75% - 1em);
+    }
+}
+
+@media (max-width: 768px) {
+    .FeedbackForm{
+        width: 100%;
+        padding: 1em;
+    }
+    .FeedbackForm h4{
+        font-size: calc(.75rem + .5vw);
+    }
+}

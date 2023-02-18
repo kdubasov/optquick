@@ -1,8 +1,11 @@
 import React from 'react';
 import FeedbackForm from "../../general-components/FeedbackForm/FeedbackForm";
 import {Container} from "react-bootstrap";
-import "./FeedbackPage.css";
 import {Link} from "react-router-dom";
+
+//css
+import "./FeedbackPage.css";
+import "./FeedbackPageMedia.css";
 
 const FeedbackPage = () => {
 

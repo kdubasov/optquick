@@ -1,14 +1,17 @@
 import React from 'react';
 import {Container} from "react-bootstrap";
-import "./ArticlesPage.css";
 import {useGetCategory} from "../../pages-functions/AdminPage/Categories/useGetCategory";
 import Loader from "../../general-components/Loader/Loader";
 import {Link} from "react-router-dom";
 
+//css
+import "./ArticlesPage.css";
+import "./ArticlesPageMedia.css";
+
 const ArticlesPage = () => {
 
     const data = useGetCategory("/articles");
-    console.log(data,"ArticlesPage");
+    // console.log(data,"ArticlesPage");
 
     //styles for card
     const getStyles = (bgColor) => {

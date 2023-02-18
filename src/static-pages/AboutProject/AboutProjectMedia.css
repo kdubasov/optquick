@@ -1,0 +1,14 @@
+@media (max-width: 991px) {
+    .AboutProject img.title{
+        width: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+    .AboutProject img.title{
+        width: 60%;
+    }
+    .AboutProject h5{
+        margin-top: 1em;
+    }
+}

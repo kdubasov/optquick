@@ -9,15 +9,22 @@
 
 /*footer with title*/
 .SupportProjectPage footer{
+    display: flex;
+    justify-content: center;
+
     margin-bottom: 3em;
     padding: 1.5em 0;
     text-align: center;
     border-radius: 10px;
-    background-color: #F8F8F8;
+    background-color: var(--bs-light);
     background-image: url("/public/images/static/bg-podderjka.svg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 .SupportProjectPage footer h5{
-    margin: 0;
+    width: auto;
+    margin: 0 1em;
+    padding: .35em 1em;
+    border-radius: 1em;
+    background: var(--bs-light);
 }

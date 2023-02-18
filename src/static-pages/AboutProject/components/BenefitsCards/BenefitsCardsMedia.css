@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+    /*card*/
+    .BenefitsCards .inner-card{
+        width: 100%;
+        margin-bottom: 1.5em;
+    }
+}
+
+@media (max-width: 500px) {/*card*/
+    .BenefitsCards .inner-card{
+        margin-bottom: 1em;
+    }
+    /*color block*/
+    .BenefitsCards .inner-card .color{
+        margin-right: .5em;
+    }
+    /*text container*/
+    .BenefitsCards .inner-card .text{
+        width: calc(100% - 25px - .5em) !important;
+    }
+    .BenefitsCards .inner-card .text h5{
+        margin: 5px 0 .5em 0;
+    }
+}

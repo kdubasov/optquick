@@ -6,6 +6,7 @@ import './NavbarTopMedia.css';
 import {useUserAuth} from "../../context/AuthContext";
 import {useGetBriefcaseData} from "../../pages-functions/Briefcase/useGetBriefcaseData";
 import NTCanvas from "./components/NTCanvas/NTCanvas";
+import {useMediaQuery} from "react-responsive";
 
 const NavbarTop = () => {
 
@@ -15,6 +16,9 @@ const NavbarTop = () => {
     const linkDB = `/users/${user?.uid}/briefcase`;
     const briefcaseData = useGetBriefcaseData(linkDB);
     // console.log(briefcaseData);
+
+    //media query
+    const media340px = useMediaQuery({query: '(max-width: 340px)'});
 
     // offcanvas show
     const [showOffCanvas, setShowOffCanvas] = useState(false);
@@ -56,7 +60,7 @@ const NavbarTop = () => {
                     {/*mobile elements*/}
                     <div className="mobile-right">
                         <Link className={"but-green post-product"} to={`/postProduct`}>
-                            Разместить товар
+                            Разместить {media340px ? "" : "товар"}
                         </Link>
                         <img
                             src="/images/icons/open-nav.svg"

@@ -3,7 +3,10 @@ import {Alert, Form} from "react-bootstrap";
 import {addFeedbackForm} from "../../functions/FeedbackForm/addFeedbackForm";
 import {useUserAuth} from "../../context/AuthContext";
 import {useGetUser} from "../Auth/UserProfile/functions/useGetUser";
+
+//css
 import "./FeedbackForm.css";
+import "./FeedbackFormMedia.css";
 
 const FeedbackForm = () => {
 
