@@ -30,8 +30,9 @@
     margin: .75em 0 -5px 0;
 }
 
-.CardSimilarProducts .content small{
+.CardSimilarProducts .content small.min-order{
     font-size: 13px;
+    margin-bottom: 10px;
     color: var(--bs-blue);
     text-decoration: underline;
 }

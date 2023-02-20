@@ -38,7 +38,7 @@ const CardSimilarProducts = ({product,setPath,setAlertData}) => {
 
             <div className={"content"}>
                 {/*Название*/}
-                <h6 onClick={() => handleSetProduct()} className={"title"}>
+                <h6 onClick={() => handleSetProduct()}>
                     {getCutWord(product.title,media768px?20:50)}
                 </h6>
                 {/*price*/}
@@ -52,7 +52,7 @@ const CardSimilarProducts = ({product,setPath,setAlertData}) => {
                     (user && (user.uid === product.userUid)) ?
                         <p className={"bottom m-0"}>Ваше объявление</p>:
                         <p className={"bottom m-0"}>
-                            В наличии:
+                            Осталось:
                             <b>{product.amount}</b>шт.
                         </p>
                 }

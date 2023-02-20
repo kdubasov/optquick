@@ -17,6 +17,7 @@ const CardProduct = ({product}) => {
     //media query
     const media768px = useMediaQuery({query: '(max-width: 768px)'});
 
+    const productUrl = `/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`;
     const databaseUrl = `/categories/${product.selectCategory}/subcategories/${product.selectSubCategory}/products/${product.id}`;
 
     return (
@@ -47,14 +48,13 @@ const CardProduct = ({product}) => {
 
                 {/*Мин заказ*/}
                 <small className={"min-order"}>
-                    {media768px ? "Заказ" : "Минимальный заказ"} от {product.minOrder} шт.
+                    <Link to={productUrl}>
+                        {media768px ? "Заказ" : "Минимальный заказ"} от {product.minOrder} шт.
+                    </Link>
                 </small>
 
                 {/*ссылка на страницу товара*/}
-                <Link
-                    className={"w-75 but-blue"}
-                    to={`/categories/${product.selectCategory}/${product.selectSubCategory}/${product.id}`}
-                >
+                <Link className={"w-75 but-blue"} to={productUrl}>
                     Перейти к товару
                 </Link>
 
@@ -67,7 +67,7 @@ const CardProduct = ({product}) => {
                     (user && (user.uid === product.userUid)) ?
                         <p className={"bottom"}>Ваше объявление</p>:
                         <p className={"bottom"}>
-                            В наличии:
+                            Осталось:
                             <strong>{product.amount}</strong>шт.
                         </p>
                 }

@@ -16,12 +16,6 @@ const LastProducts = () => {
         <div className={"LastProducts"}>
             <header>
                 <h4 className={"title"}>Успейте купить</h4>
-                <p className="small descr">
-                    Ниже вы видите, остаток которых не прывашает 100 штук.
-                    Данный блок включает в себя не полный список товаров,
-                    для ознакомления со всеми товарами вы можете перейти в
-                    <Link to={"/categories"}>каталог</Link>.
-                </p>
             </header>
 
             {

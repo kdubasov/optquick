@@ -43,6 +43,13 @@
 .CardProduct .content .min-order{
     width: 100%;
     margin-bottom: 1.5em;
+}
+.CardProduct .content .min-order a{
+    color: #333;
+    text-decoration: none;
+    transition: .25s;
+}
+.CardProduct .content .min-order a:hover{
     color: var(--bs-blue);
     text-decoration: underline;
 }

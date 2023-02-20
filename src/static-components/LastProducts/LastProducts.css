@@ -7,19 +7,19 @@
 .LastProducts header{
     width: 100%;
 }
-.LastProducts h4{
+.LastProducts header h4{
     width: 100%;
-    margin-bottom: .4em !important;
+    margin-bottom: .75em !important;
 }
-.LastProducts p.descr{
-    width: 75%;
-    margin-bottom: 2em;
-    opacity: .75;
-}
-.LastProducts p.descr a{
-    color: var(--bs-blue);
-    margin-left: .25em;
-}
+/*.LastProducts p.descr{*/
+/*    width: 75%;*/
+/*    margin-bottom: 2em;*/
+/*    opacity: .75;*/
+/*}*/
+/*.LastProducts p.descr a{*/
+/*    color: var(--bs-blue);*/
+/*    margin-left: .25em;*/
+/*}*/
 
 .LastProducts .link-container{
     width: 100%;
